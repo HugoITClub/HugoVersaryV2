@@ -1,20 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
+import { RouterProvider } from "react-router-dom";
+import reportWebVitals from "./reportWebVitals";
 import { LanguageProvider } from "./services/language/LanguageProvider";
-import configureStore from "./redux/store";
-import App from "./App";
+import router from "./router/browserRouter";
+import store from "./redux/store";
 
-// Preparing
-const store = configureStore();
 const root = ReactDOM.createRoot(document.getElementById("root"));
-
-// Render to DOM
 root.render(
   <Provider store={store}>
     <LanguageProvider>
-      <App />
+      <RouterProvider router={router} />
     </LanguageProvider>
   </Provider>
 );

@@ -1,0 +1,20 @@
+.navbar {
+  --bs-navbar-toggler-focus-width: 0;
+  padding: 0;
+}
+
+.nav-item::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  transition: 0.2s;
+  background-color: #fff;
+}
+
+.nav-item:hover::before {
+  left: 0;
+  width: 100%;
+}
