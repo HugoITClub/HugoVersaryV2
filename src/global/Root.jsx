@@ -1,15 +1,14 @@
-import { Outlet, RouterProvider } from "react-router-dom";
-import Head from "../components/Head/Head";
+import { Outlet } from "react-router-dom";
 import Navigator from "../components/Navigator/Navigator";
-import router from "../router/browserRouter";
-import "./style.css";
+
+import "./style/root.style.css";
+import "./style/button.style.css";
+import "./style/text.style.css";
+import "./style/spacing.style.css";
 
 function Root() {
   return (
     <div>
-      {/* Common heads */}
-      <Head />
-
       {/* Navigation bar */}
       <Navigator />
 

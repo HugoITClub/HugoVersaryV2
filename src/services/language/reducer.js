@@ -6,7 +6,8 @@ export function languageReducer(state = initialState, action) {
   switch (action.type) {
     case CHANGE_LOCALE:
       return { ...state, locale: action.locale };
-  }
 
-  return state;
+    default:
+      return state;
+  }
 }

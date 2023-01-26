@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+
+.f-lato {
+  font-family: "Lato", var(--bs-body-font-family);
+}
+
+.f-montserrat {
+  font-family: "Montserrat", var(--bs-body-font-family);
+}
+
+.text-gradient {
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent;
+  background: var(--bs-gradient);
+}
+
+.text-outline-primary {
+  color: transparent;
+  -webkit-text-stroke: 2px var(--bs-primary);
+}
+
+.text-outline-secondary {
+  color: transparent;
+  -webkit-text-stroke: 2px var(--bs-secondary);
+}
+

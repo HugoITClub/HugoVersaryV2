@@ -1,4 +1,4 @@
-import { useLocation, useMatch } from "react-router-dom";
+import { useMatch } from "react-router-dom";
 import { TEAMS_PAGE_PATH } from "./constants";
 
 function TeamsPage() {

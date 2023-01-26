@@ -7,3 +7,8 @@ export function joinCls(...classNames) {
     .filter(Boolean) // Remove falsy items
     .join(" "); // Join with white space;
 }
+
+export function randomImgUrl(size = 2000) {
+  const seed = Math.floor(Math.random() * 1000);
+  return `https://picsum.photos/${size}?random=${seed}`;
+}

@@ -1,7 +1,9 @@
 import { TEAMS_PAGE_PATH } from "./constants";
 import TeamsPage from "./TeamsPage";
 
-export default {
+const teamsRoute = {
   path: TEAMS_PAGE_PATH,
   element: <TeamsPage />,
 };
+
+export default teamsRoute;

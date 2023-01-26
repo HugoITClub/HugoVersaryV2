@@ -1,7 +1,9 @@
 import AboutUsPage from "./AboutUsPage";
 import { ABOUT_US_PAGE_PATH } from "./constants";
 
-export default {
+const aboutUsRoute = {
   path: ABOUT_US_PAGE_PATH,
   element: <AboutUsPage />,
 };
+
+export default aboutUsRoute;
