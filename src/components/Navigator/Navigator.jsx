@@ -1,13 +1,13 @@
 import { Fragment } from "react";
-import { generatePath, Link, matchPath, NavLink, useLocation } from "react-router-dom";
+import { Link, matchPath, NavLink, useLocation } from "react-router-dom";
 import { joinCls } from "../../utilities/text.utils";
 import Image from "../Image/Image";
 import FakeImage from "./images/Fake.png";
 import Title from "./Title";
 import style from "./style.module.css";
 import { HOME_PAGE_PATH } from "../../pages/Home/constants";
-import { BANANA, HEROES_COMPANY, NIFFLER, POWER_RANGERS, TEAMS_PAGE_PATH } from "../../pages/Teams/constants";
-import { ACTIVITIES_PAGE_PATH, EVENTS, MEETINGS } from "../../pages/Activities/constants";
+import { BANANA_TEAM_PAGE_PATH, HEROES_COMPANY_TEAM_PAGE_PATH, NIFFLER_TEAM_PAGE_PATH, POWER_RANGERS_TEAM_PAGE_PATH, TEAMS_PAGE_PATH } from "../../pages/Teams/constants";
+import { ACTIVITIES_PAGE_PATH, EVENTS_ACTIVITY_PAGE_PATH, MEETINGS_ACTIVITY_PAGE_PATH } from "../../pages/Activities/constants";
 import { BLOGS_PAGE_PATH } from "../../pages/Blogs/constants";
 import { ABOUT_US_PAGE_PATH } from "../../pages/AboutUs/constants";
 
@@ -23,19 +23,19 @@ export const NAV_LINKS = [
     children: [
       {
         name: "BANANA",
-        path: generatePath(TEAMS_PAGE_PATH, { name: BANANA }),
+        path: BANANA_TEAM_PAGE_PATH,
       },
       {
         name: "HEROES COMPANY",
-        path: generatePath(TEAMS_PAGE_PATH, { name: HEROES_COMPANY }),
+        path: HEROES_COMPANY_TEAM_PAGE_PATH,
       },
       {
         name: "POWER RANGERS",
-        path: generatePath(TEAMS_PAGE_PATH, { name: POWER_RANGERS }),
+        path: POWER_RANGERS_TEAM_PAGE_PATH,
       },
       {
         name: "NIFFLER",
-        path: generatePath(TEAMS_PAGE_PATH, { name: NIFFLER }),
+        path: NIFFLER_TEAM_PAGE_PATH,
       },
     ],
   },
@@ -45,11 +45,11 @@ export const NAV_LINKS = [
     children: [
       {
         name: "MEETINGS",
-        path: generatePath(ACTIVITIES_PAGE_PATH, { name: MEETINGS }),
+        path: MEETINGS_ACTIVITY_PAGE_PATH,
       },
       {
         name: "EVENTS",
-        path: generatePath(ACTIVITIES_PAGE_PATH, { name: EVENTS }),
+        path: EVENTS_ACTIVITY_PAGE_PATH,
       },
     ],
   },

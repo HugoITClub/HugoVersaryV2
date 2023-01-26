@@ -13,10 +13,14 @@ html {
 }
 
 :root, [data-bs-theme="light"] {
+  --bs-body-bg: var(--bs-light);
+  --bs-body-bg-rgb: var(--bs-light-rgb);
   --bs-primary: #FF6D1B;
   --bs-primary-rgb: 255, 109, 27;
-  --bs-secondary: #fC6373;
+  --bs-secondary: #FC6373;
   --bs-secondary-rgb: 252, 99, 115;
-  --bs-gradient: linear-gradient(90deg, #FF6D1B, #FFB54D);
+  --bs-gradient: linear-gradient(90deg, #FC6373, #FE9548);
 }
+
+
 

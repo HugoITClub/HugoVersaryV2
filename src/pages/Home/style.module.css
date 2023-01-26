@@ -20,3 +20,40 @@
 .yt-play:hover .yt-play-btn {
   backdrop-filter: blur(4px);
 }
+
+.activity-item {
+  flex-shrink: 0;
+  flex-basis: 30%;
+}
+
+.activity-item :global(.card-img-overlay) {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0)) 50%;
+}
+
+.activity-item :global(.card-img) {
+  transition: 0.4s ease-out;
+  height: 248px;
+}
+
+.activity-item:hover :global(.card-img) {
+  transform: scale(120%);
+  opacity: 0.6;
+}
+
+.card-sub-text {
+  opacity: 0;
+  transition: 0.2s ease-out;
+}
+
+.activity-item:hover .card-sub-text {
+  opacity: 1;
+}
+
+.card-header {
+  bottom: 0%;
+  transition: 0.2s ease-out;
+}
+
+.activity-item:hover .card-header {
+  bottom: 100%;
+}
