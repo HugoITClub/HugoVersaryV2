@@ -1,3 +1,4 @@
+import { FormattedMessage } from "react-intl";
 import Carousel from "../../components/Carousel/Carousel";
 import { joinCls, randomImgUrl } from "../../utilities/text.utils";
 
@@ -8,6 +9,7 @@ import Slider from "../../components/Slider/Slider";
 import { Link } from "react-router-dom";
 import { MEETINGS_ACTIVITY_PAGE_PATH } from "../Activities/constants";
 import Image from "../../components/Image/Image";
+import homeMessages from "./homeMessages";
 
 function HomePage() {
   const images = [randomImgUrl(), randomImgUrl(), randomImgUrl(), randomImgUrl(), randomImgUrl(), randomImgUrl()];
@@ -23,17 +25,15 @@ function HomePage() {
             <h1 className="display-2 text-outline-primary fw-bolder f-lato">WHAT IS</h1>
             <h1 className="display-3 f-montserrat fw-bolder text-gradient text-start">HUGO ENGLISH CLUB</h1>
             <p className={joinCls("me-5", style["description"])}>
-              Hugo English Club is an official club directly under the Student Union of the University of Science and Technology - the University of Danang. It was established on
-              March 15, 2008, by the University of Science and Technology students. Our vision is to build a dynamic environment for all students, school-level students, and
-              working people in Da Nang city who want to practice English, enhance personal skills, and experience new activities.
+              <FormattedMessage {...homeMessages.description} />
             </p>
             <button className="btn btn-outline-gradient rounded-pill px-4">SEE MORE</button>
           </div>
           <div className="col-auto">
             <div className={joinCls("position-relative", style["yt-play"])}>
-              <img src={YtDecor1Svg} className="position-absolute bottom-0 start-0" />
-              <img src={YtDecor2Svg} className="position-absolute top-0 end-0" />
-              <img src="https://img.youtube.com/vi/Y9V3bgXbzi4/hqdefault.jpg" className="mw-100 p-3" />
+              <img src={YtDecor1Svg} className="position-absolute bottom-0 start-0" alt="youtube-decor" />
+              <img src={YtDecor2Svg} className="position-absolute top-0 end-0" alt="youtube-decor" />
+              <img src="https://img.youtube.com/vi/Y9V3bgXbzi4/hqdefault.jpg" className="mw-100 p-3" alt="youtube-thumbnail" />
               <div
                 className={joinCls(
                   "position-absolute top-50 start-50 translate-middle d-flex justify-content-center align-items-center bg-white bg-opacity-25 rounded-circle",
