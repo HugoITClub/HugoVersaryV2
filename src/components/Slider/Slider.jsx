@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { joinCls } from "../../utilities/text.utils";
 
 import style from "./style.module.css";
@@ -61,7 +61,7 @@ export default function Slider({ items = [], className, renderItem, ...props }) 
       </div>
 
       <div className={joinCls("position-absolute d-flex align-items-center", style["prev-area"])}>
-        <div className={joinCls("position-relative", style["fade-area"], currentItemIndex != 0 && "px-5")}>
+        <div className={joinCls("position-relative", style["fade-area"], currentItemIndex !== 0 && "px-5")}>
           <button
             className={joinCls("btn position-absolute d-flex justify-content-center align-items-center rounded-circle start-0 translate-middle", style["icon"])}
             onClick={handlePrevButtonClicked}
@@ -71,7 +71,7 @@ export default function Slider({ items = [], className, renderItem, ...props }) 
         </div>
       </div>
       <div className={joinCls("position-absolute d-flex align-items-center", style["next-area"])}>
-        <div className={joinCls("position-relative", style["fade-area"], currentItemIndex != containerRef.current?.children.length - 1 && "px-5")}>
+        <div className={joinCls("position-relative", style["fade-area"], currentItemIndex !== containerRef.current?.children.length - 1 && "px-5")}>
           <button
             className={joinCls("btn position-absolute d-flex justify-content-center align-items-center rounded-circle start-100 translate-middle", style["icon"])}
             onClick={handleNextButtonClicked}

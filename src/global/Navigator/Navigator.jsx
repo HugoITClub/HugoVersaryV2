@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import { Link, matchPath, NavLink, useLocation } from "react-router-dom";
 import { joinCls } from "../../utilities/text.utils";
-import Image from "../Image/Image";
+import Image from "../../components/Image/Image";
 import FakeImage from "./images/Fake.png";
 import Title from "./Title";
 import style from "./style.module.css";

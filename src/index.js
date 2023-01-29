@@ -6,13 +6,16 @@ import reportWebVitals from "./reportWebVitals";
 import { LanguageProvider } from "./services/language/LanguageProvider";
 import router from "./router/browserRouter";
 import store from "./redux/store";
+import { GoogleProvider } from "./services/google/GoogleProvider";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Provider store={store}>
-    <LanguageProvider>
-      <RouterProvider router={router} />
-    </LanguageProvider>
+    <GoogleProvider>
+      <LanguageProvider>
+        <RouterProvider router={router} />
+      </LanguageProvider>
+    </GoogleProvider>
   </Provider>
 );
 

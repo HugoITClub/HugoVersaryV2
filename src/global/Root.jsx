@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import Navigator from "../components/Navigator/Navigator";
+import Navigator from "./Navigator/Navigator";
 
 import "./style/root.style.css";
 import "./style/button.style.css";
