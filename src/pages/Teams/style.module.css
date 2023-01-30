@@ -1,0 +1,48 @@
+.header {
+  position: relative;
+  height: 60rem;
+}
+
+.header .fade {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 40%;
+  background: linear-gradient(0deg, rgba(var(--bs-dark-rgb), 1) 0%, rgba(var(--bs-dark-rgb), 0.5) 60%, rgba(var(--bs-dark-rgb), 0) 100%);
+}
+
+.header .overlay {
+  position: relative;
+}
+
+.header h1 {
+  font-size: 6rem;
+  font-weight: 800;
+  color: white;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.header p {
+  font-size: 1.6rem;
+  letter-spacing: 0.1rem;
+  color: white;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.icon {
+  width: 3rem;
+  height: 3rem;
+  background: transparent;
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.1);
+  border: 2px solid var(--bs-primary);
+  color: var(--bs-primary);
+  margin-bottom: 24px;
+}
+
+.icon:hover {
+  background: var(--bs-gradient) !important;
+  border: 2px solid transparent;
+  color: white;
+}
