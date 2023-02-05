@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useMatch } from "react-router-dom";
 import Image from "../../components/Image/Image";
+import Masonry from "../../components/Masonry/Masonry";
 import Modal from "../../components/Modal/Modal";
 import Slider from "../../components/Slider/Slider";
 import { joinCls, randomImgUrl } from "../../utilities/text.utils";
@@ -18,27 +19,27 @@ export default function TeamsPage() {
     {
       title: "Team Meeting",
       description: "Weekly meeting every Thursday evening",
-      images: Array.from(new Array(7)).map(randomImgUrl),
+      images: Array.from(new Array(7)).map(() => randomImgUrl()),
     },
     {
       title: "Team Camping",
       description: "One of the most interesting activities",
-      images: Array.from(new Array(7)).map(randomImgUrl),
+      images: Array.from(new Array(7)).map(() => randomImgUrl()),
     },
     {
       title: "Extra Activities",
       description: "Another Activities",
-      images: Array.from(new Array(7)).map(randomImgUrl),
+      images: Array.from(new Array(7)).map(() => randomImgUrl()),
     },
     {
       title: "Sharing",
       description: "Sharing experiences and knowledge",
-      images: Array.from(new Array(7)).map(randomImgUrl),
+      images: Array.from(new Array(7)).map(() => randomImgUrl()),
     },
   ];
 
   const sliderItems = Array.from(new Array(7))
-    .map(randomImgUrl)
+    .map(() => randomImgUrl())
     .map((image) => ({ url: image, id: image }));
 
   const [isShownModal, setIsShownModal] = useState(false);
@@ -140,7 +141,7 @@ export default function TeamsPage() {
       <section className={joinCls("container-fluid mt-10", style["footer"])}>
         <div className="d-flex justify-content-center align-items-center gap-5">
           <div className={style["line-decor"]} />
-          <Image src={randomImgUrl(80)} />
+          <Image src={randomImgUrl(80, 80)} />
           <div className={style["line-decor"]} />
         </div>
 
@@ -151,10 +152,8 @@ export default function TeamsPage() {
         </div>
       </section>
 
-      <Modal isShown={isShownModal} onClose={() => setIsShownModal(false)}>
-        {currentExploreImages.map((currentExploreImage) => (
-          <Image src={currentExploreImage} />
-        ))}
+      <Modal className="modal-xl" isShown={isShownModal} onClose={() => setIsShownModal(false)}>
+        <Masonry images={currentExploreImages} renderItem={(image) => <Image key={image} src={image} />} gutter={4} />
       </Modal>
     </div>
   );

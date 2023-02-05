@@ -24,6 +24,7 @@ export default function Modal({ isShown, onClose, className, children, ...props 
   };
 
   useEffect(() => {
+    console.log("IsShown effect");
     if (isShown) {
       setIsEntering(true);
       setIsEntered(false);
@@ -38,14 +39,16 @@ export default function Modal({ isShown, onClose, className, children, ...props 
   }, [isShown]);
 
   useEffect(() => {
+    setIsEntering(false);
+    setIsEntered(false);
+    setIsExisting(false);
+    setIsExisted(false);
+
     const root = document.querySelector("#root");
     root.appendChild(containerRef.current);
 
     return () => root.removeChild(containerRef.current);
   }, []);
-
-  console.log(isShown);
-  console.log({ isEntering, isEntered, isExiting, isExited });
 
   const content = (
     <div
@@ -60,6 +63,7 @@ export default function Modal({ isShown, onClose, className, children, ...props 
       )}
       onClick={onClose}
       onTransitionEnd={handleTransitionEnd}
+      {...props}
     >
       <div className="modal-dialog">{children}</div>
     </div>
