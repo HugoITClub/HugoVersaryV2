@@ -7,9 +7,9 @@ import YtDecor1Svg from "./images/yt-decor-1.svg";
 import YtDecor2Svg from "./images/yt-decor-2.svg";
 import Slider from "../../components/Slider/Slider";
 import { Link } from "react-router-dom";
-import { MEETINGS_ACTIVITY_PAGE_PATH } from "../Activities/constants";
 import Image from "../../components/Image/Image";
 import homeMessages from "./homeMessages";
+import { MEETINGS_ACTIVITY_PAGE_PATH } from "../Activities/Meetings/constants";
 
 function HomePage() {
   const images = [randomImgUrl(), randomImgUrl(), randomImgUrl(), randomImgUrl(), randomImgUrl(), randomImgUrl()];

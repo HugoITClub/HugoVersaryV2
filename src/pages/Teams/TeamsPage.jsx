@@ -2,7 +2,7 @@ import { Link, useMatch } from "react-router-dom";
 import Image from "../../components/Image/Image";
 import Slider from "../../components/Slider/Slider";
 import { joinCls, randomImgUrl } from "../../utilities/text.utils";
-import { MEETINGS_ACTIVITY_PAGE_PATH } from "../Activities/constants";
+import { MEETINGS_ACTIVITY_PAGE_PATH } from "../Activities/Meetings/constants";
 import { TEAMS_PAGE_PATH } from "./constants";
 
 import style from "./style.module.css";

@@ -7,9 +7,11 @@ import Title from "./Title";
 import style from "./style.module.css";
 import { HOME_PAGE_PATH } from "../../pages/Home/constants";
 import { BANANA_TEAM_PAGE_PATH, HEROES_COMPANY_TEAM_PAGE_PATH, NIFFLER_TEAM_PAGE_PATH, POWER_RANGERS_TEAM_PAGE_PATH, TEAMS_PAGE_PATH } from "../../pages/Teams/constants";
-import { ACTIVITIES_PAGE_PATH, EVENTS_ACTIVITY_PAGE_PATH, MEETINGS_ACTIVITY_PAGE_PATH } from "../../pages/Activities/constants";
 import { BLOGS_PAGE_PATH } from "../../pages/Blogs/constants";
 import { ABOUT_US_PAGE_PATH } from "../../pages/AboutUs/constants";
+import { MEETINGS_ACTIVITY_PAGE_PATH } from "../../pages/Activities/Meetings/constants";
+import { ACTIVITY_PAGE_PATH } from "../../pages/Activities/constants";
+import { EVENTS_ACTIVITY_PAGE_PATH } from "../../pages/Activities/Events/constants";
 
 export const NAV_LINKS = [
   {
@@ -41,7 +43,7 @@ export const NAV_LINKS = [
   },
   {
     name: "ACTIVITIES",
-    path: ACTIVITIES_PAGE_PATH,
+    path: ACTIVITY_PAGE_PATH,
     children: [
       {
         name: "MEETINGS",
