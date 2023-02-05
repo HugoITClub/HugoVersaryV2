@@ -1,0 +1,25 @@
+.modal::-webkit-scrollbar {
+  display: none;
+}
+
+.modal, .modal :global(.modal-dialog) {
+  transition: 0.4s ease-out;
+}
+
+.show {
+  opacity: 1;
+  backdrop-filter: blur(4px) grayscale(0.64) brightness(0.5);
+}
+
+.show :global(.modal-dialog) {
+  transform: translate3d(0, 0, 0);
+}
+
+.hide {
+  opacity: 0;
+  backdrop-filter: blur(0) grayscale(0) brightness(0);
+}
+
+.hide :global(.modal-dialog) {
+  transform: translate3d(0, -100%, 0);
+}
