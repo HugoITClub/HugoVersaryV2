@@ -5,6 +5,7 @@ import "./style/root.style.css";
 import "./style/button.style.css";
 import "./style/text.style.css";
 import "./style/spacing.style.css";
+import "./style/custom.style.css";
 
 function Root() {
   return (

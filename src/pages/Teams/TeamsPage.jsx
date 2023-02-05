@@ -85,7 +85,7 @@ function TeamsPage() {
         <div className="row gx-5">
           {exploreCategories.map(({ title, description, images }) => (
             <div key={title} className="col-3">
-              <div className={joinCls("position-relative overflow-hidden", style["explore-img-area"])}>
+              <div className={joinCls("position-relative overflow-hidden cursor-pointer", style["explore-img-area"])}>
                 <Image src={randomImgUrl()} className="d-flex justify-content-center align-items-end rounded" />
                 <div className="position-absolute bottom-0 w-100">
                   <div className="position-relative w-100 mx-2">
