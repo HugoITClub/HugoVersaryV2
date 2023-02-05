@@ -11,7 +11,7 @@ import Image from "../../components/Image/Image";
 import homeMessages from "./homeMessages";
 import { MEETINGS_ACTIVITY_PAGE_PATH } from "../Activities/Meetings/constants";
 
-function HomePage() {
+export default function HomePage() {
   const images = [randomImgUrl(), randomImgUrl(), randomImgUrl(), randomImgUrl(), randomImgUrl(), randomImgUrl()];
   const sliderItems = images.map((image) => ({ url: image, id: image }));
 
@@ -82,5 +82,3 @@ function HomePage() {
     </div>
   );
 }
-
-export default HomePage;

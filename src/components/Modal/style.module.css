@@ -1,0 +1,19 @@
+.modal::-webkit-scrollbar {
+  display: none;
+}
+
+.modal {
+  transition: 0.4s ease-out;
+}
+
+.show {
+  opacity: 1;
+    transform: translate3d(0, 0, 0);
+    backdrop-filter: blur(4px) grayscale(0.64);
+}
+
+.hide {
+  opacity: 0;
+    transform: translate3d(0, -100%, 0);
+    backdrop-filter: blur(0) grayscale(0);
+}
