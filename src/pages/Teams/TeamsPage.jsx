@@ -1,5 +1,8 @@
+import { useState } from "react";
 import { Link, useMatch } from "react-router-dom";
 import Image from "../../components/Image/Image";
+import Masonry from "../../components/Masonry/Masonry";
+import Modal from "../../components/Modal/Modal";
 import Slider from "../../components/Slider/Slider";
 import { joinCls, randomImgUrl } from "../../utilities/text.utils";
 import { MEETINGS_ACTIVITY_PAGE_PATH } from "../Activities/Meetings/constants";
@@ -7,7 +10,7 @@ import { TEAMS_PAGE_PATH } from "./constants";
 
 import style from "./style.module.css";
 
-function TeamsPage() {
+export default function TeamsPage() {
   const {
     params: { name },
   } = useMatch(TEAMS_PAGE_PATH);
@@ -16,29 +19,36 @@ function TeamsPage() {
     {
       title: "Team Meeting",
       description: "Weekly meeting every Thursday evening",
-      images: Array.from(new Array(7)).map(randomImgUrl),
+      images: Array.from(new Array(7)).map(() => randomImgUrl()),
     },
     {
       title: "Team Camping",
       description: "One of the most interesting activities",
-      images: Array.from(new Array(7)).map(randomImgUrl),
+      images: Array.from(new Array(7)).map(() => randomImgUrl()),
     },
     {
       title: "Extra Activities",
       description: "Another Activities",
-      images: Array.from(new Array(7)).map(randomImgUrl),
+      images: Array.from(new Array(7)).map(() => randomImgUrl()),
     },
     {
       title: "Sharing",
       description: "Sharing experiences and knowledge",
-      images: Array.from(new Array(7)).map(randomImgUrl),
+      images: Array.from(new Array(7)).map(() => randomImgUrl()),
     },
   ];
 
   const sliderItems = Array.from(new Array(7))
-    .map(randomImgUrl)
+    .map(() => randomImgUrl())
     .map((image) => ({ url: image, id: image }));
-  console.log(sliderItems);
+
+  const [isShownModal, setIsShownModal] = useState(false);
+  const [currentExploreImages, setCurrentExploreImages] = useState([]);
+
+  const handleShownExploreImages = (images) => {
+    setIsShownModal(true);
+    setCurrentExploreImages(images);
+  };
 
   return (
     <div className="bg-black">
@@ -85,7 +95,7 @@ function TeamsPage() {
         <div className="row gx-5">
           {exploreCategories.map(({ title, description, images }) => (
             <div key={title} className="col-3">
-              <div className={joinCls("position-relative overflow-hidden cursor-pointer", style["explore-img-area"])}>
+              <div className={joinCls("position-relative overflow-hidden cursor-pointer", style["explore-img-area"])} onClick={() => handleShownExploreImages(images)}>
                 <Image src={randomImgUrl()} className="d-flex justify-content-center align-items-end rounded" />
                 <div className="position-absolute bottom-0 w-100">
                   <div className="position-relative w-100 mx-2">
@@ -131,7 +141,7 @@ function TeamsPage() {
       <section className={joinCls("container-fluid mt-10", style["footer"])}>
         <div className="d-flex justify-content-center align-items-center gap-5">
           <div className={style["line-decor"]} />
-          <Image src={randomImgUrl(80)} />
+          <Image src={randomImgUrl(80, 80)} />
           <div className={style["line-decor"]} />
         </div>
 
@@ -141,8 +151,10 @@ function TeamsPage() {
           <div className={joinCls("position-absolute w-100 bottom-0", style["fade-up"])}></div>
         </div>
       </section>
+
+      <Modal className="modal-xl" isShown={isShownModal} onClose={() => setIsShownModal(false)}>
+        <Masonry images={currentExploreImages} renderItem={(image) => <Image key={image} src={image} />} gutter={4} />
+      </Modal>
     </div>
   );
 }
-
-export default TeamsPage;

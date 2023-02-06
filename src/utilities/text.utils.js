@@ -8,7 +8,7 @@ export function joinCls(...classNames) {
     .join(" "); // Join with white space;
 }
 
-export function randomImgUrl(size = 2000) {
+export function randomImgUrl(width = 2000, height = 2000) {
   const seed = Math.floor(Math.random() * 1000);
-  return `https://picsum.photos/${size}?random=${seed}`;
+  return `https://picsum.photos/${width}/${height}?random=${seed}`;
 }
