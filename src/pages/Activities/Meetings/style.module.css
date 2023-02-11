@@ -1,0 +1,75 @@
+.header-pic {
+  position: relative;
+  padding-top: 50%;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.header-pic .fade {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 40%;
+  background: linear-gradient(
+    0deg,
+    rgba(var(--bs-black-rgb), 1) 0%,
+    rgba(var(--bs-black-rgb), 0.5) 60%,
+    rgba(var(--bs-dark-rgb), 0) 100%
+  );
+}
+
+.header-pic .overlay {
+  position: relative;
+}
+
+.post {
+  cursor: pointer;
+  display: block;
+  border: 2px solid #e2e2e2;
+  border-radius: 10.1256px;
+  padding: 12px;
+  transition: all 0.25s;
+}
+.post:hover {
+  border: 2px solid #fe9548;
+}
+.post-image {
+  padding: 0;
+  width: 100%;
+  height: 162px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.post-title {
+  line-height: 18px;
+  letter-spacing: 0.03em;
+  transition: all 0.5s;
+  -webkit-line-clamp: 3;
+  font-size: 15px;
+}
+
+.post-description {
+  -webkit-line-clamp: 3;
+  color: #949ba4;
+}
+
+.post-date {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 18px;
+  letter-spacing: 0.03em;
+  color: #949ba4;
+}
+
+.read-btn {
+  background-color: #fadec8;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+}
+
+.see-more-btn {
+  padding: 0.8rem 4.6rem;
+}

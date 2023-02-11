@@ -6,6 +6,7 @@ export default function useSheetAPI(sheetName, fromColumn, toColumn, { earlyTake
   const gApiClient = useSelector((state) => state.google.gApiClient, shallowEqual);
 
   const [isLoading, setIsLoading] = useState(false);
+  const [isFull, setIsFull] = useState(false);
   const [data, setData] = useState([]);
 
   const request = useCallback(
@@ -28,18 +29,23 @@ export default function useSheetAPI(sheetName, fromColumn, toColumn, { earlyTake
 
       setIsLoading(false);
       setData([...oldData, ...result.values]);
+
+      // Check is get full of data
+      if (result.values.length < take) setIsFull(true);
+
       return "Google API Client: Success";
     },
     [gApiClient, data]
   );
 
   useEffect(() => {
-    if (earlyTake) request(earlySkip, earlyTake);
+    if (earlyTake) request(earlyTake, earlySkip);
   }, [gApiClient]);
 
   return {
     isLoading,
+    isFull,
     data,
-    request: (take, skip = 0) => request(take, skip, data),
+    getMore: (take, skip = 0) => request(take, skip, data),
   };
 }
