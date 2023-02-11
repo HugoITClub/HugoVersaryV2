@@ -12,6 +12,7 @@ import homeMessages from "./homeMessages";
 import { MEETINGS_ACTIVITY_PAGE_PATH } from "../Activities/Meetings/constants";
 import { useState } from "react";
 import Modal from "../../components/Modal/Modal";
+import Footer from "../../components/Footer/Footer";
 
 export default function HomePage() {
   const images = [randomImgUrl(), randomImgUrl(), randomImgUrl(), randomImgUrl(), randomImgUrl(), randomImgUrl()];
@@ -88,6 +89,37 @@ export default function HomePage() {
           )}
         />
       </section>
+
+      <section className="container mt-10">
+        <h1 className="display-5 f-montserrat fw-bolder text-gradient text-center">BLOGS</h1>
+        {/* <Slider
+          items={sliderItems}
+          className="gap-3 mt-5"
+          renderItem={(item) => (
+            <Link
+              key={item.id}
+              to={MEETINGS_ACTIVITY_PAGE_PATH}
+              className={joinCls("card text-decoration-none text-bg-dark border-0 rounded-3 overflow-hidden", style["blog-item"])}
+            >
+              <Image src={item.url} className="card-img" />
+              <div className="card-img-overlay d-flex flex-column justify-content-end">
+                <div className="position-relative">
+                  <div className={joinCls("position-absolute", style["card-header"])}>
+                    <h3 className="badge text-success text-bg-light text-uppercase px-2 py-2">Special title treatment</h3>
+                    <h5 className="card-text">Traveling</h5>
+                  </div>
+                  <p className={joinCls("card-text", style["card-sub-text"])}>With supporting text below as a natural lead-in to additional content</p>
+                </div>
+                <p className="card-text text-secondary fw-bold">
+                  <small>May 30, 2022</small>
+                </p>
+              </div>
+            </Link>
+          )}
+        /> */}
+      </section>
+
+      <Footer className="mt-10" />
     </div>
   );
 }
