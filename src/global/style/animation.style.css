@@ -14,10 +14,10 @@
   animation-name: fadeInDown;
 }
 
-@keyframes fadeInDown {
+@keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, 100%, 0);
   }
 
   to {
@@ -26,8 +26,8 @@
   }
 }
 
-.fadeInDown {
-  animation-name: fadeInDown;
+.fadeInUp {
+  animation-name: fadeInUp;
 }
 
 
@@ -61,4 +61,21 @@
 
 .fadeInRight {
   animation-name: fadeInRight;
+}
+
+
+
+@keyframes slideInLeft {
+  from {
+    transform: translate3d(-100%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.slideInLeft {
+  animation-name: slideInLeft;
 }

@@ -25,10 +25,10 @@
 
 .post {
   cursor: pointer;
+  display: block;
   border: 2px solid #e2e2e2;
   border-radius: 10.1256px;
   padding: 12px;
-  margin-bottom: 1rem;
   transition: all 0.25s;
 }
 .post:hover {
@@ -68,4 +68,8 @@
   width: 18px;
   height: 18px;
   border-radius: 50%;
+}
+
+.see-more-btn {
+  padding: 0.8rem 4.6rem;
 }

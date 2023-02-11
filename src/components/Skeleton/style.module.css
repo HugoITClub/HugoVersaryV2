@@ -1,0 +1,34 @@
+@keyframes slideInLeft {
+  from {
+    transform: translate3d(-50%, 0, 0);
+    opacity: 0;
+    visibility: visible;
+  }
+
+  50% {
+    opacity: 50%;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 0;
+  }
+}
+
+.skeleton {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+.skeleton::after {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.06);
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: -100%;;
+  background: linear-gradient(90deg,rgba(0,0,0,0.06) 25%,rgba(0,0,0,0.15) 37%,rgba(0,0,0,0.06) 63%);
+  animation: slideInLeft 1s linear 0s infinite;
+} 
