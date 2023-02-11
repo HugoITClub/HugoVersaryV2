@@ -34,12 +34,12 @@ export default function useSheetAPI(sheetName, fromColumn, toColumn, { earlyTake
   );
 
   useEffect(() => {
-    if (earlyTake) request(earlySkip, earlyTake);
+    if (earlyTake) request(earlyTake, earlySkip);
   }, [gApiClient]);
 
   return {
     isLoading,
     data,
-    request: (take, skip = 0) => request(take, skip, data),
+    getMore: (take, skip = 0) => request(take, skip, data),
   };
 }
