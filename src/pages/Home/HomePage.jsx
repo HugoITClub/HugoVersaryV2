@@ -10,10 +10,14 @@ import { Link } from "react-router-dom";
 import Image from "../../components/Image/Image";
 import homeMessages from "./homeMessages";
 import { MEETINGS_ACTIVITY_PAGE_PATH } from "../Activities/Meetings/constants";
+import { useState } from "react";
+import Modal from "../../components/Modal/Modal";
 
 export default function HomePage() {
   const images = [randomImgUrl(), randomImgUrl(), randomImgUrl(), randomImgUrl(), randomImgUrl(), randomImgUrl()];
   const sliderItems = images.map((image) => ({ url: image, id: image }));
+
+  const [isShownHugoVideo, setIsShownHugoVideo] = useState(false);
 
   return (
     <div className="bg-light">
@@ -39,12 +43,17 @@ export default function HomePage() {
                   "position-absolute top-50 start-50 translate-middle d-flex justify-content-center align-items-center bg-white bg-opacity-25 rounded-circle",
                   style["yt-play-btn"]
                 )}
+                onClick={() => setIsShownHugoVideo(true)}
               >
                 <i className="fa-solid fa-2xl fa-play text-white"></i>
               </div>
             </div>
           </div>
         </div>
+
+        <Modal className="modal-xl" dialogClassName="h-100 my-0 py-5" isShown={isShownHugoVideo} onClose={() => setIsShownHugoVideo(false)}>
+          <iframe id="player" type="text/html" width="100%" height="100%" src="http://www.youtube.com/embed/Y9V3bgXbzi4?enablejsapi=1" frameBorder="0"></iframe>
+        </Modal>
       </section>
 
       <section className="container mt-10">
