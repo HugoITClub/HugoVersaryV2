@@ -1,5 +1,5 @@
 .carousel :global(.carousel-item) {
-  height: 43rem;
+  height: 90vh;
 }
 
 .description {
