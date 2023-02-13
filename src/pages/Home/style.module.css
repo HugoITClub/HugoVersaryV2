@@ -57,3 +57,25 @@
 .activity-item:hover .card-header {
   bottom: 100%;
 }
+
+.blog-item {
+  flex-shrink: 0;
+  flex-basis: 25%;
+  transition: 0.4s ease-out;
+}
+
+.blog-item:hover {
+  --bs-card-border-color: var(--bs-primary);
+}
+
+.blog-item img {
+  height: 12rem;
+}
+
+.blog-item h5, .blog-item .read-more {
+  transition: 0.2s ease-out;
+}
+
+.blog-item:hover h5, .blog-item:hover .read-more {
+  color: var(--bs-primary);
+}

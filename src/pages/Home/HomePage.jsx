@@ -92,31 +92,24 @@ export default function HomePage() {
 
       <section className="container mt-10">
         <h1 className="display-5 f-montserrat fw-bolder text-gradient text-center">BLOGS</h1>
-        {/* <Slider
+        <Slider
           items={sliderItems}
           className="gap-3 mt-5"
           renderItem={(item) => (
-            <Link
-              key={item.id}
-              to={MEETINGS_ACTIVITY_PAGE_PATH}
-              className={joinCls("card text-decoration-none text-bg-dark border-0 rounded-3 overflow-hidden", style["blog-item"])}
-            >
-              <Image src={item.url} className="card-img" />
-              <div className="card-img-overlay d-flex flex-column justify-content-end">
-                <div className="position-relative">
-                  <div className={joinCls("position-absolute", style["card-header"])}>
-                    <h3 className="badge text-success text-bg-light text-uppercase px-2 py-2">Special title treatment</h3>
-                    <h5 className="card-text">Traveling</h5>
-                  </div>
-                  <p className={joinCls("card-text", style["card-sub-text"])}>With supporting text below as a natural lead-in to additional content</p>
+            <Link key={item.id} to={MEETINGS_ACTIVITY_PAGE_PATH} className={joinCls("card text-reset text-decoration-none rounded-3 overflow-hidden", style["blog-item"])}>
+              <Image src={item.url} className="card-img-top" />
+              <div className="card-body">
+                <small className="d-block text-secondary text-uppercase">May 30, 2022</small>
+                <h5 className="">Special title treatment</h5>
+                <p>With supporting text below as a natural lead-in to additional content</p>
+                <div className={joinCls("d-flex align-items-center gap-2", style["read-more"])}>
+                  <h6 className="mb-0">Read more</h6>
+                  <i className="fa-solid fa-arrow-right" />
                 </div>
-                <p className="card-text text-secondary fw-bold">
-                  <small>May 30, 2022</small>
-                </p>
               </div>
             </Link>
           )}
-        /> */}
+        />
       </section>
 
       <Footer className="mt-10" />
