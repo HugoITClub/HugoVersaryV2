@@ -1,8 +1,6 @@
 import { FormattedMessage } from "react-intl";
 import Carousel from "../../components/Carousel/Carousel";
 import { joinCls, randomImgUrl } from "../../utilities/text.utils";
-
-import style from "./style.module.css";
 import YtDecor1Svg from "./images/yt-decor-1.svg";
 import YtDecor2Svg from "./images/yt-decor-2.svg";
 import Slider from "../../components/Slider/Slider";
@@ -13,6 +11,9 @@ import { MEETINGS_ACTIVITY_PAGE_PATH } from "../Activities/Meetings/constants";
 import { useState } from "react";
 import Modal from "../../components/Modal/Modal";
 import Footer from "../../components/Footer/Footer";
+import TeamsSection from "./components/TeamsSection/TeamsSection";
+
+import style from "./style.module.css";
 
 export default function HomePage() {
   const images = [randomImgUrl(), randomImgUrl(), randomImgUrl(), randomImgUrl(), randomImgUrl(), randomImgUrl()];
@@ -59,6 +60,7 @@ export default function HomePage() {
 
       <section className="container mt-10">
         <h1 className="display-5 f-montserrat fw-bolder text-gradient text-center">TEAMS IN HUGO</h1>
+        <TeamsSection className="mt-5" />
       </section>
 
       <section className="container mt-10">
@@ -110,6 +112,25 @@ export default function HomePage() {
             </Link>
           )}
         />
+      </section>
+
+      <section className="container mt-10">
+        <div className={joinCls("d-flex flex-column align-items-center rounded-4", style["join-us"])} style={{ backgroundImage: `url(${randomImgUrl(2000, 1000)})` }}>
+          <h1 className="text-gradient text-center text-uppercase">
+            become an official member of
+            <br />
+            Hugo English Club
+          </h1>
+          <h4 className="text-center mt-5">Hugo brings English more familiar than ever before, whoever you are!</h4>
+          <p className="text-center f-montserrat mt-3">
+            Do you want to immerse yourself in an environment where people practice English together?
+            <br />
+            Are you eager to make active and talented friends in Danang?
+            <br />
+            More than an English Club, let’s join us to know what's behind it!
+          </p>
+          <button className="btn btn-lg btn-outline-gradient rounded-pill text-uppercase px-5 py-3 mt-4">Join us right now</button>
+        </div>
       </section>
 
       <Footer className="mt-10" />

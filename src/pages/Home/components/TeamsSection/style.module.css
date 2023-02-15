@@ -1,0 +1,77 @@
+.wheel {
+  flex-shrink: 0;
+  width: 32rem;
+  height: 32rem;
+  padding: 7rem;
+}
+
+.wheel img {
+  width: 8rem;
+  height: 8rem;
+  transition: 0.4s ease-out;
+}
+
+.wheel img.active {
+  width: 14rem;
+  height: 14rem;
+}
+
+.team-card {
+  background: #EEEEEE33;
+  box-shadow: 0 0 1rem #0000001A;
+}
+
+.team-card h1 {
+  color: transparent;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 3.4rem;
+}
+
+.team-card h2 {
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+
+.team-card p {
+  font-style: italic;
+}
+
+.team-card h1.banana {
+  background: linear-gradient(180deg, #FFCC00, #FFFF66);
+  -webkit-background-clip: text;
+}
+
+.team-card h1.heroes-company {
+  background: linear-gradient(180deg, #0750de 0%, #3c96ff 100%);
+  -webkit-background-clip: text;
+}
+
+.team-card h1.power-rangers {
+  background: linear-gradient(to bottom, #ff0000, #ff6666);
+  -webkit-background-clip: text;
+}
+
+.team-card h1.niffler {
+  background: linear-gradient(180deg, #7107db 0%, #df1bff 100%);
+  -webkit-background-clip: text;
+}
+
+.team-card .description {
+  font-family: "Crimson Pro", var(--bs-font-sans-serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 120%;
+}
+
+.team-card .next-btn {
+  color: var(--bs-dark);
+  transition: 0.2s ease-out;
+}
+
+.team-card .next-btn:hover {
+  color: var(--bs-primary);
+}

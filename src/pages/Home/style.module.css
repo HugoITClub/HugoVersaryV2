@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital@1&display=swap');
+
 .carousel :global(.carousel-item) {
   height: 43rem;
 }
@@ -78,4 +80,24 @@
 
 .blog-item:hover h5, .blog-item:hover .read-more {
   color: var(--bs-primary);
+}
+
+.join-us {
+  padding: 56px 0;
+  border: 2px solid var(--bs-primary);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: screen;
+  background-color: rgba(var(--bs-white-rgb), 0.9);
+}
+
+.join-us h1 {
+  line-height: 132%;
+  font-size: 3rem;
+}
+
+.join-us p {
+  font-size: 1.6rem;
+  font-weight: 300;
 }
