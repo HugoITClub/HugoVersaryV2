@@ -1,0 +1,39 @@
+.item:first-child {
+  margin: 0 50%;
+  transform: translateX(-50%);
+}
+
+.mem-name {
+  font-family: "Montserrat";
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 140.9%;
+  margin-top: 10px;
+}
+
+.mem-title {
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140.9%;
+}
+
+.about-human-title {
+  font-size: 32px;
+  border-bottom: 1px solid #fc6373;
+}
+
+.about-human-description {
+  font-size: 16px;
+}
+
+.about-introduction-title {
+  font-size: 58px;
+  color: #1f1f1f;
+  line-height: 80px;
+}
+
+.introduction-content {
+  font-weight: 500;
+  font-size: 20px;
+}
