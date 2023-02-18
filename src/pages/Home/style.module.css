@@ -23,6 +23,16 @@
   backdrop-filter: blur(4px);
 }
 
+.eclipse-decor-1 {
+  top: 100%;
+  transform: translateX(-50%);
+}
+
+.eclipse-decor-2 {
+  top: 100%;
+  transform: translate(3rem, -3rem);
+}
+
 .activity-item {
   flex-shrink: 0;
   flex-basis: 30%;
@@ -85,11 +95,8 @@
 .join-us {
   padding: 56px 0;
   border: 2px solid var(--bs-primary);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-blend-mode: screen;
-  background-color: rgba(var(--bs-white-rgb), 0.9);
+  backdrop-filter: blur(8px);
+  background-color: rgba(var(--bs-white-rgb), 0.5);
 }
 
 .join-us h1 {
@@ -100,4 +107,31 @@
 .join-us p {
   font-size: 1.6rem;
   font-weight: 300;
+}
+
+.join-us img {
+  opacity: 4%;
+  filter: screen;
+}
+
+.eclipse-decor-3 {
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -32%);
+}
+
+.rect-decor-2 {
+  bottom: 0;
+  right: 0;
+  transform: translate(50%, 64%);
+  width: 12rem;
+  height: 12rem;
+}
+
+.rect-decor-2-1 {
+  bottom: 4rem;
+  right: -8rem;
+  transform: rotate(60deg);
+  width: 4rem;
+  height: 4rem;
 }

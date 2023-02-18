@@ -86,22 +86,22 @@ export default function TeamsSection({ className }) {
           <div className={joinCls("position-relative rounded-circle border border-2 border-primary w-100 h-100", style["circle"])} />
           <Image
             src={teamMap[BANANA].image}
-            className={joinCls("rounded-pill position-absolute cursor-pointer", teamLogoClassName[BANANA])}
+            className={joinCls("rounded-pill position-absolute cursor-pointer", style[teamMap[BANANA].className], teamLogoClassName[BANANA])}
             onClick={() => setSelectedTeamKey(BANANA)}
           />
           <Image
             src={teamMap[HEROES_COMPANY].image}
-            className={joinCls("rounded-pill position-absolute cursor-pointer", teamLogoClassName[HEROES_COMPANY])}
+            className={joinCls("rounded-pill position-absolute cursor-pointer", style[teamMap[HEROES_COMPANY].className], teamLogoClassName[HEROES_COMPANY])}
             onClick={() => setSelectedTeamKey(HEROES_COMPANY)}
           />
           <Image
             src={teamMap[POWER_RANGERS].image}
-            className={joinCls("rounded-pill position-absolute cursor-pointer", teamLogoClassName[POWER_RANGERS])}
+            className={joinCls("rounded-pill position-absolute cursor-pointer", style[teamMap[POWER_RANGERS].className], teamLogoClassName[POWER_RANGERS])}
             onClick={() => setSelectedTeamKey(POWER_RANGERS)}
           />
           <Image
             src={teamMap[NIFFLER].image}
-            className={joinCls("rounded-pill position-absolute cursor-pointer", teamLogoClassName[NIFFLER])}
+            className={joinCls("rounded-pill position-absolute cursor-pointer", style[teamMap[NIFFLER].className], teamLogoClassName[NIFFLER])}
             onClick={() => setSelectedTeamKey(NIFFLER)}
           />
         </div>

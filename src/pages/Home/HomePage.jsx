@@ -3,6 +3,11 @@ import Carousel from "../../components/Carousel/Carousel";
 import { joinCls, randomImgUrl } from "../../utilities/text.utils";
 import YtDecor1Svg from "./images/yt-decor-1.svg";
 import YtDecor2Svg from "./images/yt-decor-2.svg";
+import EclipseDecor1Svg from "./images/eclipse-decor-1.svg";
+import EclipseDecor2Svg from "./images/eclipse-decor-2.svg";
+import EclipseDecor3Svg from "./images/eclipse-decor-3.svg";
+import RectDecor1Svg from "./images/rect-decor-1.svg";
+import RectDecor2Svg from "./images/rect-decor-2.svg";
 import Slider from "../../components/Slider/Slider";
 import { Link } from "react-router-dom";
 import Image from "../../components/Image/Image";
@@ -25,31 +30,36 @@ export default function HomePage() {
     <div className="bg-light">
       <Carousel id="HeaderCarousel" images={images} className={style.carousel} />
 
-      <section className="container mt-5">
-        <div className="row justify-content-between align-items-center">
-          <div className="col-6">
-            <h1 className="display-2 text-outline-primary fw-bolder f-lato">WHAT IS</h1>
-            <h1 className="display-3 f-montserrat fw-bolder text-gradient text-start">HUGO ENGLISH CLUB</h1>
-            <p className={joinCls("me-5", style["description"])}>
-              <FormattedMessage {...homeMessages.description} />
-            </p>
-            <button className="btn btn-outline-gradient rounded-pill px-4">
-              <FormattedMessage {...homeMessages.seeMoreButton} />
-            </button>
-          </div>
-          <div className="col-auto">
-            <div className={joinCls("position-relative", style["yt-play"])}>
-              <img src={YtDecor1Svg} className="position-absolute bottom-0 start-0" alt="youtube-decor" />
-              <img src={YtDecor2Svg} className="position-absolute top-0 end-0" alt="youtube-decor" />
-              <img src="https://img.youtube.com/vi/Y9V3bgXbzi4/hqdefault.jpg" className="mw-100 p-3" alt="youtube-thumbnail" />
-              <div
-                className={joinCls(
-                  "position-absolute top-50 start-50 translate-middle d-flex justify-content-center align-items-center bg-white bg-opacity-25 rounded-circle",
-                  style["yt-play-btn"]
-                )}
-                onClick={() => setIsShownHugoVideo(true)}
-              >
-                <i className="fa-solid fa-2xl fa-play text-white"></i>
+      <section className="position-relative mt-5">
+        <img src={EclipseDecor1Svg} className={joinCls("position-absolute", style["eclipse-decor-1"])} />
+        <img src={EclipseDecor2Svg} className={joinCls("position-absolute", style["eclipse-decor-2"])} />
+
+        <div className="container position-relative">
+          <div className="row justify-content-between align-items-center">
+            <div className="col-6">
+              <h1 className="display-2 text-outline-primary fw-bolder f-lato">WHAT IS</h1>
+              <h1 className="display-3 f-montserrat fw-bolder text-gradient text-start">HUGO ENGLISH CLUB</h1>
+              <p className={joinCls("me-5", style["description"])}>
+                <FormattedMessage {...homeMessages.description} />
+              </p>
+              <button className="btn btn-outline-gradient rounded-pill px-4">
+                <FormattedMessage {...homeMessages.seeMoreButton} />
+              </button>
+            </div>
+            <div className="col-auto">
+              <div className={joinCls("position-relative", style["yt-play"])}>
+                <img src={YtDecor1Svg} className="position-absolute bottom-0 start-0" alt="youtube-decor" />
+                <img src={YtDecor2Svg} className="position-absolute top-0 end-0" alt="youtube-decor" />
+                <img src="https://img.youtube.com/vi/Y9V3bgXbzi4/hqdefault.jpg" className="mw-100 p-3" alt="youtube-thumbnail" />
+                <div
+                  className={joinCls(
+                    "position-absolute top-50 start-50 translate-middle d-flex justify-content-center align-items-center bg-white bg-opacity-25 rounded-circle",
+                    style["yt-play-btn"]
+                  )}
+                  onClick={() => setIsShownHugoVideo(true)}
+                >
+                  <i className="fa-solid fa-2xl fa-play text-white"></i>
+                </div>
               </div>
             </div>
           </div>
@@ -116,22 +126,29 @@ export default function HomePage() {
         />
       </section>
 
-      <section className="container mt-10">
-        <div className={joinCls("d-flex flex-column align-items-center rounded-4", style["join-us"])} style={{ backgroundImage: `url(${randomImgUrl(2000, 1000)})` }}>
-          <h1 className="text-gradient text-center text-uppercase">
-            become an official member of
-            <br />
-            Hugo English Club
-          </h1>
-          <h4 className="text-center mt-5">Hugo brings English more familiar than ever before, whoever you are!</h4>
-          <p className="text-center f-montserrat mt-3">
-            Do you want to immerse yourself in an environment where people practice English together?
-            <br />
-            Are you eager to make active and talented friends in Danang?
-            <br />
-            More than an English Club, let’s join us to know what's behind it!
-          </p>
-          <button className="btn btn-lg btn-outline-gradient rounded-pill text-uppercase px-5 py-3 mt-4">Join us right now</button>
+      <section className="position-relative container mt-10">
+        <Image src={EclipseDecor3Svg} className={joinCls("position-absolute", style["eclipse-decor-3"])} />
+        <Image src={RectDecor2Svg} className={joinCls("position-absolute", style["rect-decor-2"])} />
+        <Image src={RectDecor2Svg} className={joinCls("position-absolute", style["rect-decor-2-1"])} />
+
+        <div className={joinCls("position-relative rounded-4", style["join-us"])}>
+          <Image src={randomImgUrl(2000, 1000)} className="position-absolute top-0 left-0 w-100 h-100 rounded-4" />
+          <div className="position-relative d-flex flex-column align-items-center">
+            <h1 className="text-gradient text-center text-uppercase">
+              become an official member of
+              <br />
+              Hugo English Club
+            </h1>
+            <h4 className="text-center mt-5">Hugo brings English more familiar than ever before, whoever you are!</h4>
+            <p className="text-center f-montserrat mt-3">
+              Do you want to immerse yourself in an environment where people practice English together?
+              <br />
+              Are you eager to make active and talented friends in Danang?
+              <br />
+              More than an English Club, let’s join us to know what's behind it!
+            </p>
+            <button className="btn btn-lg btn-outline-gradient rounded-pill text-uppercase px-5 py-3 mt-4">Join us right now</button>
+          </div>
         </div>
       </section>
 

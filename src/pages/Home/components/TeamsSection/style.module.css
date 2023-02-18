@@ -16,6 +16,22 @@
   height: 14rem;
 }
 
+.wheel img.banana:hover, .wheel img.banana.active {
+  box-shadow: 0px 0px 64px #FFCC006A;
+}
+
+.wheel img.heroes-company:hover, .wheel img.heroes-company.active {
+  box-shadow: 0px 0px 64px #507FF16A;
+}
+
+.wheel img.power-rangers:hover, .wheel img.power-rangers.active {
+  box-shadow: 0px 0px 64px #EA4A466A;
+}
+
+.wheel img.niffler:hover, .wheel img.niffler.active {
+  box-shadow: 0px 0px 64px #C133D76A;
+}
+
 .team-card {
   background: #EEEEEE33;
   box-shadow: 0 0 1rem #0000001A;
@@ -74,4 +90,19 @@
 
 .team-card .next-btn:hover {
   color: var(--bs-primary);
+}
+
+.team-card .next-btn i {
+  transition: 0.2s ease-out;
+}
+
+.team-card .next-btn:hover i {
+  color: var(--bs-primary);
+  transform: translateX(0.5rem);
+}
+
+.circle-decor-orange {
+  background: linear-gradient(180deg, rgba(255, 92, 0, 0.6) 0%, rgba(254, 189, 63, 0.6) 100%);
+  width: 9rem;
+  height: 9rem;
 }
