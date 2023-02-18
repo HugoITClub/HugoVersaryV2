@@ -33,7 +33,9 @@ export default function HomePage() {
             <p className={joinCls("me-5", style["description"])}>
               <FormattedMessage {...homeMessages.description} />
             </p>
-            <button className="btn btn-outline-gradient rounded-pill px-4">SEE MORE</button>
+            <button className="btn btn-outline-gradient rounded-pill px-4">
+              <FormattedMessage {...homeMessages.seeMoreButton} />
+            </button>
           </div>
           <div className="col-auto">
             <div className={joinCls("position-relative", style["yt-play"])}>

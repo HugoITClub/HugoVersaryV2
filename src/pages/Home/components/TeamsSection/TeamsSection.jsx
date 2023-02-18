@@ -12,15 +12,26 @@ import {
   POWER_RANGERS,
   POWER_RANGERS_TEAM_PAGE_PATH,
 } from "../../../Teams/constants";
+import bananaImage from "./images/banana.png";
+import heroesCompanyImage from "./images/heroes-company.png";
+import powerRangersImage from "./images/power-rangers.png";
+import nifflerImage from "./images/niffler.png";
 
 import style from "./style.module.css";
 
+const baseOrderedTeamLogoClassNames = [
+  joinCls("top-50 start-100 translate-middle", style["active"]),
+  joinCls("top-100 start-50 translate-middle"),
+  joinCls("top-50 start-0 translate-middle"),
+  joinCls("top-0 start-50 translate-middle"),
+];
+
 export default function TeamsSection({ className }) {
-  const [orderedTeamKeys, setOrderedTeamKeys] = useState([BANANA, HEROES_COMPANY, POWER_RANGERS, NIFFLER]);
+  const [selectedTeamKey, setSelectedTeamKey] = useState(BANANA);
 
   const teamMap = {
     [BANANA]: {
-      image: randomImgUrl(400, 400),
+      image: bananaImage,
       className: "banana",
       name: "Banana",
       slogan: "We come in bunch",
@@ -29,7 +40,7 @@ export default function TeamsSection({ className }) {
       link: BANANA_TEAM_PAGE_PATH,
     },
     [HEROES_COMPANY]: {
-      image: randomImgUrl(400, 400),
+      image: heroesCompanyImage,
       className: "heroes-company",
       name: "Heroes Company",
       slogan: "Stronger together",
@@ -38,7 +49,7 @@ export default function TeamsSection({ className }) {
       link: HEROES_COMPANY_TEAM_PAGE_PATH,
     },
     [POWER_RANGERS]: {
-      image: randomImgUrl(400, 400),
+      image: powerRangersImage,
       className: "power-rangers",
       name: "Power Rangers",
       slogan: "Justice for all",
@@ -47,7 +58,7 @@ export default function TeamsSection({ className }) {
       link: POWER_RANGERS_TEAM_PAGE_PATH,
     },
     [NIFFLER]: {
-      image: randomImgUrl(400, 400),
+      image: nifflerImage,
       className: "niffler",
       name: "Niffler",
       slogan: "Friend forever",
@@ -57,9 +68,16 @@ export default function TeamsSection({ className }) {
     },
   };
 
+  const teamKeys = Object.keys(teamMap);
+  const selectedTeamIndex = teamKeys.findIndex((teamKey) => teamKey === selectedTeamKey);
   const handleNextBtnClicked = () => {
-    setOrderedTeamKeys([...orderedTeamKeys.slice(1), orderedTeamKeys[0]]);
+    setSelectedTeamKey(teamKeys[(selectedTeamIndex + 1) % teamKeys.length]);
   };
+
+  const teamLogoClassName = teamKeys.reduce((result, teamKey, index) => {
+    result[teamKey] = baseOrderedTeamLogoClassNames[index - selectedTeamIndex >= 0 ? index - selectedTeamIndex : index - selectedTeamIndex + teamKeys.length];
+    return result;
+  }, {});
 
   return (
     <div className={joinCls("d-flex align-items-center gap-5", className)}>
@@ -67,24 +85,36 @@ export default function TeamsSection({ className }) {
         <div className="position-relative w-100 h-100">
           <div className={joinCls("position-relative rounded-circle border border-2 border-primary w-100 h-100", style["circle"])} />
           <Image
-            key={orderedTeamKeys[0]}
-            src={teamMap[orderedTeamKeys[0]].image}
-            className={joinCls("rounded-pill position-absolute top-50 start-100 translate-middle", style["active"])}
+            src={teamMap[BANANA].image}
+            className={joinCls("rounded-pill position-absolute cursor-pointer", teamLogoClassName[BANANA])}
+            onClick={() => setSelectedTeamKey(BANANA)}
           />
-          <Image key={orderedTeamKeys[1]} src={teamMap[orderedTeamKeys[1]].image} className={joinCls("rounded-pill position-absolute top-100 start-50 translate-middle")} />
-          <Image key={orderedTeamKeys[2]} src={teamMap[orderedTeamKeys[2]].image} className={joinCls("rounded-pill position-absolute top-50 start-0 translate-middle")} />
-          <Image key={orderedTeamKeys[3]} src={teamMap[orderedTeamKeys[3]].image} className={joinCls("rounded-pill position-absolute top-0 start-50 translate-middle")} />
+          <Image
+            src={teamMap[HEROES_COMPANY].image}
+            className={joinCls("rounded-pill position-absolute cursor-pointer", teamLogoClassName[HEROES_COMPANY])}
+            onClick={() => setSelectedTeamKey(HEROES_COMPANY)}
+          />
+          <Image
+            src={teamMap[POWER_RANGERS].image}
+            className={joinCls("rounded-pill position-absolute cursor-pointer", teamLogoClassName[POWER_RANGERS])}
+            onClick={() => setSelectedTeamKey(POWER_RANGERS)}
+          />
+          <Image
+            src={teamMap[NIFFLER].image}
+            className={joinCls("rounded-pill position-absolute cursor-pointer", teamLogoClassName[NIFFLER])}
+            onClick={() => setSelectedTeamKey(NIFFLER)}
+          />
         </div>
       </div>
       <div className="flex-grow-1">
         <div className={joinCls("position-relative rounded-4 p-5", style["team-card"])}>
           <div className="position-absolute"></div>
           <div className="position-relative">
-            <h1 className={joinCls("text-uppercase", style[teamMap[orderedTeamKeys[0]].className])}>{teamMap[orderedTeamKeys[0]].name}</h1>
-            <h2 className="text-uppercase">{teamMap[orderedTeamKeys[0]].slogan}</h2>
-            <p className={joinCls("mt-3", style["description"])}>“{teamMap[orderedTeamKeys[0]].description}”</p>
+            <h1 className={joinCls("text-uppercase", style[teamMap[selectedTeamKey].className])}>{teamMap[selectedTeamKey].name}</h1>
+            <h2 className="text-uppercase">{teamMap[selectedTeamKey].slogan}</h2>
+            <p className={joinCls("mt-3", style["description"])}>“{teamMap[selectedTeamKey].description}”</p>
             <div className="d-flex justify-content-between align-items-center">
-              <Link to={teamMap[orderedTeamKeys[0]].link}>
+              <Link to={teamMap[selectedTeamKey].link}>
                 <button className="btn btn-outline-gradient rounded-pill text-uppercase px-4 mt-3">See more</button>
               </Link>
               <div className={joinCls("d-flex align-items-center gap-2 fw-bold cursor-pointer", style["next-btn"])} onClick={handleNextBtnClicked}>

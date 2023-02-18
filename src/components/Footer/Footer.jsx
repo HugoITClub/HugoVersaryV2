@@ -1,5 +1,8 @@
 import { useEffect, useRef, useState } from "react";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { changeLocale } from "../../services/language/actions";
+import { EN_LOCALE, VI_LOCALE } from "../../services/language/constants";
 import { joinCls, randomImgUrl } from "../../utilities/text.utils";
 import Image from "../Image/Image";
 import { generateSpark } from "./components/Spark/helper";
@@ -10,6 +13,7 @@ import style from "./style.module.css";
 export default function Footer({ className, ...props }) {
   const containerRef = useRef();
   const [sparks, setSparks] = useState([]);
+  const dispatch = useDispatch();
 
   const handleSparkTransitionEnded = (key, event) => {
     const container = event.target.parentElement;
@@ -78,8 +82,12 @@ export default function Footer({ className, ...props }) {
                     English
                   </div>
                   <ul className="dropdown-menu">
-                    <li className="dropdown-item">English</li>
-                    <li className="dropdown-item">Vietnamese</li>
+                    <li className="dropdown-item" onClick={() => dispatch(changeLocale(EN_LOCALE))}>
+                      English
+                    </li>
+                    <li className="dropdown-item" onClick={() => dispatch(changeLocale(VI_LOCALE))}>
+                      Vietnamese
+                    </li>
                   </ul>
                 </div>
               </div>

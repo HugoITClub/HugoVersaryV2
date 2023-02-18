@@ -8,7 +8,12 @@ const homeMessages = defineMessages({
     id: `${SCOPE}.Header.Description`,
     [EN_LOCALE]:
       "Hugo English Club is an official club directly under the Student Union of the University of Science and Technology - the University of Danang. It was established on March 15, 2008, by the University of Science and Technology students. Our vision is to build a dynamic environment for all students, school-level students, and working people in Da Nang city who want to practice English, enhance personal skills, and experience new activities.",
-    [VI_LOCALE]: "Huhu 😭😭😭",
+    [VI_LOCALE]: "1231231231231",
+  },
+  seeMoreButton: {
+    id: `${SCOPE}.SeeMoreButton`,
+    [EN_LOCALE]: "SEE MORE",
+    [VI_LOCALE]: "XEM THÊM",
   },
 });
 
