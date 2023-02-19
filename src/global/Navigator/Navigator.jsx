@@ -2,7 +2,7 @@ import { Fragment } from "react";
 import { Link, matchPath, NavLink, useLocation } from "react-router-dom";
 import { joinCls } from "../../utilities/text.utils";
 import Image from "../../components/Image/Image";
-import FakeImage from "./images/Fake.png";
+import HugoLogoSvg from "./images/hugo-logo-full.svg";
 import Title from "./Title";
 import style from "./style.module.css";
 import { HOME_PAGE_PATH } from "../../pages/Home/constants";
@@ -81,7 +81,7 @@ export default function Navigator() {
       <nav className={joinCls("navbar navbar-expand-lg bg-dark navbar-dark p-0", style["navbar"])}>
         <div className="container align-items-stretch">
           <Link to={HOME_PAGE_PATH} className="navbar-brand">
-            <Image src={FakeImage} width={48} />
+            <Image src={HugoLogoSvg} width={216} className="py-2" />
           </Link>
 
           <div className="row align-items-center d-lg-none">

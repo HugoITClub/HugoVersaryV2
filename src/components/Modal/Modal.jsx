@@ -24,7 +24,6 @@ export default function Modal({ isShown, onClose, className, dialogClassName, co
   };
 
   useEffect(() => {
-    console.log("IsShown effect");
     if (isShown) {
       setIsEntering(true);
       setIsEntered(false);
