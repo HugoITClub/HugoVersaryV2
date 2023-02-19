@@ -7,6 +7,7 @@ import Slider from "../../components/Slider/Slider";
 import { joinCls, randomImgUrl } from "../../utilities/text.utils";
 import { MEETINGS_ACTIVITY_PAGE_PATH } from "../Activities/Meetings/constants";
 import { TEAMS_PAGE_PATH } from "./constants";
+import Footer from "../../components/Footer/Footer";
 
 import style from "./style.module.css";
 
