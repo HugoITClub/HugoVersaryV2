@@ -1,9 +1,6 @@
 .header-pic {
   position: relative;
-  padding-top: 50%;
-  background-position: top center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  height: 90vh;
 }
 
 .header-pic .fade {
@@ -21,6 +18,13 @@
 
 .header-pic .overlay {
   position: relative;
+}
+
+.header-pic .header-text {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .post {
