@@ -4,7 +4,7 @@ import { joinCls } from "../../utilities/text.utils";
 
 import style from "./style.module.css";
 
-export default function Modal({ isShown, onClose, className, children, ...props }) {
+export default function Modal({ isShown, onClose, className, dialogClassName, contentClassName, children, ...props }) {
   const containerRef = useRef(document.createElement("div"));
   const modalRef = useRef();
 
@@ -24,7 +24,6 @@ export default function Modal({ isShown, onClose, className, children, ...props 
   };
 
   useEffect(() => {
-    console.log("IsShown effect");
     if (isShown) {
       setIsEntering(true);
       setIsEntered(false);
@@ -65,7 +64,11 @@ export default function Modal({ isShown, onClose, className, children, ...props 
       onTransitionEnd={handleTransitionEnd}
       {...props}
     >
-      <div className="modal-dialog">{children}</div>
+      <div className={joinCls("modal-dialog", dialogClassName)}>
+        <div className={joinCls("modal-content h-100", contentClassName)} onClick={(e) => e.stopPropagation()}>
+          {children}
+        </div>
+      </div>
     </div>
   );
 
