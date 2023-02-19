@@ -1,0 +1,17 @@
+.before {
+  opacity: 0.4;
+  color: #7107db;
+}
+
+.after {
+  opacity: 0.2;
+  color: #7107db;
+}
+
+.before path {
+  stroke-width: 4;
+}
+
+.after path {
+  stroke-width: 1;
+}
