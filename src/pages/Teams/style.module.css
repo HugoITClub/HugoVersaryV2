@@ -1,6 +1,7 @@
 .header {
   position: relative;
   height: 90vh;
+  background-size: cover;
 }
 
 .header .fade {
@@ -99,7 +100,8 @@
 
 .card-sub-text {
   opacity: 0;
-  transition: 0.2s ease-out;
+  transition: 0.4s ease-out;
+  -webkit-line-clamp: 3;
 }
 
 .activity-item:hover .card-sub-text {
@@ -108,7 +110,7 @@
 
 .card-header {
   bottom: 0%;
-  transition: 0.2s ease-out;
+  transition: 0.4s ease-out;
 }
 
 .activity-item:hover .card-header {
