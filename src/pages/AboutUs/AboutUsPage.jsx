@@ -4,18 +4,21 @@ import { joinCls, randomImgUrl } from "../../utilities/text.utils.js";
 import style from "./style.module.css";
 export default function AboutUsPage() {
   const {
-    isLoading,
-    isFull,
+    isLoading: isAboutUsLoading,
+    isFull: isAboutUsFull,
     data: staffMembers,
     getMore: getMoreStaffs,
   } = useSheetAPI("AboutUs", "M", "P", { earlyTake: 13 });
-  const { data: aboutUsImg } = useSheetAPI("AboutUs", "Q", "R", {
+  const {
+    isIntroductionLoading,
+    isIntroductionFull,
+    data: introductionContent,
+  } = useSheetAPI("AboutUs", "Q", "R", {
     earlyTake: 1,
   });
-  console.log(aboutUsImg.values);
   return (
     <div>
-      {aboutUsImg.map(([introduction, imgUrl]) => (
+      {introductionContent.map(([introduction, imgUrl]) => (
         <div>
           <div className="container">
             <div
