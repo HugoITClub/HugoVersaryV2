@@ -13,6 +13,7 @@ import {
   POWER_RANGERS_TEAM_PAGE_PATH,
 } from "../../../Teams/constants";
 import bananaImage from "./images/banana.png";
+import bananaSvg from "./images/banana.svg";
 import heroesCompanyImage from "./images/heroes-company.png";
 import powerRangersImage from "./images/power-rangers.png";
 import nifflerImage from "./images/niffler.png";
@@ -32,6 +33,7 @@ export default function TeamsSection({ className }) {
   const teamMap = {
     [BANANA]: {
       image: bananaImage,
+      icon: bananaSvg,
       className: "banana",
       name: "Banana",
       slogan: "We come in bunch",
@@ -41,6 +43,7 @@ export default function TeamsSection({ className }) {
     },
     [HEROES_COMPANY]: {
       image: heroesCompanyImage,
+      icon: bananaSvg,
       className: "heroes-company",
       name: "Heroes Company",
       slogan: "Stronger together",
@@ -50,6 +53,7 @@ export default function TeamsSection({ className }) {
     },
     [POWER_RANGERS]: {
       image: powerRangersImage,
+      icon: bananaSvg,
       className: "power-rangers",
       name: "Power Rangers",
       slogan: "Justice for all",
@@ -59,6 +63,7 @@ export default function TeamsSection({ className }) {
     },
     [NIFFLER]: {
       image: nifflerImage,
+      icon: bananaSvg,
       className: "niffler",
       name: "Niffler",
       slogan: "Friend forever",
@@ -107,9 +112,10 @@ export default function TeamsSection({ className }) {
         </div>
       </div>
       <div className="flex-grow-1">
-        <div className={joinCls("position-relative rounded-4 p-5", style["team-card"])}>
-          <div className="position-absolute"></div>
-          <div className="position-relative">
+        <div className="position-relative">
+          <Image src={teamMap[selectedTeamKey].icon} className={joinCls("position-absolute", style["team-icon"])} />
+
+          <div className={joinCls("position-relative rounded-4 p-5", style["team-card"])}>
             <h1 className={joinCls("text-uppercase", style[teamMap[selectedTeamKey].className])}>{teamMap[selectedTeamKey].name}</h1>
             <h2 className="text-uppercase">{teamMap[selectedTeamKey].slogan}</h2>
             <p className={joinCls("mt-3", style["description"])}>“{teamMap[selectedTeamKey].description}”</p>

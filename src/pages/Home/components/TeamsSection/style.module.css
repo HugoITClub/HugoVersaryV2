@@ -16,25 +16,30 @@
   height: 14rem;
 }
 
-.wheel img.banana:hover, .wheel img.banana.active {
-  box-shadow: 0px 0px 64px #FFCC006A;
+.wheel img.banana:hover,
+.wheel img.banana.active {
+  box-shadow: 0px 0px 64px #ffcc006a;
 }
 
-.wheel img.heroes-company:hover, .wheel img.heroes-company.active {
-  box-shadow: 0px 0px 64px #507FF16A;
+.wheel img.heroes-company:hover,
+.wheel img.heroes-company.active {
+  box-shadow: 0px 0px 64px #507ff16a;
 }
 
-.wheel img.power-rangers:hover, .wheel img.power-rangers.active {
-  box-shadow: 0px 0px 64px #EA4A466A;
+.wheel img.power-rangers:hover,
+.wheel img.power-rangers.active {
+  box-shadow: 0px 0px 64px #ea4a466a;
 }
 
-.wheel img.niffler:hover, .wheel img.niffler.active {
-  box-shadow: 0px 0px 64px #C133D76A;
+.wheel img.niffler:hover,
+.wheel img.niffler.active {
+  box-shadow: 0px 0px 64px #c133d76a;
 }
 
 .team-card {
-  background: #EEEEEE33;
-  box-shadow: 0 0 1rem #0000001A;
+  background: #eeeeee33;
+  box-shadow: 0 0 1rem #0000001a;
+  backdrop-filter: blur(8px);
 }
 
 .team-card h1 {
@@ -48,7 +53,7 @@
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
   font-size: 2.4rem;
   font-weight: 600;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .team-card p {
@@ -56,7 +61,7 @@
 }
 
 .team-card h1.banana {
-  background: linear-gradient(180deg, #FFCC00, #FFFF66);
+  background: linear-gradient(180deg, #ffcc00, #ffff66);
   -webkit-background-clip: text;
 }
 
@@ -99,6 +104,14 @@
 .team-card .next-btn:hover i {
   color: var(--bs-primary);
   transform: translateX(0.5rem);
+}
+
+.team-icon {
+  top: 1rem;
+  right: 1rem;
+  height: 80%;
+  width: auto;
+  opacity: 0.5;
 }
 
 .circle-decor-orange {
