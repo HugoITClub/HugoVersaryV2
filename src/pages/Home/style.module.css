@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital@1&display=swap');
+
 .carousel :global(.carousel-item) {
   height: 43rem;
 }
@@ -19,6 +21,16 @@
 
 .yt-play:hover .yt-play-btn {
   backdrop-filter: blur(4px);
+}
+
+.eclipse-decor-1 {
+  top: 100%;
+  transform: translateX(-50%);
+}
+
+.eclipse-decor-2 {
+  top: 100%;
+  transform: translate(3rem, -3rem);
 }
 
 .activity-item {
@@ -56,4 +68,70 @@
 
 .activity-item:hover .card-header {
   bottom: 100%;
+}
+
+.blog-item {
+  flex-shrink: 0;
+  flex-basis: 25%;
+  transition: 0.4s ease-out;
+}
+
+.blog-item:hover {
+  --bs-card-border-color: var(--bs-primary);
+}
+
+.blog-item img {
+  height: 12rem;
+}
+
+.blog-item h5, .blog-item .read-more {
+  transition: 0.2s ease-out;
+}
+
+.blog-item:hover h5, .blog-item:hover .read-more {
+  color: var(--bs-primary);
+}
+
+.join-us {
+  padding: 56px 0;
+  border: 2px solid var(--bs-primary);
+  backdrop-filter: blur(8px);
+  background-color: rgba(var(--bs-white-rgb), 0.5);
+}
+
+.join-us h1 {
+  line-height: 132%;
+  font-size: 3rem;
+}
+
+.join-us p {
+  font-size: 1.6rem;
+  font-weight: 300;
+}
+
+.join-us img {
+  opacity: 4%;
+  filter: screen;
+}
+
+.eclipse-decor-3 {
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -32%);
+}
+
+.rect-decor-2 {
+  bottom: 0;
+  right: 0;
+  transform: translate(50%, 64%);
+  width: 12rem;
+  height: 12rem;
+}
+
+.rect-decor-2-1 {
+  bottom: 4rem;
+  right: -8rem;
+  transform: rotate(60deg);
+  width: 4rem;
+  height: 4rem;
 }
