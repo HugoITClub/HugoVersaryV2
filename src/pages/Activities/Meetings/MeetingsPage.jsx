@@ -6,43 +6,50 @@ import Image from "../../../components/Image/Image";
 import style from "./style.module.css";
 export default function MeetingsPage() {
   const {
-    isLoading,
-    isFull,
+    isLoading: isMeetingLoading,
+    isFull: isMeetingFull,
     data: meetings,
     getMore: getMoreMeeting,
   } = useSheetAPI("Meeting", "K", "P", { earlyTake: 8 });
-
+  const {
+    isLoading: isImageLoading,
+    isFull: isImageFull,
+    data: mainImg,
+    getMore: getMoreImg,
+  } = useSheetAPI("Meeting", "Q", "R", { earlyTake: 1 });
   return (
     <div>
-      <div className="team-meeting">
-        <div className={style["header-pic"]}>
-          <Image
-            src={`${randomImgUrl(500)}`}
-            className="object-fit-cover w-100 h-100"
-          />
-          <div className={style["fade"]}></div>
-          <div
-            className={joinCls("text-white text-center", style["header-text"])}
-          >
-            <h2 className="text-uppercase">hugo english club</h2>
-            <h2 className="">“Light up your fire.”</h2>
+      <div className="meeting">
+        {mainImg.map(([id, imgUrl]) => (
+          <div key={id} className={style["header-pic"]}>
+            <Image src={imgUrl} className="object-fit-cover w-100 h-100" />
+            <div className={style["fade"]}></div>
+            <div
+              className={joinCls(
+                "text-white text-center",
+                style["header-text"]
+              )}
+            >
+              <h2 className="text-uppercase">hugo english club</h2>
+              <h2 className="">“Light up your fire.”</h2>
+            </div>
           </div>
-        </div>
+        ))}
         <h1 className="display-5 f-montserrat fw-bolder text-center text-gradient text-uppercase my-5">
           meetings
         </h1>
-        <div id="team-meeting" className="container">
-          <div className="row g-5">
+        <div id="meeting" className="container">
+          <div className="row g-5 g-md-3 g-lg-5">
             {meetings.map(
               ([id, title, description, date, imgUrl, contentUrl]) => (
-                <div className="col-6">
+                <div className="col-lg-6 col-md-6 col-12">
                   <a
                     key={id}
                     href={contentUrl}
                     className={joinCls("text-decoration-none", style["post"])}
                   >
                     <div className="row justify-content-around">
-                      <div className="col-5 p-0">
+                      <div className="col-md-6 col-lg-5 p-0 px-sm-2 col-5">
                         <img
                           src={imgUrl}
                           alt=""
@@ -92,7 +99,7 @@ export default function MeetingsPage() {
               )
             )}
 
-            {isLoading && (
+            {isMeetingLoading && (
               <>
                 <div className="col-6">
                   <div
@@ -132,7 +139,7 @@ export default function MeetingsPage() {
             )}
           </div>
 
-          {!isFull && (
+          {!isMeetingFull && (
             <div className="row justify-content-center mt-5">
               <div className="col-auto">
                 <button
