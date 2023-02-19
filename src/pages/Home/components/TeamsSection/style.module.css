@@ -39,7 +39,6 @@
 .team-card {
   background: #eeeeee33;
   box-shadow: 0 0 1rem #0000001a;
-  backdrop-filter: blur(8px);
 }
 
 .team-card h1 {
@@ -106,12 +105,30 @@
   transform: translateX(0.5rem);
 }
 
+.sparks {
+  backdrop-filter: blur(4px);
+}
+
+.sparks .spark-banana-before {
+  opacity: 0.6;
+  border-style: solid;
+  border-width: 4px;
+  border-color: #ffcc00;
+}
+
+.sparks .spark-banana-after {
+  opacity: 0.2;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #ffcc00;
+}
+
 .team-icon {
-  top: 1rem;
-  right: 1rem;
-  height: 80%;
+  top: -8rem;
+  right: -3rem;
+  height: 12rem;
   width: auto;
-  opacity: 0.5;
+  opacity: 0.8;
 }
 
 .circle-decor-orange {

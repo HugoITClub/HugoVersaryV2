@@ -5,8 +5,9 @@ import { changeLocale } from "../../services/language/actions";
 import { EN_LOCALE, VI_LOCALE } from "../../services/language/constants";
 import { joinCls, randomImgUrl } from "../../utilities/text.utils";
 import Image from "../Image/Image";
-import { generateSpark } from "./components/Spark/helper";
-import Spark from "./components/Spark/Spark";
+import { generateSpark } from "../Spark/helper";
+import Spark from "../Spark/Spark";
+import FooterSpark from "./components/FooterSpark/FooterSpark";
 import hugoLogo from "./Images/hugo-logo-full.svg";
 
 import style from "./style.module.css";
@@ -20,54 +21,39 @@ export default function Footer({ className, ...props }) {
     const container = event.target.parentElement;
     const newSpark = generateSpark(
       { from: 64, to: container.clientWidth - 64 },
+      { from: -40, to: -40 },
       { from: 200, to: 500 },
       { from: 2.4, to: 5 },
       { from: 0, to: 360 },
       { from: 4, to: 16 }
     );
 
-    const sparkIndex = sparks.findIndex(
-      ({ x, yEnd }) => `${x}-${yEnd}` === key
-    );
-    setSparks([
-      ...sparks.slice(0, sparkIndex),
-      ...sparks.slice(sparkIndex + 1),
-      newSpark,
-    ]);
+    const sparkIndex = sparks.findIndex((spark) => spark.key === key);
+    setSparks([...sparks.slice(0, sparkIndex), ...sparks.slice(sparkIndex + 1), newSpark]);
   };
 
   useEffect(() => {
     const container = containerRef.current;
     setSparks(
-      [...Array(5)].map((item) =>
-        generateSpark(
-          { from: 64, to: container.clientWidth - 64 },
-          { from: 200, to: 500 },
-          { from: 2.4, to: 5 },
-          { from: 0, to: 360 },
-          { from: 4, to: 16 }
-        )
+      [...Array(10)].map((item) =>
+        generateSpark({ from: 64, to: container.clientWidth - 64 }, { from: -40, to: -40 }, { from: 200, to: 500 }, { from: 2.4, to: 5 }, { from: 0, to: 360 }, { from: 4, to: 16 })
       )
     );
   }, []);
 
   return (
-    <section
-      ref={containerRef}
-      className={joinCls("position-relative text-white", className)}
-      {...props}
-    >
-      {sparks.map(({ x, yEnd, size, rotateEnd, transitionTime }) => (
+    <section ref={containerRef} className={joinCls("position-relative text-white", className)} {...props}>
+      {sparks.map(({ key, x, yStart, yEnd, size, rotateEnd, transitionTime }) => (
         <Spark
-          key={`${x}-${yEnd}`}
+          key={key}
           x={x}
+          yStart={yStart}
           yEnd={yEnd}
           size={size}
           rotateEnd={rotateEnd}
           transitionTime={transitionTime}
-          onTransitionEnd={(event) =>
-            handleSparkTransitionEnded(`${x}-${yEnd}`, event)
-          }
+          onTransitionEnd={(event) => handleSparkTransitionEnded(key, event)}
+          sparkComponent={FooterSpark}
         />
       ))}
 
@@ -77,18 +63,11 @@ export default function Footer({ className, ...props }) {
             <div className="col-3">
               <div className="d-flex flex-column">
                 <Link to="#">
-                  <Image
-                    src={hugoLogo}
-                    width={240}
-                    className={joinCls("px-2 mb-2")}
-                  />
+                  <Image src={hugoLogo} width={240} className={joinCls("px-2 mb-2")} />
                 </Link>
                 <p className="mb-0">
-                  This website is a product of Hugo IT club and part of the
-                  HUGOVERSARY project to celebrate the 15th birthday of Hugo
-                  English Club. This website is to store, update and promote the
-                  activities and events of Hugo English Club up to the present
-                  time.
+                  This website is a product of Hugo IT club and part of the HUGOVERSARY project to celebrate the 15th birthday of Hugo English Club. This website is to store,
+                  update and promote the activities and events of Hugo English Club up to the present time.
                 </p>
               </div>
             </div>
@@ -118,23 +97,14 @@ export default function Footer({ className, ...props }) {
               <div className="d-flex flex-column">
                 <h3 className="text-uppercase mb-4">Language</h3>
                 <div className="dropdown">
-                  <div
-                    className="btn btn-outline-light dropdown-toggle"
-                    data-bs-toggle="dropdown"
-                  >
+                  <div className="btn btn-outline-light dropdown-toggle" data-bs-toggle="dropdown">
                     English
                   </div>
                   <ul className="dropdown-menu">
-                    <li
-                      className="dropdown-item"
-                      onClick={() => dispatch(changeLocale(EN_LOCALE))}
-                    >
+                    <li className="dropdown-item" onClick={() => dispatch(changeLocale(EN_LOCALE))}>
                       English
                     </li>
-                    <li
-                      className="dropdown-item"
-                      onClick={() => dispatch(changeLocale(VI_LOCALE))}
-                    >
+                    <li className="dropdown-item" onClick={() => dispatch(changeLocale(VI_LOCALE))}>
                       Vietnamese
                     </li>
                   </ul>
