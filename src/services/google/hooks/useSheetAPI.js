@@ -35,12 +35,12 @@ export default function useSheetAPI(sheetName, fromColumn, toColumn, { earlyTake
 
       return "Google API Client: Success";
     },
-    [gApiClient, data]
+    [sheetName, gApiClient, data]
   );
 
   useEffect(() => {
     if (earlyTake) request(earlyTake, earlySkip);
-  }, [gApiClient]);
+  }, [sheetName, gApiClient]);
 
   return {
     isLoading,

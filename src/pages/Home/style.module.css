@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital@1&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Pro:ital@1&display=swap");
 
 .carousel :global(.carousel-item) {
   height: 90vh;
@@ -31,6 +31,12 @@
 .eclipse-decor-2 {
   top: 100%;
   transform: translate(3rem, -3rem);
+}
+
+.rocket {
+  top: 0%;
+  left: 4rem;
+  width: 16rem;
 }
 
 .activity-item {
@@ -84,11 +90,13 @@
   height: 12rem;
 }
 
-.blog-item h5, .blog-item .read-more {
+.blog-item h5,
+.blog-item .read-more {
   transition: 0.2s ease-out;
 }
 
-.blog-item:hover h5, .blog-item:hover .read-more {
+.blog-item:hover h5,
+.blog-item:hover .read-more {
   color: var(--bs-primary);
 }
 
@@ -134,4 +142,46 @@
   transform: rotate(60deg);
   width: 4rem;
   height: 4rem;
+}
+
+.shooting-stars {
+  top: -10rem;
+  left: 2rem;
+  width: 12rem;
+  height: auto;
+}
+
+.puzzle {
+  top: -4rem;
+  right: 6rem;
+  width: 8rem;
+  height: auto;
+}
+
+.eclipse-decor-4 {
+  top: -6rem;
+  left: -12rem;
+  width: 32rem;
+  height: auto;
+}
+
+.note {
+  top: 2rem;
+  left: 6rem;
+  width: 8rem;
+  height: auto;
+}
+
+.rect-decor-3 {
+  top: -8rem;
+  right: -4rem;
+  width: 16rem;
+  height: auto;
+}
+
+.dots {
+  top: -4rem;
+  right: -10rem;
+  width: 16rem;
+  height: auto;
 }

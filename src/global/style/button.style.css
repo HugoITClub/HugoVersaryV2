@@ -8,23 +8,23 @@
 }
 
 .btn-gradient {
-  background: linear-gradient(90deg, #FC6373 0%, #FE9548 100%);
-  color: #FFF;
+  background: linear-gradient(90deg, #fc6373 0%, #fe9548 100%);
+  color: #fff;
 }
 
 .btn-gradient:hover {
-  background: linear-gradient(90deg, #FFF 0%, #FFF 100%);
+  background: linear-gradient(90deg, #fff 0%, #fff 100%);
   color: var(--bs-secondary) !important;
 }
 
 .btn-outline-gradient {
-  background: linear-gradient(90deg, #FC637300 0%, #FE954800 100%);
+  background: linear-gradient(90deg, #fc637300 0%, #fe954800 100%);
   color: var(--bs-secondary);
   border: 1px solid var(--bs-secondary);
 }
 
 .btn-outline-gradient:hover {
-  background: linear-gradient(90deg, #FC6373 0%, #FE9548 100%);
+  background: linear-gradient(90deg, #fc6373 0%, #fe9548 100%);
   color: white !important;
   border: 1px solid transparent !important;
 }

@@ -11,6 +11,30 @@
 }
 
 .footer {
-  background: linear-gradient(0deg, #00072d 0%, #250902 100%);
+  /* background: linear-gradient(180deg, #eba919 0%, #9a2718 100%); */
+  margin-top: 16rem;
 }
 
+.sparks-area {
+  height: 500px;
+  border-color: var(--bs-primary) !important;
+}
+
+.language-btn,
+.language-btn :global(.dropdown-item) {
+  width: 12rem;
+  cursor: pointer;
+}
+
+.language-btn img {
+  width: 2rem;
+}
+
+.language-btn :global(.dropdown-item):hover {
+  background-color: var(--bs-gray-200);
+}
+
+.language-btn :global(.dropdown-item):active {
+  background-color: var(--bs-gray-800);
+  color: var(--bs-light);
+}

@@ -1,0 +1,17 @@
+.before {
+  opacity: 0.4;
+  color: var(--bs-primary);
+}
+
+.after {
+  opacity: 0.2;
+  color: var(--bs-primary);
+}
+
+.before path {
+  stroke-width: 4;
+}
+
+.after path {
+  stroke-width: 1;
+}
