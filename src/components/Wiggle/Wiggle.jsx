@@ -19,7 +19,6 @@ export default function Wiggle({
     const REDUCE_PERCENT_TO = 0.4;
 
     const intervalId = setInterval(() => {
-      console.log(container.matches(":hover"));
       if (container.matches(":hover")) return;
 
       const xPercent = Math.random() * 2 - 1;

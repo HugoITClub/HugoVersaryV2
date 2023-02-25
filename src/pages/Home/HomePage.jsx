@@ -74,7 +74,9 @@ export default function HomePage() {
         </div>
 
         <Modal className="modal-xl" dialogClassName="h-100 my-0 py-5" isShown={isShownHugoVideo} onClose={() => setIsShownHugoVideo(false)}>
-          <iframe title="Youtube Video" type="text/html" width="100%" height="100%" src="http://www.youtube.com/embed/Y9V3bgXbzi4?enablejsapi=1" frameBorder="0"></iframe>
+          {isShownHugoVideo && (
+            <iframe title="Youtube Video" className="bg-dark" type="text/html" width="100%" height="100%" src="http://www.youtube.com/embed/Y9V3bgXbzi4?enablejsapi=1"></iframe>
+          )}
         </Modal>
       </section>
 
@@ -159,7 +161,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="position-relative container mt-10">
+      <section className="position-relative container z-1 mt-10">
         <Wiggle className={joinCls("position-absolute", style["eclipse-decor-3"])}>
           <Image src={EclipseDecor3Svg} />
         </Wiggle>
