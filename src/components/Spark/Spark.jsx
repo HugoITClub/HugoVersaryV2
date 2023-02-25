@@ -15,7 +15,8 @@ export default function Spark({ sparkComponent, x, yStart, yEnd, size, transitio
     }
   }, [isMounted]);
 
-  const SparkComponent = sparkComponent;
+  const defaultSparkComponent = <div />;
+  const SparkComponent = sparkComponent || defaultSparkComponent.type;
 
   useEffect(() => {
     setIsMounted(false);

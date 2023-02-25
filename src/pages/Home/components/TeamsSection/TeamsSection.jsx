@@ -28,6 +28,7 @@ import nifflerImage from "./images/niffler.png";
 import nifflerSvg from "./images/niffler.svg";
 
 import style from "./style.module.css";
+import Wiggle from "../../../../components/Wiggle/Wiggle";
 
 const baseOrderedTeamLogoClassNames = [
   joinCls("top-50 start-100 translate-middle", style["active"]),
@@ -37,35 +38,6 @@ const baseOrderedTeamLogoClassNames = [
 ];
 
 export default function TeamsSection({ className }) {
-  const teamCardRef = useRef();
-  const [selectedTeamKey, setSelectedTeamKey] = useState(BANANA);
-  const [sparks, setSparks] = useState([]);
-
-  const handleSparkTransitionEnded = (key, event) => {
-    const container = event.target.parentElement;
-    const newSpark = generateSpark(
-      { from: 64, to: container.clientWidth - 64 },
-      { from: -462, to: -462 },
-      { from: -80, to: 20 },
-      { from: 2.4, to: 5 },
-      { from: 0, to: 360 },
-      { from: 4, to: 16 }
-    );
-
-    const sparkIndex = sparks.findIndex((spark) => spark.key === key);
-    console.log(sparkIndex);
-    setSparks([...sparks.slice(0, sparkIndex), ...sparks.slice(sparkIndex + 1), newSpark]);
-  };
-
-  useEffect(() => {
-    const container = teamCardRef.current;
-    setSparks(
-      [...Array(12)].map((item) =>
-        generateSpark({ from: 64, to: container.clientWidth - 64 }, { from: -462, to: -462 }, { from: -80, to: 20 }, { from: 1, to: 2 }, { from: 0, to: 360 }, { from: 4, to: 16 })
-      )
-    );
-  }, []);
-
   const teamMap = {
     [BANANA]: {
       image: bananaImage,
@@ -113,6 +85,34 @@ export default function TeamsSection({ className }) {
     },
   };
 
+  const teamCardRef = useRef();
+  const [selectedTeamKey, setSelectedTeamKey] = useState(Object.keys(teamMap).sort(() => Math.random() - 0.5)[0]);
+  const [sparks, setSparks] = useState([]);
+
+  const handleSparkTransitionEnded = (key, event) => {
+    const container = event.target.parentElement;
+    const newSpark = generateSpark(
+      { from: 64, to: container.clientWidth - 64 },
+      { from: -462, to: -462 },
+      { from: -80, to: 20 },
+      { from: 2.4, to: 5 },
+      { from: 0, to: 360 },
+      { from: 4, to: 16 }
+    );
+
+    const sparkIndex = sparks.findIndex((spark) => spark.key === key);
+    setSparks([...sparks.slice(0, sparkIndex), ...sparks.slice(sparkIndex + 1), newSpark]);
+  };
+
+  useEffect(() => {
+    const container = teamCardRef.current;
+    setSparks(
+      [...Array(12)].map((item) =>
+        generateSpark({ from: 64, to: container.clientWidth - 64 }, { from: -462, to: -462 }, { from: -80, to: 20 }, { from: 1, to: 2 }, { from: 0, to: 360 }, { from: 4, to: 16 })
+      )
+    );
+  }, []);
+
   const teamKeys = Object.keys(teamMap);
   const selectedTeamIndex = teamKeys.findIndex((teamKey) => teamKey === selectedTeamKey);
   const handleNextBtnClicked = () => {
@@ -153,7 +153,9 @@ export default function TeamsSection({ className }) {
       </div>
       <div className="flex-grow-1">
         <div ref={teamCardRef} className="position-relative">
-          <Image src={teamMap[selectedTeamKey].icon} className={joinCls("position-absolute", style["team-icon"])} />
+          <Wiggle className={joinCls("position-absolute", style["team-icon"])}>
+            <Image src={teamMap[selectedTeamKey].icon} />
+          </Wiggle>
           <div className={joinCls("position-absolute top-0 left-0 w-100 h-100 overflow-hidden", style["sparks"])}>
             <div className="position-relative w-100 h-100">
               {sparks.map(({ key, x, yStart, yEnd, size, rotateEnd, transitionTime }) => (

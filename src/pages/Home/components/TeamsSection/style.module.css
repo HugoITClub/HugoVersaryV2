@@ -61,22 +61,22 @@
 
 .team-card h1.banana {
   background: linear-gradient(180deg, #ffcc00, #ffff66);
-  -webkit-background-clip: text;
+  background-clip: text;
 }
 
 .team-card h1.heroes-company {
   background: linear-gradient(180deg, #0750de 0%, #3c96ff 100%);
-  -webkit-background-clip: text;
+  background-clip: text;
 }
 
 .team-card h1.power-rangers {
   background: linear-gradient(to bottom, #ff0000, #ff6666);
-  -webkit-background-clip: text;
+  background-clip: text;
 }
 
 .team-card h1.niffler {
   background: linear-gradient(180deg, #7107db 0%, #df1bff 100%);
-  -webkit-background-clip: text;
+  background-clip: text;
 }
 
 .team-card .description {
@@ -126,9 +126,12 @@
 .team-icon {
   top: -8rem;
   right: -3rem;
-  height: 12rem;
-  width: auto;
   opacity: 0.8;
+}
+
+.team-icon img {
+  width: auto;
+  height: 12rem;
 }
 
 .circle-decor-orange {

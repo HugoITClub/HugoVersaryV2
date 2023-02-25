@@ -26,6 +26,7 @@ import Footer from "../../components/Footer/Footer";
 import TeamsSection from "./components/TeamsSection/TeamsSection";
 
 import style from "./style.module.css";
+import Wiggle from "../../components/Wiggle/Wiggle";
 
 export default function HomePage() {
   const images = [randomImgUrl(), randomImgUrl(), randomImgUrl(), randomImgUrl(), randomImgUrl(), randomImgUrl()];
@@ -73,22 +74,29 @@ export default function HomePage() {
         </div>
 
         <Modal className="modal-xl" dialogClassName="h-100 my-0 py-5" isShown={isShownHugoVideo} onClose={() => setIsShownHugoVideo(false)}>
-          <iframe id="player" type="text/html" width="100%" height="100%" src="http://www.youtube.com/embed/Y9V3bgXbzi4?enablejsapi=1" frameBorder="0"></iframe>
+          <iframe title="Youtube Video" type="text/html" width="100%" height="100%" src="http://www.youtube.com/embed/Y9V3bgXbzi4?enablejsapi=1" frameBorder="0"></iframe>
         </Modal>
       </section>
 
       <section className="position-relative mt-10">
-        <Image src={RocketSvg} className={joinCls("position-absolute", style["rocket"])} />
-
         <div className="position-relative container">
           <h1 className="display-5 f-montserrat fw-bolder text-gradient text-center">TEAMS IN HUGO</h1>
           <TeamsSection className="mt-5" />
         </div>
+
+        <Wiggle className={joinCls("position-absolute", style["rocket"])}>
+          <Image src={RocketSvg} />
+        </Wiggle>
       </section>
 
       <section className="position-relative mt-10">
-        <Image src={ShootingStarsSvg} className={joinCls("position-absolute", style["shooting-stars"])} />
-        <Image src={PuzzleStarsSvg} className={joinCls("position-absolute", style["puzzle"])} />
+        <Wiggle className={joinCls("position-absolute", style["shooting-stars"])}>
+          <Image src={ShootingStarsSvg} />
+        </Wiggle>
+        <Wiggle className={joinCls("position-absolute", style["puzzle"])}>
+          <Image src={PuzzleStarsSvg} />
+        </Wiggle>
+
         <div className="position-relative container">
           <h1 className="display-5 f-montserrat fw-bolder text-gradient text-center">ACTIVITIES</h1>
           <Slider
@@ -121,8 +129,12 @@ export default function HomePage() {
 
       <section className="position-relative mt-10">
         <Image src={EclipseDecor4Svg} className={joinCls("position-absolute", style["eclipse-decor-4"])} />
-        <Image src={NoteSvg} className={joinCls("position-absolute", style["note"])} />
-        <Image src={RectDecor3Svg} className={joinCls("position-absolute", style["rect-decor-3"])} />
+        <Wiggle className={joinCls("position-absolute", style["note"])}>
+          <Image src={NoteSvg} />
+        </Wiggle>
+        <Wiggle className={joinCls("position-absolute", style["rect-decor-3"])}>
+          <Image src={RectDecor3Svg} />
+        </Wiggle>
 
         <div className="position-relative container">
           <h1 className="display-5 f-montserrat fw-bolder text-gradient text-center">BLOGS</h1>
@@ -148,10 +160,18 @@ export default function HomePage() {
       </section>
 
       <section className="position-relative container mt-10">
-        <Image src={EclipseDecor3Svg} className={joinCls("position-absolute", style["eclipse-decor-3"])} />
-        <Image src={RectDecor2Svg} className={joinCls("position-absolute", style["rect-decor-2"])} />
-        <Image src={RectDecor1Svg} className={joinCls("position-absolute", style["rect-decor-2-1"])} />
-        <Image src={DotsSvg} className={joinCls("position-absolute", style["dots"])} />
+        <Wiggle className={joinCls("position-absolute", style["eclipse-decor-3"])}>
+          <Image src={EclipseDecor3Svg} />
+        </Wiggle>
+        <Wiggle className={joinCls("position-absolute", style["rect-decor-2-1"])}>
+          <Image src={RectDecor1Svg} />
+        </Wiggle>
+        <Wiggle className={joinCls("position-absolute", style["rect-decor-2"])}>
+          <Image src={RectDecor2Svg} />
+        </Wiggle>
+        <Wiggle className={joinCls("position-absolute", style["dots"])}>
+          <Image src={DotsSvg} />
+        </Wiggle>
 
         <div className={joinCls("position-relative rounded-4", style["join-us"])}>
           <Image src={randomImgUrl(2000, 1000)} className="position-absolute top-0 left-0 w-100 h-100 rounded-4" />
