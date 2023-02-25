@@ -21,24 +21,45 @@ import TeamsSection from "./components/TeamsSection/TeamsSection";
 import style from "./style.module.css";
 
 export default function HomePage() {
-  const images = [randomImgUrl(), randomImgUrl(), randomImgUrl(), randomImgUrl(), randomImgUrl(), randomImgUrl()];
+  const images = [
+    randomImgUrl(),
+    randomImgUrl(),
+    randomImgUrl(),
+    randomImgUrl(),
+    randomImgUrl(),
+    randomImgUrl(),
+  ];
   const sliderItems = images.map((image) => ({ url: image, id: image }));
 
   const [isShownHugoVideo, setIsShownHugoVideo] = useState(false);
 
   return (
     <div className="bg-light">
-      <Carousel id="HeaderCarousel" images={images} className={style.carousel} />
+      <Carousel
+        id="HeaderCarousel"
+        images={images}
+        className={style.carousel}
+      />
 
       <section className="position-relative mt-5">
-        <img src={EclipseDecor1Svg} className={joinCls("position-absolute", style["eclipse-decor-1"])} />
-        <img src={EclipseDecor2Svg} className={joinCls("position-absolute", style["eclipse-decor-2"])} />
+        <img
+          src={EclipseDecor1Svg}
+          className={joinCls("position-absolute", style["eclipse-decor-1"])}
+        />
+        <img
+          src={EclipseDecor2Svg}
+          className={joinCls("position-absolute", style["eclipse-decor-2"])}
+        />
 
         <div className="container position-relative">
           <div className="row justify-content-between align-items-center">
             <div className="col-6">
-              <h1 className="display-2 text-outline-primary fw-bolder f-lato">WHAT IS</h1>
-              <h1 className="display-3 f-montserrat fw-bolder text-gradient text-start">HUGO ENGLISH CLUB</h1>
+              <h1 className="display-2 text-outline-primary fw-bolder f-lato">
+                WHAT IS
+              </h1>
+              <h1 className="display-3 f-montserrat fw-bolder text-gradient text-start">
+                HUGO ENGLISH CLUB
+              </h1>
               <p className={joinCls("me-5", style["description"])}>
                 <FormattedMessage {...homeMessages.description} />
               </p>
@@ -48,9 +69,21 @@ export default function HomePage() {
             </div>
             <div className="col-auto">
               <div className={joinCls("position-relative", style["yt-play"])}>
-                <img src={YtDecor1Svg} className="position-absolute bottom-0 start-0" alt="youtube-decor" />
-                <img src={YtDecor2Svg} className="position-absolute top-0 end-0" alt="youtube-decor" />
-                <img src="https://img.youtube.com/vi/Y9V3bgXbzi4/hqdefault.jpg" className="mw-100 p-3" alt="youtube-thumbnail" />
+                <img
+                  src={YtDecor1Svg}
+                  className="position-absolute bottom-0 start-0"
+                  alt="youtube-decor"
+                />
+                <img
+                  src={YtDecor2Svg}
+                  className="position-absolute top-0 end-0"
+                  alt="youtube-decor"
+                />
+                <img
+                  src="https://img.youtube.com/vi/Y9V3bgXbzi4/hqdefault.jpg"
+                  className="mw-100 p-3"
+                  alt="youtube-thumbnail"
+                />
                 <div
                   className={joinCls(
                     "position-absolute top-50 start-50 translate-middle d-flex justify-content-center align-items-center bg-white bg-opacity-25 rounded-circle",
@@ -65,18 +98,34 @@ export default function HomePage() {
           </div>
         </div>
 
-        <Modal className="modal-xl" dialogClassName="h-100 my-0 py-5" isShown={isShownHugoVideo} onClose={() => setIsShownHugoVideo(false)}>
-          <iframe id="player" type="text/html" width="100%" height="100%" src="http://www.youtube.com/embed/Y9V3bgXbzi4?enablejsapi=1" frameBorder="0"></iframe>
+        <Modal
+          className="modal-xl"
+          dialogClassName="h-100 my-0 py-5"
+          isShown={isShownHugoVideo}
+          onClose={() => setIsShownHugoVideo(false)}
+        >
+          <iframe
+            id="player"
+            type="text/html"
+            width="100%"
+            height="100%"
+            src="http://www.youtube.com/embed/Y9V3bgXbzi4?enablejsapi=1"
+            frameBorder="0"
+          ></iframe>
         </Modal>
       </section>
 
       <section className="container mt-10">
-        <h1 className="display-5 f-montserrat fw-bolder text-gradient text-center">TEAMS IN HUGO</h1>
+        <h1 className="display-5 f-montserrat fw-bolder text-gradient text-center">
+          TEAMS IN HUGO
+        </h1>
         <TeamsSection className="mt-5" />
       </section>
 
       <section className="container mt-10">
-        <h1 className="display-5 f-montserrat fw-bolder text-gradient text-center">ACTIVITIES</h1>
+        <h1 className="display-5 f-montserrat fw-bolder text-gradient text-center">
+          ACTIVITIES
+        </h1>
         <Slider
           items={sliderItems}
           className="gap-3 mt-5"
@@ -84,16 +133,29 @@ export default function HomePage() {
             <Link
               key={item.id}
               to={MEETINGS_ACTIVITY_PAGE_PATH}
-              className={joinCls("card text-decoration-none text-bg-dark border-0 rounded-3 overflow-hidden", style["activity-item"])}
+              className={joinCls(
+                "card text-decoration-none text-bg-dark border-0 rounded-3 overflow-hidden",
+                style["activity-item"]
+              )}
             >
               <Image src={item.url} className="card-img" />
               <div className="card-img-overlay d-flex flex-column justify-content-end">
                 <div className="position-relative">
-                  <div className={joinCls("position-absolute", style["card-header"])}>
-                    <h3 className="badge text-success text-bg-light text-uppercase px-2 py-2">Special title treatment</h3>
+                  <div
+                    className={joinCls(
+                      "position-absolute",
+                      style["card-header"]
+                    )}
+                  >
+                    <h3 className="badge text-success text-bg-light text-uppercase px-2 py-2">
+                      Special title treatment
+                    </h3>
                     <h5 className="card-text">Traveling</h5>
                   </div>
-                  <p className={joinCls("card-text", style["card-sub-text"])}>With supporting text below as a natural lead-in to additional content</p>
+                  <p className={joinCls("card-text", style["card-sub-text"])}>
+                    With supporting text below as a natural lead-in to
+                    additional content
+                  </p>
                 </div>
                 <p className="card-text text-secondary fw-bold">
                   <small>May 30, 2022</small>
@@ -105,18 +167,50 @@ export default function HomePage() {
       </section>
 
       <section className="container mt-10">
-        <h1 className="display-5 f-montserrat fw-bolder text-gradient text-center">BLOGS</h1>
+        <h1 className="display-5 f-montserrat fw-bolder text-gradient text-center">
+          BLOGS
+        </h1>
         <Slider
           items={sliderItems}
           className="gap-3 mt-5"
           renderItem={(item) => (
-            <Link key={item.id} to={MEETINGS_ACTIVITY_PAGE_PATH} className={joinCls("card text-reset text-decoration-none rounded-3 overflow-hidden", style["blog-item"])}>
+            <Link
+              key={item.id}
+              to={MEETINGS_ACTIVITY_PAGE_PATH}
+              className={joinCls(
+                "card text-reset text-decoration-none rounded-3 overflow-hidden",
+                style["blog-item"]
+              )}
+            >
               <Image src={item.url} className="card-img-top" />
               <div className="card-body">
-                <small className="d-block text-secondary text-uppercase">May 30, 2022</small>
-                <h5 className="">Special title treatment</h5>
-                <p>With supporting text below as a natural lead-in to additional content</p>
-                <div className={joinCls("d-flex align-items-center gap-2", style["read-more"])}>
+                <small className="d-block text-secondary text-uppercase">
+                  May 30, 2022
+                </small>
+                <h5
+                  className={joinCls(
+                    "text-ellipsis text-start",
+                    style["blog-item-tile"]
+                  )}
+                >
+                  Special title treatment
+                </h5>
+                <p
+                  className={joinCls(
+                    "text-ellipsis text-start mb-4",
+                    style["blog-item-description"]
+                  )}
+                >
+                  With supporting text below as a natural lead-in to additional
+                  content With supporting text below as a natural lead-in to
+                  additional content
+                </p>
+                <div
+                  className={joinCls(
+                    "d-flex align-items-center gap-2",
+                    style["read-more"]
+                  )}
+                >
                   <h6 className="mb-0">Read more</h6>
                   <i className="fa-solid fa-arrow-right" />
                 </div>
@@ -127,27 +221,47 @@ export default function HomePage() {
       </section>
 
       <section className="position-relative container mt-10">
-        <Image src={EclipseDecor3Svg} className={joinCls("position-absolute", style["eclipse-decor-3"])} />
-        <Image src={RectDecor2Svg} className={joinCls("position-absolute", style["rect-decor-2"])} />
-        <Image src={RectDecor2Svg} className={joinCls("position-absolute", style["rect-decor-2-1"])} />
+        <Image
+          src={EclipseDecor3Svg}
+          className={joinCls("position-absolute", style["eclipse-decor-3"])}
+        />
+        <Image
+          src={RectDecor2Svg}
+          className={joinCls("position-absolute", style["rect-decor-2"])}
+        />
+        <Image
+          src={RectDecor2Svg}
+          className={joinCls("position-absolute", style["rect-decor-2-1"])}
+        />
 
-        <div className={joinCls("position-relative rounded-4", style["join-us"])}>
-          <Image src={randomImgUrl(2000, 1000)} className="position-absolute top-0 left-0 w-100 h-100 rounded-4" />
+        <div
+          className={joinCls("position-relative rounded-4", style["join-us"])}
+        >
+          <Image
+            src={randomImgUrl(2000, 1000)}
+            className="position-absolute top-0 left-0 w-100 h-100 rounded-4"
+          />
           <div className="position-relative d-flex flex-column align-items-center">
             <h1 className="text-gradient text-center text-uppercase">
               become an official member of
               <br />
               Hugo English Club
             </h1>
-            <h4 className="text-center mt-5">Hugo brings English more familiar than ever before, whoever you are!</h4>
+            <h4 className="text-center mt-5">
+              Hugo brings English more familiar than ever before, whoever you
+              are!
+            </h4>
             <p className="text-center f-montserrat mt-3">
-              Do you want to immerse yourself in an environment where people practice English together?
+              Do you want to immerse yourself in an environment where people
+              practice English together?
               <br />
               Are you eager to make active and talented friends in Danang?
               <br />
               More than an English Club, let’s join us to know what's behind it!
             </p>
-            <button className="btn btn-lg btn-outline-gradient rounded-pill text-uppercase px-5 py-3 mt-4">Join us right now</button>
+            <button className="btn btn-lg btn-outline-gradient rounded-pill text-uppercase px-5 py-3 mt-4">
+              Join us right now
+            </button>
           </div>
         </div>
       </section>

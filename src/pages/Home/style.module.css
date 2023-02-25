@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital@1&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Pro:ital@1&display=swap");
 
 .carousel :global(.carousel-item) {
   height: 90vh;
@@ -84,12 +84,30 @@
   height: 12rem;
 }
 
-.blog-item h5, .blog-item .read-more {
+.blog-item h5,
+.blog-item .read-more {
   transition: 0.2s ease-out;
 }
 
-.blog-item:hover h5, .blog-item:hover .read-more {
+.blog-item:hover h5,
+.blog-item:hover .read-more {
   color: var(--bs-primary);
+}
+
+.blog-item .read-more {
+  position: absolute;
+  bottom: 3%;
+}
+
+.blog-item-tile {
+  -webkit-line-clamp: 2;
+  max-height: 92px;
+  min-height: 36px;
+}
+
+.blog-item-description {
+  -webkit-line-clamp: 3;
+  max-height: 92px;
 }
 
 .join-us {
