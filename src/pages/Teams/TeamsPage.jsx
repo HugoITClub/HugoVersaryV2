@@ -163,6 +163,8 @@ export default function TeamsPage() {
         </div>
       </section>
 
+      <Footer className="mt-10" />
+
       <Modal className="modal-xl" contentClassName="bg-transparent" isShown={isShownModal} onClose={() => setIsShownModal(false)}>
         <Masonry images={currentExploreImages} renderItem={(image) => <Image key={image} src={image} />} gutter={4} />
       </Modal>
