@@ -87,7 +87,7 @@ export default function TeamsSection({ className }) {
   };
 
   const teamCardRef = useRef();
-  const [selectedTeamKey, setSelectedTeamKey] = useState(Object.keys(teamMap).sort(() => Math.random() - 0.5)[0]);
+  const [selectedTeamKey, setSelectedTeamKey] = useState(Object.keys(teamMap)[Math.floor(Math.random() * 4)]);
   const [sparks, setSparks] = useState([]);
 
   const handleSparkTransitionEnded = (key, event) => {
