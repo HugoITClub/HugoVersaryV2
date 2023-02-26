@@ -2,8 +2,10 @@ import Skeleton from "../../../components/Skeleton/Skeleton.jsx";
 import useSheetAPI from "../../../services/google/hooks/useSheetAPI.js";
 import { joinCls, randomImgUrl } from "../../../utilities/text.utils.js";
 import Image from "../../../components/Image/Image";
+import Footer from "../../../components/Footer/Footer";
 
 import style from "./style.module.css";
+import { Link } from "react-router-dom";
 export default function MeetingsPage() {
   const {
     isLoading: isMeetingLoading,
@@ -43,9 +45,9 @@ export default function MeetingsPage() {
             {meetings.map(
               ([id, title, description, date, imgUrl, contentUrl]) => (
                 <div className="col-lg-6 col-md-6 col-12">
-                  <a
+                  <Link
                     key={id}
-                    href={contentUrl}
+                    to={contentUrl}
                     className={joinCls("text-decoration-none", style["post"])}
                   >
                     <div className="row justify-content-around">
@@ -94,7 +96,7 @@ export default function MeetingsPage() {
                         </div>
                       </div>
                     </div>
-                  </a>
+                  </Link>
                 </div>
               )
             )}
@@ -156,6 +158,7 @@ export default function MeetingsPage() {
           )}
         </div>
       </div>
+      <Footer className="mt-10" />
     </div>
   );
 }

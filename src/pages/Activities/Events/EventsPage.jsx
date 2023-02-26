@@ -2,6 +2,7 @@ import Skeleton from "../../../components/Skeleton/Skeleton.jsx";
 import useSheetAPI from "../../../services/google/hooks/useSheetAPI.js";
 import { joinCls, randomImgUrl } from "../../../utilities/text.utils.js";
 import Image from "../../../components/Image/Image";
+import Footer from "../../../components/Footer/Footer";
 
 import style from "./style.module.css";
 
@@ -157,6 +158,7 @@ function EventsPage() {
           )}
         </div>
       </div>
+      <Footer className="mt-10" />
     </div>
   );
 }

@@ -36,14 +36,25 @@ export default function Footer({ theme = LIGHT_THEME, className, ...props }) {
     );
 
     const sparkIndex = sparks.findIndex((spark) => spark.key === key);
-    setSparks([...sparks.slice(0, sparkIndex), ...sparks.slice(sparkIndex + 1), newSpark]);
+    setSparks([
+      ...sparks.slice(0, sparkIndex),
+      ...sparks.slice(sparkIndex + 1),
+      newSpark,
+    ]);
   };
 
   useEffect(() => {
     const container = containerRef.current;
     setSparks(
       [...Array(10)].map((item) =>
-        generateSpark({ from: 64, to: container.clientWidth - 64 }, { from: -540, to: -540 }, { from: -40, to: 0 }, { from: 2.4, to: 5 }, { from: 0, to: 360 }, { from: 4, to: 16 })
+        generateSpark(
+          { from: 64, to: container.clientWidth - 64 },
+          { from: -540, to: -540 },
+          { from: -40, to: 0 },
+          { from: 2.4, to: 5 },
+          { from: 0, to: 360 },
+          { from: 4, to: 16 }
+        )
       )
     );
   }, []);
@@ -64,22 +75,35 @@ export default function Footer({ theme = LIGHT_THEME, className, ...props }) {
   };
 
   return (
-    <section ref={containerRef} className={joinCls("position-relative", className)} {...props}>
-      <div className={joinCls("position-absolute bottom-100 left-0 w-100 border-bottom border-2 overflow-hidden", style["sparks-area"])}>
+    <section
+      ref={containerRef}
+      className={joinCls("position-relative", className)}
+      {...props}
+    >
+      <div
+        className={joinCls(
+          "position-absolute bottom-100 left-0 w-100 border-bottom border-2 overflow-hidden",
+          style["sparks-area"]
+        )}
+      >
         <div className="position-relative w-100 h-100">
-          {sparks.map(({ key, x, yStart, yEnd, size, rotateEnd, transitionTime }) => (
-            <Spark
-              key={key}
-              x={x}
-              yStart={yStart}
-              yEnd={yEnd}
-              size={size}
-              rotateEnd={rotateEnd}
-              transitionTime={transitionTime}
-              onTransitionEnd={(event) => handleSparkTransitionEnded(key, event)}
-              sparkComponent={FooterSpark}
-            />
-          ))}
+          {sparks.map(
+            ({ key, x, yStart, yEnd, size, rotateEnd, transitionTime }) => (
+              <Spark
+                key={key}
+                x={x}
+                yStart={yStart}
+                yEnd={yEnd}
+                size={size}
+                rotateEnd={rotateEnd}
+                transitionTime={transitionTime}
+                onTransitionEnd={(event) =>
+                  handleSparkTransitionEnded(key, event)
+                }
+                sparkComponent={FooterSpark}
+              />
+            )
+          )}
         </div>
       </div>
 
@@ -89,41 +113,117 @@ export default function Footer({ theme = LIGHT_THEME, className, ...props }) {
             <div className="col-3">
               <div className="d-flex flex-column">
                 <Link to="#">
-                  <Image src={themeContent[theme].logo} width={240} className={joinCls("px-2 mb-2")} />
+                  <Image
+                    src={themeContent[theme].logo}
+                    width={240}
+                    className={joinCls("px-2 mb-2")}
+                  />
                 </Link>
-                <p className={joinCls("mt-3 mb-0", themeContent[theme].textColor)}>
-                  This website is a product of Hugo IT club and part of the HUGOVERSARY project to celebrate the 15th birthday of Hugo English Club. This website is to store,
-                  update and promote the activities and events of Hugo English Club up to the present time.
+                <p
+                  className={joinCls(
+                    "mt-3 mb-0",
+                    themeContent[theme].textColor
+                  )}
+                >
+                  This website is a product of Hugo IT club and part of the
+                  HUGOVERSARY project to celebrate the 15th birthday of Hugo
+                  English Club. This website is to store, update and promote the
+                  activities and events of Hugo English Club up to the present
+                  time.
                 </p>
               </div>
             </div>
             <div className="col-3">
               <div className="d-flex flex-column">
-                <h3 className={joinCls("text-uppercase mt-3 mb-4", themeContent[theme].titleColor)}>About Us</h3>
-                <Link to={ABOUT_US_PAGE_PATH} className={joinCls("text-decoration-none mb-2", themeContent[theme].textColor)}>
-                  Our staffs
+                <h3 className="text-uppercase mt-3 mb-4">About Us</h3>
+                <Link
+                  to={ABOUT_US_PAGE_PATH}
+                  className="text-reset text-decoration-none mb-2"
+                >
+                  Our Staffs
                 </Link>
-                <Link to="#" className={joinCls("text-decoration-none mb-2", themeContent[theme].textColor)}>
-                  Developers
+                <Link to="#" className="text-reset text-decoration-none mb-2">
+                  HUGOVERSARY Team
                 </Link>
               </div>
             </div>
             <div className="col-3">
               <div className="d-flex flex-column">
-                <h3 className={joinCls("text-uppercase mt-3 mb-4", themeContent[theme].titleColor)}>Contact</h3>
-                <Link to="#" className={joinCls("text-decoration-none mb-2", themeContent[theme].textColor)}>
+                <h3
+                  className={joinCls(
+                    "text-uppercase mt-3 mb-4",
+                    themeContent[theme].titleColor
+                  )}
+                >
+                  Contact
+                </h3>
+                <Link
+                  to="#"
+                  className={joinCls(
+                    "text-decoration-none mb-2",
+                    themeContent[theme].textColor
+                  )}
+                >
                   Email: hugoclub.dut@gmail.com
                 </Link>
-                <Link to="#" className={joinCls("text-decoration-none mb-2", themeContent[theme].textColor)}>
+                <Link
+                  to="#"
+                  className={joinCls(
+                    "text-decoration-none mb-2",
+                    themeContent[theme].textColor
+                  )}
+                >
                   Phone: +84 981-770-874
                 </Link>
+                <div className="row">
+                  <Link
+                    to="https://www.facebook.com/HUGOClub"
+                    className={joinCls(
+                      "col-2 text-decoration-none fs-3 text-gradient",
+                      style["contact-icon"]
+                    )}
+                  >
+                    <i className="fa-brands fa-facebook"></i>
+                  </Link>
+                  <Link
+                    to="https://www.youtube.com/channel/UCmhyu5rOUvECgvA4YEEKnxg"
+                    className={joinCls(
+                      "col-2 text-decoration-none fs-3 text-gradient",
+                      style["contact-icon"]
+                    )}
+                  >
+                    <i className="fa-brands fa-youtube"></i>
+                  </Link>
+                  <Link
+                    to="https://www.instagram.com/hugoenglishclub/"
+                    className={joinCls(
+                      "col-2 text-decoration-none fs-3 text-gradient",
+                      style["contact-icon"]
+                    )}
+                  >
+                    <i class="fa-brands fa-instagram"></i>
+                  </Link>
+                </div>
               </div>
             </div>
             <div className="col-3">
               <div className="d-flex flex-column">
-                <h3 className={joinCls("text-uppercase mt-3 mb-4", themeContent[theme].titleColor)}>Language</h3>
+                <h3
+                  className={joinCls(
+                    "text-uppercase mt-3 mb-4",
+                    themeContent[theme].titleColor
+                  )}
+                >
+                  Language
+                </h3>
                 <div className={joinCls("dropdown", style["language-btn"])}>
-                  <div className={joinCls("btn dropdown-toggle d-flex gap-2 align-items-center", themeContent[theme].languageBtn)} data-bs-toggle="dropdown">
+                  <div
+                    className={joinCls(
+                      "btn dropdown-toggle d-flex gap-2 align-items-center",
+                      themeContent[theme].languageBtn
+                    )}
+                    data-bs-toggle="dropdown"
+                  >
                     {locale === EN_LOCALE && (
                       <>
                         <Image src={AmericaFlagSvg} className="me-2" />
@@ -138,11 +238,17 @@ export default function Footer({ theme = LIGHT_THEME, className, ...props }) {
                     )}
                   </div>
                   <ul className="dropdown-menu">
-                    <li className="dropdown-item d-flex gap-3 align-items-center" onClick={() => dispatch(changeLocale(EN_LOCALE))}>
+                    <li
+                      className="dropdown-item d-flex gap-3 align-items-center"
+                      onClick={() => dispatch(changeLocale(EN_LOCALE))}
+                    >
                       <Image src={AmericaFlagSvg} />
                       <h6 className="mb-0">English</h6>
                     </li>
-                    <li className="dropdown-item d-flex gap-3 align-items-center" onClick={() => dispatch(changeLocale(VI_LOCALE))}>
+                    <li
+                      className="dropdown-item d-flex gap-3 align-items-center"
+                      onClick={() => dispatch(changeLocale(VI_LOCALE))}
+                    >
                       <Image src={VietnamFlagSvg} />
                       <h6 className="mb-0">Vietnamese</h6>
                     </li>
@@ -154,7 +260,11 @@ export default function Footer({ theme = LIGHT_THEME, className, ...props }) {
 
           <div className="row justify-content-center">
             <div className="col-auto">
-              <p className={joinCls("opacity-25", themeContent[theme].textColor)}>Copyright © 2022 HUGOENGLISHCLUB</p>
+              <p
+                className={joinCls("opacity-25", themeContent[theme].textColor)}
+              >
+                Copyright © 2022 HUGOENGLISHCLUB
+              </p>
             </div>
           </div>
         </div>

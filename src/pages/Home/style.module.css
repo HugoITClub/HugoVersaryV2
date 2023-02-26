@@ -60,7 +60,8 @@
 
 .card-sub-text {
   opacity: 0;
-  transition: 0.2s ease-out;
+  transition: 0.4s ease-out;
+  -webkit-line-clamp: 3;
 }
 
 .activity-item:hover .card-sub-text {
@@ -69,7 +70,7 @@
 
 .card-header {
   bottom: 0%;
-  transition: 0.2s ease-out;
+  transition: 0.4s ease-out;
 }
 
 .activity-item:hover .card-header {
@@ -98,6 +99,22 @@
 .blog-item:hover h5,
 .blog-item:hover .read-more {
   color: var(--bs-primary);
+}
+
+.blog-item .read-more {
+  position: absolute;
+  bottom: 3%;
+}
+
+.blog-item-title {
+  -webkit-line-clamp: 2;
+  max-height: 92px;
+  min-height: 36px;
+}
+
+.blog-item-description {
+  -webkit-line-clamp: 3;
+  max-height: 92px;
 }
 
 .join-us {

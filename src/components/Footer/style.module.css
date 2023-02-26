@@ -19,6 +19,14 @@
   border-color: var(--bs-primary) !important;
 }
 
+.contact-icon {
+  opacity: 0.8;
+}
+
+.contact-icon:hover {
+  opacity: 1;
+}
+
 .language-btn,
 .language-btn :global(.dropdown-item) {
   width: 12rem;
