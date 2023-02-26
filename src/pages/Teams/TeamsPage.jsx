@@ -11,6 +11,7 @@ import Footer from "../../components/Footer/Footer";
 
 import style from "./style.module.css";
 import useSheetAPI from "../../services/google/hooks/useSheetAPI";
+import { DARK_THEME } from "../../services/theme/constants";
 
 const sheetNameMap = {
   [BANANA]: "Banana",
@@ -149,7 +150,7 @@ export default function TeamsPage() {
         />
       </section>
 
-      <section className={joinCls("container-fluid mt-10", style["footer"])}>
+      <section className={joinCls("container-fluid mt-10 px-0", style["footer"])}>
         <div className="d-flex justify-content-center align-items-center gap-5">
           <div className={style["line-decor"]} />
           <Image src={randomImgUrl(80, 80)} />
@@ -163,7 +164,7 @@ export default function TeamsPage() {
         </div>
       </section>
 
-      <Footer className="mt-10" />
+      <Footer className="mt-10" theme={DARK_THEME} />
 
       <Modal className="modal-xl" contentClassName="bg-transparent" isShown={isShownModal} onClose={() => setIsShownModal(false)}>
         <Masonry images={currentExploreImages} renderItem={(image) => <Image key={image} src={image} />} gutter={4} />
