@@ -5,6 +5,7 @@ import Slider from "../../components/Slider/Slider";
 import Image from "../../components/Image/Image";
 import { Link } from "react-router-dom";
 import Skeleton from "../../components/Skeleton/Skeleton.jsx";
+import Footer from "../../components/Footer/Footer";
 
 import style from "./style.module.css";
 
@@ -46,7 +47,7 @@ export default function BlogsPage() {
             <div className="blog-intro-content">
               <div
                 className={joinCls(
-                  "text-uppercase mb-3 f-montserrat",
+                  "text-uppercase mb-3 f-montserrat text-start",
                   style["blog-intro-content-title"]
                 )}
               >
@@ -55,7 +56,7 @@ export default function BlogsPage() {
               </div>
               <div
                 className={joinCls(
-                  "f-lato text-ellipsis",
+                  "f-lato text-ellipsis text-start",
                   style["blog-intro-content-description"]
                 )}
               >
@@ -114,7 +115,7 @@ export default function BlogsPage() {
                   <h5
                     className={joinCls(
                       "text-ellipsis text-start",
-                      style["blog-item-tile"]
+                      style["blog-item-title"]
                     )}
                   >
                     {title}
@@ -253,7 +254,7 @@ export default function BlogsPage() {
               <div className="col-auto">
                 <button
                   className={joinCls(
-                    "btn btn-lg btn-outline-gradient rounded-pill",
+                    "btn btn-lg btn-outline-gradient rounded-pill ",
                     style["see-more-btn"]
                   )}
                   onClick={() => getMoreAcademicData(8)}
@@ -265,6 +266,7 @@ export default function BlogsPage() {
           )}
         </div>
       </div>
+      <Footer className="mt-10" />
     </div>
   );
 }

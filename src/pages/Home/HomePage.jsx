@@ -24,6 +24,7 @@ import { useState } from "react";
 import Modal from "../../components/Modal/Modal";
 import Footer from "../../components/Footer/Footer";
 import TeamsSection from "./components/TeamsSection/TeamsSection";
+import useSheetAPI from "../../services/google/hooks/useSheetAPI";
 
 import style from "./style.module.css";
 import Wiggle from "../../components/Wiggle/Wiggle";
@@ -39,34 +40,50 @@ export default function HomePage() {
   ];
   const sliderItems = images.map((image) => ({ url: image, id: image }));
 
-  const [isShownHugoVideo, setIsShownHugoVideo] = useState(false);
+  const {
+    isLoading: isBlogsLoading,
+    isFull: isBlogsFull,
+    data: blogsData,
+    getMore: getMoreBlogsData,
+  } = useSheetAPI("Blogs", "M", "R", { earlyTake: 8 });
 
+  const {
+    isLoading: isActivitiesLoading,
+    isFull: isActivitiesFull,
+    data: activitiesData,
+    getMore: getMoreActivitiesData,
+  } = useSheetAPI("Activities", "M", "S", { earlyTake: 8 });
+
+  const {
+    isLoading: isSliderHomePageLoading,
+    isFull: isSliderHomePageFull,
+    data: sliderHomePageData,
+    getMore: getSliderHomePageData,
+  } = useSheetAPI("SliderHomePage", "H", "I", { earlyTake: 4 });
+
+  const [isShownHugoVideo, setIsShownHugoVideo] = useState(false);
+  console.log(sliderHomePageData);
   return (
-<<<<<<< HEAD
-    <div className="bg-light">
+    <div className="bg-light overflow-hidden">
       <Carousel
         id="HeaderCarousel"
         images={images}
         className={style.carousel}
       />
-
+      {/* <Carousel
+        id={activitiesData.map((item) => [item[0]])}
+        images={activitiesData.map((item) => [item[1]])}
+        className={style.carousel}
+      /> */}
       <section className="position-relative mt-5">
-        <img
+        <Image
           src={EclipseDecor1Svg}
           className={joinCls("position-absolute", style["eclipse-decor-1"])}
         />
-        <img
+        <Image
           src={EclipseDecor2Svg}
           className={joinCls("position-absolute", style["eclipse-decor-2"])}
         />
-=======
-    <div className="bg-light overflow-hidden">
-      <Carousel id="HeaderCarousel" images={images} className={style.carousel} />
-
-      <section className="position-relative mt-5">
-        <Image src={EclipseDecor1Svg} className={joinCls("position-absolute", style["eclipse-decor-1"])} />
-        <Image src={EclipseDecor2Svg} className={joinCls("position-absolute", style["eclipse-decor-2"])} />
->>>>>>> 6709fa2dd8bca2a374a930c761c6b7048e606ba5
 
         <div className="container position-relative">
           <div className="row justify-content-between align-items-center">
@@ -115,75 +132,30 @@ export default function HomePage() {
           </div>
         </div>
 
-<<<<<<< HEAD
         <Modal
           className="modal-xl"
           dialogClassName="h-100 my-0 py-5"
           isShown={isShownHugoVideo}
           onClose={() => setIsShownHugoVideo(false)}
         >
-          <iframe
-            id="player"
-            type="text/html"
-            width="100%"
-            height="100%"
-            src="http://www.youtube.com/embed/Y9V3bgXbzi4?enablejsapi=1"
-            frameBorder="0"
-          ></iframe>
-        </Modal>
-      </section>
-
-      <section className="container mt-10">
-        <h1 className="display-5 f-montserrat fw-bolder text-gradient text-center">
-          TEAMS IN HUGO
-        </h1>
-        <TeamsSection className="mt-5" />
-      </section>
-
-      <section className="container mt-10">
-        <h1 className="display-5 f-montserrat fw-bolder text-gradient text-center">
-          ACTIVITIES
-        </h1>
-        <Slider
-          items={sliderItems}
-          className="gap-3 mt-5"
-          renderItem={(item) => (
-            <Link
-              key={item.id}
-              to={MEETINGS_ACTIVITY_PAGE_PATH}
-              className={joinCls(
-                "card text-decoration-none text-bg-dark border-0 rounded-3 overflow-hidden",
-                style["activity-item"]
-              )}
-            >
-              <Image src={item.url} className="card-img" />
-              <div className="card-img-overlay d-flex flex-column justify-content-end">
-                <div className="position-relative">
-                  <div
-                    className={joinCls(
-                      "position-absolute",
-                      style["card-header"]
-                    )}
-                  >
-                    <h3 className="badge text-success text-bg-light text-uppercase px-2 py-2">
-                      Special title treatment
-                    </h3>
-                    <h5 className="card-text">Traveling</h5>
-                  </div>
-                  <p className={joinCls("card-text", style["card-sub-text"])}>
-                    With supporting text below as a natural lead-in to
-                    additional content
-=======
-        <Modal className="modal-xl" dialogClassName="h-100 my-0 py-5" isShown={isShownHugoVideo} onClose={() => setIsShownHugoVideo(false)}>
           {isShownHugoVideo && (
-            <iframe title="Youtube Video" className="bg-dark" type="text/html" width="100%" height="100%" src="http://www.youtube.com/embed/Y9V3bgXbzi4?enablejsapi=1"></iframe>
+            <iframe
+              title="Youtube Video"
+              className="bg-dark"
+              type="text/html"
+              width="100%"
+              height="100%"
+              src="http://www.youtube.com/embed/Y9V3bgXbzi4?enablejsapi=1"
+            ></iframe>
           )}
         </Modal>
       </section>
 
       <section className="position-relative mt-10">
         <div className="position-relative container">
-          <h1 className="display-5 f-montserrat fw-bolder text-gradient text-center">TEAMS IN HUGO</h1>
+          <h1 className="display-5 f-montserrat fw-bolder text-gradient text-center">
+            TEAMS IN HUGO
+          </h1>
           <TeamsSection className="mt-5" />
         </div>
 
@@ -193,7 +165,9 @@ export default function HomePage() {
       </section>
 
       <section className="position-relative mt-10">
-        <Wiggle className={joinCls("position-absolute", style["shooting-stars"])}>
+        <Wiggle
+          className={joinCls("position-absolute", style["shooting-stars"])}
+        >
           <Image src={ShootingStarsSvg} />
         </Wiggle>
         <Wiggle className={joinCls("position-absolute", style["puzzle"])}>
@@ -201,28 +175,54 @@ export default function HomePage() {
         </Wiggle>
 
         <div className="position-relative container">
-          <h1 className="display-5 f-montserrat fw-bolder text-gradient text-center">ACTIVITIES</h1>
+          <h1 className="display-5 f-montserrat fw-bolder text-gradient text-center">
+            ACTIVITIES
+          </h1>
           <Slider
-            items={sliderItems}
+            items={activitiesData}
             className="gap-3 mt-5"
-            renderItem={(item) => (
+            renderItem={([
+              id,
+              label,
+              name,
+              description,
+              date,
+              imageUrl,
+              contentFileId,
+            ]) => (
               <Link
-                key={item.id}
+                key={id}
                 to={MEETINGS_ACTIVITY_PAGE_PATH}
-                className={joinCls("card text-decoration-none text-bg-dark border-0 rounded-3 overflow-hidden", style["activity-item"])}
+                className={joinCls(
+                  "card text-decoration-none text-bg-dark border-0 rounded-3 overflow-hidden",
+                  style["activity-item"]
+                )}
               >
-                <Image src={item.url} className="card-img" />
+                <Image src={imageUrl} className="card-img" />
                 <div className="card-img-overlay d-flex flex-column justify-content-end">
                   <div className="position-relative">
-                    <div className={joinCls("position-absolute", style["card-header"])}>
-                      <h3 className="badge text-success text-bg-light text-uppercase px-2 py-2">Special title treatment</h3>
-                      <h5 className="card-text">Traveling</h5>
+                    <div
+                      className={joinCls(
+                        "position-absolute",
+                        style["card-header"]
+                      )}
+                    >
+                      <h3 className="badge text-success text-bg-light text-uppercase px-2 py-2">
+                        {label}
+                      </h3>
+                      <h5 className="card-text">{name}</h5>
                     </div>
-                    <p className={joinCls("card-text", style["card-sub-text"])}>With supporting text below as a natural lead-in to additional content</p>
+                    <p
+                      className={joinCls(
+                        "card-text text-ellipsis text-start",
+                        style["card-sub-text"]
+                      )}
+                    >
+                      {description}
+                    </p>
                   </div>
                   <p className="card-text text-secondary fw-bold">
-                    <small>May 30, 2022</small>
->>>>>>> 6709fa2dd8bca2a374a930c761c6b7048e606ba5
+                    <small className="text-uppercase">{date}</small>
                   </p>
                 </div>
               </Link>
@@ -231,57 +231,11 @@ export default function HomePage() {
         </div>
       </section>
 
-<<<<<<< HEAD
-      <section className="container mt-10">
-        <h1 className="display-5 f-montserrat fw-bolder text-gradient text-center">
-          BLOGS
-        </h1>
-        <Slider
-          items={sliderItems}
-          className="gap-3 mt-5"
-          renderItem={(item) => (
-            <Link
-              key={item.id}
-              to={MEETINGS_ACTIVITY_PAGE_PATH}
-              className={joinCls(
-                "card text-reset text-decoration-none rounded-3 overflow-hidden",
-                style["blog-item"]
-              )}
-            >
-              <Image src={item.url} className="card-img-top" />
-              <div className="card-body">
-                <small className="d-block text-secondary text-uppercase">
-                  May 30, 2022
-                </small>
-                <h5
-                  className={joinCls(
-                    "text-ellipsis text-start",
-                    style["blog-item-tile"]
-                  )}
-                >
-                  Special title treatment
-                </h5>
-                <p
-                  className={joinCls(
-                    "text-ellipsis text-start mb-4",
-                    style["blog-item-description"]
-                  )}
-                >
-                  With supporting text below as a natural lead-in to additional
-                  content With supporting text below as a natural lead-in to
-                  additional content
-                </p>
-                <div
-                  className={joinCls(
-                    "d-flex align-items-center gap-2",
-                    style["read-more"]
-                  )}
-                >
-                  <h6 className="mb-0">Read more</h6>
-                  <i className="fa-solid fa-arrow-right" />
-=======
       <section className="position-relative mt-10">
-        <Image src={EclipseDecor4Svg} className={joinCls("position-absolute", style["eclipse-decor-4"])} />
+        <Image
+          src={EclipseDecor4Svg}
+          className={joinCls("position-absolute", style["eclipse-decor-4"])}
+        />
         <Wiggle className={joinCls("position-absolute", style["note"])}>
           <Image src={NoteSvg} />
         </Wiggle>
@@ -290,22 +244,58 @@ export default function HomePage() {
         </Wiggle>
 
         <div className="position-relative container">
-          <h1 className="display-5 f-montserrat fw-bolder text-gradient text-center">BLOGS</h1>
+          <h1 className="display-5 f-montserrat fw-bolder text-gradient text-center">
+            BLOGS
+          </h1>
           <Slider
-            items={sliderItems}
+            items={blogsData}
             className="gap-3 mt-5"
-            renderItem={(item) => (
-              <Link key={item.id} to={MEETINGS_ACTIVITY_PAGE_PATH} className={joinCls("card text-reset text-decoration-none rounded-3 overflow-hidden", style["blog-item"])}>
-                <Image src={item.url} className="card-img-top" />
-                <div className="card-body">
-                  <small className="d-block text-secondary text-uppercase">May 30, 2022</small>
-                  <h5 className="">Special title treatment</h5>
-                  <p>With supporting text below as a natural lead-in to additional content</p>
-                  <div className={joinCls("d-flex align-items-center gap-2", style["read-more"])}>
+            renderItem={([
+              id,
+              title,
+              description,
+              time,
+              imageUrl,
+              contentFileId,
+            ]) => (
+              <Link
+                key={id}
+                to={contentFileId}
+                className={joinCls(
+                  "card text-reset text-decoration-none rounded-3 overflow-hidden",
+                  style["blog-item"]
+                )}
+              >
+                <Image src={imageUrl} className="card-img-top" />
+                <div className="card-body position-relative">
+                  <small className="d-block text-secondary text-uppercase">
+                    {time}
+                  </small>
+                  <h5
+                    className={joinCls(
+                      "text-ellipsis text-start",
+                      style["blog-item-title"]
+                    )}
+                  >
+                    {title}
+                  </h5>
+                  <p
+                    className={joinCls(
+                      "text-ellipsis text-start mb-4",
+                      style["blog-item-description"]
+                    )}
+                  >
+                    {description}
+                  </p>
+                  <div
+                    className={joinCls(
+                      "d-flex align-items-center gap-2",
+                      style["read-more"]
+                    )}
+                  >
                     <h6 className="mb-0">Read more</h6>
                     <i className="fa-solid fa-arrow-right" />
                   </div>
->>>>>>> 6709fa2dd8bca2a374a930c761c6b7048e606ba5
                 </div>
               </Link>
             )}
@@ -313,26 +303,15 @@ export default function HomePage() {
         </div>
       </section>
 
-<<<<<<< HEAD
-      <section className="position-relative container mt-10">
-        <Image
-          src={EclipseDecor3Svg}
-          className={joinCls("position-absolute", style["eclipse-decor-3"])}
-        />
-        <Image
-          src={RectDecor2Svg}
-          className={joinCls("position-absolute", style["rect-decor-2"])}
-        />
-        <Image
-          src={RectDecor2Svg}
-          className={joinCls("position-absolute", style["rect-decor-2-1"])}
-        />
-=======
       <section className="position-relative container z-1 mt-10">
-        <Wiggle className={joinCls("position-absolute", style["eclipse-decor-3"])}>
+        <Wiggle
+          className={joinCls("position-absolute", style["eclipse-decor-3"])}
+        >
           <Image src={EclipseDecor3Svg} />
         </Wiggle>
-        <Wiggle className={joinCls("position-absolute", style["rect-decor-2-1"])}>
+        <Wiggle
+          className={joinCls("position-absolute", style["rect-decor-2-1"])}
+        >
           <Image src={RectDecor1Svg} />
         </Wiggle>
         <Wiggle className={joinCls("position-absolute", style["rect-decor-2"])}>
@@ -341,7 +320,6 @@ export default function HomePage() {
         <Wiggle className={joinCls("position-absolute", style["dots"])}>
           <Image src={DotsSvg} />
         </Wiggle>
->>>>>>> 6709fa2dd8bca2a374a930c761c6b7048e606ba5
 
         <div
           className={joinCls("position-relative rounded-4", style["join-us"])}

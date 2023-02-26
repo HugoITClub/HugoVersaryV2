@@ -1,5 +1,6 @@
 import useSheetAPI from "../../services/google/hooks/useSheetAPI.js";
 import { joinCls, randomImgUrl } from "../../utilities/text.utils.js";
+import Footer from "../../components/Footer/Footer";
 
 import style from "./style.module.css";
 export default function AboutUsPage() {
@@ -98,6 +99,7 @@ export default function AboutUsPage() {
           </div>
         </div>
       </div>
+      <Footer className="mt-10" />
     </div>
   );
 }
