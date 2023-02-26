@@ -33,6 +33,12 @@
   transform: translate(3rem, -3rem);
 }
 
+.rocket {
+  top: 0%;
+  left: 4rem;
+  width: 16rem;
+}
+
 .activity-item {
   flex-shrink: 0;
   flex-basis: 30%;
@@ -152,4 +158,46 @@
   transform: rotate(60deg);
   width: 4rem;
   height: 4rem;
+}
+
+.shooting-stars {
+  top: -10rem;
+  left: 2rem;
+  width: 12rem;
+  height: auto;
+}
+
+.puzzle {
+  top: -4rem;
+  right: 6rem;
+  width: 8rem;
+  height: auto;
+}
+
+.eclipse-decor-4 {
+  top: -6rem;
+  left: -12rem;
+  width: 32rem;
+  height: auto;
+}
+
+.note {
+  top: 2rem;
+  left: 6rem;
+  width: 8rem;
+  height: auto;
+}
+
+.rect-decor-3 {
+  top: -8rem;
+  right: -4rem;
+  width: 16rem;
+  height: auto;
+}
+
+.dots {
+  top: -4rem;
+  right: -10rem;
+  width: 16rem;
+  height: auto;
 }

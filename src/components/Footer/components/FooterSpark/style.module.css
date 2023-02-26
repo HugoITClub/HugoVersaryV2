@@ -1,11 +1,11 @@
 .before {
   opacity: 1;
   border-radius: 50%;
-  background: #eba919;
+  background: var(--bs-primary);
 }
 
 .after {
   opacity: 0;
   border-width: 0;
-  border-color: #9a2718;
+  border-color: #eba919;
 }

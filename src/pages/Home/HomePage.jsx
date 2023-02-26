@@ -6,8 +6,15 @@ import YtDecor2Svg from "./images/yt-decor-2.svg";
 import EclipseDecor1Svg from "./images/eclipse-decor-1.svg";
 import EclipseDecor2Svg from "./images/eclipse-decor-2.svg";
 import EclipseDecor3Svg from "./images/eclipse-decor-3.svg";
+import EclipseDecor4Svg from "./images/eclipse-decor-4.svg";
 import RectDecor1Svg from "./images/rect-decor-1.svg";
 import RectDecor2Svg from "./images/rect-decor-2.svg";
+import RectDecor3Svg from "./images/rect-decor-3.svg";
+import ShootingStarsSvg from "./images/shooting-stars.svg";
+import PuzzleStarsSvg from "./images/puzzle.svg";
+import NoteSvg from "./images/note.svg";
+import RocketSvg from "./images/rocket.svg";
+import DotsSvg from "./images/dots.svg";
 import Slider from "../../components/Slider/Slider";
 import { Link } from "react-router-dom";
 import Image from "../../components/Image/Image";
@@ -19,6 +26,7 @@ import Footer from "../../components/Footer/Footer";
 import TeamsSection from "./components/TeamsSection/TeamsSection";
 
 import style from "./style.module.css";
+import Wiggle from "../../components/Wiggle/Wiggle";
 
 export default function HomePage() {
   const images = [
@@ -34,6 +42,7 @@ export default function HomePage() {
   const [isShownHugoVideo, setIsShownHugoVideo] = useState(false);
 
   return (
+<<<<<<< HEAD
     <div className="bg-light">
       <Carousel
         id="HeaderCarousel"
@@ -50,6 +59,14 @@ export default function HomePage() {
           src={EclipseDecor2Svg}
           className={joinCls("position-absolute", style["eclipse-decor-2"])}
         />
+=======
+    <div className="bg-light overflow-hidden">
+      <Carousel id="HeaderCarousel" images={images} className={style.carousel} />
+
+      <section className="position-relative mt-5">
+        <Image src={EclipseDecor1Svg} className={joinCls("position-absolute", style["eclipse-decor-1"])} />
+        <Image src={EclipseDecor2Svg} className={joinCls("position-absolute", style["eclipse-decor-2"])} />
+>>>>>>> 6709fa2dd8bca2a374a930c761c6b7048e606ba5
 
         <div className="container position-relative">
           <div className="row justify-content-between align-items-center">
@@ -98,6 +115,7 @@ export default function HomePage() {
           </div>
         </div>
 
+<<<<<<< HEAD
         <Modal
           className="modal-xl"
           dialogClassName="h-100 my-0 py-5"
@@ -155,17 +173,65 @@ export default function HomePage() {
                   <p className={joinCls("card-text", style["card-sub-text"])}>
                     With supporting text below as a natural lead-in to
                     additional content
-                  </p>
-                </div>
-                <p className="card-text text-secondary fw-bold">
-                  <small>May 30, 2022</small>
-                </p>
-              </div>
-            </Link>
+=======
+        <Modal className="modal-xl" dialogClassName="h-100 my-0 py-5" isShown={isShownHugoVideo} onClose={() => setIsShownHugoVideo(false)}>
+          {isShownHugoVideo && (
+            <iframe title="Youtube Video" className="bg-dark" type="text/html" width="100%" height="100%" src="http://www.youtube.com/embed/Y9V3bgXbzi4?enablejsapi=1"></iframe>
           )}
-        />
+        </Modal>
       </section>
 
+      <section className="position-relative mt-10">
+        <div className="position-relative container">
+          <h1 className="display-5 f-montserrat fw-bolder text-gradient text-center">TEAMS IN HUGO</h1>
+          <TeamsSection className="mt-5" />
+        </div>
+
+        <Wiggle className={joinCls("position-absolute", style["rocket"])}>
+          <Image src={RocketSvg} />
+        </Wiggle>
+      </section>
+
+      <section className="position-relative mt-10">
+        <Wiggle className={joinCls("position-absolute", style["shooting-stars"])}>
+          <Image src={ShootingStarsSvg} />
+        </Wiggle>
+        <Wiggle className={joinCls("position-absolute", style["puzzle"])}>
+          <Image src={PuzzleStarsSvg} />
+        </Wiggle>
+
+        <div className="position-relative container">
+          <h1 className="display-5 f-montserrat fw-bolder text-gradient text-center">ACTIVITIES</h1>
+          <Slider
+            items={sliderItems}
+            className="gap-3 mt-5"
+            renderItem={(item) => (
+              <Link
+                key={item.id}
+                to={MEETINGS_ACTIVITY_PAGE_PATH}
+                className={joinCls("card text-decoration-none text-bg-dark border-0 rounded-3 overflow-hidden", style["activity-item"])}
+              >
+                <Image src={item.url} className="card-img" />
+                <div className="card-img-overlay d-flex flex-column justify-content-end">
+                  <div className="position-relative">
+                    <div className={joinCls("position-absolute", style["card-header"])}>
+                      <h3 className="badge text-success text-bg-light text-uppercase px-2 py-2">Special title treatment</h3>
+                      <h5 className="card-text">Traveling</h5>
+                    </div>
+                    <p className={joinCls("card-text", style["card-sub-text"])}>With supporting text below as a natural lead-in to additional content</p>
+                  </div>
+                  <p className="card-text text-secondary fw-bold">
+                    <small>May 30, 2022</small>
+>>>>>>> 6709fa2dd8bca2a374a930c761c6b7048e606ba5
+                  </p>
+                </div>
+              </Link>
+            )}
+          />
+        </div>
+      </section>
+
+<<<<<<< HEAD
       <section className="container mt-10">
         <h1 className="display-5 f-montserrat fw-bolder text-gradient text-center">
           BLOGS
@@ -213,13 +279,41 @@ export default function HomePage() {
                 >
                   <h6 className="mb-0">Read more</h6>
                   <i className="fa-solid fa-arrow-right" />
+=======
+      <section className="position-relative mt-10">
+        <Image src={EclipseDecor4Svg} className={joinCls("position-absolute", style["eclipse-decor-4"])} />
+        <Wiggle className={joinCls("position-absolute", style["note"])}>
+          <Image src={NoteSvg} />
+        </Wiggle>
+        <Wiggle className={joinCls("position-absolute", style["rect-decor-3"])}>
+          <Image src={RectDecor3Svg} />
+        </Wiggle>
+
+        <div className="position-relative container">
+          <h1 className="display-5 f-montserrat fw-bolder text-gradient text-center">BLOGS</h1>
+          <Slider
+            items={sliderItems}
+            className="gap-3 mt-5"
+            renderItem={(item) => (
+              <Link key={item.id} to={MEETINGS_ACTIVITY_PAGE_PATH} className={joinCls("card text-reset text-decoration-none rounded-3 overflow-hidden", style["blog-item"])}>
+                <Image src={item.url} className="card-img-top" />
+                <div className="card-body">
+                  <small className="d-block text-secondary text-uppercase">May 30, 2022</small>
+                  <h5 className="">Special title treatment</h5>
+                  <p>With supporting text below as a natural lead-in to additional content</p>
+                  <div className={joinCls("d-flex align-items-center gap-2", style["read-more"])}>
+                    <h6 className="mb-0">Read more</h6>
+                    <i className="fa-solid fa-arrow-right" />
+                  </div>
+>>>>>>> 6709fa2dd8bca2a374a930c761c6b7048e606ba5
                 </div>
-              </div>
-            </Link>
-          )}
-        />
+              </Link>
+            )}
+          />
+        </div>
       </section>
 
+<<<<<<< HEAD
       <section className="position-relative container mt-10">
         <Image
           src={EclipseDecor3Svg}
@@ -233,6 +327,21 @@ export default function HomePage() {
           src={RectDecor2Svg}
           className={joinCls("position-absolute", style["rect-decor-2-1"])}
         />
+=======
+      <section className="position-relative container z-1 mt-10">
+        <Wiggle className={joinCls("position-absolute", style["eclipse-decor-3"])}>
+          <Image src={EclipseDecor3Svg} />
+        </Wiggle>
+        <Wiggle className={joinCls("position-absolute", style["rect-decor-2-1"])}>
+          <Image src={RectDecor1Svg} />
+        </Wiggle>
+        <Wiggle className={joinCls("position-absolute", style["rect-decor-2"])}>
+          <Image src={RectDecor2Svg} />
+        </Wiggle>
+        <Wiggle className={joinCls("position-absolute", style["dots"])}>
+          <Image src={DotsSvg} />
+        </Wiggle>
+>>>>>>> 6709fa2dd8bca2a374a930c761c6b7048e606ba5
 
         <div
           className={joinCls("position-relative rounded-4", style["join-us"])}

@@ -28,6 +28,8 @@ import nifflerImage from "./images/niffler.png";
 import nifflerSvg from "./images/niffler.svg";
 
 import style from "./style.module.css";
+import Wiggle from "../../../../components/Wiggle/Wiggle";
+import Animation from "../../../../components/Animation/Animation";
 
 const baseOrderedTeamLogoClassNames = [
   joinCls("top-50 start-100 translate-middle", style["active"]),
@@ -37,35 +39,6 @@ const baseOrderedTeamLogoClassNames = [
 ];
 
 export default function TeamsSection({ className }) {
-  const teamCardRef = useRef();
-  const [selectedTeamKey, setSelectedTeamKey] = useState(BANANA);
-  const [sparks, setSparks] = useState([]);
-
-  const handleSparkTransitionEnded = (key, event) => {
-    const container = event.target.parentElement;
-    const newSpark = generateSpark(
-      { from: 64, to: container.clientWidth - 64 },
-      { from: -462, to: -462 },
-      { from: -80, to: 20 },
-      { from: 2.4, to: 5 },
-      { from: 0, to: 360 },
-      { from: 4, to: 16 }
-    );
-
-    const sparkIndex = sparks.findIndex((spark) => spark.key === key);
-    console.log(sparkIndex);
-    setSparks([...sparks.slice(0, sparkIndex), ...sparks.slice(sparkIndex + 1), newSpark]);
-  };
-
-  useEffect(() => {
-    const container = teamCardRef.current;
-    setSparks(
-      [...Array(12)].map((item) =>
-        generateSpark({ from: 64, to: container.clientWidth - 64 }, { from: -462, to: -462 }, { from: -80, to: 20 }, { from: 1, to: 2 }, { from: 0, to: 360 }, { from: 4, to: 16 })
-      )
-    );
-  }, []);
-
   const teamMap = {
     [BANANA]: {
       image: bananaImage,
@@ -113,6 +86,34 @@ export default function TeamsSection({ className }) {
     },
   };
 
+  const teamCardRef = useRef();
+  const [selectedTeamKey, setSelectedTeamKey] = useState(Object.keys(teamMap).sort(() => Math.random() - 0.5)[0]);
+  const [sparks, setSparks] = useState([]);
+
+  const handleSparkTransitionEnded = (key, event) => {
+    const container = event.target.parentElement;
+    const newSpark = generateSpark(
+      { from: 64, to: container.clientWidth - 64 },
+      { from: -462, to: -462 },
+      { from: -80, to: 20 },
+      { from: 2.4, to: 5 },
+      { from: 0, to: 360 },
+      { from: 4, to: 16 }
+    );
+
+    const sparkIndex = sparks.findIndex((spark) => spark.key === key);
+    setSparks([...sparks.slice(0, sparkIndex), ...sparks.slice(sparkIndex + 1), newSpark]);
+  };
+
+  useEffect(() => {
+    const container = teamCardRef.current;
+    setSparks(
+      [...Array(12)].map((item) =>
+        generateSpark({ from: 64, to: container.clientWidth - 64 }, { from: -462, to: -462 }, { from: -80, to: 20 }, { from: 1, to: 2 }, { from: 0, to: 360 }, { from: 4, to: 16 })
+      )
+    );
+  }, []);
+
   const teamKeys = Object.keys(teamMap);
   const selectedTeamIndex = teamKeys.findIndex((teamKey) => teamKey === selectedTeamKey);
   const handleNextBtnClicked = () => {
@@ -153,7 +154,11 @@ export default function TeamsSection({ className }) {
       </div>
       <div className="flex-grow-1">
         <div ref={teamCardRef} className="position-relative">
-          <Image src={teamMap[selectedTeamKey].icon} className={joinCls("position-absolute", style["team-icon"])} />
+          <Animation watching={selectedTeamKey} animation={[{ name: "fadeIn" }]}>
+            <Wiggle className={joinCls("position-absolute", style["team-icon"])}>
+              <Image src={teamMap[selectedTeamKey].icon} />
+            </Wiggle>
+          </Animation>
           <div className={joinCls("position-absolute top-0 left-0 w-100 h-100 overflow-hidden", style["sparks"])}>
             <div className="position-relative w-100 h-100">
               {sparks.map(({ key, x, yStart, yEnd, size, rotateEnd, transitionTime }) => (
@@ -173,18 +178,20 @@ export default function TeamsSection({ className }) {
           </div>
 
           <div className={joinCls("position-relative rounded-4 p-5", style["team-card"])}>
-            <h1 className={joinCls("text-uppercase", style[teamMap[selectedTeamKey].className])}>{teamMap[selectedTeamKey].name}</h1>
-            <h2 className="text-uppercase">{teamMap[selectedTeamKey].slogan}</h2>
-            <p className={joinCls("mt-3", style["description"])}>“{teamMap[selectedTeamKey].description}”</p>
-            <div className="d-flex justify-content-between align-items-center">
-              <Link to={teamMap[selectedTeamKey].link}>
-                <button className="btn btn-outline-gradient rounded-pill text-uppercase px-4 mt-3">See more</button>
-              </Link>
-              <div className={joinCls("d-flex align-items-center gap-2 fw-bold cursor-pointer", style["next-btn"])} onClick={handleNextBtnClicked}>
-                <span>Next</span>
-                <i className="fa-solid fa-arrow-right" />
+            <Animation watching={selectedTeamKey} animation={[{ name: "fadeIn" }]}>
+              <h1 className={joinCls("text-uppercase", style[teamMap[selectedTeamKey].className])}>{teamMap[selectedTeamKey].name}</h1>
+              <h2 className="text-uppercase">{teamMap[selectedTeamKey].slogan}</h2>
+              <p className={joinCls("mt-3", style["description"])}>“{teamMap[selectedTeamKey].description}”</p>
+              <div className="d-flex justify-content-between align-items-center">
+                <Link to={teamMap[selectedTeamKey].link}>
+                  <button className="btn btn-outline-gradient rounded-pill text-uppercase px-4 mt-3">See more</button>
+                </Link>
+                <div className={joinCls("d-flex align-items-center gap-2 fw-bold cursor-pointer", style["next-btn"])} onClick={handleNextBtnClicked}>
+                  <span>Next</span>
+                  <i className="fa-solid fa-arrow-right" />
+                </div>
               </div>
-            </div>
+            </Animation>
           </div>
         </div>
       </div>

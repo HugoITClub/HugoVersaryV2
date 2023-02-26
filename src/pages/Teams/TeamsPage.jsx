@@ -289,6 +289,29 @@ export default function TeamsPage() {
           renderItem={(image) => <Image key={image} src={image} />}
           gutter={4}
         />
+<<<<<<< HEAD
+=======
+      </section>
+
+      <section className={joinCls("container-fluid mt-10", style["footer"])}>
+        <div className="d-flex justify-content-center align-items-center gap-5">
+          <div className={style["line-decor"]} />
+          <Image src={randomImgUrl(80, 80)} />
+          <div className={style["line-decor"]} />
+        </div>
+
+        <div className="position-relative w-100 vh-100 mt-10">
+          <Image src={randomImgUrl()} className="w-100 h-100" />
+          <div className={joinCls("position-absolute w-100 top-0", style["fade-down"])}></div>
+          <div className={joinCls("position-absolute w-100 bottom-0", style["fade-up"])}></div>
+        </div>
+      </section>
+
+      <Footer className="mt-10" />
+
+      <Modal className="modal-xl" contentClassName="bg-transparent" isShown={isShownModal} onClose={() => setIsShownModal(false)}>
+        <Masonry images={currentExploreImages} renderItem={(image) => <Image key={image} src={image} />} gutter={4} />
+>>>>>>> 6709fa2dd8bca2a374a930c761c6b7048e606ba5
       </Modal>
     </div>
   );
