@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, useEffect, useRef } from "react";
 import { Link, matchPath, NavLink, useLocation } from "react-router-dom";
 import { joinCls } from "../../utilities/text.utils";
 import Image from "../../components/Image/Image";
@@ -67,12 +67,20 @@ export const NAV_LINKS = [
 
 export default function Navigator() {
   const location = useLocation();
+  const navbarRef = useRef();
 
   const joinUsBtn = (
     <a href="https://hugoenglish.club/" target="_blank" rel="noreferrer" className="text-decoration-none">
       <button className="btn btn-gradient rounded-pill px-3">JOIN US</button>
     </a>
   );
+
+  useEffect(() => {
+    const navbar = navbarRef.current;
+    const dropDownElements = navbar.querySelectorAll(".dropdown-toggle");
+    debugger;
+    dropDownElements[0].hide();
+  }, []);
 
   return (
     <Fragment>
@@ -93,7 +101,7 @@ export default function Navigator() {
           </button>
 
           <div className="collapse navbar-collapse align-items-stretch">
-            <ul className="navbar-nav mx-auto mb-2 mb-lg-0 align-items-center">
+            <ul ref={navbarRef} className="navbar-nav mx-auto mb-2 mb-lg-0 align-items-center">
               {NAV_LINKS.map((navLink) => (
                 <li key={navLink.name} className="position-relative nav-item nav-element d-flex align-items-center h-100">
                   {navLink.children ? (
