@@ -78,9 +78,12 @@ export default function Navigator() {
   useEffect(() => {
     const navbar = navbarRef.current;
     const dropDownElements = navbar.querySelectorAll(".dropdown-toggle");
-    debugger;
-    dropDownElements[0].hide();
-  }, []);
+
+    dropDownElements.forEach((dropDownElement) => {
+      const dropDown = window.bootstrap.Dropdown.getOrCreateInstance(dropDownElement);
+      dropDown.hide();
+    });
+  }, [location.pathname]);
 
   return (
     <Fragment>
