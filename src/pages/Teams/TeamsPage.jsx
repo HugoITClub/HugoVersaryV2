@@ -92,6 +92,11 @@ export default function TeamsPage() {
     },
   ];
 
+  const handleButtonDown = () => {
+    const teamInfo = document.querySelector("#explore");
+    teamInfo.scrollIntoView();
+  };
+
   const [isShownModal, setIsShownModal] = useState(false);
   const [currentExploreImages, setCurrentExploreImages] = useState([]);
 
@@ -136,12 +141,16 @@ export default function TeamsPage() {
                     "btn d-flex justify-content-center align-items-center rounded-circle",
                     style["icon"]
                   )}
+                  onClick={handleButtonDown}
                 >
                   <span className="fa-solid fa-xl fa-chevron-down"></span>
                 </button>
               </div>
             </section>
-            <section className={joinCls("container", style["explore"])}>
+            <section
+              id="explore"
+              className={joinCls("container", style["explore"])}
+            >
               <h1 className="text-white text-center f-montserrat fw-semibold mt-10">
                 Explore <span className="text-primary">{teamName}</span>
               </h1>

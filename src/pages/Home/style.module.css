@@ -62,6 +62,7 @@
   opacity: 0;
   transition: 0.4s ease-out;
   -webkit-line-clamp: 3;
+  line-height: 18px;
 }
 
 .activity-item:hover .card-sub-text {

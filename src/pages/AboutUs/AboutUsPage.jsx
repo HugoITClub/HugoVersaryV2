@@ -47,7 +47,7 @@ export default function AboutUsPage() {
               </div>
             </div>
           </div>
-          <img src={imgUrl} className="w-100"></img>
+          <img alt="" src={imgUrl} className="w-100"></img>
         </div>
       ))}
       <div id="staff-area" className="mt-5">
@@ -86,7 +86,12 @@ export default function AboutUsPage() {
                 <img
                   src={imageUrl}
                   alt=""
-                  style={{ objectFit: "cover", width: "100%", height: "65%" }}
+                  style={{
+                    objectFit: "cover",
+                    width: "100%",
+                    height: "65%",
+                    borderRadius: "10px",
+                  }}
                 />
                 <p className={joinCls("mb-0 f-montserrat", style["mem-name"])}>
                   {name}
