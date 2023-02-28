@@ -6,7 +6,13 @@ import HugoLogoSvg from "./images/hugo-logo-full.svg";
 import Title from "./Title";
 import style from "./style.module.css";
 import { HOME_PAGE_PATH } from "../../pages/Home/constants";
-import { BANANA_TEAM_PAGE_PATH, HEROES_COMPANY_TEAM_PAGE_PATH, NIFFLER_TEAM_PAGE_PATH, POWER_RANGERS_TEAM_PAGE_PATH, TEAMS_PAGE_PATH } from "../../pages/Teams/constants";
+import {
+  BANANA_TEAM_PAGE_PATH,
+  HEROES_COMPANY_TEAM_PAGE_PATH,
+  NIFFLER_TEAM_PAGE_PATH,
+  POWER_RANGERS_TEAM_PAGE_PATH,
+  TEAMS_PAGE_PATH,
+} from "../../pages/Teams/constants";
 import { BLOGS_PAGE_PATH } from "../../pages/Blogs/constants";
 import { ABOUT_US_PAGE_PATH } from "../../pages/AboutUs/constants";
 import { MEETINGS_ACTIVITY_PAGE_PATH } from "../../pages/Activities/Meetings/constants";
@@ -70,7 +76,12 @@ export default function Navigator() {
   const navbarRef = useRef();
 
   const joinUsBtn = (
-    <a href="https://hugoenglish.club/" target="_blank" rel="noreferrer" className="text-decoration-none">
+    <a
+      href="https://forms.gle/P3a5dJzUpWxstcKt8"
+      target="_blank"
+      rel="noreferrer"
+      className="text-decoration-none"
+    >
       <button className="btn btn-gradient rounded-pill px-3">JOIN US</button>
     </a>
   );
@@ -80,7 +91,8 @@ export default function Navigator() {
     const dropDownElements = navbar.querySelectorAll(".dropdown-toggle");
 
     dropDownElements.forEach((dropDownElement) => {
-      const dropDown = window.bootstrap.Dropdown.getOrCreateInstance(dropDownElement);
+      const dropDown =
+        window.bootstrap.Dropdown.getOrCreateInstance(dropDownElement);
       dropDown.hide();
     });
   }, [location.pathname]);
@@ -89,7 +101,12 @@ export default function Navigator() {
     <Fragment>
       <Title />
 
-      <nav className={joinCls("navbar navbar-expand-lg bg-dark navbar-dark p-0", style["navbar"])}>
+      <nav
+        className={joinCls(
+          "navbar navbar-expand-lg bg-dark navbar-dark p-0",
+          style["navbar"]
+        )}
+      >
         <div className="container align-items-stretch">
           <Link to={HOME_PAGE_PATH} className="navbar-brand">
             <Image src={HugoLogoSvg} width={216} className="py-2" />
@@ -99,14 +116,25 @@ export default function Navigator() {
             <div className="col-auto">{joinUsBtn}</div>
           </div>
 
-          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse">
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target=".navbar-collapse"
+          >
             <span className="navbar-toggler-icon"></span>
           </button>
 
           <div className="collapse navbar-collapse align-items-stretch">
-            <ul ref={navbarRef} className="navbar-nav mx-auto mb-2 mb-lg-0 align-items-center">
+            <ul
+              ref={navbarRef}
+              className="navbar-nav mx-auto mb-2 mb-lg-0 align-items-center"
+            >
               {NAV_LINKS.map((navLink) => (
-                <li key={navLink.name} className="position-relative nav-item nav-element d-flex align-items-center h-100">
+                <li
+                  key={navLink.name}
+                  className="position-relative nav-item nav-element d-flex align-items-center h-100"
+                >
                   {navLink.children ? (
                     <>
                       <div
@@ -123,7 +151,11 @@ export default function Navigator() {
                       <div className="dropdown-menu rounded-0 p-0">
                         <ul className="list-group list-group-flush">
                           {navLink.children.map((subNavLink) => (
-                            <NavLink to={subNavLink.path} key={subNavLink.name} className="list-group-item dropdown-item">
+                            <NavLink
+                              to={subNavLink.path}
+                              key={subNavLink.name}
+                              className="list-group-item dropdown-item"
+                            >
                               {subNavLink.name}
                             </NavLink>
                           ))}
@@ -131,7 +163,14 @@ export default function Navigator() {
                       </div>
                     </>
                   ) : (
-                    <NavLink to={navLink.path} end={navLink.end} className={joinCls("nav-link text-white h-100 d-flex align-items-center px-3", style["nav-link"])}>
+                    <NavLink
+                      to={navLink.path}
+                      end={navLink.end}
+                      className={joinCls(
+                        "nav-link text-white h-100 d-flex align-items-center px-3",
+                        style["nav-link"]
+                      )}
+                    >
                       <div>{navLink.name}</div>
                     </NavLink>
                   )}

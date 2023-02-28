@@ -62,19 +62,13 @@ export default function HomePage() {
   } = useSheetAPI("SliderHomePage", "H", "I", { earlyTake: 4 });
 
   const [isShownHugoVideo, setIsShownHugoVideo] = useState(false);
-  console.log(sliderHomePageData);
   return (
     <div className="bg-light overflow-hidden">
       <Carousel
         id="HeaderCarousel"
-        images={images}
+        images={sliderHomePageData.map((item) => [item[1]])}
         className={style.carousel}
       />
-      {/* <Carousel
-        id={activitiesData.map((item) => [item[0]])}
-        images={activitiesData.map((item) => [item[1]])}
-        className={style.carousel}
-      /> */}
       <section className="position-relative mt-5">
         <Image
           src={EclipseDecor1Svg}
@@ -346,9 +340,13 @@ export default function HomePage() {
               <br />
               More than an English Club, let’s join us to know what's behind it!
             </p>
-            <button className="btn btn-lg btn-outline-gradient rounded-pill text-uppercase px-5 py-3 mt-4">
+            <Link
+              target="_blank"
+              to="https://forms.gle/P3a5dJzUpWxstcKt8"
+              className="btn btn-lg btn-outline-gradient rounded-pill text-uppercase px-5 py-3 mt-4"
+            >
               Join us right now
-            </button>
+            </Link>
           </div>
         </div>
       </section>
