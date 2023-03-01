@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { ABOUT_US_PAGE_PATH } from "../../pages/AboutUs/constants";
+import { PROJECT_TEAM_PAGE_PATH } from "../../pages/ProjectTeam/constants";
 import { changeLocale } from "../../services/language/actions";
 import { EN_LOCALE, VI_LOCALE } from "../../services/language/constants";
 import { joinCls } from "../../utilities/text.utils";
@@ -142,7 +143,10 @@ export default function Footer({ theme = LIGHT_THEME, className, ...props }) {
                 >
                   Our Staffs
                 </Link>
-                <Link to="#" className="text-reset text-decoration-none mb-2">
+                <Link
+                  to={PROJECT_TEAM_PAGE_PATH}
+                  className="text-reset text-decoration-none mb-2"
+                >
                   HUGOVERSARY Team
                 </Link>
               </div>
