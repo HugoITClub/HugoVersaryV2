@@ -28,6 +28,7 @@ import useSheetAPI from "../../services/google/hooks/useSheetAPI";
 
 import style from "./style.module.css";
 import Wiggle from "../../components/Wiggle/Wiggle";
+import logoHugo from "../../global/Images/logoHugo.png";
 
 export default function HomePage() {
   const images = [
@@ -63,7 +64,7 @@ export default function HomePage() {
 
   const [isShownHugoVideo, setIsShownHugoVideo] = useState(false);
   return (
-    <div className="bg-light overflow-hidden">
+    <div className="bg-light overflow-hidden position-relative">
       <Carousel
         id="HeaderCarousel"
         images={sliderHomePageData.map((item) => [item[1]])}
