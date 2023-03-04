@@ -3,8 +3,17 @@ import useSheetAPI from "../../../services/google/hooks/useSheetAPI.js";
 import { joinCls, randomImgUrl } from "../../../utilities/text.utils.js";
 import Image from "../../../components/Image/Image";
 import Footer from "../../../components/Footer/Footer";
+import bananaSvg from "../../Home/components/TeamsSection/images/banana.svg";
+import heroesCompanySvg from "../../Home/components/TeamsSection/images/heroes-company.svg";
+import powerRangerSvg from "../../Home/components/TeamsSection/images/power-rangers.svg";
+import nifflerSvg from "../../Home/components/TeamsSection/images/niffler.svg";
+import DotsSvg from "../../Home/images/dots.svg";
+import RectDecor3Svg from "../../Home/images/rect-decor-3.svg";
+import EclipseDecor3Svg from "../../Home/images/eclipse-decor-3.svg";
+import logoHugo from "../Images/logoHugo.png";
 
 import style from "./style.module.css";
+import Wiggle from "../../../components/Wiggle/Wiggle";
 
 function EventsPage() {
   const {
@@ -20,7 +29,7 @@ function EventsPage() {
     getMore: getMoreImg,
   } = useSheetAPI("Event", "Q", "R", { earlyTake: 8 });
   return (
-    <div>
+    <div className="overflow-hidden">
       <div className="event">
         {mainImg.map(([id, imgUrl]) => (
           <div key={id} className={style["header-pic"]}>
@@ -40,8 +49,37 @@ function EventsPage() {
         <h1 className="display-5 f-montserrat fw-bolder text-center text-gradient text-uppercase my-5">
           events
         </h1>
-        <div id="event" className="container">
-          <div className="row g-5 g-md-3 g-lg-5">
+        <div
+          id="event"
+          className={joinCls("container position-relative", style["event"])}
+        >
+          <div
+            className={joinCls(
+              "position-absolute h-100 w-100",
+              style["event-bg"]
+            )}
+          >
+            <Image src={logoHugo} className="position-fixed h-100" />
+          </div>
+          <Wiggle className={joinCls("position-absolute", style["dots"])}>
+            <Image src={DotsSvg} />
+          </Wiggle>
+          <Wiggle
+            className={joinCls("position-absolute", style["rect-decor-3"])}
+          >
+            <Image src={RectDecor3Svg} />
+          </Wiggle>
+          <Wiggle
+            className={joinCls("position-absolute", style["eclipse-decor-3"])}
+          >
+            <Image src={EclipseDecor3Svg} />
+          </Wiggle>
+          <div
+            className={joinCls(
+              "row g-5 g-md-3 g-lg-5 position-relative",
+              style["event-content"]
+            )}
+          >
             {events.map(
               ([id, title, description, date, imgUrl, contentUrl]) => (
                 <div className="col-lg-6 col-md-6 col-12">
@@ -61,7 +99,7 @@ function EventsPage() {
                       <div className="col-6">
                         <div
                           className={joinCls(
-                            "text-ellipsis f-montserrat fw-bold text-black",
+                            "text-ellipsis f-montserrat fw-bold",
                             style["post-title"]
                           )}
                         >
@@ -146,7 +184,7 @@ function EventsPage() {
               <div className="col-auto">
                 <button
                   className={joinCls(
-                    "btn btn-lg btn-outline-gradient rounded-pill",
+                    "btn btn-lg btn-outline-gradient rounded-pill position-relative",
                     style["see-more-btn"]
                   )}
                   onClick={() => getMoreEvent(8)}
@@ -158,7 +196,7 @@ function EventsPage() {
           )}
         </div>
       </div>
-      <Footer className="mt-10" />
+      <Footer className="mt-10 bg-light" />
     </div>
   );
 }

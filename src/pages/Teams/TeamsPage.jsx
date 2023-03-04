@@ -288,6 +288,8 @@ export default function TeamsPage() {
         )
       )}
 
+      <Footer theme="dark" className="mt-10" />
+
       <Modal
         className="modal-xl"
         contentClassName="bg-transparent"
