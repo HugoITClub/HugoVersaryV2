@@ -1,26 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
 
 /* Config `rem` */
 html {
-  font-size: 14px;
+	font-size: 14px;
 }
 
 /* Modify Bootstrap */
 :root {
-  --bs-body-font-family: "Lato", var(--bs-font-sans-serif);
-  --bs-body-text-align: justify;
+	--bs-body-font-family: "Lato", var(--bs-font-sans-serif);
+	--bs-body-text-align: justify;
 }
 
-:root, [data-bs-theme="light"] {
-  --bs-body-bg: var(--bs-light);
-  --bs-body-bg-rgb: var(--bs-light-rgb);
-  --bs-primary: #FF6D1B;
-  --bs-primary-rgb: 255, 109, 27;
-  --bs-secondary: #FC6373;
-  --bs-secondary-rgb: 252, 99, 115;
-  --bs-gradient: linear-gradient(90deg, #FC6373, #FE9548);
+:root,
+[data-bs-theme="light"] {
+	--bs-body-bg: var(--bs-light);
+	--bs-body-bg-rgb: var(--bs-light-rgb);
+	--bs-primary: #ff6d1b;
+	--bs-primary-rgb: 255, 109, 27;
+	--bs-secondary: #fc6373;
+	--bs-secondary-rgb: 252, 99, 115;
+	--bs-gradient: linear-gradient(90deg, #fc6373, #fe9548);
 }
 
-
-
+img {
+	object-fit: cover;
+}

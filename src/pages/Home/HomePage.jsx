@@ -50,7 +50,12 @@ export default function HomePage() {
 		<div className="position-relative bg-light overflow-hidden">
 			<div className={joinCls("position-absolute", style["circle-gradient-1"])} />
 
-			<Carousel id="HeaderCarousel" images={sliderHomePageData.map((item) => [item[1]])} className={joinCls("position-relative", style["carousel"])} />
+			<Carousel id="HeaderCarousel" className={joinCls("position-relative", style["carousel"])}>
+				{sliderHomePageData.map((item) => (
+					<Image key={item[1]} src={item[1]} className="w-100 h-100" />
+				))}
+			</Carousel>
+
 			<section className="position-relative mt-5">
 				<Image src={EclipseDecor1Svg} className={joinCls("position-absolute", style["eclipse-decor-1"])} />
 				<Image src={EclipseDecor2Svg} className={joinCls("position-absolute", style["eclipse-decor-2"])} />

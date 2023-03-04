@@ -130,7 +130,7 @@ export default function Footer({ theme = LIGHT_THEME, className, ...props }) {
 										<i className="fa-brands fa-youtube"></i>
 									</a>
 									<a target="_blank" href="https://www.instagram.com/hugoenglishclub/" className={joinCls("col-2 text-decoration-none fs-3 text-gradient", style["contact-icon"])}>
-										<i class="fa-brands fa-instagram"></i>
+										<i className="fa-brands fa-instagram"></i>
 									</a>
 								</div>
 							</div>
