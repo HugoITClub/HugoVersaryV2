@@ -136,16 +136,29 @@ export default function Footer({ theme = LIGHT_THEME, className, ...props }) {
             </div>
             <div className="col-3">
               <div className="d-flex flex-column">
-                <h3 className="text-uppercase mt-3 mb-4">About Us</h3>
+                <h3
+                  className={joinCls(
+                    "text-uppercase mt-3 mb-4",
+                    themeContent[theme].titleColor
+                  )}
+                >
+                  About Us
+                </h3>
                 <Link
                   to={ABOUT_US_PAGE_PATH}
-                  className="text-reset text-decoration-none mb-2"
+                  className={joinCls(
+                    "text-decoration-none mb-2",
+                    themeContent[theme].textColor
+                  )}
                 >
                   Our Staffs
                 </Link>
                 <Link
                   to={PROJECT_TEAM_PAGE_PATH}
-                  className="text-reset text-decoration-none mb-2"
+                  className={joinCls(
+                    "text-decoration-none mb-2",
+                    themeContent[theme].textColor
+                  )}
                 >
                   HUGOVERSARY Team
                 </Link>
@@ -267,7 +280,7 @@ export default function Footer({ theme = LIGHT_THEME, className, ...props }) {
               <p
                 className={joinCls("opacity-25", themeContent[theme].textColor)}
               >
-                Copyright © 2022 HUGOENGLISHCLUB
+                Copyright © 2022 HUGO ENGLISH CLUB
               </p>
             </div>
           </div>
