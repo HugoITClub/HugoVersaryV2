@@ -6,7 +6,7 @@ import Footer from "../../../components/Footer/Footer";
 import DotsSvg from "../../Home/images/dots.svg";
 import RectDecor3Svg from "../../Home/images/rect-decor-3.svg";
 import EclipseDecor3Svg from "../../Home/images/eclipse-decor-3.svg";
-import logoHugo from "../Images/logoHugo.png";
+import logoHugo from "../../../global/Images/logoHugo.png";
 
 import style from "./style.module.css";
 import Wiggle from "../../../components/Wiggle/Wiggle";
@@ -26,7 +26,7 @@ export default function MeetingsPage() {
     getMore: getMoreImg,
   } = useSheetAPI("Meeting", "Q", "R", { earlyTake: 1 });
   return (
-    <div>
+    <div className="overflow-hidden">
       <div className="meeting">
         {mainImg.map(([id, imgUrl]) => (
           <div key={id} className={style["header-pic"]}>
@@ -53,7 +53,7 @@ export default function MeetingsPage() {
               style["meeting-bg"]
             )}
           >
-            <Image src={logoHugo} className="position-fixed h-100" />
+            <Image src={logoHugo} className="position-fixed" />
           </div>
           <Wiggle className={joinCls("position-absolute", style["dots"])}>
             <Image src={DotsSvg} />
@@ -178,7 +178,7 @@ export default function MeetingsPage() {
               <div className="col-auto">
                 <button
                   className={joinCls(
-                    "btn btn-lg btn-outline-gradient rounded-pill  position-relative",
+                    "btn btn-lg btn-outline-gradient rounded-pill position-relative",
                     style["see-more-btn"]
                   )}
                   onClick={() => getMoreMeeting(8)}

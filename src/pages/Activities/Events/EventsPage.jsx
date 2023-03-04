@@ -10,7 +10,7 @@ import nifflerSvg from "../../Home/components/TeamsSection/images/niffler.svg";
 import DotsSvg from "../../Home/images/dots.svg";
 import RectDecor3Svg from "../../Home/images/rect-decor-3.svg";
 import EclipseDecor3Svg from "../../Home/images/eclipse-decor-3.svg";
-import logoHugo from "../Images/logoHugo.png";
+import logoHugo from "../../../global/Images/logoHugo.png";
 
 import style from "./style.module.css";
 import Wiggle from "../../../components/Wiggle/Wiggle";
@@ -59,7 +59,7 @@ function EventsPage() {
               style["event-bg"]
             )}
           >
-            <Image src={logoHugo} className="position-fixed h-100" />
+            <Image src={logoHugo} className="position-fixed" />
           </div>
           <Wiggle className={joinCls("position-absolute", style["dots"])}>
             <Image src={DotsSvg} />

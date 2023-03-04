@@ -1,6 +1,8 @@
 import useSheetAPI from "../../services/google/hooks/useSheetAPI.js";
 import { joinCls, randomImgUrl } from "../../utilities/text.utils.js";
 import Footer from "../../components/Footer/Footer";
+import logoHugo from "../../global/Images/logoHugo.png";
+import Image from "../../components/Image/Image.jsx";
 
 import style from "./style.module.css";
 export default function AboutUsPage() {
@@ -19,6 +21,14 @@ export default function AboutUsPage() {
   });
   return (
     <div>
+      <div
+        className={joinCls(
+          "position-absolute h-100 w-100",
+          style["about-us-bg"]
+        )}
+      >
+        <Image src={logoHugo} className="position-fixed" />
+      </div>
       {introductionContent.map(([introduction, imgUrl]) => (
         <div>
           <div className="container">
@@ -96,15 +106,29 @@ export default function AboutUsPage() {
                 <p className={joinCls("mb-0 f-montserrat", style["mem-name"])}>
                   {name}
                 </p>
-                <p className={joinCls("f-montserrat", style["mem-title"])}>
+                <p
+                  className={joinCls(
+                    "f-montserrat text-uppercase",
+                    style["mem-title"]
+                  )}
+                >
                   {title}
+                </p>
+                <p
+                  className={joinCls(
+                    "f-montserrat text-italic",
+                    style["mem-motto"]
+                  )}
+                >
+                  “Always smile as if you inhaled N2O, fly high like H2,
+                  sublimate like I2, strong-willed like N2 and gentle like H2O.”
                 </p>
               </div>
             ))}
           </div>
         </div>
       </div>
-      <Footer className="mt-10" />
+      <Footer className="mt-10 bg-light" />
     </div>
   );
 }

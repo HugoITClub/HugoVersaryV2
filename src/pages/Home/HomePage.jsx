@@ -28,6 +28,7 @@ import useSheetAPI from "../../services/google/hooks/useSheetAPI";
 
 import style from "./style.module.css";
 import Wiggle from "../../components/Wiggle/Wiggle";
+import logoHugo from "../../global/Images/logoHugo.png";
 
 export default function HomePage() {
 	const images = [randomImgUrl(), randomImgUrl(), randomImgUrl(), randomImgUrl(), randomImgUrl(), randomImgUrl()];
@@ -158,10 +159,10 @@ export default function HomePage() {
 						renderItem={([id, title, description, time, imageUrl, contentFileId]) => (
 							<Link key={id} to={contentFileId} className={joinCls("card text-reset text-decoration-none rounded-3 overflow-hidden", style["blog-item"])}>
 								<Image src={imageUrl} className="card-img-top" />
-								<div className="card-body position-relative">
+								<div className="card-body d-flex flex-column position-relative">
 									<small className="d-block text-secondary text-uppercase">{time}</small>
 									<h5 className={joinCls("text-ellipsis text-start", style["blog-item-title"])}>{title}</h5>
-									<p className={joinCls("text-ellipsis text-start mb-4", style["blog-item-description"])}>{description}</p>
+									<p className={joinCls("text-ellipsis text-start flex-grow-1 mb-4", style["blog-item-description"])}>{description}</p>
 									<div className={joinCls("d-flex align-items-center gap-2", style["read-more"])}>
 										<h6 className="mb-0">Read more</h6>
 										<i className="fa-solid fa-arrow-right" />

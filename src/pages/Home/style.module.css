@@ -103,11 +103,6 @@
 	color: var(--bs-primary);
 }
 
-.blog-item .read-more {
-	position: absolute;
-	bottom: 3%;
-}
-
 .blog-item-title {
 	-webkit-line-clamp: 2;
 	max-height: 92px;
