@@ -1,141 +1,166 @@
 .wheel {
-  flex-shrink: 0;
-  width: 32rem;
-  height: 32rem;
-  padding: 7rem;
+	flex-shrink: 0;
+	width: 32rem;
+	height: 32rem;
+	padding: 7rem;
 }
 
 .wheel img {
-  width: 8rem;
-  height: 8rem;
-  transition: 0.4s ease-out;
+	width: 8rem;
+	height: 8rem;
+	transition: 0.4s ease-out;
 }
 
 .wheel img.active {
-  width: 14rem;
-  height: 14rem;
+	width: 14rem;
+	height: 14rem;
 }
 
 .wheel img.banana:hover,
 .wheel img.banana.active {
-  box-shadow: 0px 0px 64px #ffcc006a;
+	box-shadow: 0px 0px 64px #ffcc006a;
 }
 
 .wheel img.heroes-company:hover,
 .wheel img.heroes-company.active {
-  box-shadow: 0px 0px 64px #507ff16a;
+	box-shadow: 0px 0px 64px #507ff16a;
 }
 
 .wheel img.power-rangers:hover,
 .wheel img.power-rangers.active {
-  box-shadow: 0px 0px 64px #ea4a466a;
+	box-shadow: 0px 0px 64px #ea4a466a;
 }
 
 .wheel img.niffler:hover,
 .wheel img.niffler.active {
-  box-shadow: 0px 0px 64px #c133d76a;
+	box-shadow: 0px 0px 64px #c133d76a;
 }
 
 .team-card {
-  background: #eeeeee33;
-  box-shadow: 0 0 1rem #0000001a;
+	background: rgba(255, 255, 255, 62%);
+	box-shadow: 0 0 1rem #0000001a;
 }
 
 .team-card h1 {
-  color: transparent;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-size: 3.4rem;
+	color: transparent;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	font-size: 3.4rem;
 }
 
 .team-card h2 {
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-  font-size: 2.4rem;
-  font-weight: 600;
-  color: #ffffff;
+	text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+	font-size: 2.4rem;
+	font-weight: 600;
+	color: #ffffff;
 }
 
 .team-card p {
-  font-style: italic;
+	font-style: italic;
 }
 
 .team-card h1.banana {
-  background: linear-gradient(180deg, #ffcc00, #ffff66);
-  background-clip: text;
+	background: linear-gradient(180deg, #ffcc00, #ffff66);
+	background-clip: text;
 }
 
 .team-card h1.heroes-company {
-  background: linear-gradient(180deg, #0750de 0%, #3c96ff 100%);
-  background-clip: text;
+	background: linear-gradient(180deg, #0750de 0%, #3c96ff 100%);
+	background-clip: text;
 }
 
 .team-card h1.power-rangers {
-  background: linear-gradient(to bottom, #ff0000, #ff6666);
-  background-clip: text;
+	background: linear-gradient(to bottom, #ff0000, #ff6666);
+	background-clip: text;
 }
 
 .team-card h1.niffler {
-  background: linear-gradient(180deg, #7107db 0%, #df1bff 100%);
-  background-clip: text;
+	background: linear-gradient(180deg, #7107db 0%, #df1bff 100%);
+	background-clip: text;
 }
 
 .team-card .description {
-  font-family: "Crimson Pro", var(--bs-font-sans-serif);
-  font-style: italic;
-  font-weight: 400;
-  font-size: 1.4rem;
-  line-height: 120%;
+	font-family: "Crimson Pro", var(--bs-font-sans-serif);
+	font-style: italic;
+	font-weight: 400;
+	font-size: 1.4rem;
+	line-height: 120%;
 }
 
 .team-card .next-btn {
-  color: var(--bs-dark);
-  transition: 0.2s ease-out;
+	color: var(--bs-dark);
+	transition: 0.2s ease-out;
 }
 
 .team-card .next-btn:hover {
-  color: var(--bs-primary);
+	color: var(--bs-primary);
 }
 
 .team-card .next-btn i {
-  transition: 0.2s ease-out;
+	transition: 0.2s ease-out;
 }
 
 .team-card .next-btn:hover i {
-  color: var(--bs-primary);
-  transform: translateX(0.5rem);
+	color: var(--bs-primary);
+	transform: translateX(0.5rem);
 }
 
 .sparks {
-  backdrop-filter: blur(4px);
+	backdrop-filter: blur(4px);
 }
 
 .sparks .spark-banana-before {
-  opacity: 0.6;
-  border-style: solid;
-  border-width: 4px;
-  border-color: #ffcc00;
+	opacity: 0.6;
+	border-style: solid;
+	border-width: 4px;
+	border-color: #ffcc00;
 }
 
 .sparks .spark-banana-after {
-  opacity: 0.2;
-  border-style: solid;
-  border-width: 1px;
-  border-color: #ffcc00;
+	opacity: 0.2;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #ffcc00;
 }
 
 .team-icon {
-  top: -8rem;
-  right: -3rem;
-  opacity: 0.8;
+	top: -8rem;
+	right: -3rem;
+	opacity: 0.8;
 }
 
 .team-icon img {
-  width: auto;
-  height: 12rem;
+	width: auto;
+	height: 12rem;
 }
 
 .circle-decor-orange {
-  background: linear-gradient(180deg, rgba(255, 92, 0, 0.6) 0%, rgba(254, 189, 63, 0.6) 100%);
-  width: 9rem;
-  height: 9rem;
+	background: linear-gradient(180deg, rgba(255, 92, 0, 0.6) 0%, rgba(254, 189, 63, 0.6) 100%);
+	width: 9rem;
+	height: 9rem;
+}
+
+.circle-gradient {
+	top: 0rem;
+	right: -32vw;
+	width: 84vw;
+	height: 84vw;
+	border-radius: 50%;
+	opacity: 8%;
+}
+
+.circle-gradient.banana {
+	background: radial-gradient(#ffcc00 0%, var(--bs-light) 70%);
+}
+
+.circle-gradient.heroes-company {
+	background: radial-gradient(#0750de 0%, var(--bs-light) 70%);
+}
+
+.circle-gradient.power-rangers {
+	background: radial-gradient(#ff0000 0%, var(--bs-light) 70%);
+}
+
+.circle-gradient.niffler {
+	background: radial-gradient(#7107db 0%, var(--bs-light) 70%);
 }

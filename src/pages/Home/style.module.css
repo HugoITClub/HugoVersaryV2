@@ -1,205 +1,217 @@
 @import url("https://fonts.googleapis.com/css2?family=Crimson+Pro:ital@1&display=swap");
 
 .carousel :global(.carousel-item) {
-  height: 90vh;
+	height: 90vh;
 }
 
 .description {
-  font-size: 1.2rem;
-  letter-spacing: 0.01rem;
+	font-size: 1.2rem;
+	letter-spacing: 0.01rem;
 }
 
 .yt-play {
-  cursor: pointer;
+	cursor: pointer;
 }
 
 .yt-play .yt-play-btn {
-  width: 5rem;
-  height: 5rem;
-  transition: 0.4s ease-out;
+	width: 5rem;
+	height: 5rem;
+	transition: 0.4s ease-out;
 }
 
 .yt-play:hover .yt-play-btn {
-  backdrop-filter: blur(4px);
+	backdrop-filter: blur(4px);
 }
 
 .eclipse-decor-1 {
-  top: 100%;
-  transform: translateX(-50%);
+	top: 100%;
+	transform: translateX(-50%);
 }
 
 .eclipse-decor-2 {
-  top: 100%;
-  transform: translate(3rem, -3rem);
+	top: 100%;
+	transform: translate(3rem, -3rem);
 }
 
 .rocket {
-  top: 0%;
-  left: 4rem;
-  width: 16rem;
+	top: 0%;
+	left: 4rem;
+	width: 16rem;
 }
 
 .activity-item {
-  flex-shrink: 0;
-  flex-basis: 30%;
+	flex-shrink: 0;
+	flex-basis: 30%;
+	box-shadow: 0px 0px 64px #ffffff32;
 }
 
 .activity-item :global(.card-img-overlay) {
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0)) 50%;
+	background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0)) 50%;
 }
 
 .activity-item :global(.card-img) {
-  transition: 0.4s ease-out;
-  height: 248px;
+	transition: 0.4s ease-out;
+	height: 248px;
 }
 
 .activity-item:hover :global(.card-img) {
-  transform: scale(120%);
-  opacity: 0.6;
+	transform: scale(120%);
+	opacity: 0.6;
 }
 
 .card-sub-text {
-  opacity: 0;
-  transition: 0.4s ease-out;
-  -webkit-line-clamp: 3;
-  line-height: 18px;
+	opacity: 0;
+	transition: 0.4s ease-out;
+	-webkit-line-clamp: 3;
+	line-height: 18px;
 }
 
 .activity-item:hover .card-sub-text {
-  opacity: 1;
+	opacity: 1;
 }
 
 .card-header {
-  bottom: 0%;
-  transition: 0.4s ease-out;
+	bottom: 0%;
+	transition: 0.4s ease-out;
 }
 
 .activity-item:hover .card-header {
-  bottom: 100%;
+	bottom: 100%;
 }
 
 .blog-item {
-  flex-shrink: 0;
-  flex-basis: 25%;
-  transition: 0.4s ease-out;
+	flex-shrink: 0;
+	flex-basis: 25%;
+	transition: 0.4s ease-out;
 }
 
 .blog-item:hover {
-  --bs-card-border-color: var(--bs-primary);
+	--bs-card-border-color: var(--bs-primary);
 }
 
 .blog-item img {
-  height: 12rem;
+	height: 12rem;
 }
 
 .blog-item h5,
 .blog-item .read-more {
-  transition: 0.2s ease-out;
+	transition: 0.2s ease-out;
 }
 
 .blog-item:hover h5,
 .blog-item:hover .read-more {
-  color: var(--bs-primary);
+	color: var(--bs-primary);
 }
 
 .blog-item .read-more {
-  position: absolute;
-  bottom: 3%;
+	position: absolute;
+	bottom: 3%;
 }
 
 .blog-item-title {
-  -webkit-line-clamp: 2;
-  max-height: 92px;
-  min-height: 36px;
+	-webkit-line-clamp: 2;
+	max-height: 92px;
+	min-height: 36px;
 }
 
 .blog-item-description {
-  -webkit-line-clamp: 3;
-  max-height: 92px;
+	-webkit-line-clamp: 3;
+	max-height: 92px;
 }
 
 .join-us {
-  padding: 56px 0;
-  border: 2px solid var(--bs-primary);
-  backdrop-filter: blur(8px);
-  background-color: rgba(var(--bs-white-rgb), 0.5);
+	padding: 56px 0;
+	border: 2px solid var(--bs-primary);
+	backdrop-filter: blur(8px);
+	background-color: rgba(var(--bs-white-rgb), 0.5);
 }
 
 .join-us h1 {
-  line-height: 132%;
-  font-size: 3rem;
+	line-height: 132%;
+	font-size: 3rem;
 }
 
 .join-us p {
-  font-size: 1.6rem;
-  font-weight: 300;
+	font-size: 1.6rem;
+	font-weight: 300;
 }
 
 .join-us img {
-  opacity: 4%;
-  filter: screen;
+	opacity: 4%;
+	filter: screen;
 }
 
 .eclipse-decor-3 {
-  top: 0;
-  left: 0;
-  transform: translate(-50%, -32%);
+	top: 0;
+	left: 0;
+	transform: translate(-50%, -32%);
 }
 
 .rect-decor-2 {
-  bottom: 0;
-  right: 0;
-  transform: translate(50%, 64%);
-  width: 12rem;
-  height: 12rem;
+	bottom: 0;
+	right: 0;
+	transform: translate(50%, 64%);
+	width: 12rem;
+	height: 12rem;
 }
 
 .rect-decor-2-1 {
-  bottom: 4rem;
-  right: -8rem;
-  transform: rotate(60deg);
-  width: 4rem;
-  height: 4rem;
+	bottom: 4rem;
+	right: -8rem;
+	transform: rotate(60deg);
+	width: 4rem;
+	height: 4rem;
 }
 
 .shooting-stars {
-  top: -10rem;
-  left: 2rem;
-  width: 12rem;
-  height: auto;
+	top: -10rem;
+	left: 2rem;
+	width: 12rem;
+	height: auto;
 }
 
 .puzzle {
-  top: -4rem;
-  right: 6rem;
-  width: 8rem;
-  height: auto;
+	top: -4rem;
+	right: 6rem;
+	width: 8rem;
+	height: auto;
 }
 
 .eclipse-decor-4 {
-  top: -6rem;
-  left: -12rem;
-  width: 32rem;
-  height: auto;
+	top: -6rem;
+	left: -12rem;
+	width: 32rem;
+	height: auto;
 }
 
 .note {
-  top: 2rem;
-  left: 6rem;
-  width: 8rem;
-  height: auto;
+	top: 2rem;
+	left: 6rem;
+	width: 8rem;
+	height: auto;
 }
 
 .rect-decor-3 {
-  top: -8rem;
-  right: -4rem;
-  width: 16rem;
-  height: auto;
+	top: -8rem;
+	right: -4rem;
+	width: 16rem;
+	height: auto;
 }
 
 .dots {
-  top: -4rem;
-  right: -10rem;
-  width: 16rem;
-  height: auto;
+	top: -4rem;
+	right: -10rem;
+	width: 16rem;
+	height: auto;
+}
+
+.circle-gradient-1 {
+	top: 36vh;
+	left: -32vw;
+	width: 54vw;
+	height: 54vw;
+	border-radius: 50%;
+	background: var(--bs-primary);
+	filter: blur(24rem);
+	opacity: 24%;
 }
