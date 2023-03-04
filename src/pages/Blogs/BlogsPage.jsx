@@ -6,8 +6,17 @@ import Image from "../../components/Image/Image";
 import { Link } from "react-router-dom";
 import Skeleton from "../../components/Skeleton/Skeleton.jsx";
 import Footer from "../../components/Footer/Footer";
+import PuzzleSvg from "../Home/images/puzzle.svg";
+import EclipseDecor1Svg from "../Home/images/eclipse-decor-1.svg";
+import EclipseDecor2Svg from "../Home/images/eclipse-decor-2.svg";
+import EclipseDecor3Svg from "../Home/images/eclipse-decor-3.svg";
+import EclipseDecor4Svg from "../Home/images/eclipse-decor-4.svg";
+import RectDecor1Svg from "../Home/images/rect-decor-1.svg";
+import RectDecor2Svg from "../Home/images/rect-decor-2.svg";
+import RectDecor3Svg from "../Home/images/rect-decor-3.svg";
 
 import style from "./style.module.css";
+import Wiggle from "../../components/Wiggle/Wiggle";
 
 export default function BlogsPage() {
   const images = [
@@ -41,7 +50,7 @@ export default function BlogsPage() {
 
   return (
     <div>
-      <div className="container">
+      <div className="container position-relative">
         <div className={joinCls("row mt-5", style["blog-intro"])}>
           <div className="col-6 d-flex align-items-center">
             <div className="blog-intro-content">
@@ -79,7 +88,7 @@ export default function BlogsPage() {
             <Carousel id="HeaderCarousel" images={images} />
           </div>
         </div>
-        <div className="blog-content">
+        <div className="blog-content position-relative">
           <div
             className={joinCls(
               "text-uppercase text-gradient fw-bold text-center f-montserrat display-5",
@@ -88,6 +97,9 @@ export default function BlogsPage() {
           >
             hugo's blog
           </div>
+          <Wiggle className={joinCls("position-absolute", style["puzzle"])}>
+            <Image src={PuzzleSvg} />
+          </Wiggle>
           <Slider
             items={blogsData}
             className="gap-3 mt-5"
@@ -108,7 +120,7 @@ export default function BlogsPage() {
                 )}
               >
                 <Image src={imageUrl} className="card-img-top" />
-                <div className="card-body position-relative">
+                <div className="card-body position-relative d-flex flex-column">
                   <small className="d-block text-secondary text-uppercase">
                     {time}
                   </small>
@@ -122,7 +134,7 @@ export default function BlogsPage() {
                   </h5>
                   <p
                     className={joinCls(
-                      "text-ellipsis text-start mb-4",
+                      "text-ellipsis text-start mb-4 flex-grow-1",
                       style["blog-item-description"]
                     )}
                   >
@@ -142,7 +154,22 @@ export default function BlogsPage() {
             )}
           />
         </div>
-        <div className="academic-content">
+        <div className="academic-content position-relative">
+          <Wiggle className={joinCls("position-absolute", style["eclipse-1"])}>
+            <Image src={EclipseDecor1Svg} />
+          </Wiggle>
+          <Wiggle className={joinCls("position-absolute", style["eclipse-3"])}>
+            <Image src={EclipseDecor3Svg} />
+          </Wiggle>
+          <Wiggle className={joinCls("position-absolute", style["eclipse-2"])}>
+            <Image src={EclipseDecor2Svg} />
+          </Wiggle>
+          <Wiggle className={joinCls("position-absolute", style["rect-1"])}>
+            <Image src={RectDecor1Svg} />
+          </Wiggle>
+          <Wiggle className={joinCls("position-absolute", style["rect-2"])}>
+            <Image src={RectDecor2Svg} />
+          </Wiggle>
           <div
             className={joinCls(
               "text-uppercase text-gradient fw-bold text-center f-montserrat display-5 mb-5",
@@ -151,7 +178,12 @@ export default function BlogsPage() {
           >
             hugo's academic
           </div>
-          <div className="row g-5 g-md-3 g-lg-5">
+          <div
+            className={joinCls(
+              "row g-5 g-md-3 g-lg-5 position-relative",
+              style["academic-content"]
+            )}
+          >
             {academicData.map(
               ([id, title, description, date, imgUrl, contentUrl]) => (
                 <div className="col-lg-6 col-md-6 col-12">
@@ -171,7 +203,7 @@ export default function BlogsPage() {
                       <div className="col-6">
                         <div
                           className={joinCls(
-                            "text-ellipsis f-montserrat fw-bold text-black",
+                            "text-ellipsis f-montserrat fw-bold",
                             style["post-title"]
                           )}
                         >
@@ -254,7 +286,7 @@ export default function BlogsPage() {
               <div className="col-auto">
                 <button
                   className={joinCls(
-                    "btn btn-lg btn-outline-gradient rounded-pill ",
+                    "btn btn-lg btn-outline-gradient rounded-pill position-relative",
                     style["see-more-btn"]
                   )}
                   onClick={() => getMoreAcademicData(8)}

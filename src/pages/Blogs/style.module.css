@@ -47,11 +47,6 @@
   transition: 0.2s ease-out;
 }
 
-.blog-item .read-more {
-  position: absolute;
-  bottom: 5%;
-}
-
 .blog-item:hover h5,
 .blog-item:hover .read-more {
   color: var(--bs-primary);
@@ -68,6 +63,10 @@
   max-height: 92px;
 }
 
+.academic-content {
+  z-index: 1;
+}
+
 .post {
   cursor: pointer;
   display: block;
@@ -75,6 +74,9 @@
   border-radius: 10.1256px;
   padding: 12px;
   transition: all 0.25s;
+  backdrop-filter: blur(8px);
+  background-color: rgba(var(--bs-white-rgb), 0.5);
+  z-index: 1;
 }
 .post:hover {
   border: 2px solid #fe9548;
@@ -93,6 +95,7 @@
 }
 
 .post-title {
+  color: #000;
   line-height: 18px;
   letter-spacing: 0.03em;
   transition: all 0.5s;
@@ -122,4 +125,47 @@
 
 .see-more-btn {
   padding: 0.8rem 4.6rem;
+  z-index: 1;
+}
+
+.puzzle {
+  top: -4rem;
+  right: -8rem;
+  width: 12rem;
+  height: auto;
+}
+
+.eclipse-1 {
+  top: 4rem;
+  right: -10rem;
+  width: 12rem;
+  height: auto;
+}
+
+.eclipse-3 {
+  top: -4rem;
+  left: -8rem;
+  width: 12rem;
+  height: auto;
+}
+
+.eclipse-2 {
+  top: -2rem;
+  left: 70%;
+  width: 12rem;
+  height: auto;
+}
+
+.rect-1 {
+  top: 50rem;
+  left: -10rem;
+  width: 12rem;
+  height: auto;
+}
+
+.rect-2 {
+  top: 52rem;
+  left: -10rem;
+  width: 12rem;
+  height: auto;
 }
