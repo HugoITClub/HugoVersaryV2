@@ -28,26 +28,57 @@ export default function BlogsPage() {
 
 	return (
 		<div>
-			<div className="container position-relative">
-				<div className={joinCls("row mt-5", style["blog-intro"])}>
-					<div className="col-6 d-flex align-items-center">
-						<div className="blog-intro-content">
-							<div className={joinCls("text-uppercase mb-3 f-montserrat text-start", style["blog-intro-content-title"])}>
-								LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT. NUNC VULPUTATE LIBERO
+			<Carousel id="BlogIntroCarousel" safeZone intervalTime={100000000} className={style["blog-intro"]}>
+				{images.map((image) => (
+					<div key={image} className="position-relative h-100">
+						<div className={joinCls("position-absolute start-0 left-0 w-100 h-50", style["blog-intro-banner"])}>
+							<Image key={image} src={image} className="w-100 h-100" />
+						</div>
+
+						<div className={joinCls("position-absolute start-0 left-0 w-100", style["blog-intro-banner-text"])}>
+							<h1 className="text-white ms-5 mt-3">EVENT</h1>
+						</div>
+
+						<div className={joinCls("position-absolute start-0 left-0 w-100 h-100", style["blog-intro-poster"])}>
+							<div className="row justify-content-end align-items-center h-100">
+								<div className="col-6 h-100">
+									<div className={joinCls("me-4 mt-5", style["poster"])}>
+										<div className="d-flex justify-content-center align-items-center h-100">
+											<Wiggle disableHover maxScaleRange={0} maxRotateRange={0} transitionTime={3} className="h-100">
+												<Image key={image} src={image} className="object-fit-contain h-100" />
+											</Wiggle>
+										</div>
+									</div>
+								</div>
 							</div>
-							<div className={joinCls("f-lato text-ellipsis text-start", style["blog-intro-content-description"])}>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing
-								elit. vulputate libero,Nunc vulputate libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero,Nunc vulputate libero. Lorem ipsum
-								dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero,Nunc vulputate libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate
-								libero,Nunc vulputate libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero,Nunc vulputate libero. Lorem ipsum dolor sit amet,
-								consectetur adipiscing elit. Nunc vulputate libero,Nunc vulputate libero.
+						</div>
+
+						<div className="container h-100">
+							<div className="row align-items-end h-100">
+								<div className="col-8 d-flex align-items-center mb-10">
+									<div className={joinCls("rounded-3 p-5", style["blog-intro-content"])}>
+										<Link to="#" className="text-reset text-decoration-none">
+											<h2 className="text-uppercase mb-3 f-montserrat text-start">LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT. NUNC VULPUTATE LIBERO</h2>
+										</Link>
+										<div className={joinCls("f-lato text-ellipsis fs-4 mt-4", style["blog-intro-content-description"])}>
+											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur
+											adipiscing elit. vulputate libero,Nunc vulputate libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero,Nunc vulputate libero.
+											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero,Nunc vulputate libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+											Nunc vulputate libero,Nunc vulputate libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero,Nunc vulputate libero. Lorem ipsum
+											dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero,Nunc vulputate libero.
+										</div>
+										<Link to="#" className="btn btn-lg btn-outline-gradient text-uppercase rounded-pill px-4 mt-4">
+											Read more
+										</Link>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
-					<div className={joinCls("col-6", style["blog-intro-img"])}>
-						<Carousel id="HeaderCarousel" images={images} />
-					</div>
-				</div>
+				))}
+			</Carousel>
+
+			<div className="container position-relative">
 				<div className="blog-content position-relative">
 					<div className={joinCls("text-uppercase text-gradient fw-bold text-center f-montserrat display-5", style["blog-content-header"])}>hugo's blog</div>
 					<Wiggle className={joinCls("position-absolute", style["puzzle"])}>
