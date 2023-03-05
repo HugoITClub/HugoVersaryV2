@@ -8,7 +8,7 @@
 }
 
 .blog-intro-banner-text h1 {
-	font-size: 16rem;
+	font-size: 12rem;
 	font-weight: 800;
 	opacity: 80%;
 }
@@ -28,6 +28,7 @@
 }
 
 .blog-intro-content h2 {
+	font-size: 1.4rem;
 	-webkit-line-clamp: 3;
 	max-height: 92px;
 	transition: 0.24s ease-out;
@@ -45,6 +46,12 @@
 
 .blog-content-header {
 	margin-top: 8rem;
+}
+
+.wrap-blog-intro-content {
+	top: 50%;
+	left: 0;
+	transform: translateY(-25%);
 }
 
 .blog-item {
