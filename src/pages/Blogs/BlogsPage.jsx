@@ -27,7 +27,7 @@ export default function BlogsPage() {
 	const { isLoading: isAcademicLoading, isFull: isAcademicFull, data: academicData, getMore: getMoreAcademicData } = useSheetAPI("Academic", "K", "P", { earlyTake: 8 });
 
 	return (
-		<div>
+		<div className="overflow-hidden">
 			<Carousel id="BlogIntroCarousel" safeZone intervalTime={100000000} className={style["blog-intro"]}>
 				{images.map((image) => (
 					<div key={image} className="position-relative h-100">
@@ -53,21 +53,42 @@ export default function BlogsPage() {
 							</div>
 						</div>
 
-						<div className="container h-100">
-							<div className="row align-items-end h-100">
-								<div className="col-8 d-flex align-items-center mb-10">
+						{/* <div className="container h-100">
+							<div className="row align-items-end justify-content-start h-100">
+								<div className="col-8 d-flex align-items-center">
 									<div className={joinCls("rounded-3 p-5", style["blog-intro-content"])}>
 										<Link to="#" className="text-reset text-decoration-none">
 											<h2 className="text-uppercase mb-3 f-montserrat text-start">LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT. NUNC VULPUTATE LIBERO</h2>
 										</Link>
-										<div className={joinCls("f-lato text-ellipsis fs-4 mt-4", style["blog-intro-content-description"])}>
+										<div className={joinCls("f-lato text-ellipsis fs-5 mt-4", style["blog-intro-content-description"])}>
 											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur
 											adipiscing elit. vulputate libero,Nunc vulputate libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero,Nunc vulputate libero.
 											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero,Nunc vulputate libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 											Nunc vulputate libero,Nunc vulputate libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero,Nunc vulputate libero. Lorem ipsum
 											dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero,Nunc vulputate libero.
 										</div>
-										<Link to="#" className="btn btn-lg btn-outline-gradient text-uppercase rounded-pill px-4 mt-4">
+										<Link to="#" className="fs-6 btn btn-lg btn-outline-gradient text-uppercase rounded-pill px-4 mt-4">
+											Read more
+										</Link>
+									</div>
+								</div>
+							</div>
+						</div> */}
+						<div className="container h-100">
+							<div className="row position-relative justify-content-start h-100">
+								<div className={joinCls("col-8 d-flex align-items-center position-absolute", style["wrap-blog-intro-content"])}>
+									<div className={joinCls("rounded-3 p-5", style["blog-intro-content"])}>
+										<Link to="#" className="text-reset text-decoration-none">
+											<h2 className="text-uppercase mb-3 f-montserrat text-start">LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT. NUNC VULPUTATE LIBERO</h2>
+										</Link>
+										<div className={joinCls("f-lato text-ellipsis fs-5 mt-4", style["blog-intro-content-description"])}>
+											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur
+											adipiscing elit. vulputate libero,Nunc vulputate libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero,Nunc vulputate libero.
+											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero,Nunc vulputate libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+											Nunc vulputate libero,Nunc vulputate libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero,Nunc vulputate libero. Lorem ipsum
+											dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero,Nunc vulputate libero.
+										</div>
+										<Link to="#" className="fs-6 btn btn-lg btn-outline-gradient text-uppercase rounded-pill px-4 mt-4">
 											Read more
 										</Link>
 									</div>
