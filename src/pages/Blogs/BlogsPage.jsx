@@ -14,6 +14,7 @@ import EclipseDecor4Svg from "../Home/images/eclipse-decor-4.svg";
 import RectDecor1Svg from "../Home/images/rect-decor-1.svg";
 import RectDecor2Svg from "../Home/images/rect-decor-2.svg";
 import RectDecor3Svg from "../Home/images/rect-decor-3.svg";
+import logoHugo from "../../global/Images/logoHugo.png";
 
 import style from "./style.module.css";
 import Wiggle from "../../components/Wiggle/Wiggle";
@@ -27,8 +28,13 @@ export default function BlogsPage() {
 	const { isLoading: isAcademicLoading, isFull: isAcademicFull, data: academicData, getMore: getMoreAcademicData } = useSheetAPI("Academic", "K", "P", { earlyTake: 8 });
 
 	return (
-		<div className="overflow-hidden">
-			<Carousel id="BlogIntroCarousel" safeZone intervalTime={100000000} className={style["blog-intro"]}>
+		<div className="position-relative overflow-hidden">
+			<div className={joinCls("position-absolute h-100 w-100", style["bg"])}>
+				<Image src={logoHugo} className="position-fixed" />
+				<div className={joinCls("position-relative", style["fade"])} />
+			</div>
+
+			<Carousel id="BlogIntroCarousel" safeZone intervalTime={5000} className={style["blog-intro"]}>
 				{images.map((image) => (
 					<div key={image} className="position-relative h-100">
 						<div className={joinCls("position-absolute start-0 left-0 w-100 h-50", style["blog-intro-banner"])}>
@@ -53,27 +59,6 @@ export default function BlogsPage() {
 							</div>
 						</div>
 
-						{/* <div className="container h-100">
-							<div className="row align-items-end justify-content-start h-100">
-								<div className="col-8 d-flex align-items-center">
-									<div className={joinCls("rounded-3 p-5", style["blog-intro-content"])}>
-										<Link to="#" className="text-reset text-decoration-none">
-											<h2 className="text-uppercase mb-3 f-montserrat text-start">LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT. NUNC VULPUTATE LIBERO</h2>
-										</Link>
-										<div className={joinCls("f-lato text-ellipsis fs-5 mt-4", style["blog-intro-content-description"])}>
-											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur
-											adipiscing elit. vulputate libero,Nunc vulputate libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero,Nunc vulputate libero.
-											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero,Nunc vulputate libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-											Nunc vulputate libero,Nunc vulputate libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero,Nunc vulputate libero. Lorem ipsum
-											dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero,Nunc vulputate libero.
-										</div>
-										<Link to="#" className="fs-6 btn btn-lg btn-outline-gradient text-uppercase rounded-pill px-4 mt-4">
-											Read more
-										</Link>
-									</div>
-								</div>
-							</div>
-						</div> */}
 						<div className="container h-100">
 							<div className="row position-relative justify-content-start h-100">
 								<div className={joinCls("col-8 d-flex align-items-center position-absolute", style["wrap-blog-intro-content"])}>
@@ -100,6 +85,8 @@ export default function BlogsPage() {
 			</Carousel>
 
 			<div className="container position-relative">
+				<div className={joinCls("position-absolute", style["circle-gradient-1"])} />
+
 				<div className="blog-content position-relative">
 					<div className={joinCls("text-uppercase text-gradient fw-bold text-center f-montserrat display-5", style["blog-content-header"])}>hugo's blog</div>
 					<Wiggle className={joinCls("position-absolute", style["puzzle"])}>
@@ -125,6 +112,8 @@ export default function BlogsPage() {
 					/>
 				</div>
 				<div className="academic-content position-relative">
+					<div className={joinCls("position-absolute", style["circle-gradient-2"])} />
+
 					<Wiggle className={joinCls("position-absolute", style["eclipse-1"])}>
 						<Image src={EclipseDecor1Svg} />
 					</Wiggle>
