@@ -96,7 +96,7 @@ export default function BlogsPage() {
 						items={blogsData}
 						className="gap-3 mt-5"
 						renderItem={([id, title, description, time, imageUrl, contentFileId]) => (
-							<Link key={id} to={contentFileId} className={joinCls("card text-reset text-decoration-none rounded-3 overflow-hidden", style["blog-item"])}>
+							<Link key={id} to={contentFileId} className={joinCls("card text-reset text-decoration-none overflow-hidden", style["blog-item"])}>
 								<Image src={imageUrl} className="card-img-top" />
 								<div className="card-body position-relative d-flex flex-column">
 									<small className="d-block text-secondary text-uppercase">{time}</small>
@@ -139,8 +139,8 @@ export default function BlogsPage() {
 											<img src={imgUrl} alt="" className={style["post-image"]} />
 										</div>
 										<div className="col-6">
-											<div className={joinCls("text-ellipsis f-montserrat fw-bold", style["post-title"])}>{title}</div>
-											<div className={joinCls("text-ellipsis", style["post-description"])}>{description}</div>
+											<div className={joinCls("text-ellipsis text-start f-montserrat fw-bold", style["post-title"])}>{title}</div>
+											<div className={joinCls("text-ellipsis text-start", style["post-description"])}>{description}</div>
 											<div className={joinCls("text-uppercase mt-2", style["post-date"])}>{date}</div>
 											<div className="text-decoration-none d-flex align-items-center mt-1">
 												<p className="m-0 fw-bold text-gradient">Read more</p>

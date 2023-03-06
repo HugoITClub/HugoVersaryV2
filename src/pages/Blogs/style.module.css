@@ -59,10 +59,14 @@
 	flex-shrink: 0;
 	flex-basis: 25%;
 	transition: 0.4s ease-out;
+	background-color: rgba(var(--bs-white-rgb), 0.64);
+	backdrop-filter: blur(8px);
+	border: 2px solid #e2e2e2;
 }
 
 .blog-item:hover {
-	--bs-card-border-color: var(--bs-primary);
+	/* --bs-card-border-color: var(--bs-primary); */
+	border: 2px solid var(--bs-primary);
 }
 
 .blog-item img {
@@ -98,7 +102,8 @@
 	cursor: pointer;
 	display: block;
 	border: 2px solid #e2e2e2;
-	border-radius: 10.1256px;
+	/* border: 2px solid #bdb8b8; */
+	border-radius: 4px;
 	padding: 12px;
 	transition: all 0.25s;
 	backdrop-filter: blur(8px);
