@@ -163,8 +163,8 @@ export default function HomePage() {
 						className="gap-3 mt-5"
 						renderItem={([id, title, description, time, imageUrl, contentFileId]) => (
 							<Link key={id} to={contentFileId} className={joinCls("card text-reset text-decoration-none rounded-3 overflow-hidden", style["blog-item"])}>
-								<Image src={imageUrl} className="card-img-top" />
-								<div className="card-body d-flex flex-column position-relative">
+								<Image src={imageUrl} className={joinCls("card-img-top p-3", style["blog-item-img"])} />
+								<div className="card-body d-flex flex-column position-relative pt-0">
 									<small className="d-block text-secondary text-uppercase">{time}</small>
 									<h5 className={joinCls("text-ellipsis text-start", style["blog-item-title"])}>{title}</h5>
 									<p className={joinCls("text-ellipsis text-start flex-grow-1 mb-4", style["blog-item-description"])}>{description}</p>

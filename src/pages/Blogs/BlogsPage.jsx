@@ -97,8 +97,8 @@ export default function BlogsPage() {
 						className="gap-3 mt-5"
 						renderItem={([id, title, description, time, imageUrl, contentFileId]) => (
 							<Link key={id} to={contentFileId} className={joinCls("card text-reset text-decoration-none overflow-hidden", style["blog-item"])}>
-								<Image src={imageUrl} className="card-img-top" />
-								<div className="card-body position-relative d-flex flex-column">
+								<Image src={imageUrl} className={joinCls("card-img-top p-3", style["blog-item-img"])} />
+								<div className="card-body position-relative d-flex flex-column pt-0">
 									<small className="d-block text-secondary text-uppercase">{time}</small>
 									<h5 className={joinCls("text-ellipsis text-start", style["blog-item-title"])}>{title}</h5>
 									<p className={joinCls("text-ellipsis text-start mb-4 flex-grow-1", style["blog-item-description"])}>{description}</p>
@@ -134,8 +134,8 @@ export default function BlogsPage() {
 						{academicData.map(([id, title, description, date, imgUrl, contentUrl]) => (
 							<div className="col-lg-6 col-md-6 col-12">
 								<Link key={id} to={contentUrl} className={joinCls("text-decoration-none", style["post"])}>
-									<div className="row justify-content-around">
-										<div className="col-md-6 col-lg-5 p-0 px-sm-2 col-5">
+									<div className="row justify-content-around align-items-center">
+										<div className="col-md-6 col-lg-5 p-0 col-5">
 											<img src={imgUrl} alt="" className={style["post-image"]} />
 										</div>
 										<div className="col-6">

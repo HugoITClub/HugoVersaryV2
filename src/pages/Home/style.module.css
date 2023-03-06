@@ -83,14 +83,21 @@
 	flex-shrink: 0;
 	flex-basis: 25%;
 	transition: 0.4s ease-out;
+	border: 2px solid #e2e2e2;
 }
 
 .blog-item:hover {
-	--bs-card-border-color: var(--bs-primary);
+	/* --bs-card-border-color: var(--bs-primary); */
+	border: 2px solid var(--bs-primary);
+	box-shadow: 0.15rem 0rem 1rem rgba(var(--bs-body-color-rgb), 0.15);
+}
+
+.blog-item-img {
+	border-radius: 20px;
 }
 
 .blog-item img {
-	height: 12rem;
+	height: 13rem;
 }
 
 .blog-item h5,
