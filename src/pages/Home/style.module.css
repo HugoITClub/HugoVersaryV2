@@ -208,12 +208,11 @@
 }
 
 .circle-gradient-1 {
-	top: 36vh;
-	left: -32vw;
-	width: 54vw;
-	height: 54vw;
+	top: -72vh;
+	left: -92vw;
+	width: 156vw;
+	height: 156vw;
 	border-radius: 50%;
-	background: var(--bs-primary);
-	filter: blur(24rem);
-	opacity: 12%;
+	background: radial-gradient(var(--bs-primary), transparent 70%);
+	opacity: 16%;
 }

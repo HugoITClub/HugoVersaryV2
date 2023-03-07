@@ -7,16 +7,19 @@ import { LanguageProvider } from "./services/language/LanguageProvider";
 import router from "./router/browserRouter";
 import store from "./redux/store";
 import { GoogleProvider } from "./services/google/GoogleProvider";
+import { FontProvider } from "./services/font/FontProvider";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <Provider store={store}>
-    <GoogleProvider>
-      <LanguageProvider>
-        <RouterProvider router={router} />
-      </LanguageProvider>
-    </GoogleProvider>
-  </Provider>
+	<Provider store={store}>
+		<GoogleProvider>
+			<LanguageProvider>
+				<FontProvider>
+					<RouterProvider router={router} />
+				</FontProvider>
+			</LanguageProvider>
+		</GoogleProvider>
+	</Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function
