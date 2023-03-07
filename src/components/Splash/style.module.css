@@ -2,5 +2,6 @@
 	--bs-progress-height: 0.42rem;
 }
 
-.slogan {
+.progress :global(.progress-bar) {
+	--bs-progress-bar-bg: var(--bs-secondary);
 }

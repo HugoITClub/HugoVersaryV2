@@ -12,12 +12,12 @@ export default function Splash({ className, children, ...props }) {
 							<h3 className="text-center mb-0">Hugo English Club</h3>
 						</div>
 						<div className="col-auto">
-							<div className={joinCls("progress", style["progress"])}>
+							<div className={joinCls("progress", style["progress"])} style={{ transition: "5s ease-out" }}>
 								<div className="progress-bar progress-bar-striped progress-bar-animated" style={{ width: "75%" }}></div>
 							</div>
 						</div>
 						<div className="col-auto">
-							<p className={joinCls("f-montserrat text-center mb-0 fs-5", style["slogan"])}>Light Up Your Fire</p>
+							<p className="f-montserrat text-center mb-0 fs-5">Light Up Your Fire</p>
 						</div>
 					</div>
 				</div>
