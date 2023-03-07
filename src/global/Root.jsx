@@ -7,17 +7,21 @@ import "./style/text.style.css";
 import "./style/spacing.style.css";
 import "./style/animation.style.css";
 import "./style/custom.style.css";
+import Splash from "../components/Splash/Splash";
 
 function Root() {
-  return (
-    <div>
-      {/* Navigation bar */}
-      <Navigator />
+	return (
+		<div>
+			{/* Navigation bar */}
+			<Navigator />
 
-      {/* Page will render here */}
-      <Outlet />
-    </div>
-  );
+			{/* Page will render here */}
+			<Outlet />
+
+			{/* Splash */}
+			<Splash />
+		</div>
+	);
 }
 
 export default Root;

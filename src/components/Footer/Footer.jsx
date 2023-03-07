@@ -55,17 +55,19 @@ export default function Footer({ theme = LIGHT_THEME, className, ...props }) {
 			titleColor: "text-white",
 			textColor: "text-light",
 			languageBtn: "btn-outline-light",
+			bg: "bg-dark",
 		},
 		[LIGHT_THEME]: {
 			logo: HugoLogoDarkSvg,
 			titleColor: "text-black",
 			textColor: "text-dark",
 			languageBtn: "btn-outline-dark",
+			bg: "bg-light",
 		},
 	};
 
 	return (
-		<section ref={containerRef} className={joinCls("position-relative", className)} {...props}>
+		<section ref={containerRef} className={joinCls("position-relative", themeContent[theme].bg, className)} {...props}>
 			<div className={joinCls("position-absolute bottom-100 left-0 w-100 border-bottom border-2 overflow-hidden", style["sparks-area"])}>
 				<div className="position-relative w-100 h-100">
 					{sparks.map(({ key, x, yStart, yEnd, size, rotateEnd, transitionTime }) => (
