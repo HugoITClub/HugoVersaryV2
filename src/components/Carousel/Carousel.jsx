@@ -25,12 +25,8 @@ function Carousel({
 			const newImageIndex = event.to;
 			if (event.direction === "left") {
 				onNext(oldImageIndex, newImageIndex);
-				console.log("next");
-				console.log(oldImageIndex, newImageIndex);
 			} else if (event.direction === "right") {
 				onPrev(oldImageIndex, newImageIndex);
-				console.log("prev");
-				console.log(oldImageIndex, newImageIndex);
 			}
 		};
 

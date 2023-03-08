@@ -42,7 +42,7 @@ export default function BlogsPage() {
 						</div>
 
 						<div className={joinCls("position-absolute start-0 left-0 w-100", style["blog-intro-banner-text"])}>
-							<h1 className="text-white ms-5 mt-3">EVENT</h1>
+							<h1 className="text-white ms-5 mt-3">BLOGS</h1>
 						</div>
 
 						<div className={joinCls("position-absolute start-0 left-0 w-100 h-100", style["blog-intro-poster"])}>
