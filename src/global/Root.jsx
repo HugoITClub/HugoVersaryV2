@@ -19,7 +19,7 @@ function Root() {
 			<Outlet />
 
 			{/* Splash */}
-			<Splash />
+			{/* <Splash /> */}
 		</div>
 	);
 }

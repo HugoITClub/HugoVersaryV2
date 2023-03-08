@@ -7,18 +7,71 @@ import DotsSvg from "../../Home/images/dots.svg";
 import RectDecor3Svg from "../../Home/images/rect-decor-3.svg";
 import EclipseDecor3Svg from "../../Home/images/eclipse-decor-3.svg";
 import logoHugo from "../../../global/Images/logoHugo.png";
+import Carousel from "../../../components/Carousel/Carousel";
 
 import style from "./style.module.css";
 import Wiggle from "../../../components/Wiggle/Wiggle";
 
 import { Link } from "react-router-dom";
 export default function MeetingsPage() {
+	const images = [randomImgUrl(), randomImgUrl(), randomImgUrl(), randomImgUrl(), randomImgUrl(), randomImgUrl()];
+	const clubWords = ["Enthusiastic", "Dynamic", "Energetic"];
 	const { isLoading: isMeetingLoading, isFull: isMeetingFull, data: meetings, getMore: getMoreMeeting } = useSheetAPI("Meeting", "K", "P", { earlyTake: 8 });
 	const { isLoading: isImageLoading, isFull: isImageFull, data: mainImg, getMore: getMoreImg } = useSheetAPI("Meeting", "Q", "R", { earlyTake: 1 });
 	return (
 		<div className="overflow-hidden">
-			<div className="meeting">
-				{mainImg.map(([id, imgUrl]) => (
+			<div className={style["meeting"]}>
+				<Carousel id="MeetingIntroCarousel" safeZone intervalTime={10000000} className={style["meeting-intro"]}>
+					{clubWords.map((word) => (
+						<div key={word} className={joinCls("position-relative h-100", style["meeting-header"])}>
+							<div className="container h-100">
+								<div className="row h-100">
+									<div className={joinCls("col-4", style["meeting-header-content"])}>
+										<div className={joinCls("mt-10 f-merienda", style["describe-word"])}>{word}</div>
+									</div>
+									<div className="col-8 h-100">
+										<div className={joinCls("bg-light w-100 d-flex flex-column justify-content-between", style["group-image"])}>
+											<div className={joinCls("row justify-content-between", style["first-row"])}>
+												<div className="col-4">
+													<Image src={randomImgUrl()} className="object-fit-cover w-100" />
+												</div>
+												<div className="col-4">
+													<Image src={randomImgUrl()} className="object-fit-cover w-100" />
+												</div>
+												<div className="col-4">
+													<Image src={randomImgUrl()} className="object-fit-cover w-100" />
+												</div>
+											</div>
+											{/* <div className="row justify-content-between">
+												<div className="col-3">
+													<Image src={randomImgUrl()} className="object-fit-cover w-100 h-100" />
+												</div>
+												<div className="col-3">
+													<Image src={randomImgUrl()} className="object-fit-cover w-100 h-100" />
+												</div>
+												<div className="col-3">
+													<Image src={randomImgUrl()} className="object-fit-cover w-100 h-100" />
+												</div>
+											</div> */}
+											<div className="row justify-content-around">
+												<div className="col-4">
+													<Image src={randomImgUrl()} className="object-fit-cover w-100 h-100" />
+												</div>
+												<div className="col-4">
+													<Image src={randomImgUrl()} className="object-fit-cover w-100 h-100" />
+												</div>
+												<div className="col-4">
+													<Image src={randomImgUrl()} className="object-fit-cover w-100 h-100" />
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					))}
+				</Carousel>
+				{/* {mainImg.map(([id, imgUrl]) => (
 					<div key={id} className={style["header-pic"]}>
 						<Image src={imgUrl} className="object-fit-cover w-100 h-100" />
 						<div className={style["fade"]}></div>
@@ -27,7 +80,7 @@ export default function MeetingsPage() {
 							<h2 className="">“Light up your fire.”</h2>
 						</div>
 					</div>
-				))}
+				))} */}
 				<h1 className="display-5 f-montserrat fw-bolder text-center text-gradient text-uppercase my-5">meetings</h1>
 				<div id="meeting" className="container position-relative">
 					<div className={joinCls("position-absolute h-100 w-100", style["meeting-bg"])}>

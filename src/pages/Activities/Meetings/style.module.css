@@ -22,6 +22,28 @@
 	transform: translateX(-50%);
 }
 
+.meeting-intro :global(.carousel-item) {
+	height: 90vh;
+	background-color: #dee0e4;
+}
+
+.meeting-header-content {
+	font-size: 4rem;
+}
+
+.describe-word {
+}
+
+.group-image {
+	margin-top: 4rem;
+	height: 90%;
+	padding: 4rem;
+}
+
+.first-row {
+	/* height: 30%; */
+}
+
 .meeting-content {
 	z-index: 1;
 }
