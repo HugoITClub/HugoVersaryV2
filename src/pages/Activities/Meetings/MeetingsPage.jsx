@@ -21,47 +21,74 @@ export default function MeetingsPage() {
 	return (
 		<div className="overflow-hidden">
 			<div className={style["meeting"]}>
-				<Carousel id="MeetingIntroCarousel" safeZone intervalTime={10000000} className={style["meeting-intro"]}>
+				<Carousel id="MeetingIntroCarousel" safeZone intervalTime={50000000} className={style["meeting-intro"]}>
 					{clubWords.map((word) => (
 						<div key={word} className={joinCls("position-relative h-100", style["meeting-header"])}>
+							<div className={joinCls("position-absolute w-100 h-100", style["meeting-header-bg"])}>
+								<div className={joinCls("row flex-column", style["meeting-header-sub-bg"])}>
+									<div className="col-6 w-100">
+										<div className={joinCls("row justify-content-between h-100 w-100 gx-5", style["group-image-row"], style["row-1"])}>
+											<div className="col-4">
+												<Image src={randomImgUrl()} className="object-fit-cover w-100" />
+											</div>
+											<div className="col-4">
+												<Image src={randomImgUrl()} className="object-fit-cover w-100" />
+											</div>
+											<div className="col-4">
+												<Image src={randomImgUrl()} className="object-fit-cover w-100" />
+											</div>
+										</div>
+									</div>
+									{/* <div className="col-6">
+										<div className={joinCls("row justify-content-between h-100", style["group-image-row"], style["row-2"])}>
+											<div className="col-4">
+												<Image src={randomImgUrl()} className="object-fit-cover w-100 h-100" />
+											</div>
+											<div className="col-4">
+												<Image src={randomImgUrl()} className="object-fit-cover w-100 h-100" />
+											</div>
+											<div className="col-4">
+												<Image src={randomImgUrl()} className="object-fit-cover w-100 h-100" />
+											</div>
+										</div>
+									</div> */}
+								</div>
+							</div>
 							<div className="container h-100">
-								<div className="row h-100">
-									<div className={joinCls("col-4", style["meeting-header-content"])}>
-										<div className={joinCls("mt-10 f-merienda", style["describe-word"])}>{word}</div>
+								<div className="row h-100 position-relative">
+									<div className={joinCls("col-4 ", style["meeting-header-content"])}>
+										<div className={joinCls("me-5", style["quotes-area"])}>
+											<div className={joinCls("mt-10 f-montserrat text-start fw-bold text-dark", style["describe-word"])}>{word}</div>
+											<p className={joinCls("mt-3 text-start mb-0", style["quotes"])}>"Energy and persistence conquer all things."</p>
+											<p className={joinCls(" text-end", style["quotes-author"])}>- Benjamin Franklin.</p>
+										</div>
 									</div>
 									<div className="col-8 h-100">
-										<div className={joinCls("bg-light w-100 d-flex flex-column justify-content-between", style["group-image"])}>
-											<div className={joinCls("row justify-content-between", style["first-row"])}>
-												<div className="col-4">
-													<Image src={randomImgUrl()} className="object-fit-cover w-100" />
-												</div>
-												<div className="col-4">
-													<Image src={randomImgUrl()} className="object-fit-cover w-100" />
-												</div>
-												<div className="col-4">
-													<Image src={randomImgUrl()} className="object-fit-cover w-100" />
+										<div className={joinCls("bg-light row flex-column", style["group-image"])}>
+											<div className="col">
+												<div className={joinCls("row justify-content-between h-100", style["group-image-row"], style["row-1"])}>
+													<div className="col-4">
+														<Image src={randomImgUrl()} className="object-fit-cover w-100" />
+													</div>
+													<div className="col-4">
+														<Image src={randomImgUrl()} className="object-fit-cover w-100" />
+													</div>
+													<div className="col-4">
+														<Image src={randomImgUrl()} className="object-fit-cover w-100" />
+													</div>
 												</div>
 											</div>
-											{/* <div className="row justify-content-between">
-												<div className="col-3">
-													<Image src={randomImgUrl()} className="object-fit-cover w-100 h-100" />
-												</div>
-												<div className="col-3">
-													<Image src={randomImgUrl()} className="object-fit-cover w-100 h-100" />
-												</div>
-												<div className="col-3">
-													<Image src={randomImgUrl()} className="object-fit-cover w-100 h-100" />
-												</div>
-											</div> */}
-											<div className="row justify-content-around">
-												<div className="col-4">
-													<Image src={randomImgUrl()} className="object-fit-cover w-100 h-100" />
-												</div>
-												<div className="col-4">
-													<Image src={randomImgUrl()} className="object-fit-cover w-100 h-100" />
-												</div>
-												<div className="col-4">
-													<Image src={randomImgUrl()} className="object-fit-cover w-100 h-100" />
+											<div className="col">
+												<div className={joinCls("row justify-content-between h-100", style["group-image-row"], style["row-2"])}>
+													<div className="col-4">
+														<Image src={randomImgUrl()} className="object-fit-cover w-100 h-100" />
+													</div>
+													<div className="col-4">
+														<Image src={randomImgUrl()} className="object-fit-cover w-100 h-100" />
+													</div>
+													<div className="col-4">
+														<Image src={randomImgUrl()} className="object-fit-cover w-100 h-100" />
+													</div>
 												</div>
 											</div>
 										</div>
@@ -71,16 +98,6 @@ export default function MeetingsPage() {
 						</div>
 					))}
 				</Carousel>
-				{/* {mainImg.map(([id, imgUrl]) => (
-					<div key={id} className={style["header-pic"]}>
-						<Image src={imgUrl} className="object-fit-cover w-100 h-100" />
-						<div className={style["fade"]}></div>
-						<div className={joinCls("text-white text-center", style["header-text"])}>
-							<h2 className="text-uppercase">hugo english club</h2>
-							<h2 className="">“Light up your fire.”</h2>
-						</div>
-					</div>
-				))} */}
 				<h1 className="display-5 f-montserrat fw-bolder text-center text-gradient text-uppercase my-5">meetings</h1>
 				<div id="meeting" className="container position-relative">
 					<div className={joinCls("position-absolute h-100 w-100", style["meeting-bg"])}>
