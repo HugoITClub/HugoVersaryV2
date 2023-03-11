@@ -23,25 +23,80 @@
 }
 
 .meeting-intro :global(.carousel-item) {
-	height: 90vh;
-	background-color: #dee0e4;
-}
-
-.meeting-header-content {
-	font-size: 4rem;
+	height: 100vh;
 }
 
 .describe-word {
+	font-size: 4rem;
+	text-shadow: 2px 2px 8px #fff;
+	letter-spacing: -2px;
+}
+
+.quotes {
+	font-size: 1.6rem;
+	font-weight: 500;
+	font-style: italic;
+	font-family: "Crimson Pro";
+	text-shadow: 2px 2px 8px #fff;
+}
+
+.quotes-author {
+	font-weight: 600;
+	font-size: 1.2rem;
+	font-family: "Crimson Pro";
+	text-shadow: 2px 2px 8px #fff;
+}
+
+.meeting-header-bg {
+	background: linear-gradient(180deg, white 30%, transparent 100%);
+}
+
+.meeting-header-sub-bg {
+	filter: blur(16px) brightness(1) contrast(0.8);
+	opacity: 0.5;
 }
 
 .group-image {
 	margin-top: 4rem;
-	height: 90%;
+	height: 80%;
 	padding: 4rem;
+	box-shadow: 0.5rem 0.5rem 3rem rgba(0, 0, 0, 0.15);
 }
 
-.first-row {
-	/* height: 30%; */
+@keyframes slideForward {
+	from {
+		transform: translate(-4%, 0);
+	}
+
+	to {
+		transform: translate(4%, 0);
+	}
+}
+
+@keyframes slideBackward {
+	from {
+		transform: translate(4%, 0);
+	}
+
+	to {
+		transform: translate(-4%, 0);
+	}
+}
+
+.group-image-row {
+	animation-duration: 12s;
+	animation-timing-function: linear;
+	animation-fill-mode: both;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
+.group-image-row.row-1 {
+	animation-name: slideForward;
+}
+
+.group-image-row.row-2 {
+	animation-name: slideBackward;
 }
 
 .meeting-content {

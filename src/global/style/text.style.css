@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Merienda+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merienda+One&family=Quicksand:wght@400;500;600;700&display=swap");
 .f-lato {
 	font-family: "Lato", var(--bs-body-font-family);
 }
@@ -10,6 +10,10 @@
 
 .f-merienda {
 	font-family: "Merienda One", var(--bs-body-font-family);
+}
+
+.f-quicksand {
+	font-family: "Quicksand", var(--bs-body-font-family);
 }
 
 h1,
