@@ -7,11 +7,11 @@ export function FontProvider({ children }) {
 	const dispatch = useDispatch();
 
 	useEffect(() => {
-		dispatch(setFontLoading(false));
+		dispatch(setFontLoading(true));
 
 		const fonts = ["Montserrat", "Lato"];
 		const fontObservers = fonts.map((font) => new FontFaceObserver(font));
-		Promise.all(fontObservers.map((fontObserver) => fontObserver.load())).then(() => dispatch(setFontLoading(true)));
+		Promise.all(fontObservers.map((fontObserver) => fontObserver.load())).then(() => dispatch(setFontLoading(false)));
 	}, []);
 
 	return children;
