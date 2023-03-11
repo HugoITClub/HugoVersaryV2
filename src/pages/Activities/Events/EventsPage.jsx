@@ -11,27 +11,28 @@ import DotsSvg from "../../Home/images/dots.svg";
 import RectDecor3Svg from "../../Home/images/rect-decor-3.svg";
 import EclipseDecor3Svg from "../../Home/images/eclipse-decor-3.svg";
 import logoHugo from "../../../global/Images/logoHugo.png";
+import Carousel from "../../../components/Carousel/Carousel";
 
 import style from "./style.module.css";
 import Wiggle from "../../../components/Wiggle/Wiggle";
+import Animation from "../../../components/Animation/Animation.jsx";
 
 function EventsPage() {
 	const { isLoading: isEventLoading, isFull: isEventFull, data: events, getMore: getMoreEvent } = useSheetAPI("Event", "K", "P", { earlyTake: 8 });
-	const { isLoading: isImageLoading, isFull: isImageFull, data: mainImg, getMore: getMoreImg } = useSheetAPI("Event", "Q", "R", { earlyTake: 8 });
+	const { isLoading: isImageLoading, isFull: isImageFull, data: mainImg, getMore: getMoreImg } = useSheetAPI("Event", "R", "T", { earlyTake: 8 });
 	return (
 		<div className="overflow-hidden">
 			<div className="event">
-				{mainImg.map(([id, imgUrl]) => (
-					<div key={id} className={style["header-pic"]}>
-						<Image src={imgUrl} className="object-fit-cover w-100 h-100" />
-						<div className={style["fade"]}></div>
-						<div className={joinCls("position-absolute", style["marquee"])}>
-							<div className={style["marquee-content"]}>Creative Enthusiastic Dynamic</div>
-							<div className={style["marquee-content2"]}>Creative Enthusiastic Dynamic</div>
-							<div className={style["marquee-content3"]}>Creative Enthusiastic Dynamic</div>
+				<Carousel id="EventsIntroCarousel" safeZone intervalTime={5000} className={style["event-intro"]}>
+					{mainImg.map(([id, eventName, imgUrl]) => (
+						<div key={id} className={joinCls("position-relative", style["header-pic"])}>
+							<Image src={imgUrl} className="object-fit-cover w-100 h-100" />
+							<Animation animation={[{ name: "fadeInRight" }]}>
+								<h1 className={joinCls("text-outline-primary text-start fw-bolder f-lato position-absolute", style["event-name"])}>{eventName}</h1>
+							</Animation>
 						</div>
-					</div>
-				))}
+					))}
+				</Carousel>
 				<h1 className="display-5 f-montserrat fw-bolder text-center text-gradient text-uppercase my-5">events</h1>
 				<div id="event" className={joinCls("container position-relative", style["event"])}>
 					<div className={joinCls("position-absolute h-100 w-100", style["event-bg"])}>
