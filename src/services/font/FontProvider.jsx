@@ -12,6 +12,8 @@ export function FontProvider({ children }) {
 		const fonts = ["Montserrat", "Lato"];
 		const fontObservers = fonts.map((font) => new FontFaceObserver(font));
 		Promise.all(fontObservers.map((fontObserver) => fontObserver.load())).then(() => dispatch(setFontLoading(false)));
+
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	return children;

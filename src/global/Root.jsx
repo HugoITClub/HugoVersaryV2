@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Outlet } from "react-router-dom";
 import Navigator from "./Navigator/Navigator";
 
@@ -9,21 +8,27 @@ import "./style/spacing.style.css";
 import "./style/animation.style.css";
 import "./style/custom.style.css";
 import Splash from "../components/Splash/Splash";
+import { shallowEqual, useSelector } from "react-redux";
+import AppSuspense from "../services/loading/AppSuspense";
 
 function Root() {
-	const [isLoading, setIsLoading] = useState(true);
+	const { isPageLoading } = useSelector((state) => state.loading, shallowEqual);
 
 	return (
-		<div>
-			{/* Navigation bar */}
-			<Navigator />
+		<>
+			<div className={isPageLoading ? "invisible" : undefined}>
+				{/* Navigation bar */}
+				<Navigator />
 
-			{/* Page will render here */}
-			<Outlet />
+				<AppSuspense>
+					{/* Page will render here */}
+					<Outlet />
+				</AppSuspense>
+			</div>
 
 			{/* Splash */}
-			{isLoading && <Splash onFinish={() => setIsLoading(false)} />}
-		</div>
+			<Splash />
+		</>
 	);
 }
 

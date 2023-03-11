@@ -53,6 +53,8 @@ export default function useDriveDocAPI(initialFileId = "") {
 
 	useEffect(() => {
 		if (initialFileId) request(initialFileId);
+
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [initialFileId, gApiClient]);
 
 	return {
