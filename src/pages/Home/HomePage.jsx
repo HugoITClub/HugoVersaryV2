@@ -50,7 +50,7 @@ export default function HomePage() {
 		<div className="position-relative bg-light overflow-hidden">
 			<div className={joinCls("position-absolute", style["circle-gradient-1"])} />
 
-			<Carousel id="HeaderCarousel" className={joinCls("position-relative", style["carousel"])}>
+			<Carousel id="HeaderCarousel" className={joinCls("position-relative", style["carousel"])} intervalTime={5000}>
 				{sliderHomePageData.map((item) => (
 					<Image key={item[1]} src={item[1]} className="w-100 h-100" />
 				))}

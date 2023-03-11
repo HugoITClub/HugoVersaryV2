@@ -1,27 +1,62 @@
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { shallowEqual, useDispatch, useSelector } from "react-redux";
+import { setIsPageLoading } from "../../services/loading/actions";
 import { joinCls } from "../../utilities/text.utils";
 import Animation from "../Animation/Animation";
 
 import style from "./style.module.css";
 
-export default function Splash({ className, children, onFinish, ...props }) {
+export default function Splash({ className, children, ...props }) {
+	const dispatch = useDispatch();
+	const { isPageLoading } = useSelector((state) => state.loading, shallowEqual);
 	const { isLoading: isFontLoading } = useSelector((state) => state.font);
-	const [isFinish, setIsFinish] = useState(false);
+
+	const [isStarted, setIsStarted] = useState(false);
+	const [isTimeout, setIsTimeout] = useState(false);
+	const [isFinished, setIsFinished] = useState(false);
+
+	console.log({ isStarted, isTimeout, isFinished });
 
 	let percent = 0;
-	if (!isFontLoading) percent += 25;
-
-	if (isFinish) percent = 100;
+	if (isStarted) {
+		if (!isFontLoading) percent += 25;
+		if (!isPageLoading) percent += 25;
+		if (isTimeout) percent = 100;
+	}
 
 	useEffect(() => {
-		const timeout = setTimeout(() => setIsFinish(true), 2000);
-		return () => clearTimeout(timeout);
-	}, []);
+		if (isPageLoading) {
+			setIsStarted(false);
+			setIsTimeout(false);
+			setIsFinished(false);
+		}
+	}, [isPageLoading]);
+
+	useEffect(() => {
+		if (isStarted) {
+			const timeout = setTimeout(() => setIsTimeout(true), 2000);
+			return () => clearTimeout(timeout);
+		}
+	}, [isStarted]);
+
+	const handleAnimating = () => {
+		if (percent === 100) dispatch(setIsPageLoading(false));
+	};
+
+	const handleAnimated = () => {
+		if (percent === 0) setIsStarted(true);
+		if (percent === 100) setIsFinished(true);
+	};
 
 	return (
-		<Animation animation={isFinish && [{ name: "fadeOut", delay: "0.8s" }]} onAnimated={onFinish}>
-			<div className="position-fixed top-0 start-0 bg-light vw-100 vh-100 z-1">
+		!isFinished && (
+			<Animation
+				animation={percent === 100 ? [{ name: "fadeOut", delay: "0.8s" }] : [{ name: "fadeIn", duration: "0.24s" }]}
+				onAnimating={handleAnimating}
+				onAnimated={handleAnimated}
+				className={joinCls("position-fixed top-0 start-0 bg-light vw-100 vh-100 z-3", className)}
+				{...props}
+			>
 				<div className="row justify-content-center align-items-center h-100">
 					<div className="col-auto">
 						<div className="row flex-column g-2">
@@ -39,7 +74,7 @@ export default function Splash({ className, children, onFinish, ...props }) {
 						</div>
 					</div>
 				</div>
-			</div>
-		</Animation>
+			</Animation>
+		)
 	);
 }

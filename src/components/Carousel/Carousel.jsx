@@ -1,6 +1,5 @@
 import { useEffect, useRef } from "react";
 import { joinCls } from "../../utilities/text.utils";
-import Image from "../Image/Image";
 import "./style.css";
 
 function Carousel({
@@ -32,7 +31,7 @@ function Carousel({
 
 		carousel.addEventListener("slide.bs.carousel", handlePrevBtnClicked);
 		return () => carousel.removeEventListener("slide.bs.carousel", handlePrevBtnClicked);
-	}, []);
+	}, [onNext, onPrev]);
 
 	return (
 		<div ref={carouselRef} id={id} className={joinCls("carousel slide carousel-fade h-100", safeZone && "carousel-safe-zone", className)} data-bs-ride="carousel" {...props}>

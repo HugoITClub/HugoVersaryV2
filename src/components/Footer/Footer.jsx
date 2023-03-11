@@ -121,17 +121,28 @@ export default function Footer({ theme = LIGHT_THEME, className, ...props }) {
 									Phone: +84 981-770-874
 								</Link>
 								<div className="row">
-									<a target="_blank" href="https://www.facebook.com/HUGOClub" className={joinCls("col-2 text-decoration-none fs-3 text-gradient", style["contact-icon"])}>
+									<a
+										target="_blank"
+										rel="noreferrer"
+										href="https://www.facebook.com/HUGOClub"
+										className={joinCls("col-2 text-decoration-none fs-3 text-gradient", style["contact-icon"])}
+									>
 										<i className="fa-brands fa-facebook"></i>
 									</a>
 									<a
 										target="_blank"
+										rel="noreferrer"
 										href="https://www.youtube.com/channel/UCmhyu5rOUvECgvA4YEEKnxg"
 										className={joinCls("col-2 text-decoration-none fs-3 text-gradient", style["contact-icon"])}
 									>
 										<i className="fa-brands fa-youtube"></i>
 									</a>
-									<a target="_blank" href="https://www.instagram.com/hugoenglishclub/" className={joinCls("col-2 text-decoration-none fs-3 text-gradient", style["contact-icon"])}>
+									<a
+										target="_blank"
+										rel="noreferrer"
+										href="https://www.instagram.com/hugoenglishclub/"
+										className={joinCls("col-2 text-decoration-none fs-3 text-gradient", style["contact-icon"])}
+									>
 										<i className="fa-brands fa-instagram"></i>
 									</a>
 								</div>

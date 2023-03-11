@@ -1,8 +1,8 @@
-import useSheetAPI from "../../services/google/hooks/useSheetAPI.js";
-import { joinCls, randomImgUrl } from "../../utilities/text.utils.js";
 import Footer from "../../components/Footer/Footer";
-import logoHugo from "../../global/Images/logoHugo.png";
 import Image from "../../components/Image/Image.jsx";
+import logoHugo from "../../global/Images/logoHugo.png";
+import useSheetAPI from "../../services/google/hooks/useSheetAPI.js";
+import { joinCls } from "../../utilities/text.utils.js";
 
 import style from "./style.module.css";
 export default function AboutUsPage() {
