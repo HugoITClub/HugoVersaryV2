@@ -6,7 +6,7 @@ import Animation from "../Animation/Animation";
 
 import style from "./style.module.css";
 
-export default function Splash({ className, children, ...props }) {
+export default function Splash({ className, children, onStarted = () => {}, ...props }) {
 	const dispatch = useDispatch();
 	const { isPageLoading } = useSelector((state) => state.loading, shallowEqual);
 	const { isLoading: isFontLoading } = useSelector((state) => state.font);
@@ -34,6 +34,7 @@ export default function Splash({ className, children, ...props }) {
 
 	useEffect(() => {
 		if (isStarted) {
+			onStarted();
 			const timeout = setTimeout(() => setIsTimeout(true), 2000);
 			return () => clearTimeout(timeout);
 		}

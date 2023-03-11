@@ -10,13 +10,21 @@ import "./style/custom.style.css";
 import Splash from "../components/Splash/Splash";
 import { shallowEqual, useSelector } from "react-redux";
 import AppSuspense from "../services/loading/AppSuspense";
+import { useEffect, useState } from "react";
 
 function Root() {
 	const { isPageLoading } = useSelector((state) => state.loading, shallowEqual);
+	const [isStartedSplash, setIsStartedSplash] = useState(false);
+
+	useEffect(() => {
+		if (isPageLoading) setIsStartedSplash(false);
+	}, [isPageLoading, setIsStartedSplash]);
+
+	console.log(isStartedSplash);
 
 	return (
 		<>
-			<div className={isPageLoading ? "invisible" : undefined}>
+			<div className={isPageLoading || !isStartedSplash ? "invisible" : undefined}>
 				{/* Navigation bar */}
 				<Navigator />
 
@@ -27,7 +35,7 @@ function Root() {
 			</div>
 
 			{/* Splash */}
-			<Splash />
+			<Splash onStarted={() => setIsStartedSplash(true)} />
 		</>
 	);
 }
