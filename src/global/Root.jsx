@@ -35,7 +35,7 @@ function Root() {
 			</div>
 
 			{/* Splash */}
-			<Splash onStarted={() => setIsStartedSplash(true)} />
+			<Splash onStart={() => setIsStartedSplash(true)} />
 		</>
 	);
 }
