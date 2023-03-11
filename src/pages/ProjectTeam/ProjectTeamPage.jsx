@@ -15,12 +15,17 @@ import EclipseDecor3Svg from "../Home/images/eclipse-decor-3.svg";
 import quoteSign1 from "./images/quoteSign1.svg";
 import quoteSign2 from "./images/quoteSign2.svg";
 import RectDecor2Svg from "../Home/images/rect-decor-2.svg";
+import logoHugo from "../../global/Images/logoHugo.png";
 
 import Wiggle from "../../components/Wiggle/Wiggle";
 
 export default function ProjectTeamPage() {
 	return (
-		<div className="bg-white pt-5 overflow-hidden">
+		<div className="pt-5 overflow-hidden position-relative">
+			<div className={joinCls("position-absolute h-100 w-100", style["bg"])}>
+				<Image src={logoHugo} className="position-fixed" />
+				<div className={joinCls("position-relative", style["fade"])} />
+			</div>
 			<div className="container">
 				<div className={joinCls("position-relative", style["team-introduction"])}>
 					<Wiggle className={joinCls("position-absolute", style["flowerIcon1"])}>
@@ -39,9 +44,9 @@ export default function ProjectTeamPage() {
 					<div className={joinCls("f-montserrat text-center text-dark", style["team-title"])}>Hugoversary - Hugo English Club Anniversary</div>
 					<div className={joinCls("text-center mt-3", style["team-description"])}>
 						“Nghe quen quen phớ hôn, đúng rùi đó, cái tên này là sự kết hợp giữa Hugo và Anniversary, và cuối cùng dự án Hugoversary ra đời. Đúng như cái tên của nó, Website này là
-						sản phẩm của dự án của chúng, được tạo ra bởi nhóm Hugo IT và thuộc quyền sở hữu của Hugo English Club. Đây là nơi lưu giữ, cập nhật và quảng bá các hoạt động, sự kiện
-						của CLB Hugo tính từ lúc mới hình thành đến hiện tại. Tại đây, các thành viên hiện tại của CLB, các cựu thành viên và thậm chí các cá nhân không phải thành viên CLB đều
-						có thể tham quan, tìm hiểu và nhìn lại quá trình phát triển của Hugo.“
+						sản phẩm trong dự án của chúng mình, được tạo ra bởi nhóm Hugo IT và thuộc quyền sở hữu của Hugo English Club. Đây là nơi lưu giữ, cập nhật và quảng bá các hoạt động,
+						sự kiện của CLB Hugo tính từ lúc mới hình thành đến hiện tại. Tại đây, các thành viên hiện tại của CLB, các cựu thành viên và thậm chí các cá nhân không phải thành viên
+						CLB đều có thể tham quan, tìm hiểu và nhìn lại quá trình phát triển của Hugo.“
 					</div>
 				</div>
 				<div className={joinCls("mt-10 position-relative", style["team-member"])}>
@@ -152,7 +157,7 @@ export default function ProjectTeamPage() {
 							</div>
 						</div>
 						<div className="col-6">
-							<Image src={randomImgUrl()} className="h-100 rounded-5" />
+							<Image src={randomImgUrl()} className={joinCls("h-100 rounded-5 shadow", style["story-img"])} />
 						</div>
 					</div>
 				</div>
@@ -165,7 +170,7 @@ export default function ProjectTeamPage() {
 					</Wiggle>
 					<div className="row justify-content-between">
 						<div className="col-6">
-							<Image src={randomImgUrl()} className={joinCls("rounded-5 mt-5", style["mission-img"])} />
+							<Image src={randomImgUrl()} className={joinCls("rounded-5 mt-5 shadow", style["mission-img"])} />
 						</div>
 						<div className="col-6">
 							<div className={joinCls("fw-bold f-montserrat text-black ", style["story-title"])}>Our Mission</div>
