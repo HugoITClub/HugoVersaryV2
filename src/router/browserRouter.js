@@ -8,22 +8,15 @@ import aboutUsRoute from "../pages/AboutUs/aboutUsRoute";
 import meetingsRoute from "../pages/Activities/Meetings/MeetingsRoute";
 import eventsRoute from "../pages/Activities/Events/MeetingsRoute";
 import projectTeamRoute from "../pages/ProjectTeam/projectTeamRoute";
+import postsRoute from "../pages/Posts/postsRoute";
 
 const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Root />,
-    errorElement: <ErrorPage />,
-    children: [
-      homeRoute,
-      teamRoute,
-      meetingsRoute,
-      eventsRoute,
-      blogRoute,
-      aboutUsRoute,
-      projectTeamRoute,
-    ],
-  },
+	{
+		path: "/",
+		element: <Root />,
+		errorElement: <ErrorPage />,
+		children: [homeRoute, teamRoute, meetingsRoute, eventsRoute, blogRoute, aboutUsRoute, projectTeamRoute, postsRoute],
+	},
 ]);
 
 export default router;
