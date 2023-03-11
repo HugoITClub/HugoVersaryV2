@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Outlet } from "react-router-dom";
 import Navigator from "./Navigator/Navigator";
 
@@ -9,21 +8,35 @@ import "./style/spacing.style.css";
 import "./style/animation.style.css";
 import "./style/custom.style.css";
 import Splash from "../components/Splash/Splash";
+import { shallowEqual, useSelector } from "react-redux";
+import AppSuspense from "../services/loading/AppSuspense";
+import { useEffect, useState } from "react";
 
 function Root() {
-	const [isLoading, setIsLoading] = useState(true);
+	const { isPageLoading } = useSelector((state) => state.loading, shallowEqual);
+	const [isStartedSplash, setIsStartedSplash] = useState(false);
+
+	useEffect(() => {
+		if (isPageLoading) setIsStartedSplash(false);
+	}, [isPageLoading, setIsStartedSplash]);
+
+	console.log(isStartedSplash);
 
 	return (
-		<div>
-			{/* Navigation bar */}
-			<Navigator />
+		<>
+			<div className={isPageLoading || !isStartedSplash ? "invisible" : undefined}>
+				{/* Navigation bar */}
+				<Navigator />
 
-			{/* Page will render here */}
-			<Outlet />
+				<AppSuspense>
+					{/* Page will render here */}
+					<Outlet />
+				</AppSuspense>
+			</div>
 
 			{/* Splash */}
-			{isLoading && <Splash onFinish={() => setIsLoading(false)} />}
-		</div>
+			<Splash onStarted={() => setIsStartedSplash(true)} />
+		</>
 	);
 }
 

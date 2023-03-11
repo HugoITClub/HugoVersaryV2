@@ -41,7 +41,9 @@ export default function Wiggle({
 		}, (Math.random() * 2 + transitionTime * 2) * 1000);
 
 		return () => clearInterval(intervalId);
-	}, [autoAnimate, maxRotateRange, maxScaleRange, maxTranslateRange]);
+
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [autoAnimate, maxRotateRange, maxScaleRange, maxTranslateRange, transitionTime]);
 
 	const transition = `${transitionTime}s ease-out`;
 	const handleMouseMoved = (event) => {
