@@ -1,150 +1,151 @@
 .header {
-  position: relative;
-  height: 90vh;
-  background-size: cover;
+	position: relative;
+	height: 90vh;
+	background-size: cover;
 }
 
 .header .fade {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 40%;
-  background: linear-gradient(
-    0deg,
-    rgba(var(--bs-black-rgb), 1) 0%,
-    rgba(var(--bs-black-rgb), 0.5) 60%,
-    rgba(var(--bs-dark-rgb), 0) 100%
-  );
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 40%;
+	background: linear-gradient(0deg, rgba(var(--bs-black-rgb), 1) 0%, rgba(var(--bs-black-rgb), 0.5) 60%, rgba(var(--bs-dark-rgb), 0) 100%);
 }
 
 .header .overlay {
-  position: relative;
+	position: relative;
 }
 
 .header h1 {
-  font-size: 6rem;
-  font-weight: 800;
-  color: white;
-  text-align: center;
+	font-size: 6rem;
+	font-weight: 800;
+	color: white;
+	text-align: center;
 }
 
 .header p {
-  font-size: 1.6rem;
-  letter-spacing: 0.1rem;
-  color: white;
-  text-align: center;
-  margin-bottom: 24px;
+	font-size: 1.6rem;
+	letter-spacing: 0.1rem;
+	color: white;
+	text-align: center;
+	margin-bottom: 24px;
 }
 
 .icon {
-  width: 3rem;
-  height: 3rem;
-  background: transparent;
-  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.1);
-  border: 2px solid var(--bs-primary);
-  color: var(--bs-primary);
-  margin-bottom: 24px;
+	width: 3rem;
+	height: 3rem;
+	background: transparent;
+	box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.1);
+	border: 2px solid var(--bs-primary);
+	color: var(--bs-primary);
+	margin-bottom: 24px;
 }
 
 .icon:hover {
-  background: var(--bs-gradient) !important;
-  border: 2px solid transparent;
-  color: white;
+	background: var(--bs-gradient) !important;
+	border: 2px solid transparent;
+	color: white;
 }
 
 .explore-img-area img {
-  height: 377px;
-  transition: 0.4s ease-out;
+	height: 377px;
+	transition: 0.4s ease-out;
 }
 
 .explore-img-area:hover img {
-  transform: scale(110%);
+	transform: scale(110%);
 }
 
 .explore-img-area h5 {
-  bottom: 0%;
-  transition: 0.4s ease-out;
+	bottom: 0%;
+	transition: 0.4s ease-out;
 }
 
 .explore-img-area:hover h5 {
-  bottom: 100%;
+	bottom: 100%;
 }
 
 .explore-img-area p {
-  opacity: 0;
-  transition: 0.4s ease-out;
+	opacity: 0;
+	transition: 0.4s ease-out;
 }
 
 .explore-img-area:hover p {
-  opacity: 1;
+	opacity: 1;
 }
 
 .activity-item {
-  flex-shrink: 0;
-  flex-basis: 30%;
+	flex-shrink: 0;
+	flex-basis: 30%;
 }
 
 .activity-item :global(.card-img-overlay) {
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0)) 50%;
+	background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0)) 50%;
 }
 
 .activity-item :global(.card-img) {
-  transition: 0.4s ease-out;
-  height: 248px;
+	transition: 0.4s ease-out;
+	height: 248px;
 }
 
 .activity-item:hover :global(.card-img) {
-  transform: scale(120%);
-  opacity: 0.6;
+	transform: scale(120%);
+	opacity: 0.6;
 }
 
 .card-sub-text {
-  opacity: 0;
-  transition: 0.4s ease-out;
-  -webkit-line-clamp: 3;
+	opacity: 0;
+	transition: 0.4s ease-out;
+	-webkit-line-clamp: 3;
 }
 
 .activity-item:hover .card-sub-text {
-  opacity: 1;
+	opacity: 1;
 }
 
 .card-header {
-  bottom: 0%;
-  transition: 0.4s ease-out;
+	bottom: 0%;
+	transition: 0.4s ease-out;
 }
 
 .activity-item:hover .card-header {
-  bottom: 100%;
+	bottom: 100%;
 }
 
 .footer .line-decor {
-  width: 80px;
-  height: 2px;
-  background-color: white;
+	width: 80px;
+	height: 2px;
+	background-color: white;
 }
 
 .footer .fade-up {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 40%;
-  background: linear-gradient(
-    0deg,
-    rgba(var(--bs-black-rgb), 1) 0%,
-    rgba(var(--bs-black-rgb), 0.5) 60%,
-    rgba(var(--bs-dark-rgb), 0) 100%
-  );
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 40%;
+	background: linear-gradient(0deg, rgba(var(--bs-black-rgb), 1) 0%, rgba(var(--bs-black-rgb), 0.5) 60%, rgba(var(--bs-dark-rgb), 0) 100%);
 }
 
 .footer .fade-down {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 40%;
-  background: linear-gradient(
-    180deg,
-    rgba(var(--bs-black-rgb), 1) 0%,
-    rgba(var(--bs-black-rgb), 0.5) 60%,
-    rgba(var(--bs-dark-rgb), 0) 100%
-  );
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 40%;
+	background: linear-gradient(180deg, rgba(var(--bs-black-rgb), 1) 0%, rgba(var(--bs-black-rgb), 0.5) 60%, rgba(var(--bs-dark-rgb), 0) 100%);
+}
+
+.title.power-rangers {
+	color: #ff0000;
+}
+
+.title.heroes-company {
+	color: #0750de;
+}
+
+.title.banana {
+	color: #ffcc00;
+}
+
+.title.niffler {
+	color: #7107db;
 }
