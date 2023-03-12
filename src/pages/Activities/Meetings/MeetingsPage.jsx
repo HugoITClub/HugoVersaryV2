@@ -39,19 +39,6 @@ export default function MeetingsPage() {
 											</div>
 										</div>
 									</div>
-									{/* <div className="col-6">
-										<div className={joinCls("row justify-content-between h-100", style["group-image-row"], style["row-2"])}>
-											<div className="col-4">
-												<Image src={randomImgUrl()} className="object-fit-cover w-100 h-100" />
-											</div>
-											<div className="col-4">
-												<Image src={randomImgUrl()} className="object-fit-cover w-100 h-100" />
-											</div>
-											<div className="col-4">
-												<Image src={randomImgUrl()} className="object-fit-cover w-100 h-100" />
-											</div>
-										</div>
-									</div> */}
 								</div>
 							</div>
 							<div className="container h-100">
@@ -64,31 +51,27 @@ export default function MeetingsPage() {
 										</div>
 									</div>
 									<div className="col-8 h-100">
-										<div className={joinCls("bg-light row flex-column", style["group-image"])}>
-											<div className="col">
-												<div className={joinCls("row justify-content-between h-100", style["group-image-row"], style["row-1"])}>
-													<div className="col-4">
-														<Image src={randomImgUrl()} className="object-fit-cover w-100" />
-													</div>
-													<div className="col-4">
-														<Image src={randomImgUrl()} className="object-fit-cover w-100" />
-													</div>
-													<div className="col-4">
-														<Image src={randomImgUrl()} className="object-fit-cover w-100" />
-													</div>
+										<div className={joinCls("bg-light", style["group-image"])}>
+											<div className={joinCls("row h-50 py-4", style["group-image-row"], style["row-1"])}>
+												<div className="col-4 h-100">
+													<Image src={randomImgUrl(Math.round(Math.random() * 1000) + 1000, Math.round(Math.random() * 1000) + 1000)} className="object-fit-cover w-100 h-100" />
+												</div>
+												<div className="col-4 h-100">
+													<Image src={randomImgUrl(Math.round(Math.random() * 1000) + 1000, Math.round(Math.random() * 1000) + 1000)} className="object-fit-cover w-100 h-100" />
+												</div>
+												<div className="col-4 h-100">
+													<Image src={randomImgUrl(Math.round(Math.random() * 1000) + 1000, Math.round(Math.random() * 1000) + 1000)} className="object-fit-cover w-100 h-100" />
 												</div>
 											</div>
-											<div className="col">
-												<div className={joinCls("row justify-content-between h-100", style["group-image-row"], style["row-2"])}>
-													<div className="col-4">
-														<Image src={randomImgUrl()} className="object-fit-cover w-100 h-100" />
-													</div>
-													<div className="col-4">
-														<Image src={randomImgUrl()} className="object-fit-cover w-100 h-100" />
-													</div>
-													<div className="col-4">
-														<Image src={randomImgUrl()} className="object-fit-cover w-100 h-100" />
-													</div>
+											<div className={joinCls("row h-50 py-4", style["group-image-row"], style["row-2"])}>
+												<div className="col-4 h-100">
+													<Image src={randomImgUrl(Math.round(Math.random() * 1000) + 1000, Math.round(Math.random() * 1000) + 1000)} className="object-fit-cover w-100 h-100" />
+												</div>
+												<div className="col-4 h-100">
+													<Image src={randomImgUrl(Math.round(Math.random() * 1000) + 1000, Math.round(Math.random() * 1000) + 1000)} className="object-fit-cover w-100 h-100" />
+												</div>
+												<div className="col-4 h-100">
+													<Image src={randomImgUrl(Math.round(Math.random() * 1000) + 1000, Math.round(Math.random() * 1000) + 1000)} className="object-fit-cover w-100 h-100" />
 												</div>
 											</div>
 										</div>
