@@ -125,7 +125,7 @@ export default function HomePage() {
 						renderItem={([id, label, name, description, date, imageUrl, contentFileId]) => (
 							<Link
 								key={id}
-								to={MEETINGS_ACTIVITY_PAGE_PATH}
+								to={`/posts/${contentFileId}`}
 								className={joinCls("card text-decoration-none text-bg-dark border-0 rounded-3 overflow-hidden", style["activity-item"])}
 							>
 								<Image src={imageUrl} className="card-img" />
@@ -162,7 +162,7 @@ export default function HomePage() {
 						items={blogsData}
 						className="gap-3 mt-5"
 						renderItem={([id, title, description, time, imageUrl, contentFileId]) => (
-							<Link key={id} to={contentFileId} className={joinCls("card text-reset text-decoration-none rounded-3 overflow-hidden", style["blog-item"])}>
+							<Link key={id} to={`/posts/${contentFileId}`} className={joinCls("card text-reset text-decoration-none rounded-3 overflow-hidden", style["blog-item"])}>
 								<Image src={imageUrl} className={joinCls("card-img-top p-3", style["blog-item-img"])} />
 								<div className="card-body d-flex flex-column position-relative pt-0">
 									<small className="d-block text-secondary text-uppercase">{time}</small>
