@@ -26,8 +26,8 @@ export default function AboutUsPage() {
 				<div>
 					<div className="container">
 						<div className={joinCls("row justify-content-between align-items-center")}>
-							<p className={joinCls("col-lg-8 col-12 mt-5 fw-bold f-montserrat", style["about-introduction-title"])}>
-								Our club built base on <br />
+							<p className={joinCls("text-start col-lg-8 col-12 mt-5 fw-bold f-montserrat", style["about-introduction-title"])}>
+								Our club was built based on <br />
 								<span>LEARN, DEVELOP</span> <br />
 								and <span>JOY.</span>
 							</p>

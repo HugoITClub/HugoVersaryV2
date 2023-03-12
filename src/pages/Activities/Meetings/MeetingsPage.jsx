@@ -112,7 +112,7 @@ export default function MeetingsPage() {
 					<div className={joinCls("row g-5 g-md-3 g-lg-5 position-relative", style["meeting-content"])}>
 						{meetings.map(([id, title, description, date, imgUrl, contentUrl]) => (
 							<div className="col-lg-6 col-md-6 col-12">
-								<Link key={id} to={contentUrl} className={joinCls("text-decoration-none", style["post"])}>
+								<Link key={id} to={`/posts/${contentUrl}`} className={joinCls("text-decoration-none", style["post"])}>
 									<div className="row justify-content-around">
 										<div className="col-md-6 col-lg-5 p-0 px-sm-2 col-5">
 											<img src={imgUrl} alt="" className={style["post-image"]} />
