@@ -133,11 +133,12 @@
 
 .post-title {
 	color: #000;
-	line-height: 18px;
+	line-height: 22px;
 	letter-spacing: 0.03em;
 	transition: all 0.5s;
 	-webkit-line-clamp: 3;
 	font-size: 15px;
+	margin-bottom: 0.5rem;
 }
 
 .post-description {

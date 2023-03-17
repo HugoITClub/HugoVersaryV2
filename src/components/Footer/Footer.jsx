@@ -89,8 +89,8 @@ export default function Footer({ theme = LIGHT_THEME, className, ...props }) {
 			<div className={joinCls("position-relative py-5", style["footer"])}>
 				<div className="container">
 					<div className="row">
-						<div className="col-3">
-							<div className="d-flex flex-column">
+						<div className="col-lg-3 col-12 ">
+							<div className="d-flex flex-column align-items-lg-start align-items-center">
 								<Link to="#">
 									<Image src={themeContent[theme].logo} width={240} className={joinCls("px-2 mb-2")} />
 								</Link>
@@ -100,8 +100,8 @@ export default function Footer({ theme = LIGHT_THEME, className, ...props }) {
 								</p>
 							</div>
 						</div>
-						<div className="col-3">
-							<div className="d-flex flex-column">
+						<div className="col-lg-3 col-12 ">
+							<div className="d-flex flex-column align-items-lg-start align-items-center">
 								<h3 className={joinCls("text-uppercase mt-3 mb-4", themeContent[theme].titleColor)}>About Us</h3>
 								<Link to={ABOUT_US_PAGE_PATH} className={joinCls("text-decoration-none mb-2", themeContent[theme].textColor)}>
 									Our Staffs
@@ -111,21 +111,21 @@ export default function Footer({ theme = LIGHT_THEME, className, ...props }) {
 								</Link>
 							</div>
 						</div>
-						<div className="col-3">
-							<div className="d-flex flex-column">
+						<div className="col-lg-3 col-12 ">
+							<div className="d-flex flex-column align-items-lg-start align-items-center">
 								<h3 className={joinCls("text-uppercase mt-3 mb-4", themeContent[theme].titleColor)}>Contact</h3>
 								<Link to="#" className={joinCls("text-decoration-none mb-2", themeContent[theme].textColor)}>
 									Email: hugoclub.dut@gmail.com
 								</Link>
-								<Link to="#" className={joinCls("text-decoration-none mb-2", themeContent[theme].textColor)}>
+								<Link to="#" className={joinCls("text-decoration-none mb-3", themeContent[theme].textColor)}>
 									Phone: +84 981-770-874
 								</Link>
-								<div className="row">
+								<div className="row align-items-center justify-content-center justify-content-lg-start w-100">
 									<a
 										target="_blank"
 										rel="noreferrer"
 										href="https://www.facebook.com/HUGOClub"
-										className={joinCls("col-2 text-decoration-none fs-3 text-gradient", style["contact-icon"])}
+										className={joinCls("col-2 text-decoration-none fs-3 text-gradient d-flex justify-content-center justify-content-lg-start", style["contact-icon"])}
 									>
 										<i className="fa-brands fa-facebook"></i>
 									</a>
@@ -133,7 +133,7 @@ export default function Footer({ theme = LIGHT_THEME, className, ...props }) {
 										target="_blank"
 										rel="noreferrer"
 										href="https://www.youtube.com/channel/UCmhyu5rOUvECgvA4YEEKnxg"
-										className={joinCls("col-2 text-decoration-none fs-3 text-gradient", style["contact-icon"])}
+										className={joinCls("col-2 text-decoration-none fs-3 text-gradient d-flex justify-content-center justify-content-lg-start", style["contact-icon"])}
 									>
 										<i className="fa-brands fa-youtube"></i>
 									</a>
@@ -141,15 +141,15 @@ export default function Footer({ theme = LIGHT_THEME, className, ...props }) {
 										target="_blank"
 										rel="noreferrer"
 										href="https://www.instagram.com/hugoenglishclub/"
-										className={joinCls("col-2 text-decoration-none fs-3 text-gradient", style["contact-icon"])}
+										className={joinCls("col-2 text-decoration-none fs-3 text-gradient d-flex justify-content-center justify-content-lg-start", style["contact-icon"])}
 									>
 										<i className="fa-brands fa-instagram"></i>
 									</a>
 								</div>
 							</div>
 						</div>
-						<div className="col-3">
-							<div className="d-flex flex-column">
+						<div className="col-lg-3 col-12 mb-3">
+							<div className="d-flex flex-column align-items-lg-start align-items-center">
 								<h3 className={joinCls("text-uppercase mt-3 mb-4", themeContent[theme].titleColor)}>Language</h3>
 								<div className={joinCls("dropdown", style["language-btn"])}>
 									<div className={joinCls("btn dropdown-toggle d-flex gap-2 align-items-center", themeContent[theme].languageBtn)} data-bs-toggle="dropdown">
