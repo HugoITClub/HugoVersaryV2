@@ -21,7 +21,7 @@ import Wiggle from "../../components/Wiggle/Wiggle";
 
 export default function BlogsPage() {
 	const images = [randomImgUrl(), randomImgUrl(), randomImgUrl(), randomImgUrl(), randomImgUrl(), randomImgUrl()];
-	const { isLoading: isBlogIntroLoading, isFull: isBlogIntroFull, data: blogIntroData, getMore: getMoreBlogIntro } = useSheetAPI("Blogs", "S", "V", { earlyTake: 8 });
+	const { isLoading: isBlogIntroLoading, isFull: isBlogIntroFull, data: blogIntroData, getMore: getMoreBlogIntro } = useSheetAPI("Blogs", "S", "W", { earlyTake: 8 });
 
 	const { isLoading: isBlogsLoading, isFull: isBlogsFull, data: blogsData, getMore: getMoreBlogsData } = useSheetAPI("Blogs", "M", "R", { earlyTake: 8 });
 
@@ -33,12 +33,11 @@ export default function BlogsPage() {
 				<Image src={logoHugo} className="position-fixed" />
 				<div className={joinCls("position-relative", style["fade"])} />
 			</div>
-
 			<Carousel id="BlogIntroCarousel" safeZone intervalTime={5000} className={style["blog-intro"]}>
-				{images.map((image) => (
-					<div key={image} className="position-relative h-100">
+				{blogIntroData.map(([id, title, description, imgUrl, contentFileId]) => (
+					<div key={id} className="position-relative h-100">
 						<div className={joinCls("position-absolute start-0 left-0 w-100 h-50", style["blog-intro-banner"])}>
-							<Image key={image} src={image} className="w-100 h-100" />
+							<Image key={imgUrl} src={imgUrl} className="w-100 h-100" />
 						</div>
 
 						<div className={joinCls("position-absolute start-0 left-0 w-100", style["blog-intro-banner-text"])}>
@@ -51,7 +50,7 @@ export default function BlogsPage() {
 									<div className={joinCls("me-4 mt-5", style["poster"])}>
 										<div className="d-flex justify-content-center align-items-center h-100">
 											<Wiggle disableHover maxScaleRange={0} maxRotateRange={0} transitionTime={3} className="h-100">
-												<Image key={image} src={image} className="object-fit-contain h-100" />
+												<Image key={imgUrl} src={imgUrl} className="object-fit-contain h-100" />
 											</Wiggle>
 										</div>
 									</div>
@@ -64,16 +63,10 @@ export default function BlogsPage() {
 								<div className={joinCls("col-8 d-flex align-items-center position-absolute", style["wrap-blog-intro-content"])}>
 									<div className={joinCls("rounded-3 p-5", style["blog-intro-content"])}>
 										<Link to="#" className="text-reset text-decoration-none">
-											<h2 className="text-uppercase mb-3 f-montserrat text-start">LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT. NUNC VULPUTATE LIBERO</h2>
+											<h2 className="text-uppercase mb-3 f-montserrat text-start">{title}</h2>
 										</Link>
-										<div className={joinCls("f-lato text-ellipsis fs-5 mt-4", style["blog-intro-content-description"])}>
-											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur
-											adipiscing elit. vulputate libero,Nunc vulputate libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero,Nunc vulputate libero.
-											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero,Nunc vulputate libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-											Nunc vulputate libero,Nunc vulputate libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero,Nunc vulputate libero. Lorem ipsum
-											dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero,Nunc vulputate libero.
-										</div>
-										<Link to="#" className="fs-6 btn btn-lg btn-outline-gradient text-uppercase rounded-pill px-4 mt-4">
+										<div className={joinCls("f-lato text-ellipsis fs-5 mt-4", style["blog-intro-content-description"])}>{description}</div>
+										<Link to={`/posts/${contentFileId}`} className="fs-6 btn btn-lg btn-outline-gradient text-uppercase rounded-pill px-4 mt-4">
 											Read more
 										</Link>
 									</div>
@@ -88,12 +81,12 @@ export default function BlogsPage() {
 				<div className={joinCls("position-absolute", style["circle-gradient-1"])} />
 
 				<div className="blog-content position-relative">
-					<div className={joinCls("text-uppercase text-gradient fw-bold text-center f-montserrat display-5", style["blog-content-header"])}>hugo's blog</div>
+					<div className={joinCls("text-uppercase text-gradient fw-bold text-center f-montserrat display-5", style["blog-content-header"])}>hugo's academic</div>
 					<Wiggle className={joinCls("position-absolute", style["puzzle"])}>
 						<Image src={PuzzleSvg} />
 					</Wiggle>
 					<Slider
-						items={blogsData}
+						items={academicData}
 						className="gap-3 mt-5"
 						renderItem={([id, title, description, time, imageUrl, contentFileId]) => (
 							<Link key={id} to={`/posts/${contentFileId}`} className={joinCls("card text-reset text-decoration-none overflow-hidden", style["blog-item"])}>
@@ -129,9 +122,9 @@ export default function BlogsPage() {
 					<Wiggle className={joinCls("position-absolute", style["rect-2"])}>
 						<Image src={RectDecor2Svg} />
 					</Wiggle>
-					<div className={joinCls("text-uppercase text-gradient fw-bold text-center f-montserrat display-5 mb-5", style["blog-content-header"])}>hugo's academic</div>
+					<div className={joinCls("text-uppercase text-gradient fw-bold text-center f-montserrat display-5 mb-5", style["blog-content-header"])}>hugo blogs</div>
 					<div className={joinCls("row g-5 g-md-3 g-lg-5 position-relative", style["academic-content"])}>
-						{academicData.map(([id, title, description, date, imgUrl, contentUrl]) => (
+						{blogsData.map(([id, title, description, date, imgUrl, contentUrl]) => (
 							<div className="col-lg-6 col-md-6 col-12">
 								<Link key={id} to={`/posts/${contentUrl}`} className={joinCls("text-decoration-none", style["post"])}>
 									<div className="row justify-content-around align-items-center">
@@ -153,7 +146,7 @@ export default function BlogsPage() {
 								</Link>
 							</div>
 						))}
-						{isAcademicLoading && (
+						{isBlogsLoading && (
 							<>
 								<div className="col-6">
 									<div className={joinCls("text-decoration-none", style["post"])}>
@@ -188,10 +181,10 @@ export default function BlogsPage() {
 							</>
 						)}
 					</div>
-					{!isAcademicFull && (
+					{!isBlogsFull && (
 						<div className="row justify-content-center mt-5">
 							<div className="col-auto">
-								<button className={joinCls("btn btn-lg btn-outline-gradient rounded-pill position-relative", style["see-more-btn"])} onClick={() => getMoreAcademicData(8)}>
+								<button className={joinCls("btn btn-lg btn-outline-gradient rounded-pill position-relative", style["see-more-btn"])} onClick={() => getMoreBlogsData(8)}>
 									SEE MORE
 								</button>
 							</div>
