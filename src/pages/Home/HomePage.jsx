@@ -93,7 +93,7 @@ export default function HomePage() {
 
 				<Modal className="modal-xl" dialogClassName="h-100 my-0 py-5" isShown={isShownHugoVideo} onClose={() => setIsShownHugoVideo(false)}>
 					{isShownHugoVideo && (
-						<iframe title="Youtube Video" className="bg-dark" type="text/html" width="100%" height="100%" src="http://www.youtube.com/embed/Y9V3bgXbzi4?enablejsapi=1"></iframe>
+						<iframe title="Youtube Video" className="bg-dark" type="text/html" width="100%" height="100%" src="https://www.youtube.com/embed/Y9V3bgXbzi4?enablejsapi=1"></iframe>
 					)}
 				</Modal>
 			</section>
