@@ -62,10 +62,10 @@ export default function HomePage() {
 
 				<div className="container position-relative">
 					<div className="row justify-content-between align-items-center">
-						<div className="col-6">
+						<div className="col-lg-6 col-12">
 							<h1 className="display-2 text-outline-primary fw-bolder f-lato">WHAT IS</h1>
 							<h1 className="display-3 f-montserrat fw-bolder text-gradient text-start">HUGO ENGLISH CLUB</h1>
-							<p className={joinCls("me-5", style["description"])}>
+							<p className={joinCls("me-0 me-lg-5", style["description"])}>
 								<FormattedMessage {...homeMessages.description} />
 							</p>
 							<button className="btn btn-outline-gradient rounded-pill px-4">
@@ -201,8 +201,8 @@ export default function HomePage() {
 							<br />
 							Hugo English Club
 						</h1>
-						<h4 className="text-center mt-5">Hugo brings English more familiar than ever before, whoever you are!</h4>
-						<p className="text-center f-montserrat mt-3">
+						<h4 className="text-center mt-3 mt-lg-5 px-3">Hugo brings English more familiar than ever before, whoever you are!</h4>
+						<p className={joinCls("text-center f-montserrat mt-3 px-3", style["join-us-description"])}>
 							Do you want to immerse yourself in an environment where people practice English together?
 							<br />
 							Are you eager to make active and talented friends in Danang?

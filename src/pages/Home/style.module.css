@@ -129,13 +129,23 @@
 }
 
 .join-us h1 {
-	line-height: 132%;
-	font-size: 3rem;
+	font-size: 2rem;
 }
 
 .join-us p {
-	font-size: 1.6rem;
+	font-size: 1.3rem;
 	font-weight: 300;
+}
+
+@media (min-width: 992px) {
+	.join-us h1 {
+		line-height: 132%;
+		font-size: 3rem;
+	}
+	.join-us p {
+		font-size: 1.6rem;
+		font-weight: 300;
+	}
 }
 
 .join-us img {
