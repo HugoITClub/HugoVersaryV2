@@ -57,8 +57,8 @@ export default function HomePage() {
 			</Carousel>
 
 			<section className="position-relative mt-5">
-				<Image src={EclipseDecor1Svg} className={joinCls("position-absolute", style["eclipse-decor-1"])} />
-				<Image src={EclipseDecor2Svg} className={joinCls("position-absolute", style["eclipse-decor-2"])} />
+				<Image lazy={false} src={EclipseDecor1Svg} className={joinCls("position-absolute", style["eclipse-decor-1"])} />
+				<Image lazy={false} src={EclipseDecor2Svg} className={joinCls("position-absolute", style["eclipse-decor-2"])} />
 
 				<div className="container position-relative">
 					<div className="row justify-content-between align-items-center">
@@ -74,8 +74,8 @@ export default function HomePage() {
 						</div>
 						<div className="col-auto">
 							<div className={joinCls("position-relative", style["yt-play"])}>
-								<img src={YtDecor1Svg} className="position-absolute bottom-0 start-0" alt="youtube-decor" />
-								<img src={YtDecor2Svg} className="position-absolute top-0 end-0" alt="youtube-decor" />
+								<img lazy={false} src={YtDecor1Svg} className="position-absolute bottom-0 start-0" alt="youtube-decor" />
+								<img lazy={false} src={YtDecor2Svg} className="position-absolute top-0 end-0" alt="youtube-decor" />
 								<img src="https://img.youtube.com/vi/Y9V3bgXbzi4/hqdefault.jpg" className="mw-100 p-3" alt="youtube-thumbnail" />
 								<div
 									className={joinCls(
