@@ -15,8 +15,6 @@ export default function Splash({ className, children, onStart = () => {}, ...pro
 	const [isTimeout, setIsTimeout] = useState(false);
 	const [isFinished, setIsFinished] = useState(false);
 
-	console.log({ isStarted, isTimeout, isFinished });
-
 	let percent = 0;
 	if (isStarted) {
 		if (!isFontLoading) percent += 25;

@@ -149,7 +149,7 @@
 }
 
 .join-us img {
-	opacity: 4%;
+	opacity: 4% !important;
 	filter: screen;
 }
 

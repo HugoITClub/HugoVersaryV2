@@ -49,8 +49,8 @@ export default function BlogsPage() {
 								<div className="col-6 h-100">
 									<div className={joinCls("me-4 mt-5", style["poster"])}>
 										<div className="d-flex justify-content-center align-items-center h-100">
-											<Wiggle disableHover maxScaleRange={0} maxRotateRange={0} transitionTime={3} className="h-100">
-												<Image key={imgUrl} src={imgUrl} className="object-fit-contain h-100" />
+											<Wiggle disableHover maxScaleRange={0} maxRotateRange={0} transitionTime={3} className="mx-5">
+												<Image key={imgUrl} src={imgUrl} className="object-fit-contain mw-100 mh-100" />
 											</Wiggle>
 										</div>
 									</div>
