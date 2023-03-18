@@ -107,7 +107,6 @@
 	cursor: pointer;
 	display: block;
 	border: 2px solid #e2e2e2;
-	/* border: 2px solid #bdb8b8; */
 	border-radius: 4px;
 	padding: 12px;
 	transition: all 0.25s;
@@ -136,7 +135,7 @@
 	line-height: 22px;
 	letter-spacing: 0.03em;
 	transition: all 0.5s;
-	-webkit-line-clamp: 3;
+	-webkit-line-clamp: 2;
 	font-size: 15px;
 	margin-bottom: 0.5rem;
 }
