@@ -133,11 +133,11 @@ export default function HomePage() {
 									<div className="position-relative">
 										<div className={joinCls("position-absolute", style["card-header"])}>
 											<h3 className="badge text-success text-bg-light text-uppercase px-2 py-2">{label}</h3>
-											<h5 className="text-start">{name}</h5>
+											<h5 className="card-text">{name}</h5>
 										</div>
-										<p className={joinCls("text-ellipsis text-start", style["card-sub-text"])}>{description}</p>
+										<p className={joinCls("card-text text-ellipsis text-start", style["card-sub-text"])}>{description}</p>
 									</div>
-									<p className="text-start text-secondary fw-bold">
+									<p className="card-text text-secondary fw-bold">
 										<small className="text-uppercase">{date}</small>
 									</p>
 								</div>
