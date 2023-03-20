@@ -41,14 +41,14 @@ export default function TeamsPage() {
 		params: { name },
 	} = useMatch(TEAMS_PAGE_PATH);
 
-	const { isLoading: isTeamDataLoading, isFull: isTeamDataFull, data: teamData, getMore: getMoreTeamData } = useSheetAPI(sheetNameMap[name], "AE", "AH", { earlyTake: 20 });
+	const { isLoading: isTeamDataLoading, isFull: isTeamDataFull, data: teamData, getMore: getMoreTeamData } = useSheetAPI(sheetNameMap[name], "AE", "AH", { earlyTake: 50 });
 	const { isLoading: isTeamIntroLoading, isFull: isTeamIntroFull, data: teamIntro, getMore: getMoreTeamIntro } = useSheetAPI(sheetNameMap[name], "V", "AD", { earlyTake: 1 });
 	const {
 		isLoading: isTeamActivitiesLoading,
 		isFull: isTeamActivitiesFull,
 		data: teamActivities,
 		getMore: getMoreTeamActivities,
-	} = useSheetAPI(sheetNameMap[name], "AI", "AO", { earlyTake: 20 });
+	} = useSheetAPI(sheetNameMap[name], "AI", "AO", { earlyTake: 50 });
 	const exploreCategories = [
 		{
 			title: "Team Meeting",
@@ -156,7 +156,7 @@ export default function TeamsPage() {
 										<div className="position-relative">
 											<div className={joinCls("position-absolute", style["card-header"])}>
 												<h3 className="text-start badge text-success text-bg-light text-uppercase px-2 py-2">{label}</h3>
-												<h5 className="card-text">{name}</h5>
+												<h5 className="card-text text-start">{name}</h5>
 											</div>
 											<p className={joinCls("card-text text-ellipsis text-start", style["card-sub-text"])}>{description}</p>
 										</div>
