@@ -17,6 +17,7 @@
 	backdrop-filter: blur(8px);
 	background-color: rgba(var(--bs-white-rgb), 0.64);
 	z-index: 1;
+	position: relative;
 }
 .post:hover {
 	border: 2px solid #fe9548;
