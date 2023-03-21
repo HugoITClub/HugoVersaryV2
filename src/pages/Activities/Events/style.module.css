@@ -51,7 +51,7 @@
 .post {
 	cursor: pointer;
 	display: block;
-	border: 2px solid #e2e2e2;
+	border: 2px solid transparent;
 	border-radius: 4px;
 	padding: 12px;
 	transition: all 0.25s;
@@ -60,7 +60,7 @@
 	z-index: 1;
 }
 .post:hover {
-	border: 2px solid #fe9548;
+	border: 2px solid var(--bs-primary);
 }
 
 .post:hover .post-title {

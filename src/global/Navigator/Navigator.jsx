@@ -90,7 +90,7 @@ export default function Navigator() {
 		<Fragment>
 			<Title />
 
-			<nav className={joinCls("navbar navbar-expand-lg bg-dark navbar-dark p-0", style["navbar"])}>
+			<nav className={joinCls("navbar navbar-expand-lg bg-dark navbar-dark p-0 fixed-top", style["navbar"])}>
 				<div className="container align-items-stretch">
 					<Link to={HOME_PAGE_PATH} className="navbar-brand">
 						<Image src={HugoLogoSvg} width={216} className="py-2" />
@@ -107,7 +107,7 @@ export default function Navigator() {
 					<div className="collapse navbar-collapse align-items-stretch">
 						<ul ref={navbarRef} className="navbar-nav mx-auto mb-2 mb-lg-0 align-items-center">
 							{NAV_LINKS.map((navLink) => (
-								<li key={navLink.name} className="position-relative nav-item nav-element d-flex align-items-center h-100">
+								<li key={navLink.name} className="position-relative nav-item nav-element d-block d-lg-flex align-items-center h-100">
 									{navLink.children ? (
 										<>
 											<div

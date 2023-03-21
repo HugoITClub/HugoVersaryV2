@@ -61,7 +61,7 @@
 	transition: 0.4s ease-out;
 	background-color: rgba(var(--bs-white-rgb), 0.64);
 	backdrop-filter: blur(8px);
-	border: 2px solid #e2e2e2;
+	border: 2px solid transparent;
 }
 
 .blog-item-img {
@@ -106,7 +106,7 @@
 .post {
 	cursor: pointer;
 	display: block;
-	border: 2px solid #e2e2e2;
+	border: 2px solid transparent;
 	border-radius: 4px;
 	padding: 12px;
 	transition: all 0.25s;
@@ -115,7 +115,7 @@
 	z-index: 1;
 }
 .post:hover {
-	border: 2px solid #fe9548;
+	border: 2px solid var(--bs-primary);
 }
 
 .post:hover .post-title {

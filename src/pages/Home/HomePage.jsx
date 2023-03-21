@@ -63,8 +63,8 @@ export default function HomePage() {
 				<div className="container position-relative">
 					<div className="row justify-content-between align-items-center">
 						<div className="col-lg-6 col-12">
-							<h1 className="display-2 text-outline-primary fw-bolder f-lato">WHAT IS</h1>
-							<h1 className="display-3 f-montserrat fw-bolder text-gradient text-start">HUGO ENGLISH CLUB</h1>
+							<h1 className="display-2 text-outline-primary fw-bolder f-google-san">WHAT IS</h1>
+							<h1 className="display-3 f-google-san fw-bolder text-gradient text-start">HUGO ENGLISH CLUB</h1>
 							<p className={joinCls("me-0 me-lg-5", style["description"])}>
 								<FormattedMessage {...homeMessages.description} />
 							</p>
@@ -98,9 +98,9 @@ export default function HomePage() {
 				</Modal>
 			</section>
 
-			<section className="position-relative mt-10">
+			<section className="position-relative mt-5 mt-lg-10">
 				<div className="position-relative container">
-					<h1 className="display-5 f-montserrat fw-bolder text-gradient text-center">TEAMS IN HUGO</h1>
+					<h1 className="display-5 f-google-san fw-bolder text-gradient text-center">TEAMS IN HUGO</h1>
 					<TeamsSection className="mt-5" />
 				</div>
 
@@ -118,7 +118,7 @@ export default function HomePage() {
 				</Wiggle>
 
 				<div className="position-relative container">
-					<h1 className="display-5 f-montserrat fw-bolder text-gradient text-center">ACTIVITIES</h1>
+					<h1 className="display-5 f-google-san fw-bolder text-gradient text-center">ACTIVITIES</h1>
 					<Slider
 						items={activitiesData}
 						className="gap-3 mt-5"
@@ -135,9 +135,9 @@ export default function HomePage() {
 											<h3 className="badge text-success text-bg-light text-uppercase px-2 py-2">{label}</h3>
 											<h5 className="card-text text-start">{name}</h5>
 										</div>
-										<p className={joinCls("card-text text-ellipsis text-start", style["card-sub-text"])}>{description}</p>
+										<p className={joinCls("card-text text-ellipsis text-start fs-sub", style["card-sub-text"])}>{description}</p>
 									</div>
-									<p className="card-text text-secondary fw-bold">
+									<p className="card-text text-info">
 										<small className="text-uppercase">{date}</small>
 									</p>
 								</div>
@@ -148,7 +148,7 @@ export default function HomePage() {
 			</section>
 
 			<section className="position-relative mt-10">
-				<Image src={EclipseDecor4Svg} className={joinCls("position-absolute", style["eclipse-decor-4"])} />
+				<Image src={EclipseDecor4Svg} lazy={false} className={joinCls("position-absolute", style["eclipse-decor-4"])} />
 				<Wiggle className={joinCls("position-absolute", style["note"])}>
 					<Image src={NoteSvg} />
 				</Wiggle>
@@ -157,7 +157,7 @@ export default function HomePage() {
 				</Wiggle>
 
 				<div className="position-relative container">
-					<h1 className="display-5 f-montserrat fw-bolder text-gradient text-center">BLOGS</h1>
+					<h1 className="display-5 f-google-san fw-bolder text-gradient text-center">BLOGS</h1>
 					<Slider
 						items={blogsData}
 						className="gap-3 mt-5"
@@ -202,7 +202,7 @@ export default function HomePage() {
 							Hugo English Club
 						</h1>
 						<h4 className="text-center mt-3 mt-lg-5 px-3">Hugo brings English more familiar than ever before, whoever you are!</h4>
-						<p className={joinCls("text-center f-montserrat mt-3 px-3", style["join-us-description"])}>
+						<p className={joinCls("text-center f-google-san mt-3 px-3", style["join-us-description"])}>
 							Do you want to immerse yourself in an environment where people practice English together?
 							<br />
 							Are you eager to make active and talented friends in Danang?

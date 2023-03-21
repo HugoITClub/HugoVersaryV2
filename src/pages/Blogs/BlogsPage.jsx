@@ -63,9 +63,9 @@ export default function BlogsPage() {
 								<div className={joinCls("col-8 d-flex align-items-center position-absolute", style["wrap-blog-intro-content"])}>
 									<div className={joinCls("rounded-3 p-5", style["blog-intro-content"])}>
 										<Link to="#" className="text-reset text-decoration-none">
-											<h2 className="text-uppercase mb-3 f-montserrat text-start">{title}</h2>
+											<h2 className="text-uppercase mb-3 f-google-san text-start">{title}</h2>
 										</Link>
-										<div className={joinCls("f-lato text-ellipsis fs-5 mt-4", style["blog-intro-content-description"])}>{description}</div>
+										<div className={joinCls("f-google-san text-ellipsis fs-5 mt-4", style["blog-intro-content-description"])}>{description}</div>
 										<Link to={`/posts/${contentFileId}`} className="fs-6 btn btn-lg btn-outline-gradient text-uppercase rounded-pill px-4 mt-4">
 											Read more
 										</Link>
@@ -81,7 +81,7 @@ export default function BlogsPage() {
 				<div className={joinCls("position-absolute", style["circle-gradient-1"])} />
 
 				<div className="blog-content position-relative">
-					<div className={joinCls("text-uppercase text-gradient fw-bold text-center f-montserrat display-5", style["blog-content-header"])}>hugo's academic</div>
+					<div className={joinCls("text-uppercase text-gradient fw-bold text-center f-google-san display-5", style["blog-content-header"])}>hugo's academic</div>
 					<Wiggle className={joinCls("position-absolute", style["puzzle"])}>
 						<Image src={PuzzleSvg} />
 					</Wiggle>
@@ -122,7 +122,7 @@ export default function BlogsPage() {
 					<Wiggle className={joinCls("position-absolute", style["rect-2"])}>
 						<Image src={RectDecor2Svg} />
 					</Wiggle>
-					<div className={joinCls("text-uppercase text-gradient fw-bold text-center f-montserrat display-5 mb-5", style["blog-content-header"])}>hugo blogs</div>
+					<div className={joinCls("text-uppercase text-gradient fw-bold text-center f-google-san display-5 mb-5", style["blog-content-header"])}>hugo blogs</div>
 					<div className={joinCls("row g-5 g-md-3 g-lg-5 position-relative", style["academic-content"])}>
 						{blogsData.map(([id, title, description, date, imgUrl, contentUrl]) => (
 							<div className="col-lg-6 col-md-6 col-12">
@@ -132,7 +132,7 @@ export default function BlogsPage() {
 											<img src={imgUrl} alt="" className={style["post-image"]} />
 										</div>
 										<div className="col-6">
-											<div className={joinCls("text-ellipsis text-start f-montserrat fw-bold", style["post-title"])}>{title}</div>
+											<div className={joinCls("text-ellipsis text-start f-google-san fw-bold", style["post-title"])}>{title}</div>
 											<div className={joinCls("text-ellipsis text-start", style["post-description"])}>{description}</div>
 											<div className={joinCls("text-uppercase mt-2", style["post-date"])}>{date}</div>
 											<div className="text-decoration-none d-flex align-items-center mt-1">

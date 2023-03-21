@@ -41,7 +41,7 @@ export default function ProjectTeamPage() {
 						<Image src={flowerIcon2} />
 					</Wiggle>
 
-					<div className={joinCls("f-montserrat text-center text-dark", style["team-title"])}>Hugoversary - Hugo English Club Anniversary</div>
+					<div className={joinCls("f-google-san text-center text-dark", style["team-title"])}>Hugoversary - Hugo English Club Anniversary</div>
 					<div className={joinCls("text-center mt-3", style["team-description"])}>
 						“Nghe quen quen phớ hôn, đúng rùi đó, cái tên này là sự kết hợp giữa Hugo và Anniversary, và cuối cùng dự án Hugoversary ra đời. Đúng như cái tên của nó, Website này là
 						sản phẩm trong dự án của chúng mình, được tạo ra bởi nhóm Hugo IT và thuộc quyền sở hữu của Hugo English Club. Đây là nơi lưu giữ, cập nhật và quảng bá các hoạt động,
@@ -148,7 +148,7 @@ export default function ProjectTeamPage() {
 
 					<div className="row justify-content-between">
 						<div className="col-6">
-							<div className={joinCls("fw-bold f-montserrat text-black", style["story-title"])}>Our Story</div>
+							<div className={joinCls("fw-bold f-google-san text-black", style["story-title"])}>Our Story</div>
 							<div className={joinCls("text-start mt-3", style["story-content"])}>
 								“Tự nhiên mà có thôi” <br /> Đúng rồi, cái ý tưởng tạo một chiếc website cho Hugo chính là tự nhiên mà có thôi.
 								<br /> Tuy vậy, hành trình tạo ra chiếc website này chẳng phải tự nhiên và dễ dàng. Sau những buổi họp bàn kế hoạch sơ lược cho project, 5 con người ấy quyết định
@@ -173,7 +173,7 @@ export default function ProjectTeamPage() {
 							<Image src={randomImgUrl()} className={joinCls("rounded-5 mt-5 shadow", style["mission-img"])} />
 						</div>
 						<div className="col-6">
-							<div className={joinCls("fw-bold f-montserrat text-black ", style["story-title"])}>Our Mission</div>
+							<div className={joinCls("fw-bold f-google-san text-black ", style["story-title"])}>Our Mission</div>
 							<div className={joinCls("text-start mt-3", style["story-content"])}>
 								“Đây không đơn thuần là một website, đây là một cuốn sách lưu giữ những kỉ niệm và con người tại Hugo English Club.”
 								<br /> Với mong muốn mang hình ảnh một câu lạc bộ tiếng Anh năng động, vui vẻ và bổ ích đến gần hơn với những ai đã, đang và sẽ trở thành một phần của Hugo English
@@ -203,7 +203,7 @@ export default function ProjectTeamPage() {
 						{/* <Image src={randomImgUrl()} className={joinCls("mt-10 w-100", style["summary-img"])} /> */}
 
 						<div className={style["fade"]}></div>
-						<div className={joinCls("text-center text-white position-absolute f-montserrat", style["summary-quote"])}>
+						<div className={joinCls("text-center text-white position-absolute f-google-san", style["summary-quote"])}>
 							<p className="px-5">"Coming together is a beginning, staying together is progress, and working together is success."</p>
 							<span className="mt-5">– Henry Ford –</span>
 						</div>

@@ -68,7 +68,7 @@ export default function Splash({ className, children, onStart = () => {}, ...pro
 								</div>
 							</div>
 							<div className="col-auto">
-								<p className="f-montserrat text-center mb-0 fs-5">Light Up Your Fire</p>
+								<p className="f-google-san text-center mb-0 fs-5">Light Up Your Fire</p>
 							</div>
 						</div>
 					</div>

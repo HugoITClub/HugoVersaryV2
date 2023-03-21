@@ -103,7 +103,7 @@ export default function TeamsPage() {
 						</div>
 					</section>
 					<section id="explore" className={joinCls("container", style["explore"])}>
-						<h1 className="text-white text-center f-montserrat fw-semibold mt-10">
+						<h1 className="text-white text-center f-google-san fw-semibold mt-10">
 							Explore <span className={joinCls(style["title"], style[teamMap[name].className])}>{teamName}</span>
 						</h1>
 						<p className="text-light text-center fst-italic fs-5 mt-5">{intro}</p>
@@ -141,7 +141,7 @@ export default function TeamsPage() {
 					</section>
 
 					<section className="container mt-10">
-						<h1 className="display-6 f-montserrat fw-bolder text-white text-center">Recent Activities</h1>
+						<h1 className="display-6 f-google-san fw-bolder text-white text-center">Recent Activities</h1>
 						<Slider
 							items={teamActivities}
 							className="gap-3 mt-5"
