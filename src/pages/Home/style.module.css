@@ -83,7 +83,7 @@
 	flex-shrink: 0;
 	flex-basis: 25%;
 	transition: 0.4s ease-out;
-	border: 2px solid #e2e2e2;
+	border: 2px solid transparent;
 }
 
 .blog-item:hover {
@@ -135,17 +135,6 @@
 .join-us p {
 	font-size: 1.3rem;
 	font-weight: 300;
-}
-
-@media (min-width: 992px) {
-	.join-us h1 {
-		line-height: 132%;
-		font-size: 3rem;
-	}
-	.join-us p {
-		font-size: 1.6rem;
-		font-weight: 300;
-	}
 }
 
 .join-us img {
@@ -225,4 +214,38 @@
 	border-radius: 50%;
 	background: radial-gradient(var(--bs-primary), transparent 70%);
 	opacity: 16%;
+}
+
+@media (min-width: 992px) {
+	.join-us h1 {
+		line-height: 132%;
+		font-size: 3rem;
+	}
+	.join-us p {
+		font-size: 1.6rem;
+		font-weight: 300;
+	}
+}
+
+@media (max-width: 576px) {
+	.rocket {
+		top: 5%;
+		left: 0rem;
+		width: 12rem;
+	}
+	.shooting-stars {
+		top: -6rem;
+		left: 2rem;
+		width: 8rem;
+		height: auto;
+	}
+	.puzzle {
+		top: -4rem;
+		right: 2rem;
+		width: 7rem;
+		height: auto;
+	}
+	.carousel :global(.carousel-item) {
+		height: 60vh;
+	}
 }

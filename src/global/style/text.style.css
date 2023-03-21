@@ -1,11 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Merienda+One&family=Quicksand:wght@400;500;600;700&display=swap");
-.f-lato {
-	font-family: "Lato", var(--bs-body-font-family);
+@font-face {
+	font-family: "Google Sans";
+	src: url(../fonts/google-sans.woff2);
 }
 
-.f-montserrat {
-	font-family: "Montserrat", var(--bs-body-font-family);
+.f-google-san {
+	font-family: "Google Sans", var(--bs-body-font-family);
 }
 
 .f-merienda {
@@ -23,7 +23,7 @@ h4,
 h5,
 h6 {
 	font-weight: bolder;
-	font-family: "Montserrat", var(--bs-body-font-family);
+	font-family: "Google Sans", var(--bs-body-font-family);
 }
 
 .text-gradient {
@@ -48,4 +48,12 @@ h6 {
 	overflow: hidden;
 	display: -webkit-box;
 	-webkit-box-orient: vertical;
+}
+
+.fs-sub {
+	font-size: calc(1rem * 6 / 7);
+}
+
+small {
+	font-size: calc(1rem * 5 / 7);
 }

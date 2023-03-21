@@ -126,7 +126,7 @@ export default function TeamsSection({ className }) {
 	}, {});
 
 	return (
-		<div className={joinCls("position-relative d-flex align-items-center gap-5", className)}>
+		<div className={joinCls("position-relative d-flex align-items-center flex-wrap flex-md-nowrap gap-5", className)}>
 			<div className={joinCls("position-absolute", style["circle-gradient"], style[teamMap[selectedTeamKey].className])} />
 
 			<div className={style["wheel"]}>

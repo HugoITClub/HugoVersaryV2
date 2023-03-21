@@ -45,7 +45,7 @@ export default function MeetingsPage() {
 								<div className="row h-100 position-relative">
 									<div className={joinCls("col-4 ", style["meeting-header-content"])}>
 										<div className={joinCls("me-5", style["quotes-area"])}>
-											<div className={joinCls("mt-10 f-montserrat text-start fw-bold text-dark", style["describe-word"])}>{word}</div>
+											<div className={joinCls("mt-10 f-google-san text-start fw-bold text-dark", style["describe-word"])}>{word}</div>
 											<p className={joinCls("mt-3 text-start mb-0", style["quotes"])}>"Energy and persistence conquer all things."</p>
 											<p className={joinCls(" text-end", style["quotes-author"])}>- Benjamin Franklin.</p>
 										</div>
@@ -81,7 +81,7 @@ export default function MeetingsPage() {
 						</div>
 					))}
 				</Carousel>
-				<h1 className="display-5 f-montserrat fw-bolder text-center text-gradient text-uppercase my-5">meetings</h1>
+				<h1 className="display-5 f-google-san fw-bolder text-center text-gradient text-uppercase my-5">meetings</h1>
 				<div id="meeting" className="container position-relative">
 					<div className={joinCls("position-absolute h-100 w-100", style["meeting-bg"])}>
 						<Image src={logoHugo} className="position-fixed" />
@@ -101,7 +101,7 @@ export default function MeetingsPage() {
 											<img src={imgUrl} alt="" className={style["post-image"]} />
 										</div>
 										<div className="col-6">
-											<div className={joinCls("text-ellipsis text-start f-montserrat fw-bold", style["post-title"])}>{title}</div>
+											<div className={joinCls("text-ellipsis text-start f-google-san fw-bold", style["post-title"])}>{title}</div>
 											<div className={joinCls("text-ellipsis text-start", style["post-description"])}>{description}</div>
 											<div className={joinCls("text-uppercase mt-2", style["post-date"])}>{date}</div>
 											<div className="text-decoration-none d-flex align-items-center mt-1">

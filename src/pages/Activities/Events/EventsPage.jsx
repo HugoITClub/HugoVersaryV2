@@ -28,12 +28,12 @@ function EventsPage() {
 						<div key={id} className={joinCls("position-relative", style["header-pic"])}>
 							<Image src={imgUrl} className="object-fit-cover w-100 h-100" />
 							<Animation animation={[{ name: "fadeInRight" }]}>
-								<h1 className={joinCls("text-outline-primary text-start fw-bolder f-lato position-absolute", style["event-name"])}>{eventName}</h1>
+								<h1 className={joinCls("text-outline-primary text-start fw-bolder f-google-san position-absolute", style["event-name"])}>{eventName}</h1>
 							</Animation>
 						</div>
 					))}
 				</Carousel>
-				<h1 className="display-5 f-montserrat fw-bolder text-center text-gradient text-uppercase my-5">events</h1>
+				<h1 className="display-5 f-google-san fw-bolder text-center text-gradient text-uppercase my-5">events</h1>
 				<div id="event" className={joinCls("container position-relative", style["event"])}>
 					<div className={joinCls("position-absolute h-100 w-100", style["event-bg"])}>
 						<Image src={logoHugo} className="position-fixed" />
@@ -56,7 +56,7 @@ function EventsPage() {
 											<img src={imgUrl} alt="" className={style["post-image"]} />
 										</div>
 										<div className="col-6">
-											<div className={joinCls("text-ellipsis text-start f-montserrat fw-bold", style["post-title"])}>{title}</div>
+											<div className={joinCls("text-ellipsis text-start f-google-san fw-bold", style["post-title"])}>{title}</div>
 											<div className={joinCls("text-ellipsis text-start", style["post-description"])}>{description}</div>
 											<div className={joinCls("text-uppercase mt-2", style["post-date"])}>{date}</div>
 											<div className="text-decoration-none d-flex align-items-center mt-1">

@@ -11,6 +11,7 @@ import Splash from "../components/Splash/Splash";
 import { shallowEqual, useSelector } from "react-redux";
 import AppSuspense from "../services/loading/AppSuspense";
 import { useEffect, useState } from "react";
+import { joinCls } from "../utilities/text.utils";
 
 function Root() {
 	const { isPageLoading } = useSelector((state) => state.loading, shallowEqual);
@@ -24,7 +25,7 @@ function Root() {
 
 	return (
 		<>
-			<div className={isPageLoading || !isStartedSplash ? "invisible" : undefined}>
+			<div className={joinCls("mt-5", isPageLoading || !isStartedSplash ? "invisible" : undefined)}>
 				{/* Navigation bar */}
 				<Navigator />
 

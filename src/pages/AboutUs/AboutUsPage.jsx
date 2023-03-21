@@ -26,19 +26,19 @@ export default function AboutUsPage() {
 				<div>
 					<div className="container">
 						<div className={joinCls("row justify-content-between align-items-center")}>
-							<p className={joinCls("text-start col-lg-8 col-12 mt-5 fw-bold f-montserrat", style["about-introduction-title"])}>
+							<p className={joinCls("text-start col-lg-8 col-12 mt-5 fw-bold f-google-san", style["about-introduction-title"])}>
 								Our club was built based on <br />
 								<span>LEARN, DEVELOP</span> <br />
 								and <span>JOY.</span>
 							</p>
-							<div className={joinCls("col-lg-9 col-12 my-5 f-lato text-justify", style["introduction-content"])}>{introduction}</div>
+							<div className={joinCls("col-lg-9 col-12 my-5 f-google-san text-justify", style["introduction-content"])}>{introduction}</div>
 						</div>
 					</div>
 					<img alt="" src={imgUrl} className="w-100"></img>
 				</div>
 			))}
 			<div className="position-relative container mt-5 z-1">
-				<div className={joinCls("pb-3 f-montserrat fw-bold text-uppercase text-center text-gradient d-flex justify-content-center", style["about-human-title"])}>
+				<div className={joinCls("pb-3 f-google-san fw-bold text-uppercase text-center text-gradient d-flex justify-content-center", style["about-human-title"])}>
 					get to know <br /> hugo's human
 				</div>
 				<div className={joinCls("text-center row justify-content-center", style["about-human-description"])}>
@@ -53,9 +53,9 @@ export default function AboutUsPage() {
 							<div className={joinCls("text-center rounded-3 overflow-hidden h-100", style["item"])}>
 								<Image src={imageUrl} />
 								<div className="p-2">
-									<p className={joinCls("mb-0 f-montserrat", style["mem-name"])}>{name}</p>
-									<p className={joinCls("f-montserrat text-uppercase", style["mem-title"])}>{title}</p>
-									<p className={joinCls("f-montserrat text-italic", style["mem-motto"])}>{motto}</p>
+									<p className={joinCls("mb-0 f-google-san", style["mem-name"])}>{name}</p>
+									<p className={joinCls("f-google-san text-uppercase", style["mem-title"])}>{title}</p>
+									<p className={joinCls("f-google-san text-italic", style["mem-motto"])}>{motto}</p>
 								</div>
 							</div>
 						</div>
@@ -67,9 +67,9 @@ export default function AboutUsPage() {
 							<div className={joinCls("text-center rounded-3 overflow-hidden h-100", style["item"])}>
 								<Image src={imageUrl} />
 								<div className="p-2">
-									<p className={joinCls("mb-0 f-montserrat", style["mem-name"])}>{name}</p>
-									<p className={joinCls("f-montserrat text-uppercase", style["mem-title"])}>{title}</p>
-									<p className={joinCls("f-montserrat text-italic", style["mem-motto"])}>{motto}</p>
+									<p className={joinCls("mb-0 f-google-san", style["mem-name"])}>{name}</p>
+									<p className={joinCls("f-google-san text-uppercase", style["mem-title"])}>{title}</p>
+									<p className={joinCls("f-google-san text-italic", style["mem-motto"])}>{motto}</p>
 								</div>
 							</div>
 						</div>

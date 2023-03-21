@@ -7,7 +7,7 @@ html {
 
 /* Modify Bootstrap */
 :root {
-	--bs-body-font-family: "Lato", var(--bs-font-sans-serif);
+	--bs-body-font-family: "Google Sans", var(--bs-font-sans-serif);
 	--bs-body-text-align: justify;
 }
 
@@ -15,10 +15,12 @@ html {
 [data-bs-theme="light"] {
 	--bs-body-bg: var(--bs-light);
 	--bs-body-bg-rgb: var(--bs-light-rgb);
-	--bs-primary: #ff6d1b;
-	--bs-primary-rgb: 255, 109, 27;
-	--bs-secondary: #fc6373;
-	--bs-secondary-rgb: 252, 99, 115;
+	--bs-primary: #fe9548;
+	--bs-primary-rgb: 254, 149, 72;
+	--bs-secondary: #48b1fe;
+	--bs-secondary-rgb: 72, 177, 254;
+	--bs-info: #adadad;
+	--bs-info-rgb: 173, 173, 173;
 	--bs-gradient: linear-gradient(90deg, #fc6373, #fe9548);
 }
 

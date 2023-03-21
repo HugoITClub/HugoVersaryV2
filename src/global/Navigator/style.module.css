@@ -1,42 +1,44 @@
 .navbar {
-  --bs-navbar-toggler-focus-width: 0;
+	--bs-navbar-toggler-focus-width: 0;
 }
 
 .nav-link {
-  cursor: pointer;
+	cursor: pointer;
 }
 
 .nav-link::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  width: 0;
-  height: 2px;
-  transition: 0.2s;
-  background-color: #fff;
+	content: "";
+	position: absolute;
+	left: 50%;
+	bottom: 0;
+	width: 0;
+	height: 2px;
+	transition: 0.2s;
+	background-color: #fff;
 }
 
 .nav-link:hover::before {
-  left: 0;
-  width: 100%;
+	left: 0;
+	width: 100%;
 }
 
-.nav-link:global(.active), .nav-link:global(.show) {
-  background-color: var(--bs-gray-800);
+.nav-link:global(.active),
+.nav-link:global(.show) {
+	background-color: var(--bs-gray-800);
 }
 
-.nav-link:global(.active)::before, .nav-link:global(.show)::before {
-  left: 0;
-  width: 100%; 
+.nav-link:global(.active)::before,
+.nav-link:global(.show)::before {
+	left: 0;
+	width: 100%;
 }
 
 .nav-link ~ :global(.dropdown-menu .list-group-item) {
-  --bs-list-group-bg: var(--bs-gray-900);
-  --bs-list-group-color: var(--bs-white);
-  --bs-list-group-active-color: var(--bs-gray-900);
-  --bs-list-group-active-bg: var(--bs-white);
-  --bs-list-group-active-border-color: var(--bs-white);
-  --bs-dropdown-link-active-bg: var(--bs-gray-200);
-  --bs-dropdown-link-active-color: var(--bs-gray-900);
+	--bs-list-group-bg: var(--bs-gray-900);
+	--bs-list-group-color: var(--bs-white);
+	--bs-list-group-active-color: var(--bs-gray-900);
+	--bs-list-group-active-bg: var(--bs-white);
+	--bs-list-group-active-border-color: var(--bs-white);
+	--bs-dropdown-link-active-bg: var(--bs-gray-200);
+	--bs-dropdown-link-active-color: var(--bs-gray-900);
 }

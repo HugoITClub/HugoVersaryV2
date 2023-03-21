@@ -34,8 +34,8 @@ export default function PostsPage() {
 				<Image src={EclipseDecor2} />
 			</Wiggle>
 			<div className="container">
-				<div className="row">
-					<div className="col-8">
+				<div className="row justify-content-between">
+					<div className="col-7">
 						<div className="" dangerouslySetInnerHTML={{ __html: data }} />
 					</div>
 					<div className="col-4">
@@ -43,13 +43,13 @@ export default function PostsPage() {
 							<h5>Recommended Posts</h5>
 							{RecommendPostsData.map(([id, title, description, date, imgUrl, contentFileId]) => (
 								<div className="col-12 flex-column g-3">
-									<Link key={id} to={`/posts/${contentFileId}`} className={joinCls("text-decoration-none", style["post"])}>
-										<div className="row justify-content-around align-items-center">
-											<div className="col-md-6 col-lg-5 p-0 col-5">
+									<Link key={id} to={`/posts/${contentFileId}`} className={joinCls("p-2 text-decoration-none", style["post"])}>
+										<div className="row align-items-center gx-3">
+											<div className="col-5 col-md-6">
 												<img src={imgUrl} alt="" className={style["post-image"]} />
 											</div>
-											<div className="col-6">
-												<div className={joinCls("text-ellipsis text-start f-montserrat fw-bold", style["post-title"])}>{title}</div>
+											<div className="col-7 col-md-6">
+												<div className={joinCls("text-ellipsis text-start f-google-san fw-bold", style["post-title"])}>{title}</div>
 												<div className={joinCls("text-ellipsis text-start", style["post-description"])}>{description}</div>
 												<div className={joinCls("text-uppercase mt-2", style["post-date"])}>{date}</div>
 												<div className="text-decoration-none d-flex align-items-center mt-1">
