@@ -10,7 +10,7 @@ export default function Masonry({ images = [], direction = "column", columns = 3
 	return (
 		<div className={joinCls("row", `g-${gutter}`, className)} {...props}>
 			{columnsContent.map((column, index) => (
-				<div key={column.join("-")} className="col">
+				<div key={`${column.join("-")}-${index}`} className="col">
 					<div className={joinCls("row flex-column", `g-${gutter}`)}>{column.map((image) => renderItem(image))}</div>
 				</div>
 			))}
