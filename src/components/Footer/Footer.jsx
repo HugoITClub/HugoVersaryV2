@@ -101,7 +101,7 @@ export default function Footer({ theme = LIGHT_THEME, className, ...props }) {
 							</div>
 						</div>
 						<div className="col-lg-3 col-12 ">
-							<div className="d-flex flex-column align-items-lg-start align-items-center">
+							<div className={joinCls("d-flex flex-column align-items-lg-start align-items-center", style["staff-area"])}>
 								<h3 className={joinCls("text-uppercase mt-3 mb-4", themeContent[theme].titleColor)}>About Us</h3>
 								<Link to={ABOUT_US_PAGE_PATH} className={joinCls("text-decoration-none mb-2", themeContent[theme].textColor)}>
 									Our Staffs
@@ -112,7 +112,7 @@ export default function Footer({ theme = LIGHT_THEME, className, ...props }) {
 							</div>
 						</div>
 						<div className="col-lg-3 col-12 ">
-							<div className="d-flex flex-column align-items-lg-start align-items-center">
+							<div className={joinCls("d-flex flex-column align-items-lg-start align-items-center", style["contact-area"])}>
 								<h3 className={joinCls("text-uppercase mt-3 mb-4", themeContent[theme].titleColor)}>Contact</h3>
 								<Link to="#" className={joinCls("text-decoration-none mb-2", themeContent[theme].textColor)}>
 									Email: hugoclub.dut@gmail.com
@@ -149,7 +149,7 @@ export default function Footer({ theme = LIGHT_THEME, className, ...props }) {
 							</div>
 						</div>
 						<div className="col-lg-3 col-12 mb-3">
-							<div className="d-flex flex-column align-items-lg-start align-items-center">
+							<div className={joinCls("d-flex flex-column align-items-lg-start align-items-center", style["language-area"])}>
 								<h3 className={joinCls("text-uppercase mt-3 mb-4", themeContent[theme].titleColor)}>Language</h3>
 								<div className={joinCls("dropdown", style["language-btn"])}>
 									<div className={joinCls("btn dropdown-toggle d-flex gap-2 align-items-center", themeContent[theme].languageBtn)} data-bs-toggle="dropdown">
