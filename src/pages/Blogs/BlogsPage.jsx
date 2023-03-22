@@ -92,7 +92,7 @@ export default function BlogsPage() {
 							<Link key={id} to={`/posts/${contentFileId}`} className={joinCls("card text-reset text-decoration-none overflow-hidden", style["blog-item"])}>
 								<Image src={imageUrl} className={joinCls("card-img-top p-3", style["blog-item-img"])} />
 								<div className="card-body position-relative d-flex flex-column pt-0">
-									<small className="d-block text-secondary text-uppercase">{time}</small>
+									<small className="d-block text-info text-uppercase">{time}</small>
 									<h5 className={joinCls("text-ellipsis text-start", style["blog-item-title"])}>{title}</h5>
 									<p className={joinCls("text-ellipsis text-start mb-4 flex-grow-1", style["blog-item-description"])}>{description}</p>
 									<div className={joinCls("d-flex align-items-center gap-2", style["read-more"])}>
