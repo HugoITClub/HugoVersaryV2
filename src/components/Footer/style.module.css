@@ -1,47 +1,59 @@
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translate3d(0, 100%, 0);
-  }
+	from {
+		opacity: 0;
+		transform: translate3d(0, 100%, 0);
+	}
 
-  to {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
+	to {
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
+	}
 }
 
 .footer {
-  /* background: linear-gradient(180deg, #eba919 0%, #9a2718 100%); */
+	/* background: linear-gradient(180deg, #eba919 0%, #9a2718 100%); */
 }
 
 .sparks-area {
-  height: 500px;
-  border-color: var(--bs-primary) !important;
+	height: 500px;
+	border-color: var(--bs-primary) !important;
 }
 
 .contact-icon {
-  opacity: 0.8;
+	opacity: 0.8;
 }
 
 .contact-icon:hover {
-  opacity: 1;
+	opacity: 1;
 }
 
 .language-btn,
 .language-btn :global(.dropdown-item) {
-  width: 12rem;
-  cursor: pointer;
+	width: 12rem;
+	cursor: pointer;
 }
 
 .language-btn img {
-  width: 2rem;
+	width: 2rem;
 }
 
 .language-btn :global(.dropdown-item):hover {
-  background-color: var(--bs-gray-200);
+	background-color: var(--bs-gray-200);
 }
 
 .language-btn :global(.dropdown-item):active {
-  background-color: var(--bs-gray-800);
-  color: var(--bs-light);
+	background-color: var(--bs-gray-800);
+	color: var(--bs-light);
+}
+
+@media (min-width: 992px) {
+	.staff-area {
+		margin-left: 5rem;
+	}
+	.contact-area {
+		margin-left: 3rem;
+	}
+	.language-area {
+		margin-left: 3rem;
+	}
 }

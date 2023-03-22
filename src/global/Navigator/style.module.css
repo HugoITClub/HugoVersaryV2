@@ -2,6 +2,10 @@
 	--bs-navbar-toggler-focus-width: 0;
 }
 
+.nav-link-container {
+	width: 8rem;
+}
+
 .nav-link {
 	cursor: pointer;
 }
