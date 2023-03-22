@@ -19,7 +19,7 @@ export default function AboutUsPage() {
 
 	return (
 		<div>
-			<div className={joinCls("position-absolute h-100 w-100", style["about-us-bg"])}>
+			{/* <div className={joinCls("position-absolute h-100 w-100", style["about-us-bg"])}>
 				<Image src={logoHugo} className="position-fixed" />
 			</div>
 			{introductionContent.map(([introduction, imgUrl]) => (
@@ -36,11 +36,12 @@ export default function AboutUsPage() {
 					</div>
 					<img alt="" src={imgUrl} className="w-100"></img>
 				</div>
-			))}
+			))} */}
+
 			<div className="position-relative container mt-5 z-1">
-				<div className={joinCls("pb-3 f-google-san fw-bold text-uppercase text-center text-gradient d-flex justify-content-center", style["about-human-title"])}>
+				{/* <div className={joinCls("pb-3 f-google-san fw-bold text-uppercase text-center text-gradient d-flex justify-content-center", style["about-human-title"])}>
 					get to know <br /> hugo's human
-				</div>
+				</div> */}
 				<div className={joinCls("text-center row justify-content-center", style["about-human-description"])}>
 					<p className={joinCls("mt-3 col-lg-6 col-8")}>
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora
