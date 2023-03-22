@@ -87,7 +87,7 @@ export default function TeamsPage() {
 	};
 
 	return (
-		<div className="bg-black">
+		<div className="bg-black overflow-hidden">
 			{teamIntro.map(([id, teamName, teamSlogan, meetingTime, location, logoTeam, topPicUrl, bottomPicUrl, intro]) => (
 				<div>
 					<section
@@ -177,7 +177,7 @@ export default function TeamsPage() {
 							<div className={style["line-decor"]} />
 						</div>
 
-						<div className="position-relative w-100 vh-100 mt-10">
+						<div className={joinCls("position-relative w-100", style["bottom-img"])}>
 							<Image src={bottomPicUrl} className="w-100 h-100" />
 							<div className={joinCls("position-absolute w-100 top-0", style["fade-down"])}></div>
 							<div className={joinCls("position-absolute w-100 bottom-0", style["fade-up"])}></div>
