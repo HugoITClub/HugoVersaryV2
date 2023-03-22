@@ -96,7 +96,7 @@ export default function TeamsPage() {
 					>
 						<div className={style["fade"]}></div>
 						<div className={joinCls("d-flex flex-column align-items-center", style["overlay"])}>
-							<h1 className="text-uppercase">{teamName}</h1>
+							<h1 className={joinCls("text-uppercase", style["team-name"])}>{teamName}</h1>
 							<p>{teamSlogan}</p>
 							<button className={joinCls("btn d-flex justify-content-center align-items-center rounded-circle", style["icon"])} onClick={handleButtonDown}>
 								<span className="fa-solid fa-xl fa-chevron-down"></span>
@@ -104,7 +104,7 @@ export default function TeamsPage() {
 						</div>
 					</section>
 					<section id="explore" className={joinCls("container", style["explore"])}>
-						<h1 className="text-white text-center f-google-san fw-semibold mt-10">
+						<h1 className="text-white text-center f-google-san fw-semibold">
 							Explore <span className={joinCls(style["title"], style[teamMap[name].className])}>{teamName}</span>
 						</h1>
 						<p className="text-light text-center fst-italic fs-5 mt-5">{intro}</p>
