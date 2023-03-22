@@ -43,7 +43,7 @@ export default function HomePage() {
 		isFull: isSliderHomePageFull,
 		data: sliderHomePageData,
 		getMore: getSliderHomePageData,
-	} = useSheetAPI("SliderHomePage", "H", "I", { earlyTake: 4 });
+	} = useSheetAPI("SliderHomePage", "H", "I", { earlyTake: 10 });
 
 	const [isShownHugoVideo, setIsShownHugoVideo] = useState(false);
 	return (
