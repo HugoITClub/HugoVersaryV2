@@ -52,6 +52,10 @@
 	padding-top: 5.5rem;
 }
 
+.explore-img-area {
+	border-radius: 12px;
+}
+
 .explore-img-area img {
 	height: 377px;
 	transition: 0.4s ease-out;
@@ -155,10 +159,16 @@
 	color: #7107db;
 }
 
+@media (max-width: 991.98px) {
+	.header h1 {
+		font-size: 3rem;
+	}
+}
+
 @media (max-width: 576px) {
 	.header {
 		position: relative;
-		height: 48vh;
+		height: 24vh;
 		background-size: cover;
 		background-repeat: no-repeat;
 	}
@@ -173,7 +183,7 @@
 		position: absolute;
 		bottom: 0rem;
 		width: 100%;
-		height: 40%;
+		height: 65%;
 		background: linear-gradient(0deg, rgba(var(--bs-black-rgb), 1) 0%, rgba(var(--bs-black-rgb), 0.5) 60%, rgba(var(--bs-dark-rgb), 0) 100%);
 	}
 	.header .overlay {
