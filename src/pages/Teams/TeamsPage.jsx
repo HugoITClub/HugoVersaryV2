@@ -126,9 +126,9 @@ export default function TeamsPage() {
 					<section className="container mt-5">
 						<div className="row gx-5">
 							{exploreCategories.map(({ title, description, images }) => (
-								<div key={title} className="col-3">
+								<div key={title} className="col-12 col-md-6 mt-5 col-lg-3">
 									<div className={joinCls("position-relative overflow-hidden cursor-pointer", style["explore-img-area"])} onClick={() => handleShownExploreImages(images)}>
-										<Image src={images[0]} className="d-flex justify-content-center align-items-end rounded" />
+										<Image src={images[0]} className="d-flex justify-content-center align-items-end" />
 										<div className="position-absolute bottom-0 w-100">
 											<div className="position-relative w-100 mx-2">
 												<h5 className="position-absolute text-white text-center w-100 mb-2">{title}</h5>
