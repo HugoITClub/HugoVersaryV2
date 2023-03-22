@@ -132,7 +132,7 @@ export default function HomePage() {
 								<div className="card-img-overlay d-flex flex-column justify-content-end">
 									<div className="position-relative">
 										<div className={joinCls("position-absolute", style["card-header"])}>
-											<h3 className="badge text-success text-bg-light text-uppercase px-2 py-2">{label}</h3>
+											<h3 className="badge text-secondary text-bg-light text-uppercase px-2 py-2">{label}</h3>
 											<h5 className="card-text text-start">{name}</h5>
 										</div>
 										<p className={joinCls("card-text text-ellipsis text-start fs-sub", style["card-sub-text"])}>{description}</p>
@@ -165,7 +165,7 @@ export default function HomePage() {
 							<Link key={id} to={`/posts/${contentFileId}`} className={joinCls("card text-reset text-decoration-none rounded-3 overflow-hidden", style["blog-item"])}>
 								<Image src={imageUrl} className={joinCls("card-img-top p-3", style["blog-item-img"])} />
 								<div className="card-body d-flex flex-column position-relative pt-0">
-									<small className="d-block text-secondary text-uppercase">{time}</small>
+									<small className="d-block text-info text-uppercase">{time}</small>
 									<h5 className={joinCls("text-ellipsis text-start", style["blog-item-title"])}>{title}</h5>
 									<p className={joinCls("text-ellipsis text-start flex-grow-1 mb-4", style["blog-item-description"])}>{description}</p>
 									<div className={joinCls("d-flex align-items-center gap-2", style["read-more"])}>

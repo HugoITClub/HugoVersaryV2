@@ -52,7 +52,7 @@
 	cursor: pointer;
 	display: block;
 	border: 2px solid transparent;
-	border-radius: 4px;
+	border-radius: 12px;
 	padding: 12px;
 	transition: all 0.25s;
 	backdrop-filter: blur(8px);

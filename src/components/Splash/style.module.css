@@ -3,5 +3,5 @@
 }
 
 .progress :global(.progress-bar) {
-	--bs-progress-bar-bg: var(--bs-secondary);
+	--bs-progress-bar-bg: var(--bs-primary);
 }
