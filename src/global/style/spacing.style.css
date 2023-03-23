@@ -1,12 +1,27 @@
 .mt-10 {
-  margin-top: 10rem;
+	margin-top: 10rem;
 }
 
 .mb-10 {
-  margin-bottom: 10rem;
+	margin-bottom: 10rem;
 }
 
 .my-10 {
-  margin-top: 10rem;
-  margin-bottom: 10rem;
+	margin-top: 10rem;
+	margin-bottom: 10rem;
+}
+
+@media (min-width: 992px) {
+	.mt-lg-10 {
+		margin-top: 10rem;
+	}
+
+	.mb-lg-10 {
+		margin-bottom: 10rem;
+	}
+
+	.my-lg-10 {
+		margin-top: 10rem;
+		margin-bottom: 10rem;
+	}
 }
