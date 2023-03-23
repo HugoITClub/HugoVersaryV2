@@ -105,14 +105,14 @@ export default function Navigator() {
 					</button>
 
 					<div className="collapse navbar-collapse align-items-stretch">
-						<ul ref={navbarRef} className="navbar-nav mx-auto mb-2 mb-lg-0 align-items-center">
+						<ul ref={navbarRef} className="navbar-nav mx-auto mb-2 mb-lg-0 align-items-lg-center align-items-start">
 							{NAV_LINKS.map((navLink) => (
 								<li key={navLink.name} className={joinCls("position-relative nav-item nav-element d-block d-lg-flex align-items-center mx-2 h-100", style["nav-link-container"])}>
 									{navLink.children ? (
 										<>
 											<div
 												className={joinCls(
-													"nav-link text-white dropdown-toggle w-100 h-100 d-flex align-items-center justify-content-center",
+													"nav-link text-white dropdown-toggle w-100 h-100 d-flex align-items-center justify-content-lg-center justify-content-between",
 													style["nav-link"],
 													matchPath(navLink.path, location.pathname) && "active"
 												)}
@@ -135,7 +135,7 @@ export default function Navigator() {
 										<NavLink
 											to={navLink.path}
 											end={navLink.end}
-											className={joinCls("nav-link text-white w-100 h-100 d-flex align-items-center justify-content-center", style["nav-link"])}
+											className={joinCls("nav-link text-white w-100 h-100 d-flex align-items-center justify-content-lg-center justify-content-between", style["nav-link"])}
 										>
 											<div>{navLink.name}</div>
 										</NavLink>
