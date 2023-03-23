@@ -77,12 +77,19 @@ export default function Navigator() {
 	);
 
 	useEffect(() => {
+		// Close all dropdowns when route changes
 		const navbar = navbarRef.current;
 		const dropDownElements = navbar.querySelectorAll(".dropdown-toggle");
 
 		dropDownElements.forEach((dropDownElement) => {
 			const dropDown = window.bootstrap.Dropdown.getOrCreateInstance(dropDownElement);
 			dropDown.hide();
+		});
+
+		// Scroll to top when route changes
+		window.scrollTo({
+			top: 0,
+			behavior: "smooth",
 		});
 	}, [location.pathname]);
 
@@ -92,6 +99,10 @@ export default function Navigator() {
 
 			<nav className={joinCls("navbar navbar-expand-lg bg-dark navbar-dark p-0 fixed-top", style["navbar"])}>
 				<div className="container align-items-stretch">
+					<button className="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse">
+						<span className="navbar-toggler-icon"></span>
+					</button>
+
 					<Link to={HOME_PAGE_PATH} className="navbar-brand">
 						<Image src={HugoLogoSvg} width={216} className="py-2" />
 					</Link>
@@ -99,10 +110,6 @@ export default function Navigator() {
 					<div className="row align-items-center d-lg-none">
 						<div className="col-auto">{joinUsBtn}</div>
 					</div>
-
-					<button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse">
-						<span className="navbar-toggler-icon"></span>
-					</button>
 
 					<div className="collapse navbar-collapse align-items-stretch">
 						<ul ref={navbarRef} className="navbar-nav mx-auto mb-2 mb-lg-0 align-items-lg-center align-items-start">

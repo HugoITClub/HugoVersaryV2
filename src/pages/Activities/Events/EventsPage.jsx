@@ -28,7 +28,7 @@ function EventsPage() {
 						<div key={id} className={joinCls("position-relative", style["header-pic"])}>
 							<Image src={imgUrl} className="object-fit-cover w-100 h-100" />
 							<Animation animation={[{ name: "fadeInRight" }]}>
-								<h1 className={joinCls("text-outline-primary text-start fw-bolder f-google-san position-absolute", style["event-name"])}>{eventName}</h1>
+								<h1 className={joinCls("text-start fw-bolder f-google-san position-absolute", style["event-name"])}>{eventName}</h1>
 							</Animation>
 						</div>
 					))}
@@ -47,7 +47,7 @@ function EventsPage() {
 					<Wiggle className={joinCls("position-absolute", style["eclipse-decor-3"])}>
 						<Image src={EclipseDecor3Svg} />
 					</Wiggle>
-					<div className={joinCls("row g-5 g-md-3 g-lg-5 position-relative", style["event-content"])}>
+					<div className={joinCls("row g-2 g-md-3 g-lg-5 position-relative", style["event-content"])}>
 						{events.map(([id, title, description, date, imgUrl, contentUrl]) => (
 							<div className="col-lg-6 col-md-6 col-12">
 								<a key={id} href={`/posts/${contentUrl}`} className={joinCls("text-decoration-none", style["post"])}>
@@ -73,7 +73,7 @@ function EventsPage() {
 
 						{isEventLoading && (
 							<>
-								<div className="col-6">
+								<div className="col-12 col-lg-6">
 									<div className={joinCls("text-decoration-none", style["post"])}>
 										<div className="row justify-content-around">
 											<div className="col-5">
@@ -88,7 +88,7 @@ function EventsPage() {
 										</div>
 									</div>
 								</div>
-								<div className="col-6">
+								<div className="col-12 col-lg-6">
 									<div className={joinCls("text-decoration-none", style["post"])}>
 										<div className="row justify-content-around">
 											<div className="col-5">

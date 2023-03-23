@@ -141,7 +141,7 @@ export default function TeamsPage() {
 						</div>
 					</section>
 
-					<section className="container mt-10">
+					<section className="container mt-10 px-4 px-lg-3">
 						<h1 className="display-6 f-google-san fw-bolder text-white text-center">Recent Activities</h1>
 						<Slider
 							items={teamActivities}
