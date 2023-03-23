@@ -75,3 +75,86 @@
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
+
+.about-us-wrap {
+	margin-top: 12rem;
+}
+
+.about-us-content {
+	font-weight: 300;
+	font-size: 6rem;
+	line-height: 111px;
+	color: #000;
+}
+
+.about-us-content span {
+	font-style: italic;
+}
+
+.about-us-item {
+	flex-shrink: 0;
+	flex-basis: 20%;
+	box-shadow: 0px 0px 64px #ffffff32;
+}
+
+.club-name {
+	font-weight: 400;
+	font-size: 5rem;
+	line-height: 77px;
+	letter-spacing: 0.03em;
+	color: #000000;
+}
+
+.club-description {
+	font-weight: 400;
+	font-size: 1.5rem;
+	color: #000000;
+}
+
+.rect-decor-2 {
+	width: 8rem;
+	right: 0;
+}
+.rect-decor-2-2 {
+	width: 3rem;
+	right: -2rem;
+	top: -5rem;
+	transform: rotate(45deg);
+}
+
+.rect-decor-2-3 {
+	transform: rotate(75deg);
+	width: 12rem;
+	right: -8rem;
+}
+
+.rect-decor-1 {
+	width: 12rem;
+	transform: rotate(45deg);
+	bottom: -10rem;
+	left: -8rem;
+}
+
+.rect-decor-1-1 {
+	width: 8rem;
+	transform: rotate(45deg);
+	bottom: -12rem;
+	left: -4rem;
+}
+
+.rect-decor-4 {
+	width: 10rem;
+	bottom: -6rem;
+	right: -10rem;
+}
+
+.eclipse-decor-6 {
+	width: 8rem;
+	bottom: 4rem;
+	right: -4rem;
+}
+.eclipse-decor-5 {
+	width: 8rem;
+	top: -4rem;
+	left: -4rem;
+}
