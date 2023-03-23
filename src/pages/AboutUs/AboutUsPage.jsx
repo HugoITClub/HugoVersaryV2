@@ -168,9 +168,6 @@ export default function AboutUsPage() {
 				</div>
 			</div>
 			<div className="position-relative container mt-10 z-1">
-				{/* <div className={joinCls("pb-3 f-google-san fw-bold text-uppercase text-center text-gradient d-flex justify-content-center", style["about-human-title"])}>
-					get to know <br /> hugo's human
-				</div> */}
 				<Wiggle className={joinCls("position-absolute", style["rect-decor-4"])}>
 					<Image src={RectDecor4Svg} />
 				</Wiggle>

@@ -3,7 +3,7 @@
 }
 
 .nav-link-container {
-	width: 8rem;
+	width: 100%;
 }
 
 .nav-link {
@@ -45,4 +45,16 @@
 	--bs-list-group-active-border-color: var(--bs-white);
 	--bs-dropdown-link-active-bg: var(--bs-gray-200);
 	--bs-dropdown-link-active-color: var(--bs-gray-900);
+}
+
+@media (min-width: 1024px) {
+	.nav-link-container {
+		width: 8rem;
+	}
+}
+
+@media (max-width: 740px) {
+	.nav-link-container {
+		margin: 0 !important;
+	}
 }

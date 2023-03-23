@@ -98,7 +98,7 @@ export default function HomePage() {
 				</Modal>
 			</section>
 
-			<section className="position-relative mt-5 mt-lg-10">
+			<section className={joinCls("position-relative mt-10", style["team-section-wrap"])}>
 				<div className="position-relative container">
 					<h1 className="display-5 f-google-san fw-bolder text-gradient text-center">TEAMS IN HUGO</h1>
 					<TeamsSection className="mt-5" />
@@ -109,7 +109,7 @@ export default function HomePage() {
 				</Wiggle>
 			</section>
 
-			<section className="position-relative mt-10">
+			<section className={joinCls("position-relative mt-10", style["activities-wrap"])}>
 				<Wiggle className={joinCls("position-absolute", style["shooting-stars"])}>
 					<Image src={ShootingStarsSvg} />
 				</Wiggle>
@@ -147,7 +147,7 @@ export default function HomePage() {
 				</div>
 			</section>
 
-			<section className="position-relative mt-10">
+			<section className={joinCls("position-relative mt-10", style["blogs-wrap"])}>
 				<Image src={EclipseDecor4Svg} lazy={false} className={joinCls("position-absolute", style["eclipse-decor-4"])} />
 				<Wiggle className={joinCls("position-absolute", style["note"])}>
 					<Image src={NoteSvg} />
@@ -179,7 +179,7 @@ export default function HomePage() {
 				</div>
 			</section>
 
-			<section className="position-relative container z-1 mt-10">
+			<section className={joinCls("position-relative container z-1 mt-10", style["join-us-wrap"])}>
 				<Wiggle className={joinCls("position-absolute", style["eclipse-decor-3"])}>
 					<Image src={EclipseDecor3Svg} />
 				</Wiggle>

@@ -227,16 +227,34 @@
 	}
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
 	.rocket {
 		top: 5%;
 		left: 0rem;
 		width: 12rem;
 	}
-	.shooting-stars {
-		top: -6rem;
-		left: 2rem;
+	.rect-decor-3 {
 		width: 8rem;
+		height: auto;
+		top: -4rem;
+		right: 0rem;
+	}
+	.eclipse-decor-4 {
+		top: 0rem;
+		left: -8rem;
+		width: 16rem;
+		height: auto;
+	}
+	.note {
+		top: 0rem;
+		left: 6rem;
+		width: 4rem;
+		height: auto;
+	}
+	.shooting-stars {
+		top: -2rem;
+		left: 2rem;
+		width: 4rem;
 		height: auto;
 	}
 	.puzzle {
@@ -246,6 +264,15 @@
 		height: auto;
 	}
 	.carousel :global(.carousel-item) {
-		height: 60vh;
+		height: 24vh;
+	}
+	.yt-play {
+		margin-top: 32px;
+	}
+	.join-us-wrap,
+	.blogs-wrap,
+	.activities-wrap,
+	.team-section-wrap {
+		margin-top: 64px;
 	}
 }

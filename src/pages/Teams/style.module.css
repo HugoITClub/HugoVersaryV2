@@ -63,6 +63,7 @@
 
 .explore-img-area:hover img {
 	transform: scale(110%);
+	opacity: 0.5;
 }
 
 .explore-img-area h5 {
