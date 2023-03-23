@@ -66,9 +66,16 @@ export default function Modal({ isShown, onClose, className, dialogClassName, co
 			onTransitionEnd={handleTransitionEnd}
 			{...props}
 		>
-			<div className={joinCls("modal-dialog", dialogClassName)}>
+			<div className={joinCls("position-relative modal-dialog", dialogClassName)}>
 				<div className={joinCls("modal-content h-100", contentClassName)} onClick={(e) => e.stopPropagation()}>
 					{children}
+				</div>
+			</div>
+
+			<div className="position-fixed bottom-0 end-0 mb-3 mb-lg-5 me-3 me-lg-5">
+				<div className="d-flex gap-2 align-items-center px-3 py-2 border border-white text-white">
+					<h5 className="mb-0">Close</h5>
+					<i className="fa-solid fa-forward"></i>
 				</div>
 			</div>
 		</div>

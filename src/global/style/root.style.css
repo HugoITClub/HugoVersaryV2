@@ -17,7 +17,7 @@ html {
 
 :root,
 [data-bs-theme="light"] {
-	--bs-body-bg: var(--bs-light);
+	--bs-body-bg: #f8f8f8;
 	--bs-body-bg-rgb: var(--bs-light-rgb);
 	--bs-primary: #fe9548;
 	--bs-primary-rgb: 254, 149, 72;

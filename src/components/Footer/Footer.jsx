@@ -94,7 +94,7 @@ export default function Footer({ theme = LIGHT_THEME, className, ...props }) {
 								<Link to="#">
 									<Image src={themeContent[theme].logo} width={240} className={joinCls("px-2 mb-2")} />
 								</Link>
-								<p className={joinCls("mt-3 mb-0", themeContent[theme].textColor)}>
+								<p className={joinCls("mt-3 mb-0 text-center text-lg-start", themeContent[theme].textColor)}>
 									This website is a product of Hugo IT club and part of the HUGOVERSARY project to celebrate the 15th birthday of Hugo English Club. This website is to store,
 									update and promote the activities and events of Hugo English Club up to the present time.
 								</p>

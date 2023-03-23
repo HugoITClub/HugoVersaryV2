@@ -2,14 +2,22 @@
 	left: 0;
 	top: 0;
 	bottom: 0;
-	background: linear-gradient(90deg, rgba(var(--bs-body-bg-rgb), 0.8) 0%, rgba(var(--bs-body-bg-rgb), 0.5) 40%, rgba(var(--bs-body-bg-rgb), 0) 100%);
 }
 
 .next-area {
 	right: 0;
 	top: 0;
 	bottom: 0;
-	background: linear-gradient(-90deg, rgba(var(--bs-body-bg-rgb), 0.8) 0%, rgba(var(--bs-body-bg-rgb), 0.5) 40%, rgba(var(--bs-body-bg-rgb), 0) 100%);
+}
+
+@media (min-width: 992px) {
+	.prev-area {
+		background: linear-gradient(90deg, rgba(var(--bs-body-bg-rgb), 0.8) 0%, rgba(var(--bs-body-bg-rgb), 0.5) 40%, rgba(var(--bs-body-bg-rgb), 0) 100%);
+	}
+
+	.next-area {
+		background: linear-gradient(-90deg, rgba(var(--bs-body-bg-rgb), 0.8) 0%, rgba(var(--bs-body-bg-rgb), 0.5) 40%, rgba(var(--bs-body-bg-rgb), 0) 100%);
+	}
 }
 
 .fade-area {
