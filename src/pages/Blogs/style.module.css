@@ -1,5 +1,11 @@
 .blog-intro :global(.carousel-item) {
-	height: 80vh;
+	height: 90vh;
+}
+
+@media (min-width: var(--bs-breakpoint-lg)) {
+	.blog-intro :global(.carousel-item) {
+		height: 80vh;
+	}
 }
 
 .blog-intro-banner {
@@ -49,19 +55,20 @@
 	margin-top: 8rem;
 }
 
-.wrap-blog-intro-content {
-	top: 50%;
-	left: 0;
-	transform: translateY(-25%);
-}
-
 .blog-item {
 	flex-shrink: 0;
-	flex-basis: 25%;
+	flex-basis: 100%;
 	transition: 0.4s ease-out;
 	background-color: rgba(var(--bs-white-rgb), 0.64);
 	backdrop-filter: blur(8px);
 	border: 2px solid transparent;
+}
+
+@media (min-width: var(--bs-breakpoint-lg)) {
+	.blog-item {
+		flex-basis: 25%;
+		border: 1px solid transparent;
+	}
 }
 
 .blog-item-img {
@@ -124,7 +131,7 @@
 
 .post-image {
 	padding: 0;
-	width: 100%;
+	width: 90%;
 	height: 162px;
 	border-radius: 4px;
 	object-fit: cover;
