@@ -114,7 +114,10 @@ export default function Navigator() {
 					<div className={joinCls("collapse navbar-collapse align-items-stretch", style["navbar-collapse"])}>
 						<ul ref={navbarRef} className="navbar-nav mx-auto mb-2 mb-lg-0 align-items-lg-center align-items-start">
 							{NAV_LINKS.map((navLink) => (
-								<li key={navLink.name} className={joinCls("position-relative nav-item nav-element d-block d-lg-flex align-items-center mx-2 h-100", style["nav-link-container"])}>
+								<li
+									key={navLink.name}
+									className={joinCls("position-relative nav-item nav-element d-block d-lg-flex align-items-center mx-lg-2 h-100", style["nav-link-container"])}
+								>
 									{navLink.children ? (
 										<>
 											<div

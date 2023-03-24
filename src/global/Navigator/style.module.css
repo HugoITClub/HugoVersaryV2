@@ -12,6 +12,7 @@
 
 .nav-link {
 	cursor: pointer;
+	min-height: 3.5rem;
 }
 
 .nav-link::before {
@@ -51,15 +52,8 @@
 	--bs-dropdown-link-active-color: var(--bs-gray-900);
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 992px) {
 	.nav-link-container {
 		width: 8rem;
-	}
-}
-
-@media (max-width: 740px) {
-	.nav-link-container {
-		margin: 0 !important;
-		height: 50px !important;
 	}
 }
