@@ -36,7 +36,7 @@ export default function HomePage() {
 
 	const { isLoading: isBlogsLoading, isFull: isBlogsFull, data: blogsData, getMore: getMoreBlogsData } = useSheetAPI("Blogs", "M", "R", { earlyTake: 8 });
 
-	const { isLoading: isActivitiesLoading, isFull: isActivitiesFull, data: activitiesData, getMore: getMoreActivitiesData } = useSheetAPI("Activities", "M", "S", { earlyTake: 8 });
+	const { isLoading: isActivitiesLoading, isFull: isActivitiesFull, data: activitiesData, getMore: getMoreActivitiesData } = useSheetAPI("Activities", "M", "S", { earlyTake: 20 });
 
 	const {
 		isLoading: isSliderHomePageLoading,
