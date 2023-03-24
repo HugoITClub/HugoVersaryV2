@@ -3,6 +3,7 @@ import Footer from "../../components/Footer/Footer";
 import { joinCls, randomImgUrl } from "../../utilities/text.utils";
 import Image from "../../components/Image/Image";
 import quotesIcon from "./images/quotesicon.svg";
+import quotesIcon2 from "./images/quotesicon2.svg";
 import quotes2Icon from "./images/quotes2.svg";
 import flowerIcon1 from "./images/flowerIcon1.svg";
 import flowerIcon2 from "./images/flowerIcon2.svg";
@@ -16,16 +17,25 @@ import quoteSign1 from "./images/quoteSign1.svg";
 import quoteSign2 from "./images/quoteSign2.svg";
 import RectDecor2Svg from "../Home/images/rect-decor-2.svg";
 import logoHugo from "../../global/Images/logoHugo.png";
+import KimHuynh from "./images/KimHuynh.jpg";
+import NguyenPhuoc from "./images/NguyenPhuoc.jpg";
+import TuanLe from "./images/TuanLe.jpg";
+import QuangLoc from "./images/QuangLoc.jpg";
+import HoangDung from "./images/HoangDung.jpg";
+import TienDat from "./images/TienDat.jpg";
+import ThienHuong from "./images/ThienHuong.jpg";
+import DungPham from "./images/DungPham.jpg";
+import HungVinh from "./images/HungVinh.jpg";
+import TheTran from "./images/TheTran.jpg";
+import NganPhung from "./images/NganPhung.jpg";
+import UyenPhung from "./images/UyenPhung.jpg";
+import AnhMinh from "./images/AnhMinh.jpg";
 
 import Wiggle from "../../components/Wiggle/Wiggle";
 
 export default function ProjectTeamPage() {
 	return (
 		<div className="pt-5 overflow-hidden position-relative">
-			<div className={joinCls("position-absolute h-100 w-100", style["bg"])}>
-				<Image src={logoHugo} className="position-fixed" />
-				<div className={joinCls("position-relative", style["fade"])} />
-			</div>
 			<div className="container">
 				<div className={joinCls("position-relative", style["team-introduction"])}>
 					<Wiggle className={joinCls("position-absolute", style["flowerIcon1"])}>
@@ -65,79 +75,154 @@ export default function ProjectTeamPage() {
 					<Wiggle className={joinCls("position-absolute", style["ellipse-10-member"])}>
 						<Image src={ellipse10} />
 					</Wiggle>
+					<div className={joinCls("position-relative", style["quotes-2-area"])}>
+						<Image className="" src={quotesIcon2} />
+						<div className={joinCls("mt-2", style["quotes-2"])}>
+							Loved Hugo yesterday, Love Hugo still,
+							<br /> Always have, Always will
+						</div>
+					</div>
 					<div className="row align-items-center  g-3">
 						<div className={style["col-custom"]}>
 							<div className="row g-3 flex-column justify-content-center">
-								<div className="col-auto">
-									<Image src={randomImgUrl(Math.round(Math.random()) * 200 + 800, Math.round(Math.random()) * 200 + 800)} className="rounded-4" />
+								<div className={joinCls("col-auto p-0 mx-1 d-flex justify-content-center position-relative", style["project-team-member"])}>
+									<Image src={KimHuynh} className={joinCls("rounded-4", style[""])} />
+									<div className={joinCls("w-100 h-100 position-absolute top-0 left-0", style["overlay"])}></div>
+									<div className={joinCls("position-absolute row d-none flex-column align-items-center justify-content-center", style["member-description"])}>
+										<div className={joinCls("text-white text-center", style["member-name"])}>Huỳnh Hoàng Thiện Kim</div>
+										<div className={joinCls("text-info text-center", style["member-role"])}>Data Collector</div>
+									</div>
 								</div>
-								<div className="col-auto">
-									<Image src={randomImgUrl(Math.round(Math.random()) * 200 + 800, Math.round(Math.random()) * 200 + 800)} className="rounded-4" />
-								</div>
-							</div>
-						</div>
-						<div className={style["col-custom"]}>
-							<div className="row g-3 row g-3 flex-column justify-content-center">
-								<div className="col-auto">
-									<Image src={randomImgUrl(Math.round(Math.random()) * 200 + 800, Math.round(Math.random()) * 200 + 800)} className="rounded-4" />
-								</div>
-								<div className="col-auto">
-									<Image src={randomImgUrl(Math.round(Math.random()) * 200 + 800, Math.round(Math.random()) * 200 + 800)} className="rounded-4" />
-								</div>
-								<div className="col-auto">
-									<Image src={randomImgUrl(Math.round(Math.random()) * 200 + 800, Math.round(Math.random()) * 200 + 800)} className="rounded-4" />
+								<div className={joinCls("col-auto p-0 mx-1 d-flex justify-content-center position-relative", style["project-team-member"])}>
+									<Image src={NguyenPhuoc} className="rounded-4" />
+									<div className={joinCls("w-100 h-100 position-absolute top-0 left-0", style["overlay"])}></div>
+									<div className={joinCls("position-absolute row d-none flex-column align-items-center justify-content-center", style["member-description"])}>
+										<div className={joinCls("text-white text-center", style["member-name"])}>Nguyễn Quang Trường Phước</div>
+										<div className={joinCls("text-info text-center", style["member-role"])}>Data Collector</div>
+									</div>
 								</div>
 							</div>
 						</div>
 						<div className={style["col-custom"]}>
 							<div className="row g-3 row g-3 flex-column justify-content-center">
-								<div className="col-auto">
-									<Image src={randomImgUrl(Math.round(Math.random()) * 200 + 800, Math.round(Math.random()) * 200 + 800)} className="rounded-4" />
+								<div className={joinCls("col-auto p-0 mx-1 d-flex justify-content-center position-relative", style["project-team-member"])}>
+									<Image src={TuanLe} className="rounded-4" />
+									<div className={joinCls("w-100 h-100 position-absolute top-0 left-0", style["overlay"])}></div>
+									<div className={joinCls("position-absolute row d-none flex-column align-items-center justify-content-center", style["member-description"])}>
+										<div className={joinCls("text-white text-center", style["member-name"])}>Lê Phước Anh Tuấn</div>
+										<div className={joinCls("text-info text-center", style["member-role"])}>Developer</div>
+									</div>
 								</div>
-								<div className="col-auto">
-									<Image src={randomImgUrl(Math.round(Math.random()) * 200 + 800, Math.round(Math.random()) * 200 + 800)} className="rounded-4" />
+								<div className={joinCls("col-auto p-0 mx-1 d-flex justify-content-center position-relative", style["project-team-member"])}>
+									<Image src={HoangDung} className="rounded-4" />
+									<div className={joinCls("w-100 h-100 position-absolute top-0 left-0", style["overlay"])}></div>
+
+									<div className={joinCls("position-absolute row d-none flex-column align-items-center justify-content-center", style["member-description"])}>
+										<div className={joinCls("text-white text-center", style["member-name"])}>Trần Hoàng Dung</div>
+										<div className={joinCls("text-info text-center", style["member-role"])}>Business Analyst</div>
+									</div>
 								</div>
-								<div className="col-auto">
-									<Image src={randomImgUrl(Math.round(Math.random()) * 200 + 800, Math.round(Math.random()) * 200 + 800)} className="rounded-4" />
+								<div className={joinCls("col-auto p-0 mx-1 d-flex justify-content-center position-relative", style["project-team-member"])}>
+									<Image src={QuangLoc} className="rounded-4" />
+									<div className={joinCls("w-100 h-100 position-absolute top-0 left-0", style["overlay"])}></div>
+
+									<div className={joinCls("position-absolute row d-none flex-column align-items-center justify-content-center", style["member-description"])}>
+										<div className={joinCls("text-white text-center", style["member-name"])}>Trương Quang Lộc</div>
+										<div className={joinCls("text-info text-center", style["member-role"])}>Developer</div>
+									</div>
 								</div>
 							</div>
 						</div>
 						<div className={style["col-custom"]}>
 							<div className="row g-3 row g-3 flex-column justify-content-center">
-								<div className="col-auto">
-									<Image src={randomImgUrl(Math.round(Math.random()) * 200 + 800, Math.round(Math.random()) * 200 + 800)} className="rounded-4" />
+								<div className={joinCls("col-auto p-0 mx-1 d-flex justify-content-center position-relative", style["project-team-member"])}>
+									<Image src={TienDat} className="rounded-4" />
+									<div className={joinCls("w-100 h-100 position-absolute top-0 left-0", style["overlay"])}></div>
+
+									<div className={joinCls("position-absolute row d-none flex-column align-items-center justify-content-center", style["member-description"])}>
+										<div className={joinCls("text-white text-center", style["member-name"])}>Nguyễn Tiến Đạt</div>
+										<div className={joinCls("text-info text-center", style["member-role"])}>UI/UX Designer/Co-Founder</div>
+									</div>
 								</div>
-								<div className="col-auto">
-									<Image src={randomImgUrl(Math.round(Math.random()) * 200 + 800, Math.round(Math.random()) * 200 + 800)} className="rounded-4" />
+								<div className={joinCls("col-auto p-0 mx-1 d-flex justify-content-center position-relative", style["project-team-member"])}>
+									<Image src={DungPham} className="rounded-4" />
+									<div className={joinCls("w-100 h-100 position-absolute top-0 left-0", style["overlay"])}></div>
+
+									<div className={joinCls("position-absolute row d-none flex-column align-items-center justify-content-center", style["member-description"])}>
+										<div className={joinCls("text-white text-center", style["member-name"])}>Phạm Mạnh Dũng</div>
+										<div className={joinCls("text-info text-center", style["member-role"])}>Founder</div>
+									</div>
 								</div>
-								<div className="col-auto">
-									<Image src={randomImgUrl(Math.round(Math.random()) * 200 + 800, Math.round(Math.random()) * 200 + 800)} className="rounded-4" />
+								<div className={joinCls("col-auto p-0 mx-1 d-flex justify-content-center position-relative", style["project-team-member"])}>
+									<Image src={ThienHuong} className="rounded-4" />
+									<div className={joinCls("w-100 h-100 position-absolute top-0 left-0", style["overlay"])}></div>
+
+									<div className={joinCls("position-absolute row d-none flex-column align-items-center justify-content-center", style["member-description"])}>
+										<div className={joinCls("text-white text-center", style["member-name"])}>Trịnh Huỳnh Thiên Hương</div>
+										<div className={joinCls("text-info text-center", style["member-role"])}>Co-Founder</div>
+									</div>
 								</div>
 							</div>
 						</div>
 						<div className={style["col-custom"]}>
 							<div className="row g-3 row g-3 flex-column justify-content-center">
-								<div className="col-auto">
-									<Image src={randomImgUrl(Math.round(Math.random()) * 200 + 800, Math.round(Math.random()) * 200 + 800)} className="rounded-4" />
+								<div className={joinCls("col-auto p-0 mx-1 d-flex justify-content-center position-relative", style["project-team-member"])}>
+									<Image src={AnhMinh} className="rounded-4" />
+									<div className={joinCls("w-100 h-100 position-absolute top-0 left-0", style["overlay"])}></div>
+
+									<div className={joinCls("position-absolute row d-none flex-column align-items-center justify-content-center", style["member-description"])}>
+										<div className={joinCls("text-white text-center", style["member-name"])}>Nguyễn Lê Anh Minh</div>
+										<div className={joinCls("text-info text-center", style["member-role"])}>Developer/Co-Founder</div>
+									</div>
 								</div>
-								<div className="col-auto">
-									<Image src={randomImgUrl(Math.round(Math.random()) * 200 + 800, Math.round(Math.random()) * 200 + 800)} className="rounded-4" />
+								<div className={joinCls("col-auto p-0 mx-1 d-flex justify-content-center position-relative", style["project-team-member"])}>
+									<Image src={NganPhung} className="rounded-4" />
+									<div className={joinCls("w-100 h-100 position-absolute top-0 left-0", style["overlay"])}></div>
+
+									<div className={joinCls("position-absolute row d-none flex-column align-items-center justify-content-center", style["member-description"])}>
+										<div className={joinCls("text-white text-center", style["member-name"])}>Phùng Lâm Kim Ngân</div>
+										<div className={joinCls("text-info text-center", style["member-role"])}>Content Writer/Co-Founder</div>
+									</div>
+								</div>
+								<div className={joinCls("col-auto p-0 mx-1 d-flex justify-content-center position-relative", style["project-team-member"])}>
+									<Image src={HungVinh} className="rounded-4" />
+									<div className={joinCls("w-100 h-100 position-absolute top-0 left-0", style["overlay"])}></div>
+
+									<div className={joinCls("position-absolute row d-none flex-column align-items-center justify-content-center", style["member-description"])}>
+										<div className={joinCls("text-white text-center", style["member-name"])}>Đặng Hùng Vĩnh</div>
+										<div className={joinCls("text-info text-center", style["member-role"])}>Developer</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div className={style["col-custom"]}>
+							<div className="row g-3 row g-3 flex-column justify-content-center">
+								<div className={joinCls("col-auto p-0 mx-1 d-flex justify-content-center position-relative", style["project-team-member"])}>
+									<Image src={TheTran} className="rounded-4" />
+									<div className={joinCls("w-100 h-100 position-absolute top-0 left-0", style["overlay"])}></div>
+
+									<div className={joinCls("position-absolute row d-none flex-column align-items-center justify-content-center", style["member-description"])}>
+										<div className={joinCls("text-white text-center", style["member-name"])}>Trần Quý Thế</div>
+										<div className={joinCls("text-info text-center", style["member-role"])}>Designer</div>
+									</div>
+								</div>
+								<div className={joinCls("col-auto p-0 mx-1 d-flex justify-content-center position-relative", style["project-team-member"])}>
+									<Image src={UyenPhung} className="rounded-4" />
+									<div className={joinCls("w-100 h-100 position-absolute top-0 left-0", style["overlay"])}></div>
+
+									<div className={joinCls("position-absolute row d-none flex-column align-items-center justify-content-center", style["member-description"])}>
+										<div className={joinCls("text-white text-center", style["member-name"])}>Phùng Ngọc Uyên</div>
+										<div className={joinCls("text-info text-center", style["member-role"])}>Content Writer</div>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div className={joinCls("position-absolute", style["quotes-1-area"])}>
+					<div className={joinCls("position-relative", style["quotes-1-area"])}>
 						<Image src={quotesIcon} />
 						<div className={joinCls("mt-2", style["quotes-1"])}>
 							I have a dream,
 							<br /> which is wearing a Hugo shirt on a VTV broadcast.
-						</div>
-					</div>
-					<div className={joinCls("position-absolute", style["quotes-2-area"])}>
-						<Image className="" src={quotes2Icon} />
-						<div className={joinCls("mt-2", style["quotes-2"])}>
-							Loved Hugo yesterday, Love Hugo still,
-							<br /> Always have, Always will
 						</div>
 					</div>
 				</div>
@@ -148,7 +233,7 @@ export default function ProjectTeamPage() {
 
 					<div className="row justify-content-between">
 						<div className="col-6">
-							<div className={joinCls("fw-bold f-google-san text-black", style["story-title"])}>Our Story</div>
+							<div className={joinCls("fw-bold f-google-san text-black", style["story-title"])}>Khởi nguồn</div>
 							<div className={joinCls("text-start mt-3", style["story-content"])}>
 								“Tự nhiên mà có thôi” <br /> Đúng rồi, cái ý tưởng tạo một chiếc website cho Hugo chính là tự nhiên mà có thôi.
 								<br /> Tuy vậy, hành trình tạo ra chiếc website này chẳng phải tự nhiên và dễ dàng. Sau những buổi họp bàn kế hoạch sơ lược cho project, 5 con người ấy quyết định
@@ -173,7 +258,7 @@ export default function ProjectTeamPage() {
 							<Image src={randomImgUrl()} className={joinCls("rounded-5 mt-5 shadow", style["mission-img"])} />
 						</div>
 						<div className="col-6">
-							<div className={joinCls("fw-bold f-google-san text-black ", style["story-title"])}>Our Mission</div>
+							<div className={joinCls("fw-bold f-google-san text-black ", style["story-title"])}>Mục tiêu</div>
 							<div className={joinCls("text-start mt-3", style["story-content"])}>
 								“Đây không đơn thuần là một website, đây là một cuốn sách lưu giữ những kỉ niệm và con người tại Hugo English Club.”
 								<br /> Với mong muốn mang hình ảnh một câu lạc bộ tiếng Anh năng động, vui vẻ và bổ ích đến gần hơn với những ai đã, đang và sẽ trở thành một phần của Hugo English

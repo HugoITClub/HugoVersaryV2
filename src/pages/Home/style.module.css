@@ -92,6 +92,9 @@
 	border: 2px solid transparent;
 }
 
+.hugo-name {
+	font-weight: 900;
+}
 @media (min-width: 992px) {
 	.blog-item {
 		flex-basis: 25%;

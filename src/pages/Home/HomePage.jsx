@@ -63,8 +63,8 @@ export default function HomePage() {
 				<div className="container position-relative">
 					<div className="row justify-content-between align-items-center">
 						<div className="col-lg-6 col-12">
-							<h1 className="display-2 text-outline-primary fw-bolder f-google-san">WHAT IS</h1>
-							<h1 className="display-3 f-google-san fw-bolder text-gradient text-start">HUGO ENGLISH CLUB</h1>
+							<h1 className={joinCls("display-2 text-outline-primary f-google-san", style["hugo-name"])}>WHAT IS</h1>
+							<h1 className={joinCls("display-3 f-google-san text-gradient text-start", style["hugo-name"])}>HUGO ENGLISH CLUB</h1>
 							<p className={joinCls("me-0 me-lg-5", style["description"])}>
 								<FormattedMessage {...homeMessages.description} />
 							</p>

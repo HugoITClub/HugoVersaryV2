@@ -60,5 +60,6 @@
 @media (max-width: 740px) {
 	.nav-link-container {
 		margin: 0 !important;
+		height: 50px !important;
 	}
 }

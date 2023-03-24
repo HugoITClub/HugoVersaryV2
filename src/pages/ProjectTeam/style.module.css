@@ -24,11 +24,10 @@
 }
 
 .story-content {
-	font-weight: 500;
+	font-weight: 400;
 	font-size: 20px;
-	color: #9e9e9e;
+	color: #000000;
 	line-height: 40px;
-	font-family: "Be Vietnam Pro";
 }
 
 .story-img {
@@ -44,7 +43,7 @@
 }
 
 .mission-img {
-	height: 85%;
+	height: 90vh;
 	transition: 0.4s ease-out;
 }
 
@@ -72,18 +71,18 @@
 }
 
 .quotes-1 {
-	font-family: "Be Vietnam Pro";
 	font-size: 20px;
+	font-style: italic;
 }
 
 .quotes-2 {
-	font-family: "Be Vietnam Pro";
 	font-size: 20px;
-	font-weight: 500;
+	right: 0;
+	font-style: italic;
 }
 
 .quotes-2-area {
-	right: 0;
+	text-align: end;
 }
 
 .summary-quote {
@@ -121,7 +120,8 @@
 
 .ellipse20-2 {
 	width: 2rem;
-	right: 2rem;
+	right: 30rem;
+	top: -3rem;
 }
 
 .quotesIcon22 {
@@ -203,4 +203,31 @@
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
+}
+
+.project-team-member {
+	border-radius: 16px;
+}
+.project-team-member:hover {
+	filter: drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.25));
+}
+
+.member-description {
+	bottom: 1rem;
+}
+
+.project-team-member:hover .member-description {
+	display: flex !important;
+}
+
+.member-name {
+	font-size: 18px;
+}
+.overlay {
+	background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.75) 100%) !important;
+	display: none;
+	border-radius: 16px;
+}
+.project-team-member:hover .overlay {
+	display: flex !important;
 }

@@ -57,13 +57,13 @@
 }
 
 .explore-img-area img {
-	height: 377px;
+	height: 25rem;
 	transition: 0.4s ease-out;
 }
 
 .explore-img-area:hover img {
 	transform: scale(110%);
-	opacity: 0.5;
+	filter: brightness(0.7);
 }
 
 .explore-img-area h5 {
@@ -207,5 +207,9 @@
 		background-size: cover;
 		height: 38vh;
 		margin-top: 5rem;
+	}
+	.explore-img-area img {
+		height: 35rem;
+		transition: 0.4s ease-out;
 	}
 }

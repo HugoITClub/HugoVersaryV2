@@ -66,8 +66,8 @@ export default function TeamsPage() {
 			images: Array.from(teamData.map(([meetingPicUrl, campingPicUrl, extraPicUrl, sharingPicUrl]) => extraPicUrl)),
 		},
 		{
-			title: "Sharing",
-			description: "Sharing experiences and knowledge",
+			title: "Team Member",
+			description: "Our beloved members",
 			images: Array.from(teamData.map(([meetingPicUrl, campingPicUrl, extraPicUrl, sharingPicUrl]) => sharingPicUrl)),
 		},
 	];
@@ -129,7 +129,7 @@ export default function TeamsPage() {
 								<div key={title} className="col-12 col-md-6 mt-5 col-lg-3">
 									<div className={joinCls("position-relative overflow-hidden cursor-pointer", style["explore-img-area"])} onClick={() => handleShownExploreImages(images)}>
 										<Image src={images[0]} className="d-flex justify-content-center align-items-end" />
-										<div className="position-absolute bottom-0 w-100">
+										<div className={joinCls("position-absolute bottom-0 w-100", style["explore-content"])}>
 											<div className="position-relative w-100 mx-2">
 												<h5 className="position-absolute text-white text-center w-100 mb-2">{title}</h5>
 												<p className="text-white text-center mb-3">{description}</p>
@@ -156,7 +156,7 @@ export default function TeamsPage() {
 									<div className="card-img-overlay d-flex flex-column justify-content-end">
 										<div className="position-relative">
 											<div className={joinCls("position-absolute", style["card-header"])}>
-												<h3 className="text-start badge text-info text-bg-light text-uppercase px-2 py-2">{label}</h3>
+												<h3 className="text-start badge text-secondary text-bg-light text-uppercase px-2 py-2">{label}</h3>
 												<h5 className="card-text text-start">{name}</h5>
 											</div>
 											<p className={joinCls("card-text text-ellipsis text-start", style["card-sub-text"])}>{description}</p>
