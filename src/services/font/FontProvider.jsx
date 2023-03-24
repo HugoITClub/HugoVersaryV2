@@ -9,7 +9,7 @@ export function FontProvider({ children }) {
 	useEffect(() => {
 		dispatch(setFontLoading(true));
 
-		const fonts = ["Google Sans", "Google Sans"];
+		const fonts = ["Google Sans", "Merienda One", "Quicksand"];
 		const fontObservers = fonts.map((font) => new FontFaceObserver(font));
 		Promise.all(fontObservers.map((fontObserver) => fontObserver.load())).then(() => dispatch(setFontLoading(false)));
 
