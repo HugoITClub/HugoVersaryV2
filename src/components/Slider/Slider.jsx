@@ -57,7 +57,7 @@ export default function Slider({ items = [], className, renderItem, ...props }) 
 	return (
 		<div className="position-relative">
 			<div className={joinCls("d-flex flex-nowrap overflow-hidden", className)} {...props} ref={containerRef}>
-				{items.map((item) => renderItem(item))}
+				{items.map((item, index) => renderItem(item, index))}
 			</div>
 
 			<div className={joinCls("position-absolute d-flex align-items-center", style["prev-area"])}>
