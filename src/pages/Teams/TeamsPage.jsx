@@ -66,8 +66,8 @@ export default function TeamsPage() {
 			images: Array.from(teamData.map(([meetingPicUrl, campingPicUrl, extraPicUrl, sharingPicUrl]) => extraPicUrl)),
 		},
 		{
-			title: "Sharing",
-			description: "Sharing experiences and knowledge",
+			title: "Team Member",
+			description: "Our beloved members",
 			images: Array.from(teamData.map(([meetingPicUrl, campingPicUrl, extraPicUrl, sharingPicUrl]) => sharingPicUrl)),
 		},
 	];
@@ -156,7 +156,7 @@ export default function TeamsPage() {
 									<div className="card-img-overlay d-flex flex-column justify-content-end">
 										<div className="position-relative">
 											<div className={joinCls("position-absolute", style["card-header"])}>
-												<h3 className="text-start badge text-info text-bg-light text-uppercase px-2 py-2">{label}</h3>
+												<h3 className="text-start badge text-secondary text-bg-light text-uppercase px-2 py-2">{label}</h3>
 												<h5 className="card-text text-start">{name}</h5>
 											</div>
 											<p className={joinCls("card-text text-ellipsis text-start", style["card-sub-text"])}>{description}</p>

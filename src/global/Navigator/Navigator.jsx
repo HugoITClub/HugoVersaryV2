@@ -91,7 +91,7 @@ export default function Navigator() {
 			<Title />
 
 			<nav className={joinCls("navbar navbar-expand-lg bg-dark navbar-dark p-0 fixed-top", style["navbar"])}>
-				<div className="container align-items-stretch">
+				<div className={joinCls("container align-items-stretch", style["nav-bar-wrap"])}>
 					<Link to={HOME_PAGE_PATH} className="navbar-brand">
 						<Image src={HugoLogoSvg} width={216} className="py-2" />
 					</Link>

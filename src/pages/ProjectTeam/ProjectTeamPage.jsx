@@ -68,8 +68,13 @@ export default function ProjectTeamPage() {
 					<div className="row align-items-center  g-3">
 						<div className={style["col-custom"]}>
 							<div className="row g-3 flex-column justify-content-center">
-								<div className="col-auto">
+								<div className={joinCls("col-auto d-flex justify-content-center position-relative", style["project-team-member"])}>
 									<Image src={randomImgUrl(Math.round(Math.random()) * 200 + 800, Math.round(Math.random()) * 200 + 800)} className="rounded-4" />
+									<div className={joinCls("w-100 h-100 position-absolute", style["overlay"])}></div>
+									<div className={joinCls("position-absolute row d-none flex-column align-items-center justify-content-center", style["member-description"])}>
+										<div className={joinCls("text-white", style["member-name"])}>Lê Phước Anh Tuấn</div>
+										<div className={joinCls("text-info text-center", style["member-role"])}>Developer</div>
+									</div>
 								</div>
 								<div className="col-auto">
 									<Image src={randomImgUrl(Math.round(Math.random()) * 200 + 800, Math.round(Math.random()) * 200 + 800)} className="rounded-4" />
