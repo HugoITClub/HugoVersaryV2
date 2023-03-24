@@ -135,3 +135,13 @@
 	right: 2rem;
 	transform: translate(-50%, -32%);
 }
+
+@media (max-width: 768px) {
+	.header-pic {
+		height: 24vh;
+	}
+	.eclipse-decor-3 {
+		top: -2rem;
+		right: -4rem;
+	}
+}

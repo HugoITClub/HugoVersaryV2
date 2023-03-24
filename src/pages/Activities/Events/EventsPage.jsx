@@ -27,9 +27,6 @@ function EventsPage() {
 					{mainImg.map(([id, eventName, imgUrl]) => (
 						<div key={id} className={joinCls("position-relative", style["header-pic"])}>
 							<Image src={imgUrl} className="object-fit-cover w-100 h-100" />
-							<Animation animation={[{ name: "fadeInRight" }]}>
-								<h1 className={joinCls("text-start fw-bolder f-google-san position-absolute", style["event-name"])}>{eventName}</h1>
-							</Animation>
 						</div>
 					))}
 				</Carousel>
