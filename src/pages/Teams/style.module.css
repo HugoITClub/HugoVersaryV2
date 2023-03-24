@@ -200,6 +200,10 @@
 	.overlay {
 		margin-bottom: -10rem;
 	}
+	.explore-img-area img {
+		height: 35rem;
+		transition: 0.4s ease-out;
+	}
 }
 
 @media (max-width: 400px) {
