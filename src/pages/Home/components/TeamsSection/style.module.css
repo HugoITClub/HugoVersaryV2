@@ -186,4 +186,19 @@
 	.team-card .description {
 		font-size: 1.3rem;
 	}
+	.wheel img {
+		width: 6rem;
+		height: 6rem;
+		transition: 0.4s ease-out;
+	}
+	.wheel {
+		flex-shrink: 0;
+		width: 28rem;
+		height: 28rem;
+		padding: 7rem;
+	}
+	.wheel img.active {
+		width: 10rem;
+		height: 10rem;
+	}
 }

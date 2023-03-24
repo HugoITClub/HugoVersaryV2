@@ -130,7 +130,7 @@ export default function TeamsSection({ className }) {
 			<div className={joinCls("position-absolute", style["circle-gradient"], style[teamMap[selectedTeamKey].className])} />
 
 			<div className={style["wheel"]}>
-				<div className="position-relative w-100 h-100">
+				<div className={joinCls("position-relative w-100 h-100", style["wheel-wrap"])}>
 					<div className={joinCls("position-relative rounded-circle border border-2 border-primary w-100 h-100", style["circle"])} />
 					<Image
 						src={teamMap[BANANA].image}
