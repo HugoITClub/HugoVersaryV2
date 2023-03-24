@@ -131,7 +131,7 @@ export default function Navigator() {
 											<div className="dropdown-menu rounded-0 p-0">
 												<ul className="list-group list-group-flush">
 													{navLink.children.map((subNavLink) => (
-														<NavLink to={subNavLink.path} key={subNavLink.name} className="list-group-item dropdown-item px-5">
+														<NavLink to={subNavLink.path} key={subNavLink.name} className="list-group-item dropdown-item px-5 px-lg-3">
 															{subNavLink.name}
 														</NavLink>
 													))}
