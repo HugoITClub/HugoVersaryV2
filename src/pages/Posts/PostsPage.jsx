@@ -49,7 +49,7 @@ export default function PostsPage() {
 			</Wiggle>
 			<div className="container">
 				<div className="row justify-content-between">
-					<div className="col-12 col-lg-7 overflow-scroll">
+					<div className="col-12 col-lg-7 overflow-auto">
 						{isLoading ? (
 							<>
 								<Skeleton height="2rem" width="70%" />
