@@ -117,7 +117,7 @@ export default function HomePage() {
 					<Image src={PuzzleStarsSvg} />
 				</Wiggle>
 
-				<div className="position-relative container">
+				<div className="position-relative container px-4 px-lg-0">
 					<h1 className="display-5 f-google-san fw-bolder text-gradient text-center">ACTIVITIES</h1>
 					<Slider
 						items={activitiesData}
@@ -156,7 +156,7 @@ export default function HomePage() {
 					<Image src={RectDecor3Svg} />
 				</Wiggle>
 
-				<div className="position-relative container">
+				<div className="position-relative container px-4 px-lg-0">
 					<h1 className="display-5 f-google-san fw-bolder text-gradient text-center">BLOGS</h1>
 					<Slider
 						items={blogsData}
@@ -186,7 +186,7 @@ export default function HomePage() {
 				<Wiggle className={joinCls("position-absolute", style["rect-decor-2-1"])}>
 					<Image src={RectDecor1Svg} />
 				</Wiggle>
-				<Wiggle className={joinCls("position-absolute", style["rect-decor-2"])}>
+				<Wiggle className={joinCls("position-absolute d-none d-lg-block", style["rect-decor-2"])}>
 					<Image src={RectDecor2Svg} />
 				</Wiggle>
 				<Wiggle className={joinCls("position-absolute", style["dots"])}>

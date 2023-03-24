@@ -1,8 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Merienda+One&family=Quicksand:wght@400;500;600;700&display=swap");
-@font-face {
-	font-family: "Google Sans";
-	src: url(../fonts/google-sans.woff2);
-}
+@import url("../fonts/google-sans");
 
 /* Config `rem` */
 html {
@@ -17,7 +14,7 @@ html {
 
 :root,
 [data-bs-theme="light"] {
-	--bs-body-bg: var(--bs-light);
+	--bs-body-bg: #f8f8f8;
 	--bs-body-bg-rgb: var(--bs-light-rgb);
 	--bs-primary: #fe9548;
 	--bs-primary-rgb: 254, 149, 72;

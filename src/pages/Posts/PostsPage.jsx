@@ -10,13 +10,27 @@ import Wiggle from "../../components/Wiggle/Wiggle";
 import { joinCls, randomImgUrl } from "../../utilities/text.utils";
 import Image from "../../components/Image/Image";
 import { Link } from "react-router-dom";
+import Skeleton from "../../components/Skeleton/Skeleton.jsx";
+import { useEffect, useRef } from "react";
 
 export default function PostsPage() {
+	const contentRef = useRef();
+
 	const {
 		params: { fileId },
 	} = useMatch(POSTS_PAGE_PATH);
-	console.log(fileId);
 	const { data, isLoading } = useDriveDocAPI(fileId);
+
+	useEffect(() => {
+		if (!data) return;
+
+		const contentHtml = contentRef.current;
+		const imgElements = contentHtml.querySelectorAll("img");
+		imgElements.forEach((imgElement) => {
+			imgElement.parentElement.style.width = "100%";
+			imgElement.parentElement.style.overflow = "auto";
+		});
+	}, [data]);
 
 	const {
 		isLoading: isRecommendPostsLoading,
@@ -35,10 +49,28 @@ export default function PostsPage() {
 			</Wiggle>
 			<div className="container">
 				<div className="row justify-content-between">
-					<div className="col-7">
-						<div className="" dangerouslySetInnerHTML={{ __html: data }} />
+					<div className="col-12 col-lg-7 overflow-auto">
+						{isLoading ? (
+							<>
+								<Skeleton height="2rem" width="70%" />
+								<div className="d-flex flex-column gap-3 mt-5">
+									{[...Array(2)].map((_, index) => (
+										<Skeleton key={index} />
+									))}
+									<Skeleton width="75%" />
+								</div>
+								<div className="d-flex flex-column gap-3 mt-5">
+									{[...Array(4)].map((_, index) => (
+										<Skeleton key={index} />
+									))}
+									<Skeleton width="75%" />
+								</div>
+							</>
+						) : (
+							<div ref={contentRef} dangerouslySetInnerHTML={{ __html: data }} />
+						)}
 					</div>
-					<div className="col-4">
+					<div className="col-12 col-lg-4 mt-5 mt-lg-0">
 						<div className="row">
 							<h5>Recommended Posts</h5>
 							{RecommendPostsData.map(([id, title, description, date, imgUrl, contentFileId]) => (

@@ -58,9 +58,16 @@
 
 .group-image {
 	margin-top: 4rem;
-	height: 80%;
-	padding: 4rem;
+	height: 86%;
+	padding: 2rem;
 	box-shadow: 0.5rem 0.5rem 3rem rgba(0, 0, 0, 0.15);
+}
+
+@media (min-width: 992px) {
+	.group-image {
+		padding: 4rem;
+		height: 80%;
+	}
 }
 
 @keyframes slideForward {
