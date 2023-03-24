@@ -1,8 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Merienda+One&family=Quicksand:wght@400;500;600;700&display=swap");
-@font-face {
-	font-family: "Google Sans";
-	src: url(../fonts/google-sans.woff2);
-}
+@import url("../fonts/google-sans");
 
 /* Config `rem` */
 html {

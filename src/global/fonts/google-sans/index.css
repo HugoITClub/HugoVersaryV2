@@ -1,0 +1,95 @@
+@font-face {
+	font-family: "Google Sans";
+	src: url(./GoogleSans-Black.woff2);
+	font-weight: 900;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Google Sans";
+	src: url(./GoogleSans-BlackItalic.woff2);
+	font-weight: 900;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Google Sans";
+	src: url(./GoogleSans-Bold.woff2);
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Google Sans";
+	src: url(./GoogleSans-BoldItalic.woff2);
+	font-weight: 700;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Google Sans";
+	src: url(./GoogleSans-Light.woff2);
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Google Sans";
+	src: url(./GoogleSans-LightItalic.woff2);
+	font-weight: 300;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Google Sans";
+	src: url(./GoogleSans-Medium.woff2);
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Google Sans";
+	src: url(./GoogleSans-MediumItalic.woff2);
+	font-weight: 500;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Google Sans";
+	src: url(./GoogleSans-Regular.woff2);
+	font-weight: 400;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Google Sans";
+	src: url(./GoogleSans-Italic.woff2);
+	font-weight: 400;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Google Sans";
+	src: url(./GoogleSans-Thin.woff2);
+	font-weight: 200;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Google Sans";
+	src: url(./GoogleSans-ThinItalic.woff2);
+	font-weight: 200;
+	font-style: italic;
+	font-display: swap;
+}
