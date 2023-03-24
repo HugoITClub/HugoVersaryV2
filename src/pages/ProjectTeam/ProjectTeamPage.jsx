@@ -30,6 +30,8 @@ import TheTran from "./images/TheTran.jpg";
 import NganPhung from "./images/NganPhung.jpg";
 import UyenPhung from "./images/UyenPhung.jpg";
 import AnhMinh from "./images/AnhMinh.jpg";
+import mission from "./images/mission.jpg";
+import story from "./images/story.jpg";
 
 import Wiggle from "../../components/Wiggle/Wiggle";
 
@@ -232,7 +234,7 @@ export default function ProjectTeamPage() {
 					</Wiggle>
 
 					<div className="row justify-content-between">
-						<div className="col-6">
+						<div className="col-lg-6 col-12">
 							<div className={joinCls("fw-bold f-google-san text-black", style["story-title"])}>Khởi nguồn</div>
 							<div className={joinCls("text-start mt-3", style["story-content"])}>
 								“Tự nhiên mà có thôi” <br /> Đúng rồi, cái ý tưởng tạo một chiếc website cho Hugo chính là tự nhiên mà có thôi.
@@ -241,8 +243,8 @@ export default function ProjectTeamPage() {
 								ngày thì chiếc website này cũng đã ra đời trong niềm vui sướng vỡ òa của chúng tui và chính thức đưa vào hoạt động vào ngày 25/03/2023.
 							</div>
 						</div>
-						<div className="col-6">
-							<Image src={randomImgUrl()} className={joinCls("h-100 rounded-5 shadow", style["story-img"])} />
+						<div className="col-lg-6 col-12">
+							<Image src={story} className={joinCls("rounded-5 shadow", style["story-img"])} />
 						</div>
 					</div>
 				</div>
@@ -253,11 +255,11 @@ export default function ProjectTeamPage() {
 					<Wiggle className={joinCls("position-absolute", style["eclipse-decor-3"])}>
 						<Image src={EclipseDecor3Svg} />
 					</Wiggle>
-					<div className="row justify-content-between">
-						<div className="col-6">
-							<Image src={randomImgUrl()} className={joinCls("rounded-5 mt-5 shadow", style["mission-img"])} />
+					<div className={joinCls("row justify-content-between", style["mission-wrap"])}>
+						<div className="col-lg-6 col-12 d-flex justify-content-center">
+							<Image src={mission} className={joinCls("mt-5 shadow", style["mission-img"])} />
 						</div>
-						<div className="col-6">
+						<div className="col-lg-6 col-12">
 							<div className={joinCls("fw-bold f-google-san text-black ", style["story-title"])}>Mục tiêu</div>
 							<div className={joinCls("text-start mt-3", style["story-content"])}>
 								“Đây không đơn thuần là một website, đây là một cuốn sách lưu giữ những kỉ niệm và con người tại Hugo English Club.”

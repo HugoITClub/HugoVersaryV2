@@ -24,10 +24,10 @@
 }
 
 .story-content {
-	font-weight: 400;
+	font-weight: 300;
 	font-size: 20px;
 	color: #000000;
-	line-height: 40px;
+	line-height: 30px;
 }
 
 .story-img {
@@ -45,6 +45,7 @@
 .mission-img {
 	height: 90vh;
 	transition: 0.4s ease-out;
+	border-radius: 12px;
 }
 
 .mission-img:hover {
@@ -230,4 +231,55 @@
 }
 .project-team-member:hover .overlay {
 	display: flex !important;
+}
+
+@media (max-width: 768px) {
+	.mission-story {
+		margin-top: 5rem !important;
+	}
+	.story-title {
+		font-size: 3rem;
+		letter-spacing: 0.01em;
+	}
+	.mission-wrap {
+		flex-direction: column-reverse;
+	}
+	.mission-img {
+		height: 50vh;
+		width: 100%;
+	}
+	.team-story {
+		margin-top: 5rem;
+	}
+	.quotesIcon22 {
+		bottom: -6rem;
+		right: 0;
+		width: 4rem;
+	}
+	.team-title {
+		font-size: 3rem;
+	}
+	.flowerIcon1 {
+		left: -1rem;
+		width: 3rem;
+	}
+	.flowerIcon2-2 {
+		display: none;
+	}
+	.flowerIcon1-1 {
+		width: 3rem;
+		top: 10rem;
+		right: 0rem;
+	}
+	.summary-img-wrap {
+		height: 35vh;
+	}
+	.summary-quote {
+		font-size: 1rem;
+	}
+	.rect-decor-2 {
+		width: 10rem;
+		bottom: -10rem;
+		right: -6rem;
+	}
 }
