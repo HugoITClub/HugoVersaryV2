@@ -129,7 +129,7 @@ export default function TeamsPage() {
 								<div key={title} className="col-12 col-md-6 mt-5 col-lg-3">
 									<div className={joinCls("position-relative overflow-hidden cursor-pointer", style["explore-img-area"])} onClick={() => handleShownExploreImages(images)}>
 										<Image src={images[0]} className="d-flex justify-content-center align-items-end" />
-										<div className="position-absolute bottom-0 w-100">
+										<div className={joinCls("position-absolute bottom-0 w-100", style["explore-content"])}>
 											<div className="position-relative w-100 mx-2">
 												<h5 className="position-absolute text-white text-center w-100 mb-2">{title}</h5>
 												<p className="text-white text-center mb-3">{description}</p>
