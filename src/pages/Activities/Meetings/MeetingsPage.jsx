@@ -15,27 +15,28 @@ import Wiggle from "../../../components/Wiggle/Wiggle";
 import { Link } from "react-router-dom";
 export default function MeetingsPage() {
 	const images = [randomImgUrl(), randomImgUrl(), randomImgUrl(), randomImgUrl(), randomImgUrl(), randomImgUrl()];
-	const clubWords = ["Enthusiastic", "Dynamic", "Energetic"];
-	const { isLoading: isMeetingLoading, isFull: isMeetingFull, data: meetings, getMore: getMoreMeeting } = useSheetAPI("Meeting", "K", "P", { earlyTake: 8 });
-	const { isLoading: isImageLoading, isFull: isImageFull, data: mainImg, getMore: getMoreImg } = useSheetAPI("Meeting", "Q", "R", { earlyTake: 1 });
+	const clubWords = ["Dynamic", "Encouraging", "Thoughtful"];
+	const clubQuotes = [""];
+	const { isLoading: isMeetingLoading, isFull: isMeetingFull, data: meetings, getMore: getMoreMeeting } = useSheetAPI("Meeting", "T", "Y", { earlyTake: 8 });
+	const { isLoading: isImageLoading, isFull: isImageFull, data: mainImg, getMore: getMoreImg } = useSheetAPI("Meeting", "Z", "AI", { earlyTake: 20 });
 	return (
 		<div className="overflow-hidden">
 			<div className={style["meeting"]}>
 				<Carousel id="MeetingIntroCarousel" safeZone intervalTime={50000000} className={style["meeting-intro"]}>
-					{clubWords.map((word) => (
-						<div key={word} className={joinCls("position-relative h-100", style["meeting-header"])}>
+					{mainImg.map(([id, word, quote, author, imgUrl1, imgUrl2, imgUrl3, imgUrl4, imgUrl5, imgUrl6]) => (
+						<div key={id} className={joinCls("position-relative h-100", style["meeting-header"])}>
 							<div className={joinCls("position-absolute w-100 h-100", style["meeting-header-bg"])}>
 								<div className={joinCls("row flex-column", style["meeting-header-sub-bg"])}>
 									<div className="col-6 w-100">
 										<div className={joinCls("row justify-content-between h-100 w-100 gx-5", style["group-image-row"], style["row-1"])}>
 											<div className="col-4">
-												<Image src={randomImgUrl()} className="object-fit-cover w-100" />
+												<Image src={imgUrl1} className="object-fit-cover w-100" />
 											</div>
 											<div className="col-4">
-												<Image src={randomImgUrl()} className="object-fit-cover w-100" />
+												<Image src={imgUrl2} className="object-fit-cover w-100" />
 											</div>
 											<div className="col-4">
-												<Image src={randomImgUrl()} className="object-fit-cover w-100" />
+												<Image src={imgUrl3} className="object-fit-cover w-100" />
 											</div>
 										</div>
 									</div>
@@ -46,46 +47,46 @@ export default function MeetingsPage() {
 									<div className={joinCls("col-12 col-lg-4 order-2 order-lg-1", style["meeting-header-content"])}>
 										<div className={joinCls("me-lg-5", style["quotes-area"])}>
 											<div className={joinCls("mt-lg-10 f-google-san text-start fw-bold text-dark", style["describe-word"])}>{word}</div>
-											<p className={joinCls("mt-3 text-start mb-0", style["quotes"])}>"Energy and persistence conquer all things."</p>
-											<p className={joinCls(" text-end", style["quotes-author"])}>- Benjamin Franklin.</p>
+											<p className={joinCls("mt-3 text-start mb-0", style["quotes"])}>{quote}</p>
+											<p className={joinCls(" text-end", style["quotes-author"])}>{author}</p>
 										</div>
 									</div>
 									<div className="col-12 col-lg-8 h-50 h-lg-100 order-1 order-lg-2">
 										<div className={joinCls("bg-light", style["group-image"])}>
 											<div className={joinCls("row h-50 g-2 g-lg-4 py-2 py-lg-4", style["group-image-row"], style["row-1"])}>
 												<div className="d-none d-lg-block col-4 h-100">
-													<Image src={randomImgUrl(Math.round(Math.random() * 1000) + 1000, Math.round(Math.random() * 1000) + 1000)} className="object-fit-cover w-100 h-100" />
+													<Image src={imgUrl1} className="object-fit-cover w-100 h-100" />
 												</div>
 												<div className="d-none d-lg-block col-4 h-100">
-													<Image src={randomImgUrl(Math.round(Math.random() * 1000) + 1000, Math.round(Math.random() * 1000) + 1000)} className="object-fit-cover w-100 h-100" />
+													<Image src={imgUrl2} className="object-fit-cover w-100 h-100" />
 												</div>
 												<div className="d-none d-lg-block col-4 h-100">
-													<Image src={randomImgUrl(Math.round(Math.random() * 1000) + 1000, Math.round(Math.random() * 1000) + 1000)} className="object-fit-cover w-100 h-100" />
+													<Image src={imgUrl3} className="object-fit-cover w-100 h-100" />
 												</div>
 
 												<div className="d-block d-lg-none col-7 h-100">
-													<Image src={randomImgUrl(Math.round(Math.random() * 1000) + 1000, Math.round(Math.random() * 1000) + 1000)} className="object-fit-cover w-100 h-100" />
+													<Image src={imgUrl1} className="object-fit-cover w-100 h-100" />
 												</div>
 												<div className="d-block d-lg-none col-5 h-100">
-													<Image src={randomImgUrl(Math.round(Math.random() * 1000) + 1000, Math.round(Math.random() * 1000) + 1000)} className="object-fit-cover w-100 h-100" />
+													<Image src={imgUrl2} className="object-fit-cover w-100 h-100" />
 												</div>
 											</div>
 											<div className={joinCls("row h-50 g-2 g-lg-4 py-2 py-lg-4", style["group-image-row"], style["row-2"])}>
 												<div className="d-none d-lg-block col-4 h-100">
-													<Image src={randomImgUrl(Math.round(Math.random() * 1000) + 1000, Math.round(Math.random() * 1000) + 1000)} className="object-fit-cover w-100 h-100" />
+													<Image src={imgUrl4} className="object-fit-cover w-100 h-100" />
 												</div>
 												<div className="d-none d-lg-block col-4 h-100">
-													<Image src={randomImgUrl(Math.round(Math.random() * 1000) + 1000, Math.round(Math.random() * 1000) + 1000)} className="object-fit-cover w-100 h-100" />
+													<Image src={imgUrl5} className="object-fit-cover w-100 h-100" />
 												</div>
 												<div className="d-none d-lg-block col-4 h-100">
-													<Image src={randomImgUrl(Math.round(Math.random() * 1000) + 1000, Math.round(Math.random() * 1000) + 1000)} className="object-fit-cover w-100 h-100" />
+													<Image src={imgUrl6} className="object-fit-cover w-100 h-100" />
 												</div>
 
 												<div className="d-block d-lg-none col-5 h-100">
-													<Image src={randomImgUrl(Math.round(Math.random() * 1000) + 1000, Math.round(Math.random() * 1000) + 1000)} className="object-fit-cover w-100 h-100" />
+													<Image src={imgUrl4} className="object-fit-cover w-100 h-100" />
 												</div>
 												<div className="d-block d-lg-none col-7 h-100">
-													<Image src={randomImgUrl(Math.round(Math.random() * 1000) + 1000, Math.round(Math.random() * 1000) + 1000)} className="object-fit-cover w-100 h-100" />
+													<Image src={imgUrl5} className="object-fit-cover w-100 h-100" />
 												</div>
 											</div>
 										</div>
