@@ -2,6 +2,10 @@
 	--bs-navbar-toggler-focus-width: 0;
 }
 
+.navbar-container {
+	--bs-gutter-x: 0;
+}
+
 .nav-link-container {
 	width: 100%;
 }

@@ -1,6 +1,6 @@
-.header-pic {
+/* .header-pic {
 	position: relative;
-	height: 90vh;
+	height: 60vh;
 }
 
 .header-pic .fade {
@@ -20,10 +20,16 @@
 	bottom: 5%;
 	left: 50%;
 	transform: translateX(-50%);
-}
+} */
 
 .meeting-intro :global(.carousel-item) {
-	height: 100vh;
+	height: 72vh;
+}
+
+@media (min-width: 992px) {
+	.meeting-intro :global(.carousel-item) {
+		height: 100vh;
+	}
 }
 
 .describe-word {
@@ -58,7 +64,7 @@
 
 .group-image {
 	margin-top: 4rem;
-	height: 86%;
+	height: 100%;
 	padding: 2rem;
 	box-shadow: 0.5rem 0.5rem 3rem rgba(0, 0, 0, 0.15);
 }

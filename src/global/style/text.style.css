@@ -10,6 +10,10 @@
 	font-family: "Quicksand", var(--bs-body-font-family);
 }
 
+.f-crimson-pro {
+	font-family: "Crimson Pro", var(--bs-body-font-family);
+}
+
 h1,
 h2,
 h3,

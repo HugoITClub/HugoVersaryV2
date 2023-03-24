@@ -44,15 +44,15 @@ export default function MeetingsPage() {
 							<div className="container h-100">
 								<div className="row h-100 position-relative">
 									<div className={joinCls("col-12 col-lg-4 order-2 order-lg-1", style["meeting-header-content"])}>
-										<div className={joinCls("me-5", style["quotes-area"])}>
+										<div className={joinCls("me-lg-5", style["quotes-area"])}>
 											<div className={joinCls("mt-lg-10 f-google-san text-start fw-bold text-dark", style["describe-word"])}>{word}</div>
 											<p className={joinCls("mt-3 text-start mb-0", style["quotes"])}>"Energy and persistence conquer all things."</p>
 											<p className={joinCls(" text-end", style["quotes-author"])}>- Benjamin Franklin.</p>
 										</div>
 									</div>
-									<div className="col-12 col-lg-8 h-lg-100 order-1 order-lg-2">
+									<div className="col-12 col-lg-8 h-50 h-lg-100 order-1 order-lg-2">
 										<div className={joinCls("bg-light", style["group-image"])}>
-											<div className={joinCls("row h-50 g-1 g-lg-4 py-1 py-lg-4", style["group-image-row"], style["row-1"])}>
+											<div className={joinCls("row h-50 g-2 g-lg-4 py-2 py-lg-4", style["group-image-row"], style["row-1"])}>
 												<div className="d-none d-lg-block col-4 h-100">
 													<Image src={randomImgUrl(Math.round(Math.random() * 1000) + 1000, Math.round(Math.random() * 1000) + 1000)} className="object-fit-cover w-100 h-100" />
 												</div>
@@ -70,7 +70,7 @@ export default function MeetingsPage() {
 													<Image src={randomImgUrl(Math.round(Math.random() * 1000) + 1000, Math.round(Math.random() * 1000) + 1000)} className="object-fit-cover w-100 h-100" />
 												</div>
 											</div>
-											<div className={joinCls("row h-50 g-1 g-lg-4 py-1 py-lg-4", style["group-image-row"], style["row-2"])}>
+											<div className={joinCls("row h-50 g-2 g-lg-4 py-2 py-lg-4", style["group-image-row"], style["row-2"])}>
 												<div className="d-none d-lg-block col-4 h-100">
 													<Image src={randomImgUrl(Math.round(Math.random() * 1000) + 1000, Math.round(Math.random() * 1000) + 1000)} className="object-fit-cover w-100 h-100" />
 												</div>
