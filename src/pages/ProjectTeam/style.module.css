@@ -282,4 +282,19 @@
 		bottom: -10rem;
 		right: -6rem;
 	}
+	.member-name {
+		font-size: 6px;
+	}
+	.member-role {
+		font-size: 6px;
+	}
+	.team-member {
+		margin-top: 3rem !important;
+	}
+	.quotes-2 {
+		font-size: 12px;
+	}
+	.quotes-1 {
+		font-size: 12px;
+	}
 }
