@@ -284,3 +284,15 @@
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
+
+@media (max-width: 768px) {
+	.blog-intro-banner-text h1 {
+		padding-top: 2rem;
+		font-size: 4rem;
+		margin-left: 5rem !important;
+	}
+	.blog-intro-poster .poster {
+		height: 92%;
+		margin-top: 10rem;
+	}
+}

@@ -44,7 +44,7 @@ export default function HomePage() {
 		data: sliderHomePageData,
 		getMore: getSliderHomePageData,
 	} = useSheetAPI("SliderHomePage", "H", "I", { earlyTake: 10 });
-
+	const { isLoading: isJoinUsImgLoading, isFull: isJoinUsImgFull, data: JoinUsImgData, getMore: getJoinUsImgData } = useSheetAPI("SliderHomePage", "J", "K", { earlyTake: 1 });
 	const [isShownHugoVideo, setIsShownHugoVideo] = useState(false);
 	return (
 		<div className="position-relative bg-light overflow-hidden">
@@ -194,7 +194,7 @@ export default function HomePage() {
 				</Wiggle>
 
 				<div className={joinCls("position-relative rounded-4", style["join-us"])}>
-					<Image src={randomImgUrl(2000, 1000)} className="position-absolute top-0 left-0 w-100 h-100 rounded-4" />
+					{/* <Image src={randomImgUrl(2000, 1000)} className="position-absolute top-0 left-0 w-100 h-100 rounded-4" /> */}
 					<div className="position-relative d-flex flex-column align-items-center">
 						<h1 className="text-gradient text-center text-uppercase">
 							become an official member of
