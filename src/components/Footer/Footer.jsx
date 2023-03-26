@@ -171,7 +171,7 @@ export default function Footer({ theme = LIGHT_THEME, className, ...props }) {
 											<Image src={AmericaFlagSvg} />
 											<h6 className="mb-0">English</h6>
 										</li>
-										<li className="dropdown-item d-flex gap-3 align-items-center" onClick={() => dispatch(changeLocale(VI_LOCALE))}>
+										<li className="dropdown-item d-flex gap-3 align-items-center disabled" onClick={() => dispatch(changeLocale(VI_LOCALE))}>
 											<Image src={VietnamFlagSvg} />
 											<h6 className="mb-0">Vietnamese</h6>
 										</li>
