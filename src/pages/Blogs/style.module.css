@@ -91,7 +91,7 @@
 @media (min-width: 992px) {
 	.blog-item {
 		flex-basis: 25%;
-		border: 1px solid transparent;
+		border: 2px solid transparent;
 	}
 }
 
@@ -127,7 +127,7 @@
 
 .blog-item-description {
 	-webkit-line-clamp: 3;
-	max-height: 92px;
+	max-height: 5rem;
 }
 
 .academic-content {
