@@ -25,6 +25,7 @@ import Modal from "../../components/Modal/Modal";
 import Footer from "../../components/Footer/Footer";
 import TeamsSection from "./components/TeamsSection/TeamsSection";
 import useSheetAPI from "../../services/google/hooks/useSheetAPI";
+import { ABOUT_US_PAGE_PATH } from "../../pages/AboutUs/constants";
 
 import style from "./style.module.css";
 import Wiggle from "../../components/Wiggle/Wiggle";
@@ -68,9 +69,9 @@ export default function HomePage() {
 							<p className={joinCls("me-0 me-lg-5", style["description"])}>
 								<FormattedMessage {...homeMessages.description} />
 							</p>
-							<button className="btn btn-outline-gradient rounded-pill px-4">
+							<Link to={ABOUT_US_PAGE_PATH} className="btn btn-outline-gradient rounded-pill px-4">
 								<FormattedMessage {...homeMessages.seeMoreButton} />
-							</button>
+							</Link>
 						</div>
 						<div className="col-auto">
 							<div className={joinCls("position-relative", style["yt-play"])}>
