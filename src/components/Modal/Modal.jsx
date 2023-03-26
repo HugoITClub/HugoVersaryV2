@@ -72,7 +72,7 @@ export default function Modal({ isShown, onClose, className, dialogClassName, co
 				</div>
 			</div>
 
-			<div className="position-fixed bottom-0 end-0 mb-3 mb-lg-5 me-3 me-lg-5">
+			<div className="position-fixed d-lg-none bottom-0 end-0 mb-3 mb-lg-5 me-3 me-lg-5">
 				<div className="d-flex gap-2 align-items-center px-3 py-2 border border-white text-white">
 					<h5 className="mb-0">Close</h5>
 					<i className="fa-solid fa-forward"></i>
