@@ -1,31 +1,28 @@
-import Carousel from "../../components/Carousel/Carousel";
-import { joinCls, randomImgUrl } from "../../utilities/text.utils";
-import useSheetAPI from "../../services/google/hooks/useSheetAPI";
-import Slider from "../../components/Slider/Slider";
-import Image from "../../components/Image/Image";
 import { Link } from "react-router-dom";
-import Skeleton from "../../components/Skeleton/Skeleton.jsx";
+import Carousel from "../../components/Carousel/Carousel";
 import Footer from "../../components/Footer/Footer";
-import PuzzleSvg from "../Home/images/puzzle.svg";
+import Image from "../../components/Image/Image";
+import Skeleton from "../../components/Skeleton/Skeleton.jsx";
+import Slider from "../../components/Slider/Slider";
+import logoHugo from "../../global/images/logo-hugo.png";
+import useSheetAPI from "../../services/google/hooks/useSheetAPI";
+import { joinCls } from "../../utilities/text.utils";
 import EclipseDecor1Svg from "../Home/images/eclipse-decor-1.svg";
 import EclipseDecor2Svg from "../Home/images/eclipse-decor-2.svg";
 import EclipseDecor3Svg from "../Home/images/eclipse-decor-3.svg";
-import EclipseDecor4Svg from "../Home/images/eclipse-decor-4.svg";
+import PuzzleSvg from "../Home/images/puzzle.svg";
 import RectDecor1Svg from "../Home/images/rect-decor-1.svg";
 import RectDecor2Svg from "../Home/images/rect-decor-2.svg";
-import RectDecor3Svg from "../Home/images/rect-decor-3.svg";
-import logoHugo from "../../global/images/logo-hugo.png";
 
-import style from "./style.module.css";
 import Wiggle from "../../components/Wiggle/Wiggle";
+import style from "./style.module.css";
 
 export default function BlogsPage() {
-	const images = [randomImgUrl(), randomImgUrl(), randomImgUrl(), randomImgUrl(), randomImgUrl(), randomImgUrl()];
-	const { isLoading: isBlogIntroLoading, isFull: isBlogIntroFull, data: blogIntroData, getMore: getMoreBlogIntro } = useSheetAPI("Blogs", "S", "W", { earlyTake: 8 });
+	const { data: blogIntroData } = useSheetAPI("Blogs", "S", "W", { earlyTake: 8 });
 
 	const { isLoading: isBlogsLoading, isFull: isBlogsFull, data: blogsData, getMore: getMoreBlogsData } = useSheetAPI("Blogs", "M", "R", { earlyTake: 8 });
 
-	const { isLoading: isAcademicLoading, isFull: isAcademicFull, data: academicData, getMore: getMoreAcademicData } = useSheetAPI("Academic", "K", "P", { earlyTake: 8 });
+	const { data: academicData } = useSheetAPI("Academic", "K", "P", { earlyTake: 8 });
 
 	return (
 		<div className="position-relative overflow-hidden">

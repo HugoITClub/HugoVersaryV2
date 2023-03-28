@@ -38,14 +38,9 @@ export default function TeamsPage() {
 		params: { name },
 	} = useMatch(TEAMS_PAGE_PATH);
 
-	const { isLoading: isTeamDataLoading, isFull: isTeamDataFull, data: teamData, getMore: getMoreTeamData } = useSheetAPI(sheetNameMap[name], "AE", "AH", { earlyTake: 50 });
-	const { isLoading: isTeamIntroLoading, isFull: isTeamIntroFull, data: teamIntro, getMore: getMoreTeamIntro } = useSheetAPI(sheetNameMap[name], "V", "AD", { earlyTake: 1 });
-	const {
-		isLoading: isTeamActivitiesLoading,
-		isFull: isTeamActivitiesFull,
-		data: teamActivities,
-		getMore: getMoreTeamActivities,
-	} = useSheetAPI(sheetNameMap[name], "AI", "AO", { earlyTake: 50 });
+	const { data: teamData } = useSheetAPI(sheetNameMap[name], "AE", "AH", { earlyTake: 50 });
+	const { data: teamIntro } = useSheetAPI(sheetNameMap[name], "V", "AD", { earlyTake: 1 });
+	const { data: teamActivities } = useSheetAPI(sheetNameMap[name], "AI", "AO", { earlyTake: 50 });
 	const exploreCategories = [
 		{
 			title: "Team Meeting",

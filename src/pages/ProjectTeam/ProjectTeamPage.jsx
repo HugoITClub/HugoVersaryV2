@@ -5,23 +5,23 @@ import EclipseDecor2Svg from "../Home/images/eclipse-decor-2.svg";
 import EclipseDecor3Svg from "../Home/images/eclipse-decor-3.svg";
 import RectDecor2Svg from "../Home/images/rect-decor-2.svg";
 import AnhMinh from "./images/AnhMinh.jpg";
-import DungPham from "./images/DungPham.jpg";
 import ellipse10 from "./images/decors/Ellipse10.svg";
 import ellipse20 from "./images/decors/Ellipse20.svg";
 import ellipse21 from "./images/decors/Ellipse21.svg";
 import flowerIcon1 from "./images/decors/flowerIcon1.svg";
 import flowerIcon2 from "./images/decors/flowerIcon2.svg";
+import quotesIcon from "./images/decors/quotesicon.svg";
+import quotesIcon2 from "./images/decors/quotesicon2.svg";
+import quotesIcon22 from "./images/decors/quotesIcon22.svg";
+import quoteSign1 from "./images/decors/quoteSign1.svg";
+import quoteSign2 from "./images/decors/quoteSign2.svg";
+import DungPham from "./images/DungPham.jpg";
 import HoangDung from "./images/HoangDung.jpg";
 import HungVinh from "./images/HungVinh.jpg";
 import KimHuynh from "./images/KimHuynh.jpg";
 import NganPhung from "./images/NganPhung.jpg";
 import NguyenPhuoc from "./images/NguyenPhuoc.jpg";
 import QuangLoc from "./images/QuangLoc.jpg";
-import quotesIcon from "./images/decors/quotesicon.svg";
-import quotesIcon2 from "./images/decors/quotesicon2.svg";
-import quotesIcon22 from "./images/decors/quotesIcon22.svg";
-import quoteSign1 from "./images/decors/quoteSign1.svg";
-import quoteSign2 from "./images/decors/quoteSign2.svg";
 import TheTran from "./images/TheTran.jpg";
 import ThienHuong from "./images/ThienHuong.jpg";
 import TienDat from "./images/TienDat.jpg";
@@ -33,7 +33,7 @@ import Wiggle from "../../components/Wiggle/Wiggle";
 import useSheetAPI from "../../services/google/hooks/useSheetAPI";
 
 export default function ProjectTeamPage() {
-	const { isLoading: isImgLoading, isFull: isImgFull, data: imgData, getMore: getMoreImgsData } = useSheetAPI("HUGOVERSARY", "E", "H", { earlyTake: 8 });
+	const { data: imgData } = useSheetAPI("HUGOVERSARY", "E", "H", { earlyTake: 8 });
 	return (
 		<div className="pt-5 overflow-hidden position-relative">
 			{imgData.map(([id, imgUrl1, imgUrl2, imgUrl3]) => (

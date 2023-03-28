@@ -14,7 +14,7 @@ import RectDecor4Svg from "../Home/images/rect-decor-4.svg";
 import style from "./style.module.css";
 
 export default function AboutUsPage() {
-	const { isLoading: isAboutUsLoading, isFull: isAboutUsFull, data: staffMembers, getMore: getMoreStaffs } = useSheetAPI("AboutUs", "N", "R", { earlyTake: 13 });
+	const { data: staffMembers } = useSheetAPI("AboutUs", "N", "R", { earlyTake: 13 });
 	// const {
 	// 	isIntroductionLoading,
 	// 	isIntroductionFull,
@@ -23,7 +23,7 @@ export default function AboutUsPage() {
 	// 	earlyTake: 1,
 	// });
 
-	const { isLoading: isStaffSliderLoading, isFull: isStaffSliderFull, data: staffSlider, getMore: getMoreStaffSlider } = useSheetAPI("SliderStaff", "F", "G", { earlyTake: 20 });
+	const { isLoading: isStaffSliderLoading, data: staffSlider } = useSheetAPI("SliderStaff", "F", "G", { earlyTake: 20 });
 
 	return (
 		<div className="position-relative overflow-hidden">

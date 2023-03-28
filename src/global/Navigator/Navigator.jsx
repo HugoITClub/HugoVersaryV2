@@ -90,7 +90,6 @@ export default function Navigator() {
 		collapseElements.forEach((collapseElement) => {
 			const collapse = window.bootstrap.Collapse.getOrCreateInstance(collapseElement);
 			collapse.hide();
-			// console.log(collapse);
 		});
 
 		// Scroll to top when route changes

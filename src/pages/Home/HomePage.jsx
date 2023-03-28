@@ -1,51 +1,41 @@
+import { useState } from "react";
 import { FormattedMessage } from "react-intl";
+import { Link } from "react-router-dom";
 import Carousel from "../../components/Carousel/Carousel";
-import { joinCls, randomImgUrl } from "../../utilities/text.utils";
-import YtDecor1Svg from "./images/yt-decor-1.svg";
-import YtDecor2Svg from "./images/yt-decor-2.svg";
+import Footer from "../../components/Footer/Footer";
+import Image from "../../components/Image/Image";
+import Modal from "../../components/Modal/Modal";
+import Slider from "../../components/Slider/Slider";
+import { ABOUT_US_PAGE_PATH } from "../../pages/AboutUs/constants";
+import useSheetAPI from "../../services/google/hooks/useSheetAPI";
+import { joinCls } from "../../utilities/text.utils";
+import TeamsSection from "./components/TeamsSection/TeamsSection";
+import homeMessages from "./homeMessages";
+import DotsSvg from "./images/dots.svg";
 import EclipseDecor1Svg from "./images/eclipse-decor-1.svg";
 import EclipseDecor2Svg from "./images/eclipse-decor-2.svg";
 import EclipseDecor3Svg from "./images/eclipse-decor-3.svg";
 import EclipseDecor4Svg from "./images/eclipse-decor-4.svg";
+import NoteSvg from "./images/note.svg";
+import PuzzleStarsSvg from "./images/puzzle.svg";
 import RectDecor1Svg from "./images/rect-decor-1.svg";
 import RectDecor2Svg from "./images/rect-decor-2.svg";
 import RectDecor3Svg from "./images/rect-decor-3.svg";
-import ShootingStarsSvg from "./images/shooting-stars.svg";
-import PuzzleStarsSvg from "./images/puzzle.svg";
-import NoteSvg from "./images/note.svg";
 import RocketSvg from "./images/rocket.svg";
-import DotsSvg from "./images/dots.svg";
-import Slider from "../../components/Slider/Slider";
-import { Link } from "react-router-dom";
-import Image from "../../components/Image/Image";
-import homeMessages from "./homeMessages";
-import { MEETINGS_ACTIVITY_PAGE_PATH } from "../Activities/Meetings/constants";
-import { useState } from "react";
-import Modal from "../../components/Modal/Modal";
-import Footer from "../../components/Footer/Footer";
-import TeamsSection from "./components/TeamsSection/TeamsSection";
-import useSheetAPI from "../../services/google/hooks/useSheetAPI";
-import { ABOUT_US_PAGE_PATH } from "../../pages/AboutUs/constants";
+import ShootingStarsSvg from "./images/shooting-stars.svg";
+import YtDecor1Svg from "./images/yt-decor-1.svg";
+import YtDecor2Svg from "./images/yt-decor-2.svg";
 
-import style from "./style.module.css";
 import Wiggle from "../../components/Wiggle/Wiggle";
-import logoHugo from "../../global/images/logo-hugo.png";
+import style from "./style.module.css";
 
 export default function HomePage() {
-	const images = [randomImgUrl(), randomImgUrl(), randomImgUrl(), randomImgUrl(), randomImgUrl(), randomImgUrl()];
-	const sliderItems = images.map((image) => ({ url: image, id: image }));
+	const { data: blogsData } = useSheetAPI("Blogs", "M", "R", { earlyTake: 8 });
 
-	const { isLoading: isBlogsLoading, isFull: isBlogsFull, data: blogsData, getMore: getMoreBlogsData } = useSheetAPI("Blogs", "M", "R", { earlyTake: 8 });
+	const { data: activitiesData } = useSheetAPI("Activities", "M", "S", { earlyTake: 20 });
 
-	const { isLoading: isActivitiesLoading, isFull: isActivitiesFull, data: activitiesData, getMore: getMoreActivitiesData } = useSheetAPI("Activities", "M", "S", { earlyTake: 20 });
-
-	const {
-		isLoading: isSliderHomePageLoading,
-		isFull: isSliderHomePageFull,
-		data: sliderHomePageData,
-		getMore: getSliderHomePageData,
-	} = useSheetAPI("SliderHomePage", "H", "I", { earlyTake: 10 });
-	const { isLoading: isJoinUsImgLoading, isFull: isJoinUsImgFull, data: JoinUsImgData, getMore: getJoinUsImgData } = useSheetAPI("SliderHomePage", "J", "K", { earlyTake: 1 });
+	const { data: sliderHomePageData } = useSheetAPI("SliderHomePage", "H", "I", { earlyTake: 10 });
+	// const { isLoading: isJoinUsImgLoading, isFull: isJoinUsImgFull, data: JoinUsImgData, getMore: getJoinUsImgData } = useSheetAPI("SliderHomePage", "J", "K", { earlyTake: 1 });
 	const [isShownHugoVideo, setIsShownHugoVideo] = useState(false);
 	return (
 		<div className="position-relative bg-light overflow-hidden">
