@@ -10,7 +10,7 @@ import nifflerSvg from "../../Home/components/TeamsSection/images/niffler.svg";
 import DotsSvg from "../../Home/images/dots.svg";
 import RectDecor3Svg from "../../Home/images/rect-decor-3.svg";
 import EclipseDecor3Svg from "../../Home/images/eclipse-decor-3.svg";
-import logoHugo from "../../../global/Images/logoHugo.png";
+import logoHugo from "../../../global/images/logo-hugo.png";
 import Carousel from "../../../components/Carousel/Carousel";
 
 import style from "./style.module.css";

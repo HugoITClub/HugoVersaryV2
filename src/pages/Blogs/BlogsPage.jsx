@@ -14,7 +14,7 @@ import EclipseDecor4Svg from "../Home/images/eclipse-decor-4.svg";
 import RectDecor1Svg from "../Home/images/rect-decor-1.svg";
 import RectDecor2Svg from "../Home/images/rect-decor-2.svg";
 import RectDecor3Svg from "../Home/images/rect-decor-3.svg";
-import logoHugo from "../../global/Images/logoHugo.png";
+import logoHugo from "../../global/images/logo-hugo.png";
 
 import style from "./style.module.css";
 import Wiggle from "../../components/Wiggle/Wiggle";

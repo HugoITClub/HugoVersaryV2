@@ -29,7 +29,7 @@ import { ABOUT_US_PAGE_PATH } from "../../pages/AboutUs/constants";
 
 import style from "./style.module.css";
 import Wiggle from "../../components/Wiggle/Wiggle";
-import logoHugo from "../../global/Images/logoHugo.png";
+import logoHugo from "../../global/images/logo-hugo.png";
 
 export default function HomePage() {
 	const images = [randomImgUrl(), randomImgUrl(), randomImgUrl(), randomImgUrl(), randomImgUrl(), randomImgUrl()];

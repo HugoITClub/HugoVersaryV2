@@ -1,18 +1,15 @@
 import { useState } from "react";
 import { Link, useMatch } from "react-router-dom";
+import Footer from "../../components/Footer/Footer";
 import Image from "../../components/Image/Image";
 import Masonry from "../../components/Masonry/Masonry";
 import Modal from "../../components/Modal/Modal";
 import Slider from "../../components/Slider/Slider";
-import { joinCls, randomImgUrl } from "../../utilities/text.utils";
-import { MEETINGS_ACTIVITY_PAGE_PATH } from "../Activities/Meetings/constants";
+import { joinCls } from "../../utilities/text.utils";
 import { BANANA, HEROES_COMPANY, NIFFLER, POWER_RANGERS, TEAMS_PAGE_PATH } from "./constants";
-import Footer from "../../components/Footer/Footer";
-import Skeleton from "../../components/Skeleton/Skeleton.jsx";
 
-import style from "./style.module.css";
 import useSheetAPI from "../../services/google/hooks/useSheetAPI";
-import { DARK_THEME } from "../../services/theme/constants";
+import style from "./style.module.css";
 
 const sheetNameMap = {
 	[BANANA]: "Banana",
