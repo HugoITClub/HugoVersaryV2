@@ -81,7 +81,6 @@ export default function TeamsPage() {
 	const [currentExploreImages, setCurrentExploreImages] = useState([]);
 
 	const handleShownExploreImages = (images) => {
-		console.log(images);
 		setIsShownModal(true);
 		setCurrentExploreImages(images);
 	};
