@@ -47,21 +47,23 @@ export default function AboutUsPage() {
 					</div>
 				</div>
 
-				<Slider
-					items={staffSlider}
-					className="gap-3 mt-5"
-					renderItem={([id, imageUrl], index) => {
-						const MAX_PADDING = 3;
-						const PADDING_FACTOR = 4;
-						const paddingTop = index % MAX_PADDING;
-						const paddingBottom = MAX_PADDING - paddingTop - 1;
-						return (
-							<div key={id} className={style["about-us-item"]} style={{ paddingTop: `${paddingTop * PADDING_FACTOR}rem`, paddingBottom: `${paddingBottom * PADDING_FACTOR}rem` }}>
-								<Image lazy={index % 5} src={imageUrl} className="w-100 h-100 rounded-4" />
-							</div>
-						);
-					}}
-				/>
+				<div className="mt-5 mx-4 mx-lg-0">
+					<Slider
+						items={staffSlider}
+						className="gap-3"
+						renderItem={([id, imageUrl], index) => {
+							const MAX_PADDING = 3;
+							const PADDING_FACTOR = 4;
+							const paddingTop = index % MAX_PADDING;
+							const paddingBottom = MAX_PADDING - paddingTop - 1;
+							return (
+								<div key={id} className={style["about-us-item"]} style={{ paddingTop: `${paddingTop * PADDING_FACTOR}rem`, paddingBottom: `${paddingBottom * PADDING_FACTOR}rem` }}>
+									<Image lazy={index % 5} src={imageUrl} className="w-100 h-100 rounded-4" />
+								</div>
+							);
+						}}
+					/>
+				</div>
 
 				<div className="mt-lg-10 row">
 					<div className="col-12">

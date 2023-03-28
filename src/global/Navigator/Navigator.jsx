@@ -79,11 +79,18 @@ export default function Navigator() {
 	useEffect(() => {
 		// Close all dropdowns when route changes
 		const navbar = navbarRef.current;
-		const dropDownElements = navbar.querySelectorAll(".dropdown-toggle");
 
+		const dropDownElements = navbar.querySelectorAll(".dropdown-toggle");
 		dropDownElements.forEach((dropDownElement) => {
 			const dropDown = window.bootstrap.Dropdown.getOrCreateInstance(dropDownElement);
 			dropDown.hide();
+		});
+
+		const collapseElements = navbar.querySelectorAll(".navbar-collapse");
+		collapseElements.forEach((collapseElement) => {
+			const collapse = window.bootstrap.Collapse.getOrCreateInstance(collapseElement);
+			collapse.hide();
+			// console.log(collapse);
 		});
 
 		// Scroll to top when route changes
@@ -97,7 +104,7 @@ export default function Navigator() {
 		<Fragment>
 			<Title />
 
-			<nav className={joinCls("navbar navbar-expand-lg bg-dark navbar-dark p-0 fixed-top", style["navbar"])}>
+			<nav ref={navbarRef} className={joinCls("navbar navbar-expand-lg bg-dark navbar-dark p-0 fixed-top", style["navbar"])}>
 				<div className={joinCls("container align-items-stretch", style["navbar-container"])}>
 					<button className="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse">
 						<span className="navbar-toggler-icon"></span>
@@ -111,8 +118,8 @@ export default function Navigator() {
 						<div className="col-auto">{joinUsBtn}</div>
 					</div>
 
-					<div className={joinCls("collapse navbar-collapse align-items-stretch", style["navbar-collapse"])}>
-						<ul ref={navbarRef} className="navbar-nav mx-auto mb-2 mb-lg-0 align-items-lg-center align-items-start">
+					<div className={joinCls("collapse navbar-collapse align-items-stretch show", style["navbar-collapse"])}>
+						<ul className="navbar-nav mx-auto mb-2 mb-lg-0 align-items-lg-center align-items-start">
 							{NAV_LINKS.map((navLink) => (
 								<li
 									key={navLink.name}
