@@ -168,7 +168,9 @@ export default function HomePage() {
 								<div className="card-body d-flex flex-column position-relative pt-0">
 									<small className="d-block text-info text-uppercase">{time}</small>
 									<h5 className={joinCls("text-ellipsis text-start", style["blog-item-title"])}>{title}</h5>
-									<p className={joinCls("text-ellipsis text-start flex-grow-1 mb-4", style["blog-item-description"])}>{description}</p>
+									<div className="flex-grow-1">
+										<p className={joinCls("text-ellipsis text-start flex-grow-1 mb-4", style["blog-item-description"])}>{description}</p>
+									</div>
 									<div className={joinCls("d-flex align-items-center gap-2", style["read-more"])}>
 										<h6 className="mb-0">Read more</h6>
 										<i className="fa-solid fa-arrow-right" />
