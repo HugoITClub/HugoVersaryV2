@@ -50,7 +50,7 @@ export default function BlogsPage() {
 									<div className={style["poster"]}>
 										<div className="d-flex justify-content-center align-items-center h-lg-100 w-100 w-lg-auto mx-lg-5 my-lg-3">
 											<Wiggle disableHover maxScaleRange={0} maxRotateRange={0} transitionTime={3} className="h-100">
-												<Image key={imgUrl} src={imgUrl} className="object-fit-contain mw-100 h-100" />
+												<Image key={imgUrl} src={imgUrl} className="object-fit-contain mw-100" />
 											</Wiggle>
 										</div>
 									</div>
