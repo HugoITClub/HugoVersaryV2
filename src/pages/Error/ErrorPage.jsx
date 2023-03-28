@@ -1,10 +1,10 @@
 import { useRouteError } from "react-router-dom";
-import Image from "../../components/Image/Image";
-import errorImg from "./Images/constuction.svg";
 import Footer from "../../components/Footer/Footer";
+import Image from "../../components/Image/Image";
 import Navigator from "../../global/Navigator/Navigator";
+import { joinCls } from "../../utilities/text.utils";
+import errorImg from "./Images/constuction.svg";
 import style from "./style.module.css";
-import { joinCls, randomImgUrl } from "../../utilities/text.utils";
 
 export default function ErrorPage() {
 	const error = useRouteError();

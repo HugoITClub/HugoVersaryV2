@@ -36,6 +36,8 @@ export default function Splash({ className, children, onStart = () => {}, ...pro
 			const timeout = setTimeout(() => setIsTimeout(true), 2000);
 			return () => clearTimeout(timeout);
 		}
+
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [isStarted]);
 
 	const handleAnimating = () => {

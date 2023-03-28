@@ -1,17 +1,16 @@
-import useSheetAPI from "../../services/google/hooks/useSheetAPI.js";
+import { useEffect, useRef } from "react";
+import { Link, useMatch } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
-import { POSTS_PAGE_PATH } from "./constants";
-import style from "./style.module.css";
+import Image from "../../components/Image/Image";
+import Skeleton from "../../components/Skeleton/Skeleton.jsx";
+import Wiggle from "../../components/Wiggle/Wiggle";
 import useDriveDocAPI from "../../services/google/hooks/useDriveDocAPI.js";
-import { useMatch } from "react-router-dom";
+import useSheetAPI from "../../services/google/hooks/useSheetAPI.js";
+import { joinCls } from "../../utilities/text.utils";
 import EclipseDecor1 from "../Home/images/eclipse-decor-1.svg";
 import EclipseDecor2 from "../Home/images/eclipse-decor-2.svg";
-import Wiggle from "../../components/Wiggle/Wiggle";
-import { joinCls, randomImgUrl } from "../../utilities/text.utils";
-import Image from "../../components/Image/Image";
-import { Link } from "react-router-dom";
-import Skeleton from "../../components/Skeleton/Skeleton.jsx";
-import { useEffect, useRef } from "react";
+import { POSTS_PAGE_PATH } from "./constants";
+import style from "./style.module.css";
 
 export default function PostsPage() {
 	const contentRef = useRef();
@@ -32,12 +31,7 @@ export default function PostsPage() {
 		});
 	}, [data]);
 
-	const {
-		isLoading: isRecommendPostsLoading,
-		isFull: isRecommendPostsFull,
-		data: RecommendPostsData,
-		getMore: getMoreRecommendPosts,
-	} = useSheetAPI("RecommendPosts", "I", "N", { earlyTake: 8 });
+	const { data: RecommendPostsData } = useSheetAPI("RecommendPosts", "I", "N", { earlyTake: 8 });
 
 	return (
 		<div className="bg-white pt-5 position-relative">
