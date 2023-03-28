@@ -26,6 +26,8 @@ export default function Image({ src, lazy = true, fade = true, className, alt, .
 		if (skeletonRef.current) observer.observe(skeletonRef.current);
 
 		return () => observer.disconnect();
+
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	if (!lazy) return <img src={src} className={joinCls("img-fluid", fade && "fadeIn animated", className)} alt={alt} />;
