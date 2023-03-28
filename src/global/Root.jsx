@@ -21,8 +21,6 @@ function Root() {
 		if (isPageLoading) setIsStartedSplash(false);
 	}, [isPageLoading, setIsStartedSplash]);
 
-	console.log(isStartedSplash);
-
 	return (
 		<>
 			<div className={joinCls("mt-5", isPageLoading || !isStartedSplash ? "invisible" : undefined)}>
