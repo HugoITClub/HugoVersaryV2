@@ -1,25 +1,20 @@
-import Skeleton from "../../../components/Skeleton/Skeleton.jsx";
-import useSheetAPI from "../../../services/google/hooks/useSheetAPI.js";
-import { joinCls, randomImgUrl } from "../../../utilities/text.utils.js";
-import Image from "../../../components/Image/Image";
-import Footer from "../../../components/Footer/Footer";
-import bananaSvg from "../../Home/components/TeamsSection/images/banana.svg";
-import heroesCompanySvg from "../../Home/components/TeamsSection/images/heroes-company.svg";
-import powerRangerSvg from "../../Home/components/TeamsSection/images/power-rangers.svg";
-import nifflerSvg from "../../Home/components/TeamsSection/images/niffler.svg";
-import DotsSvg from "../../Home/images/dots.svg";
-import RectDecor3Svg from "../../Home/images/rect-decor-3.svg";
-import EclipseDecor3Svg from "../../Home/images/eclipse-decor-3.svg";
-import logoHugo from "../../../global/Images/logoHugo.png";
 import Carousel from "../../../components/Carousel/Carousel";
+import Footer from "../../../components/Footer/Footer";
+import Image from "../../../components/Image/Image";
+import Skeleton from "../../../components/Skeleton/Skeleton.jsx";
+import logoHugo from "../../../global/images/logo-hugo.png";
+import useSheetAPI from "../../../services/google/hooks/useSheetAPI.js";
+import { joinCls } from "../../../utilities/text.utils.js";
+import DotsSvg from "../../Home/images/dots.svg";
+import EclipseDecor3Svg from "../../Home/images/eclipse-decor-3.svg";
+import RectDecor3Svg from "../../Home/images/rect-decor-3.svg";
 
-import style from "./style.module.css";
 import Wiggle from "../../../components/Wiggle/Wiggle";
-import Animation from "../../../components/Animation/Animation.jsx";
+import style from "./style.module.css";
 
 function EventsPage() {
 	const { isLoading: isEventLoading, isFull: isEventFull, data: events, getMore: getMoreEvent } = useSheetAPI("Event", "L", "Q", { earlyTake: 8 });
-	const { isLoading: isImageLoading, isFull: isImageFull, data: mainImg, getMore: getMoreImg } = useSheetAPI("Event", "R", "T", { earlyTake: 8 });
+	const { data: mainImg } = useSheetAPI("Event", "R", "T", { earlyTake: 8 });
 	return (
 		<div className="overflow-hidden">
 			<div className="event">

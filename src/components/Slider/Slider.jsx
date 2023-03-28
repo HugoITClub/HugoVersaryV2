@@ -36,7 +36,7 @@ export default function Slider({ items = [], className, renderItem, ...props }) 
 		const items = container.children;
 
 		let newCurrentItemIndex = currentItemIndex;
-		for (let i = 0; i < 100; ++i) {
+		for (let i = 0; i < items.length; ++i) {
 			newCurrentItemIndex = (newCurrentItemIndex + 1) % items.length;
 
 			const currentItem = items[newCurrentItemIndex];

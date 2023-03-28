@@ -1,29 +1,29 @@
 import Footer from "../../components/Footer/Footer";
 import Image from "../../components/Image/Image.jsx";
-import logoHugo from "../../global/Images/logoHugo.png";
-import useSheetAPI from "../../services/google/hooks/useSheetAPI.js";
-import { joinCls, randomImgUrl } from "../../utilities/text.utils.js";
+import Skeleton from "../../components/Skeleton/Skeleton";
 import Slider from "../../components/Slider/Slider";
-import { Link } from "react-router-dom";
-import EclipseDecor6Svg from "../Home/images/eclipse-decor-6.svg";
+import Wiggle from "../../components/Wiggle/Wiggle";
+import useSheetAPI from "../../services/google/hooks/useSheetAPI.js";
+import { joinCls } from "../../utilities/text.utils.js";
 import EclipseDecor5Svg from "../Home/images/eclipse-decor-5.svg";
+import EclipseDecor6Svg from "../Home/images/eclipse-decor-6.svg";
 import RectDecor1Svg from "../Home/images/rect-decor-1.svg";
 import RectDecor2Svg from "../Home/images/rect-decor-2.svg";
 import RectDecor4Svg from "../Home/images/rect-decor-4.svg";
-import Wiggle from "../../components/Wiggle/Wiggle";
 
 import style from "./style.module.css";
-export default function AboutUsPage() {
-	const { isLoading: isAboutUsLoading, isFull: isAboutUsFull, data: staffMembers, getMore: getMoreStaffs } = useSheetAPI("AboutUs", "N", "R", { earlyTake: 13 });
-	const {
-		isIntroductionLoading,
-		isIntroductionFull,
-		data: introductionContent,
-	} = useSheetAPI("AboutUs", "S", "T", {
-		earlyTake: 1,
-	});
 
-	const { isLoading: isStaffSliderLoading, isFull: isStaffSliderFull, data: staffSlider, getMore: getMoreStaffSlider } = useSheetAPI("SliderStaff", "F", "G", { earlyTake: 20 });
+export default function AboutUsPage() {
+	const { data: staffMembers } = useSheetAPI("AboutUs", "N", "R", { earlyTake: 13 });
+	// const {
+	// 	isIntroductionLoading,
+	// 	isIntroductionFull,
+	// 	data: introductionContent,
+	// } = useSheetAPI("AboutUs", "S", "T", {
+	// 	earlyTake: 1,
+	// });
+
+	const { isLoading: isStaffSliderLoading, data: staffSlider } = useSheetAPI("SliderStaff", "F", "G", { earlyTake: 20 });
 
 	return (
 		<div className="position-relative overflow-hidden">
@@ -48,21 +48,47 @@ export default function AboutUsPage() {
 				</div>
 
 				<div className="mt-5 mx-4 mx-lg-0">
-					<Slider
-						items={staffSlider}
-						className="gap-3"
-						renderItem={([id, imageUrl], index) => {
-							const MAX_PADDING = 3;
-							const PADDING_FACTOR = 4;
-							const paddingTop = index % MAX_PADDING;
-							const paddingBottom = MAX_PADDING - paddingTop - 1;
-							return (
-								<div key={id} className={style["about-us-item"]} style={{ paddingTop: `${paddingTop * PADDING_FACTOR}rem`, paddingBottom: `${paddingBottom * PADDING_FACTOR}rem` }}>
-									<Image lazy={index % 5} src={imageUrl} className="w-100 h-100 rounded-4" />
-								</div>
-							);
-						}}
-					/>
+					{isStaffSliderLoading ? (
+						<Slider
+							items={[...Array(5)].map((_, index) => index)}
+							className="gap-3"
+							renderItem={(index) => {
+								const MAX_PADDING = 3;
+								const PADDING_FACTOR = 4;
+								const paddingTop = index % MAX_PADDING;
+								const paddingBottom = MAX_PADDING - paddingTop - 1;
+								return (
+									<div
+										key={index}
+										className={style["about-us-item"]}
+										style={{ paddingTop: `${paddingTop * PADDING_FACTOR}rem`, paddingBottom: `${paddingBottom * PADDING_FACTOR}rem` }}
+									>
+										<Skeleton className="w-100 h-100 rounded-4" />
+									</div>
+								);
+							}}
+						/>
+					) : (
+						<Slider
+							items={staffSlider}
+							className="gap-3"
+							renderItem={([id, imageUrl], index) => {
+								const MAX_PADDING = 3;
+								const PADDING_FACTOR = 4;
+								const paddingTop = index % MAX_PADDING;
+								const paddingBottom = MAX_PADDING - paddingTop - 1;
+								return (
+									<div
+										key={id}
+										className={style["about-us-item"]}
+										style={{ paddingTop: `${paddingTop * PADDING_FACTOR}rem`, paddingBottom: `${paddingBottom * PADDING_FACTOR}rem` }}
+									>
+										<Image lazy={index < 5} src={imageUrl} className="w-100 h-100 rounded-4" />
+									</div>
+								);
+							}}
+						/>
+					)}
 				</div>
 
 				<div className="mt-lg-10 row">

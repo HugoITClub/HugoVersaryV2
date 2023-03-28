@@ -1,24 +1,20 @@
-import Skeleton from "../../../components/Skeleton/Skeleton.jsx";
-import useSheetAPI from "../../../services/google/hooks/useSheetAPI.js";
-import { joinCls, randomImgUrl } from "../../../utilities/text.utils.js";
-import Image from "../../../components/Image/Image";
-import Footer from "../../../components/Footer/Footer";
-import DotsSvg from "../../Home/images/dots.svg";
-import RectDecor3Svg from "../../Home/images/rect-decor-3.svg";
-import EclipseDecor3Svg from "../../Home/images/eclipse-decor-3.svg";
-import logoHugo from "../../../global/Images/logoHugo.png";
 import Carousel from "../../../components/Carousel/Carousel";
+import Footer from "../../../components/Footer/Footer";
+import Image from "../../../components/Image/Image";
+import Skeleton from "../../../components/Skeleton/Skeleton.jsx";
+import logoHugo from "../../../global/images/logo-hugo.png";
+import useSheetAPI from "../../../services/google/hooks/useSheetAPI.js";
+import { joinCls } from "../../../utilities/text.utils.js";
+import DotsSvg from "../../Home/images/dots.svg";
+import EclipseDecor3Svg from "../../Home/images/eclipse-decor-3.svg";
 
-import style from "./style.module.css";
 import Wiggle from "../../../components/Wiggle/Wiggle";
+import style from "./style.module.css";
 
 import { Link } from "react-router-dom";
 export default function MeetingsPage() {
-	const images = [randomImgUrl(), randomImgUrl(), randomImgUrl(), randomImgUrl(), randomImgUrl(), randomImgUrl()];
-	const clubWords = ["Dynamic", "Encouraging", "Thoughtful"];
-	const clubQuotes = [""];
 	const { isLoading: isMeetingLoading, isFull: isMeetingFull, data: meetings, getMore: getMoreMeeting } = useSheetAPI("Meeting", "T", "Y", { earlyTake: 8 });
-	const { isLoading: isImageLoading, isFull: isImageFull, data: mainImg, getMore: getMoreImg } = useSheetAPI("Meeting", "Z", "AI", { earlyTake: 20 });
+	const { data: mainImg } = useSheetAPI("Meeting", "Z", "AI", { earlyTake: 20 });
 	return (
 		<div className="overflow-hidden">
 			<div className={style["meeting"]}>
