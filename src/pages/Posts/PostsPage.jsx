@@ -26,8 +26,16 @@ export default function PostsPage() {
 		const contentHtml = contentRef.current;
 		const imgElements = contentHtml.querySelectorAll("img");
 		imgElements.forEach((imgElement) => {
-			imgElement.parentElement.style.width = "100%";
-			imgElement.parentElement.style.overflow = "auto";
+			const spanElement = imgElement.parentElement;
+			if (!imgElement.getAttribute("alt")) {
+				spanElement.style.width = "100%";
+				spanElement.style.height = "unset";
+
+				imgElement.style.width = "100%";
+				imgElement.style.height = "unset";
+			}
+
+			spanElement.style.overflow = "visible";
 		});
 	}, [data]);
 
