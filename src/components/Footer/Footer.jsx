@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { ABOUT_US_PAGE_PATH } from "../../pages/AboutUs/constants";
-import { PROJECT_TEAM_PAGE_PATH } from "../../pages/ProjectTeam/constants";
 import { changeLocale } from "../../services/language/actions";
 import { EN_LOCALE, VI_LOCALE } from "../../services/language/constants";
 import { joinCls } from "../../utilities/text.utils";
@@ -17,6 +16,7 @@ import VietnamFlagSvg from "./Images/vietnam-flag.svg";
 
 import style from "./style.module.css";
 import { DARK_THEME, LIGHT_THEME } from "../../services/theme/constants";
+import { PROJECT_TEAM_PAGE_PATH } from "../../pages/AboutUs/ProjectTeam/constants";
 
 export default function Footer({ theme = LIGHT_THEME, className, ...props }) {
 	const dispatch = useDispatch();
