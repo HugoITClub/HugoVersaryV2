@@ -12,6 +12,9 @@ import { ABOUT_US_PAGE_PATH } from "../../pages/AboutUs/constants";
 import { MEETINGS_ACTIVITY_PAGE_PATH } from "../../pages/Activities/Meetings/constants";
 import { ACTIVITY_PAGE_PATH } from "../../pages/Activities/constants";
 import { EVENTS_ACTIVITY_PAGE_PATH } from "../../pages/Activities/Events/constants";
+import { PROJECT_TEAM_PAGE_PATH } from "../../pages/AboutUs/ProjectTeam/constants";
+import { FAQ_PAGE_PATH } from "../../pages/AboutUs/FAQ/constants";
+import { HUGO_CLUB_PAGE_PATH } from "../../pages/AboutUs/HugoClub/constants";
 
 export const NAV_LINKS = [
 	{
@@ -63,6 +66,20 @@ export const NAV_LINKS = [
 	{
 		name: "ABOUT US",
 		path: ABOUT_US_PAGE_PATH,
+		children: [
+			{
+				name: "HUGO ENGLISH CLUB",
+				path: HUGO_CLUB_PAGE_PATH,
+			},
+			{
+				name: "HUGOVERSARY",
+				path: PROJECT_TEAM_PAGE_PATH,
+			},
+			{
+				name: "FAQ",
+				path: FAQ_PAGE_PATH,
+			},
+		],
 	},
 ];
 

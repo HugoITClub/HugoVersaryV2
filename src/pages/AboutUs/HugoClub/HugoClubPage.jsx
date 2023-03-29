@@ -1,15 +1,15 @@
-import Footer from "../../components/Footer/Footer";
-import Image from "../../components/Image/Image.jsx";
-import Skeleton from "../../components/Skeleton/Skeleton";
-import Slider from "../../components/Slider/Slider";
-import Wiggle from "../../components/Wiggle/Wiggle";
-import useSheetAPI from "../../services/google/hooks/useSheetAPI.js";
-import { joinCls } from "../../utilities/text.utils.js";
-import EclipseDecor5Svg from "../Home/images/eclipse-decor-5.svg";
-import EclipseDecor6Svg from "../Home/images/eclipse-decor-6.svg";
-import RectDecor1Svg from "../Home/images/rect-decor-1.svg";
-import RectDecor2Svg from "../Home/images/rect-decor-2.svg";
-import RectDecor4Svg from "../Home/images/rect-decor-4.svg";
+import Footer from "../../../components/Footer/Footer";
+import Image from "../../../components/Image/Image.jsx";
+import Skeleton from "../../../components/Skeleton/Skeleton";
+import Slider from "../../../components/Slider/Slider";
+import Wiggle from "../../../components/Wiggle/Wiggle";
+import useSheetAPI from "../../../services/google/hooks/useSheetAPI.js";
+import { joinCls } from "../../../utilities/text.utils.js";
+import EclipseDecor5Svg from "../../Home/images/eclipse-decor-5.svg";
+import EclipseDecor6Svg from "../../Home/images/eclipse-decor-6.svg";
+import RectDecor1Svg from "../../Home/images/rect-decor-1.svg";
+import RectDecor2Svg from "../../Home/images/rect-decor-2.svg";
+import RectDecor4Svg from "../../Home/images/rect-decor-4.svg";
 
 import style from "./style.module.css";
 

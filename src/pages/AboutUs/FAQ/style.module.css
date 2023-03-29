@@ -1,0 +1,18 @@
+.line {
+	border-top: 2px solid rgba(0, 0, 0, 0.6);
+}
+
+@media (min-width: 992px) {
+	.faq-title {
+		font-size: 5rem;
+		line-height: 77px;
+		font-weight: 500;
+	}
+	.hugo-content {
+		font-size: 1.5rem;
+	}
+}
+
+.hugo-content-gap {
+	margin-left: 6rem;
+}

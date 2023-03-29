@@ -1,9 +1,9 @@
-import Footer from "../../components/Footer/Footer";
-import Image from "../../components/Image/Image";
-import { joinCls } from "../../utilities/text.utils";
-import EclipseDecor2Svg from "../Home/images/eclipse-decor-2.svg";
-import EclipseDecor3Svg from "../Home/images/eclipse-decor-3.svg";
-import RectDecor2Svg from "../Home/images/rect-decor-2.svg";
+import Footer from "../../../components/Footer/Footer";
+import Image from "../../../components/Image/Image";
+import { joinCls } from "../../../utilities/text.utils";
+import EclipseDecor2Svg from "../../Home/images/eclipse-decor-2.svg";
+import EclipseDecor3Svg from "../../Home/images/eclipse-decor-3.svg";
+import RectDecor2Svg from "../../Home/images/rect-decor-2.svg";
 import AnhMinh from "./images/AnhMinh.jpg";
 import ellipse10 from "./images/decors/Ellipse10.svg";
 import ellipse20 from "./images/decors/Ellipse20.svg";
@@ -29,8 +29,8 @@ import TuanLe from "./images/TuanLe.jpg";
 import UyenPhung from "./images/UyenPhung.jpg";
 import style from "./style.module.css";
 
-import Wiggle from "../../components/Wiggle/Wiggle";
-import useSheetAPI from "../../services/google/hooks/useSheetAPI";
+import Wiggle from "../../../components/Wiggle/Wiggle";
+import useSheetAPI from "../../../services/google/hooks/useSheetAPI";
 
 export default function ProjectTeamPage() {
 	const { data: imgData } = useSheetAPI("HUGOVERSARY", "E", "H", { earlyTake: 8 });
