@@ -108,21 +108,27 @@ export default function AboutUsPage() {
 					<div className="col-12">
 						<div className={joinCls("f-crimson-pro", style["club-name"])}>Active Time</div>
 						<div className={joinCls("text-muted mt-3 mt-lg-5", style["club-description"])}>
-							•<span className="text-dark ms-3 fw-bold">Meeting time:</span> 8:00 A.M., every Sunday.
-							<br /> •<span className="text-dark ms-3 fw-bold">Meeting venue:</span> Block C’s Yard, in front of room C116, The University of Science and Technology.
-							<br /> •
-							<span className="text-muted ms-3">
-								Any adjustments to our meeting venue due to special events or extra activities will be announced via email or the Hugo English Club group. Therefore, remember to
-							</span>
-							<span className="text-dark ms-2 fw-bold">check your email inbox and group notifications</span> before every meeting.
-							<br /> • <span className="text-dark ms-3 fw-bold">How to receive notifications:</span>
-							<br /> <span className="ms-5 text-start"> a. Via meeting announcement email from our club.</span>
-							<br /> <span className="ms-5 text-start"> b. Our club’s email address: hugoclub.dut@gmail.com.</span>
-							<br />{" "}
-							<span className="text-dark ms-5 text-start">
-								{" "}
-								c. Besides, there will also be announcing posts on the Hugo English Club group with some essential information for the meeting.
-							</span>
+							<ul>
+								<li>
+									<span className="text-dark ms-3 fw-bold">Meeting time:</span> 8:00 A.M., every Sunday.
+								</li>
+								<li>
+									<span className="text-dark ms-3 fw-bold">Meeting venue:</span> Block C’s Yard, in front of room C116, The University of Science and Technology.
+								</li>
+								<li>
+									<div className="ms-3">
+										Any adjustments to our meeting venue due to special events or extra activities will be announced via email or the Hugo English Club group. Therefore, remember
+										to <span className="text-black fw-bold"> check your email inbox and group notifications</span> before every meeting.
+									</div>
+								</li>
+								<li>
+									<div className="ms-3">How to receive notifications:</div>
+									<ol>
+										<li className="ms-3">Via meeting announcement email from our club. Our club’s email address: hugoclub.dut@gmail.com.</li>
+										<li className="ms-3">Besides, there will also be announcing posts on the Hugo English Club group with some essential information for the meeting.</li>
+									</ol>
+								</li>
+							</ul>
 						</div>
 					</div>
 				</div>
