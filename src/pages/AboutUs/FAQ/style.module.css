@@ -2,6 +2,11 @@
 	border-top: 2px solid rgba(0, 0, 0, 0.6);
 }
 
+.faq-title {
+	font-size: 3rem;
+	line-height: 77px;
+	font-weight: 500;
+}
 @media (min-width: 992px) {
 	.faq-title {
 		font-size: 5rem;
@@ -15,4 +20,21 @@
 
 .hugo-content-gap {
 	margin-left: 6rem;
+}
+
+@media (max-width: 768px) {
+	.faq-wrap {
+		margin-top: 5rem;
+	}
+	ol {
+		padding-left: 0 !important;
+	}
+	.hugo-content-benefit {
+		font-size: 14px !important;
+	}
+}
+
+.hugo-content-benefit {
+	padding: 0 1.5rem;
+	font-size: 1.5rem;
 }

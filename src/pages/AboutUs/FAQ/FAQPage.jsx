@@ -14,11 +14,11 @@ import style from "./style.module.css";
 
 function FAQPage() {
 	return (
-		<div className="overflow-hidden mt-10">
+		<div className={joinCls("overflow-hidden mt-10", style["faq-wrap"])}>
 			<div className="container">
 				<h1 className={joinCls("f-crimson-pro", style["faq-title"])}>Các câu hỏi thường gặp</h1>
 				<ol>
-					<div className="mt-5">
+					<div className="mt-lg-5 mt-3">
 						<h2 className="">1. Hugo là gì?</h2>
 						<hr className={joinCls("", style["line"])}></hr>
 						<div className={joinCls("text-muted mt-3", style["hugo-content"])}>
@@ -29,30 +29,30 @@ function FAQPage() {
 							động, khôn khéo, dũng cảm và ham học hỏi của thành viên CLB, giống như hình tượng Hugo vậy.
 						</div>
 					</div>
-					<div className="mt-5">
+					<div className="mt-lg-5 mt-3">
 						<h2 className="">2. Làm thế nào để tham gia CLB Tiếng Anh Hugo?</h2>
 						<hr className={joinCls("", style["line"])}></hr>
 						<div className={joinCls("text-muted mt-3", style["hugo-content"])}>
 							Nếu bạn đang có mong muốn gia nhập CLB, hoặc muốn giới thiệu đến người thân, bạn bè của mình, đọc kỹ những thông tin bên dưới nhé:
 							<ul>
-								<li className="ms-5">
+								<li className="ms-lg-5">
 									<span className="fw-bold text-black">Tuyển thành viên:</span> Mỗi năm CLB có hai mùa tuyển thành viên, mùa xuân (tháng 2 ~ tháng 3) và mùa thu (tháng 8 ~ tháng 9)
 									<ol>
-										<li>Hình thức tuyển: Vòng đơn Online - Vòng Phỏng vấn trực tiếp.</li>
-										<li>Số lượng tuyển: 30~40 thành viên cho mỗi đợt.</li>
+										<li className="ms-3 ms-lg-0">Hình thức tuyển: Vòng đơn Online - Vòng Phỏng vấn trực tiếp.</li>
+										<li className="ms-3 ms-lg-0">Số lượng tuyển: 30~40 thành viên cho mỗi đợt.</li>
 									</ol>
 								</li>
-								<li className="ms-5">
+								<li className="ms-lg-5">
 									<span className="fw-bold text-black">Sau khi trở thành thành viên CLB:</span> Bạn sẽ được tham gia group Hugo English Club, có các đặc quyền và cơ hội trải nghiệm
 									nhiều hoạt động của CLB, cùng với đó là gia nhập một trong bốn team (Power Rangers, Heroes Company, Banana và Niffler).
 								</li>
 							</ul>
 						</div>
 					</div>
-					<div className="mt-5">
+					<div className="mt-lg-5 mt-3">
 						<h2 className="">3. Quyền lợi của thành viên CLB Hugo</h2>
 						<hr className={joinCls("", style["line"])}></hr>
-						<div className={joinCls("text-muted mt-3", style["hugo-content"])}>
+						<div className={joinCls("text-muted mt-3", style["hugo-content-benefit"])}>
 							<ol>
 								<li>Có môi trường rèn luyện Tiếng Anh giao tiếp. Được chỉ dẫn bởi nhiều thành viên, cựu thành viên trong CLB.</li>
 								<li>
@@ -66,7 +66,7 @@ function FAQPage() {
 							</ol>
 						</div>
 					</div>
-					<div className="mt-5">
+					<div className="mt-lg-5 mt-3">
 						<h2 className="">4. Thông tin ban chủ nhiệm</h2>
 						<hr className={joinCls("", style["line"])}></hr>
 						<div className={joinCls("text-muted mt-3", style["hugo-content"])}>
