@@ -54,8 +54,12 @@ export default function HomePage() {
 				<div className="container position-relative">
 					<div className="row justify-content-between align-items-center">
 						<div className="col-lg-6 col-12">
-							<h1 className={joinCls("display-2 text-outline-primary f-google-san", style["hugo-name"])}>WHAT IS</h1>
-							<h1 className={joinCls("display-3 f-google-san text-gradient text-start", style["hugo-name"])}>HUGO ENGLISH CLUB</h1>
+							<h1 className={joinCls("display-2 text-outline-primary f-google-san", style["hugo-name"])}>
+								<FormattedMessage {...homeMessages.hugoName1} />
+							</h1>
+							<h1 className={joinCls("display-3 f-google-san text-gradient text-start", style["hugo-name"])}>
+								<FormattedMessage {...homeMessages.hugoName2} />
+							</h1>
 							<p className={joinCls("me-0 me-lg-5", style["description"])}>
 								<FormattedMessage {...homeMessages.description} />
 							</p>
@@ -91,7 +95,9 @@ export default function HomePage() {
 
 			<section className={joinCls("position-relative mt-10", style["team-section-wrap"])}>
 				<div className="position-relative container">
-					<h1 className="display-5 f-google-san fw-bolder text-gradient text-center">TEAMS IN HUGO</h1>
+					<h1 className="display-5 f-google-san fw-bolder text-gradient text-center">
+						<FormattedMessage {...homeMessages.teamInHugo} />
+					</h1>
 					<TeamsSection className="mt-5" />
 				</div>
 
@@ -109,7 +115,9 @@ export default function HomePage() {
 				</Wiggle>
 
 				<div className="position-relative container px-4 px-lg-0">
-					<h1 className="display-5 f-google-san fw-bolder text-gradient text-center">ACTIVITIES</h1>
+					<h1 className="display-5 f-google-san fw-bolder text-gradient text-center">
+						<FormattedMessage {...homeMessages.activities} />
+					</h1>
 					<Slider
 						items={activitiesData}
 						className="gap-3 mt-5"
@@ -190,20 +198,16 @@ export default function HomePage() {
 					{/* <Image src={randomImgUrl(2000, 1000)} className="position-absolute top-0 left-0 w-100 h-100 rounded-4" /> */}
 					<div className="position-relative d-flex flex-column align-items-center">
 						<h1 className="text-gradient text-center text-uppercase">
-							become an official member of
-							<br />
-							Hugo English Club
+							<FormattedMessage {...homeMessages.joinUsTitle} />
 						</h1>
-						<h4 className="text-center mt-3 mt-lg-5 px-3">Hugo brings English more familiar than ever before, whoever you are!</h4>
+						<h4 className="text-center mt-3 mt-lg-5 px-3">
+							<FormattedMessage {...homeMessages.joinUsSubtitle} />
+						</h4>
 						<p className={joinCls("text-center f-google-san mt-3 px-3", style["join-us-description"])}>
-							Do you want to immerse yourself in an environment where people practice English together?
-							<br />
-							Are you eager to make active and talented friends in Danang?
-							<br />
-							More than an English Club, let’s join us to know what's behind it!
+							<FormattedMessage {...homeMessages.callingAction} />
 						</p>
 						<Link target="_blank" to="https://forms.gle/P3a5dJzUpWxstcKt8" className="btn btn-lg btn-outline-gradient rounded-pill text-uppercase px-5 py-3 mt-4">
-							Join us right now
+							<FormattedMessage {...homeMessages.callingActionButton} />
 						</Link>
 					</div>
 				</div>
