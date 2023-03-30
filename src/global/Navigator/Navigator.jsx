@@ -15,81 +15,87 @@ import { EVENTS_ACTIVITY_PAGE_PATH } from "../../pages/Activities/Events/constan
 import { PROJECT_TEAM_PAGE_PATH } from "../../pages/AboutUs/ProjectTeam/constants";
 import { FAQ_PAGE_PATH } from "../../pages/AboutUs/FAQ/constants";
 import { HUGO_CLUB_PAGE_PATH } from "../../pages/AboutUs/HugoClub/constants";
-
-export const NAV_LINKS = [
-	{
-		name: "HOME",
-		path: HOME_PAGE_PATH,
-		end: true,
-	},
-	{
-		name: "TEAMS",
-		path: TEAMS_PAGE_PATH,
-		children: [
-			{
-				name: "POWER RANGERS",
-				path: POWER_RANGERS_TEAM_PAGE_PATH,
-			},
-			{
-				name: "HEROES COMPANY",
-				path: HEROES_COMPANY_TEAM_PAGE_PATH,
-			},
-			{
-				name: "BANANA",
-				path: BANANA_TEAM_PAGE_PATH,
-			},
-
-			{
-				name: "NIFFLER",
-				path: NIFFLER_TEAM_PAGE_PATH,
-			},
-		],
-	},
-	{
-		name: "ACTIVITIES",
-		path: ACTIVITY_PAGE_PATH,
-		children: [
-			{
-				name: "MEETINGS",
-				path: MEETINGS_ACTIVITY_PAGE_PATH,
-			},
-			{
-				name: "EVENTS",
-				path: EVENTS_ACTIVITY_PAGE_PATH,
-			},
-		],
-	},
-	{
-		name: "BLOGS",
-		path: BLOGS_PAGE_PATH,
-	},
-	{
-		name: "ABOUT US",
-		path: ABOUT_US_PAGE_PATH,
-		children: [
-			{
-				name: "HUGO ENGLISH CLUB",
-				path: HUGO_CLUB_PAGE_PATH,
-			},
-			{
-				name: "HUGOVERSARY",
-				path: PROJECT_TEAM_PAGE_PATH,
-			},
-			{
-				name: "FAQ",
-				path: FAQ_PAGE_PATH,
-			},
-		],
-	},
-];
+import { useSelector } from "react-redux";
+import navigatorMessages from "./navigatorMessages";
+import { FormattedMessage } from "react-intl";
 
 export default function Navigator() {
 	const location = useLocation();
 	const navbarRef = useRef();
+	const { locale } = useSelector((state) => state.language);
+
+	const navLinks = [
+		{
+			name: navigatorMessages.home[locale],
+			path: HOME_PAGE_PATH,
+			end: true,
+		},
+		{
+			name: navigatorMessages.teams[locale],
+			path: TEAMS_PAGE_PATH,
+			children: [
+				{
+					name: "POWER RANGERS",
+					path: POWER_RANGERS_TEAM_PAGE_PATH,
+				},
+				{
+					name: "HEROES COMPANY",
+					path: HEROES_COMPANY_TEAM_PAGE_PATH,
+				},
+				{
+					name: "BANANA",
+					path: BANANA_TEAM_PAGE_PATH,
+				},
+
+				{
+					name: "NIFFLER",
+					path: NIFFLER_TEAM_PAGE_PATH,
+				},
+			],
+		},
+		{
+			name: navigatorMessages.activities[locale],
+			path: ACTIVITY_PAGE_PATH,
+			children: [
+				{
+					name: navigatorMessages.meetings[locale],
+					path: MEETINGS_ACTIVITY_PAGE_PATH,
+				},
+				{
+					name: navigatorMessages.events[locale],
+					path: EVENTS_ACTIVITY_PAGE_PATH,
+				},
+			],
+		},
+		{
+			name: navigatorMessages.blogs[locale],
+			path: BLOGS_PAGE_PATH,
+		},
+		{
+			name: navigatorMessages.aboutUs[locale],
+			path: ABOUT_US_PAGE_PATH,
+			children: [
+				{
+					name: "HUGO ENGLISH CLUB",
+					path: HUGO_CLUB_PAGE_PATH,
+				},
+				{
+					name: "HUGOVERSARY",
+					path: PROJECT_TEAM_PAGE_PATH,
+				},
+				{
+					name: "FAQ",
+					path: FAQ_PAGE_PATH,
+				},
+			],
+		},
+	];
 
 	const joinUsBtn = (
 		<a href="https://forms.gle/P3a5dJzUpWxstcKt8" target="_blank" rel="noreferrer" className="text-decoration-none ">
-			<button className="btn btn-gradient rounded-pill px-3 mx-3">JOIN US</button>
+			<button className="btn btn-gradient rounded-pill px-3 mx-3">
+				<FormattedMessage {...navigatorMessages.joinUsButton} />
+			</button>
 		</a>
 	);
 
@@ -118,7 +124,7 @@ export default function Navigator() {
 
 	return (
 		<Fragment>
-			<Title />
+			<Title navLinks={navLinks} />
 
 			<nav ref={navbarRef} className={joinCls("navbar navbar-expand-lg bg-dark navbar-dark p-0 fixed-top", style["navbar"])}>
 				<div className={joinCls("container align-items-stretch", style["navbar-container"])}>
@@ -136,7 +142,7 @@ export default function Navigator() {
 
 					<div className={joinCls("collapse navbar-collapse align-items-stretch show", style["navbar-collapse"])}>
 						<ul className="navbar-nav mx-auto mb-2 mb-lg-0 align-items-lg-center align-items-start">
-							{NAV_LINKS.map((navLink) => (
+							{navLinks.map((navLink) => (
 								<li
 									key={navLink.name}
 									className={joinCls("position-relative nav-item nav-element d-block d-lg-flex align-items-center mx-lg-2 h-100", style["nav-link-container"])}

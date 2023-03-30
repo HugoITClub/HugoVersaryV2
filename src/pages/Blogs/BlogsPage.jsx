@@ -16,6 +16,8 @@ import RectDecor2Svg from "../Home/images/rect-decor-2.svg";
 
 import Wiggle from "../../components/Wiggle/Wiggle";
 import style from "./style.module.css";
+import { FormattedMessage } from "react-intl";
+import blogsMessages from "./blogsMessages";
 
 export default function BlogsPage() {
 	const { data: blogIntroData } = useSheetAPI("Blogs", "S", "W", { earlyTake: 8 });
@@ -64,7 +66,7 @@ export default function BlogsPage() {
 										</Link>
 										<div className={joinCls("f-google-san text-ellipsis fs-5 mt-4", style["blog-intro-content-description"])}>{description}</div>
 										<Link to={`/posts/${contentFileId}`} className="fs-6 btn btn-lg btn-outline-gradient text-uppercase rounded-pill px-4 mt-4">
-											Read more
+											<FormattedMessage {...blogsMessages.readMore} />
 										</Link>
 									</div>
 								</div>
@@ -78,7 +80,9 @@ export default function BlogsPage() {
 				<div className={joinCls("position-absolute", style["circle-gradient-1"])} />
 
 				<div className="blog-content position-relative mx-4 mx-lg-0">
-					<div className={joinCls("text-uppercase text-gradient fw-bold text-center f-google-san display-5", style["blog-content-header"])}>hugo's academic</div>
+					<div className={joinCls("text-uppercase text-gradient fw-bold text-center f-google-san display-5", style["blog-content-header"])}>
+						<FormattedMessage {...blogsMessages.hugoAcademic} />
+					</div>
 					<Wiggle className={joinCls("position-absolute", style["puzzle"])}>
 						<Image src={PuzzleSvg} />
 					</Wiggle>
@@ -95,7 +99,9 @@ export default function BlogsPage() {
 										<p className={joinCls("text-ellipsis text-start mb-4", style["blog-item-description"])}>{description}</p>
 									</div>
 									<div className={joinCls("d-flex align-items-center gap-2", style["read-more"])}>
-										<h6 className="mb-0">Read more</h6>
+										<h6 className="mb-0">
+											<FormattedMessage {...blogsMessages.readMore} />
+										</h6>
 										<i className="fa-solid fa-arrow-right" />
 									</div>
 								</div>
@@ -103,6 +109,7 @@ export default function BlogsPage() {
 						)}
 					/>
 				</div>
+
 				<div className="academic-content position-relative">
 					<div className={joinCls("position-absolute", style["circle-gradient-2"])} />
 
@@ -121,7 +128,9 @@ export default function BlogsPage() {
 					<Wiggle className={joinCls("position-absolute", style["rect-2"])}>
 						<Image src={RectDecor2Svg} />
 					</Wiggle>
-					<div className={joinCls("text-uppercase text-gradient fw-bold text-center f-google-san display-5 mb-5", style["blog-content-header"])}>hugo blogs</div>
+					<div className={joinCls("text-uppercase text-gradient fw-bold text-center f-google-san display-5 mb-5", style["blog-content-header"])}>
+						<FormattedMessage {...blogsMessages.hugoBlogs} />
+					</div>
 					<div className={joinCls("row g-2 g-md-3 g-lg-5 position-relative", style["academic-content"])}>
 						{blogsData.map(([id, title, description, date, imgUrl, contentUrl]) => (
 							<div className="col-lg-6 col-md-6 col-12">
@@ -135,7 +144,9 @@ export default function BlogsPage() {
 											<div className={joinCls("text-ellipsis text-start", style["post-description"])}>{description}</div>
 											<div className={joinCls("text-uppercase mt-2", style["post-date"])}>{date}</div>
 											<div className="text-decoration-none d-flex align-items-center mt-1">
-												<p className="m-0 fw-bold text-gradient">Read more</p>
+												<p className="m-0 fw-bold text-gradient">
+													<FormattedMessage {...blogsMessages.readMore} />
+												</p>
 												<p className={joinCls("mb-0 mt-1 ms-2 d-flex text-decoration-none align-items-center justify-content-center text-gradient", style["read-btn"])}>
 													<i className="fa-solid fa-arrow-right"></i>
 												</p>
@@ -183,8 +194,11 @@ export default function BlogsPage() {
 					{!isBlogsFull && (
 						<div className="row justify-content-center mt-5">
 							<div className="col-auto">
-								<button className={joinCls("btn btn-lg btn-outline-gradient rounded-pill position-relative", style["see-more-btn"])} onClick={() => getMoreBlogsData(8)}>
-									SEE MORE
+								<button
+									className={joinCls("btn btn-lg btn-outline-gradient rounded-pill position-relative text-uppercase", style["see-more-btn"])}
+									onClick={() => getMoreBlogsData(8)}
+								>
+									<FormattedMessage {...blogsMessages.seeMore} />
 								</button>
 							</div>
 						</div>

@@ -11,6 +11,8 @@ import RectDecor3Svg from "../../Home/images/rect-decor-3.svg";
 
 import Wiggle from "../../../components/Wiggle/Wiggle";
 import style from "./style.module.css";
+import { FormattedMessage } from "react-intl";
+import eventsMessages from "./eventsMessages";
 
 function EventsPage() {
 	const { isLoading: isEventLoading, isFull: isEventFull, data: events, getMore: getMoreEvent } = useSheetAPI("Event", "L", "Q", { earlyTake: 8 });
@@ -25,7 +27,10 @@ function EventsPage() {
 						</div>
 					))}
 				</Carousel>
-				<h1 className="display-5 f-google-san fw-bolder text-center text-gradient text-uppercase my-5">events</h1>
+
+				<h1 className="display-5 f-google-san fw-bolder text-center text-gradient text-uppercase my-5">
+					<FormattedMessage {...eventsMessages.events} />
+				</h1>
 				<div id="event" className={joinCls("container position-relative", style["event"])}>
 					<div className={joinCls("position-absolute h-100 w-100", style["event-bg"])}>
 						<Image src={logoHugo} className="position-fixed" />
@@ -52,7 +57,9 @@ function EventsPage() {
 											<div className={joinCls("text-ellipsis text-start", style["post-description"])}>{description}</div>
 											<div className={joinCls("text-uppercase mt-2", style["post-date"])}>{date}</div>
 											<div className="text-decoration-none d-flex align-items-center mt-1">
-												<p className="m-0 fw-bold text-gradient">Read more</p>
+												<p className="m-0 fw-bold text-gradient">
+													<FormattedMessage {...eventsMessages.readMore} />
+												</p>
 												<p className={joinCls("mb-0 mt-1 ms-2 d-flex text-decoration-none align-items-center justify-content-center text-gradient", style["read-btn"])}>
 													<i className="fa-solid fa-arrow-right"></i>
 												</p>
@@ -103,7 +110,7 @@ function EventsPage() {
 						<div className="row justify-content-center mt-5">
 							<div className="col-auto">
 								<button className={joinCls("btn btn-lg btn-outline-gradient rounded-pill position-relative", style["see-more-btn"])} onClick={() => getMoreEvent(8)}>
-									SEE MORE
+									<FormattedMessage {...eventsMessages.seeMore} />
 								</button>
 							</div>
 						</div>

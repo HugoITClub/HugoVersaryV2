@@ -93,10 +93,6 @@
 	color: #000;
 }
 
-.about-us-content span {
-	font-style: italic;
-}
-
 @media (min-width: 992px) {
 	.about-us-content {
 		font-size: 6rem;

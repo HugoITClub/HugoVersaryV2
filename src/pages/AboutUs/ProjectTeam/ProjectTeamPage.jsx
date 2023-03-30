@@ -89,20 +89,30 @@ export default function ProjectTeamPage() {
 									<div className={joinCls("col-12")}>
 										<div className={joinCls("position-relative", style["project-team-member"])}>
 											<Image src={KimHuynh} className="w-100 h-100 object-fit-cover rounded-4" />
-											<div className={joinCls("w-100 h-100 position-absolute top-0 left-0", style["overlay"])}></div>
-											<div className={joinCls("position-absolute row flex-column align-items-center justify-content-center w-100", style["member-description"])}>
-												<div className={joinCls("text-white text-center", style["member-name"])}>Huỳnh Hoàng Thiện Kim</div>
-												<div className={joinCls("text-info text-center", style["member-role"])}>Data Collector</div>
+											<div className={joinCls("w-100 h-100 position-absolute top-0 left-0", style["overlay"])}>
+												<div className="row h-100 align-items-end">
+													<div className="col-12">
+														<div className="position-relative flex-grow row flex-column align-items-center justify-content-center pb-3 pb-lg-4">
+															<div className={joinCls("text-white text-center", style["member-name"])}>Huỳnh Hoàng Thiện Kim</div>
+															<div className={joinCls("text-info text-center", style["member-role"])}>Data Collector</div>
+														</div>
+													</div>
+												</div>
 											</div>
 										</div>
 									</div>
 									<div className={joinCls("col-12")}>
 										<div className={joinCls("position-relative", style["project-team-member"])}>
 											<Image src={NguyenPhuoc} className="w-100 h-100 object-fit-cover rounded-4" />
-											<div className={joinCls("w-100 h-100 position-absolute top-0 left-0", style["overlay"])}></div>
-											<div className={joinCls("position-absolute row flex-column align-items-center justify-content-center w-100", style["member-description"])}>
-												<div className={joinCls("text-white text-center", style["member-name"])}>Nguyễn Quang Trường Phước</div>
-												<div className={joinCls("text-info text-center", style["member-role"])}>Data Collector</div>
+											<div className={joinCls("w-100 h-100 position-absolute top-0 left-0", style["overlay"])}>
+												<div className="row h-100 align-items-end">
+													<div className="col-12">
+														<div className="position-relative flex-grow row flex-column align-items-center justify-content-center pb-3 pb-lg-4">
+															<div className={joinCls("text-white text-center", style["member-name"])}>Nguyễn Quang Trường Phước</div>
+															<div className={joinCls("text-info text-center", style["member-role"])}>Data Collector</div>
+														</div>
+													</div>
+												</div>
 											</div>
 										</div>
 									</div>
@@ -113,30 +123,45 @@ export default function ProjectTeamPage() {
 									<div className={joinCls("col-12")}>
 										<div className={joinCls("position-relative", style["project-team-member"])}>
 											<Image src={TuanLe} className="w-100 h-100 object-fit-cover rounded-4" />
-											<div className={joinCls("w-100 h-100 position-absolute top-0 left-0", style["overlay"])}></div>
-											<div className={joinCls("position-absolute row flex-column align-items-center justify-content-center w-100", style["member-description"])}>
-												<div className={joinCls("text-white text-center", style["member-name"])}>Lê Phước Anh Tuấn</div>
-												<div className={joinCls("text-info text-center", style["member-role"])}>Developer</div>
+											<div className={joinCls("w-100 h-100 position-absolute top-0 left-0", style["overlay"])}>
+												<div className="row h-100 align-items-end">
+													<div className="col-12">
+														<div className="position-relative flex-grow row flex-column align-items-center justify-content-center pb-3 pb-lg-4">
+															<div className={joinCls("text-white text-center", style["member-name"])}>Lê Phước Anh Tuấn</div>
+															<div className={joinCls("text-info text-center", style["member-role"])}>Developer</div>
+														</div>
+													</div>
+												</div>
 											</div>
 										</div>
 									</div>
 									<div className={joinCls("col-12")}>
 										<div className={joinCls("position-relative", style["project-team-member"])}>
 											<Image src={HoangDung} className="w-100 h-100 object-fit-cover rounded-4" />
-											<div className={joinCls("w-100 h-100 position-absolute top-0 left-0", style["overlay"])}></div>
-											<div className={joinCls("position-absolute row flex-column align-items-center justify-content-center w-100", style["member-description"])}>
-												<div className={joinCls("text-white text-center", style["member-name"])}>Trần Hoàng Dung</div>
-												<div className={joinCls("text-info text-center", style["member-role"])}>Business Analyst</div>
+											<div className={joinCls("w-100 h-100 position-absolute top-0 left-0", style["overlay"])}>
+												<div className="row h-100 align-items-end">
+													<div className="col-12">
+														<div className="position-relative flex-grow row flex-column align-items-center justify-content-center pb-3 pb-lg-4">
+															<div className={joinCls("text-white text-center", style["member-name"])}>Trần Hoàng Dung</div>
+															<div className={joinCls("text-info text-center", style["member-role"])}>Business Analyst</div>
+														</div>
+													</div>
+												</div>
 											</div>
 										</div>
 									</div>
 									<div className={joinCls("col-12")}>
 										<div className={joinCls("position-relative", style["project-team-member"])}>
 											<Image src={QuangLoc} className="w-100 h-100 object-fit-cover rounded-4" />
-											<div className={joinCls("w-100 h-100 position-absolute top-0 left-0", style["overlay"])}></div>
-											<div className={joinCls("position-absolute row flex-column align-items-center justify-content-center w-100", style["member-description"])}>
-												<div className={joinCls("text-white text-center", style["member-name"])}>Trương Quang Lộc</div>
-												<div className={joinCls("text-info text-center", style["member-role"])}>Developer</div>
+											<div className={joinCls("w-100 h-100 position-absolute top-0 left-0", style["overlay"])}>
+												<div className="row h-100 align-items-end">
+													<div className="col-12">
+														<div className="position-relative flex-grow row flex-column align-items-center justify-content-center pb-3 pb-lg-4">
+															<div className={joinCls("text-white text-center", style["member-name"])}>Trương Quang Lộc</div>
+															<div className={joinCls("text-info text-center", style["member-role"])}>Developer</div>
+														</div>
+													</div>
+												</div>
 											</div>
 										</div>
 									</div>
@@ -147,30 +172,45 @@ export default function ProjectTeamPage() {
 									<div className={joinCls("col-12")}>
 										<div className={joinCls("position-relative", style["project-team-member"])}>
 											<Image src={TienDat} className="w-100 h-100 object-fit-cover rounded-4" />
-											<div className={joinCls("w-100 h-100 position-absolute top-0 left-0", style["overlay"])}></div>
-											<div className={joinCls("position-absolute row flex-column align-items-center justify-content-center w-100", style["member-description"])}>
-												<div className={joinCls("text-white text-center", style["member-name"])}>Nguyễn Tiến Đạt</div>
-												<div className={joinCls("text-info text-center", style["member-role"])}>UI/UX Designer/Co-Founder</div>
+											<div className={joinCls("w-100 h-100 position-absolute top-0 left-0", style["overlay"])}>
+												<div className="row h-100 align-items-end">
+													<div className="col-12">
+														<div className="position-relative flex-grow row flex-column align-items-center justify-content-center pb-3 pb-lg-4">
+															<div className={joinCls("text-white text-center", style["member-name"])}>Nguyễn Tiến Đạt</div>
+															<div className={joinCls("text-info text-center", style["member-role"])}>UI/UX Designer/Co-Founder</div>
+														</div>
+													</div>
+												</div>
 											</div>
 										</div>
 									</div>
 									<div className={joinCls("col-12")}>
 										<div className={joinCls("position-relative", style["project-team-member"])}>
 											<Image src={DungPham} className="w-100 h-100 object-fit-cover rounded-4" />
-											<div className={joinCls("w-100 h-100 position-absolute top-0 left-0", style["overlay"])}></div>
-											<div className={joinCls("position-absolute row flex-column align-items-center justify-content-center w-100", style["member-description"])}>
-												<div className={joinCls("text-white text-center", style["member-name"])}>Phạm Mạnh Dũng</div>
-												<div className={joinCls("text-info text-center", style["member-role"])}>Founder</div>
+											<div className={joinCls("w-100 h-100 position-absolute top-0 left-0", style["overlay"])}>
+												<div className="row h-100 align-items-end">
+													<div className="col-12">
+														<div className="position-relative flex-grow row flex-column align-items-center justify-content-center pb-3 pb-lg-4">
+															<div className={joinCls("text-white text-center", style["member-name"])}>Phạm Mạnh Dũng</div>
+															<div className={joinCls("text-info text-center", style["member-role"])}>Founder</div>
+														</div>
+													</div>
+												</div>
 											</div>
 										</div>
 									</div>
 									<div className={joinCls("col-12")}>
 										<div className={joinCls("position-relative", style["project-team-member"])}>
 											<Image src={ThienHuong} className="w-100 h-100 object-fit-cover rounded-4" />
-											<div className={joinCls("w-100 h-100 position-absolute top-0 left-0", style["overlay"])}></div>
-											<div className={joinCls("position-absolute row flex-column align-items-center justify-content-center w-100", style["member-description"])}>
-												<div className={joinCls("text-white text-center", style["member-name"])}>Trịnh Huỳnh Thiên Hương</div>
-												<div className={joinCls("text-info text-center", style["member-role"])}>Co-Founder</div>
+											<div className={joinCls("w-100 h-100 position-absolute top-0 left-0", style["overlay"])}>
+												<div className="row h-100 align-items-end">
+													<div className="col-12">
+														<div className="position-relative flex-grow row flex-column align-items-center justify-content-center pb-3 pb-lg-4">
+															<div className={joinCls("text-white text-center", style["member-name"])}>Trịnh Huỳnh Thiên Hương</div>
+															<div className={joinCls("text-info text-center", style["member-role"])}>Co-Founder</div>
+														</div>
+													</div>
+												</div>
 											</div>
 										</div>
 									</div>
@@ -181,30 +221,45 @@ export default function ProjectTeamPage() {
 									<div className={joinCls("col-12")}>
 										<div className={joinCls("position-relative", style["project-team-member"])}>
 											<Image src={AnhMinh} className="w-100 h-100 object-fit-cover rounded-4" />
-											<div className={joinCls("w-100 h-100 position-absolute top-0 left-0", style["overlay"])}></div>
-											<div className={joinCls("position-absolute row flex-column align-items-center justify-content-center w-100", style["member-description"])}>
-												<div className={joinCls("text-white text-center", style["member-name"])}>Nguyễn Lê Anh Minh</div>
-												<div className={joinCls("text-info text-center", style["member-role"])}>Developer/Co-Founder</div>
+											<div className={joinCls("w-100 h-100 position-absolute top-0 left-0", style["overlay"])}>
+												<div className="row h-100 align-items-end">
+													<div className="col-12">
+														<div className="position-relative flex-grow row flex-column align-items-center justify-content-center pb-3 pb-lg-4">
+															<div className={joinCls("text-white text-center", style["member-name"])}>Nguyễn Lê Anh Minh</div>
+															<div className={joinCls("text-info text-center", style["member-role"])}>Developer/Co-Founder</div>
+														</div>
+													</div>
+												</div>
 											</div>
 										</div>
 									</div>
 									<div className={joinCls("col-12")}>
 										<div className={joinCls("position-relative", style["project-team-member"])}>
 											<Image src={NganPhung} className="w-100 h-100 object-fit-cover rounded-4" />
-											<div className={joinCls("w-100 h-100 position-absolute top-0 left-0", style["overlay"])}></div>
-											<div className={joinCls("position-absolute row flex-column align-items-center justify-content-center w-100", style["member-description"])}>
-												<div className={joinCls("text-white text-center", style["member-name"])}>Phùng Lâm Kim Ngân</div>
-												<div className={joinCls("text-info text-center", style["member-role"])}>Content Writer/Co-Founder</div>
+											<div className={joinCls("w-100 h-100 position-absolute top-0 left-0", style["overlay"])}>
+												<div className="row h-100 align-items-end">
+													<div className="col-12">
+														<div className="position-relative flex-grow row flex-column align-items-center justify-content-center pb-3 pb-lg-4">
+															<div className={joinCls("text-white text-center", style["member-name"])}>Phùng Lâm Kim Ngân</div>
+															<div className={joinCls("text-info text-center", style["member-role"])}>Content Writer/Co-Founder</div>
+														</div>
+													</div>
+												</div>
 											</div>
 										</div>
 									</div>
 									<div className={joinCls("col-12")}>
 										<div className={joinCls("position-relative", style["project-team-member"])}>
 											<Image src={HungVinh} className="w-100 h-100 object-fit-cover rounded-4" />
-											<div className={joinCls("w-100 h-100 position-absolute top-0 left-0", style["overlay"])}></div>
-											<div className={joinCls("position-absolute row flex-column align-items-center justify-content-center w-100", style["member-description"])}>
-												<div className={joinCls("text-white text-center", style["member-name"])}>Đặng Hùng Vĩnh</div>
-												<div className={joinCls("text-info text-center", style["member-role"])}>Developer</div>
+											<div className={joinCls("w-100 h-100 position-absolute top-0 left-0", style["overlay"])}>
+												<div className="row h-100 align-items-end">
+													<div className="col-12">
+														<div className="position-relative flex-grow row flex-column align-items-center justify-content-center pb-3 pb-lg-4">
+															<div className={joinCls("text-white text-center", style["member-name"])}>Đặng Hùng Vĩnh</div>
+															<div className={joinCls("text-info text-center", style["member-role"])}>Developer</div>
+														</div>
+													</div>
+												</div>
 											</div>
 										</div>
 									</div>
@@ -215,20 +270,30 @@ export default function ProjectTeamPage() {
 									<div className={joinCls("col-12")}>
 										<div className={joinCls("position-relative", style["project-team-member"])}>
 											<Image src={TheTran} className="w-100 h-100 object-fit-cover rounded-4" />
-											<div className={joinCls("w-100 h-100 position-absolute top-0 left-0", style["overlay"])}></div>
-											<div className={joinCls("position-absolute row flex-column align-items-center justify-content-center w-100", style["member-description"])}>
-												<div className={joinCls("text-white text-center", style["member-name"])}>Trần Quý Thế</div>
-												<div className={joinCls("text-info text-center", style["member-role"])}>Designer</div>
+											<div className={joinCls("w-100 h-100 position-absolute top-0 left-0", style["overlay"])}>
+												<div className="row h-100 align-items-end">
+													<div className="col-12">
+														<div className="position-relative flex-grow row flex-column align-items-center justify-content-center pb-3 pb-lg-4">
+															<div className={joinCls("text-white text-center", style["member-name"])}>Trần Quý Thế</div>
+															<div className={joinCls("text-info text-center", style["member-role"])}>Designer</div>
+														</div>
+													</div>
+												</div>
 											</div>
 										</div>
 									</div>
 									<div className={joinCls("col-12")}>
 										<div className={joinCls("position-relative", style["project-team-member"])}>
 											<Image src={UyenPhung} className="w-100 h-100 object-fit-cover rounded-4" />
-											<div className={joinCls("w-100 h-100 position-absolute top-0 left-0", style["overlay"])}></div>
-											<div className={joinCls("position-absolute row flex-column align-items-center justify-content-center w-100", style["member-description"])}>
-												<div className={joinCls("text-white text-center", style["member-name"])}>Phùng Ngọc Uyên</div>
-												<div className={joinCls("text-info text-center", style["member-role"])}>Content Writer</div>
+											<div className={joinCls("w-100 h-100 position-absolute top-0 left-0", style["overlay"])}>
+												<div className="row h-100 align-items-end">
+													<div className="col-12">
+														<div className="position-relative flex-grow row flex-column align-items-center justify-content-center pb-3 pb-lg-4">
+															<div className={joinCls("text-white text-center", style["member-name"])}>Phùng Ngọc Uyên</div>
+															<div className={joinCls("text-info text-center", style["member-role"])}>Content Writer</div>
+														</div>
+													</div>
+												</div>
 											</div>
 										</div>
 									</div>
