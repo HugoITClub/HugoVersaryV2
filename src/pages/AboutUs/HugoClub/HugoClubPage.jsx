@@ -11,9 +11,11 @@ import EclipseDecor6Svg from "../../Home/images/eclipse-decor-6.svg";
 import RectDecor1Svg from "../../Home/images/rect-decor-1.svg";
 import RectDecor2Svg from "../../Home/images/rect-decor-2.svg";
 import RectDecor4Svg from "../../Home/images/rect-decor-4.svg";
+import Modal from "../../../components/Modal/Modal";
 import hugoClubMessages from "./hugoClubMessages";
 
 import style from "./style.module.css";
+import { useState } from "react";
 
 export default function AboutUsPage() {
 	const { data: staffMembers } = useSheetAPI("AboutUs", "N", "R", { earlyTake: 13 });
@@ -26,6 +28,12 @@ export default function AboutUsPage() {
 	// });
 
 	const { isLoading: isStaffSliderLoading, data: staffSlider } = useSheetAPI("SliderStaff", "F", "G", { earlyTake: 20 });
+	const [isShownModal, setIsShownModal] = useState(false);
+	const [currentImgModal, setCurrentImgModal] = useState();
+	const handleModalImg = (imgUrl) => {
+		setIsShownModal(true);
+		setCurrentImgModal(imgUrl);
+	};
 
 	return (
 		<div className="position-relative overflow-hidden">
@@ -85,7 +93,12 @@ export default function AboutUsPage() {
 										className={style["about-us-item"]}
 										style={{ paddingTop: `${paddingTop * PADDING_FACTOR}rem`, paddingBottom: `${paddingBottom * PADDING_FACTOR}rem` }}
 									>
-										<Image lazy={index < 5} src={imageUrl} className="w-100 h-100 rounded-4" />
+										<Image
+											lazy={index < 5}
+											src={imageUrl}
+											className={joinCls("w-100 h-100 rounded-4 cursor-pointer", style["header-slide-img"])}
+											onClick={() => handleModalImg(imageUrl)}
+										/>
 									</div>
 								);
 							}}
@@ -279,6 +292,14 @@ export default function AboutUsPage() {
 				</div>
 			</div>
 			<Footer className="mt-10 bg-light" />
+			<Modal
+				className={joinCls("modal-xl vh-100 py-5", style["header-modal"])}
+				contentClassName="bg-transparent h-100"
+				isShown={isShownModal}
+				onClose={() => setIsShownModal(false)}
+			>
+				<Image src={currentImgModal} className="h-100" />
+			</Modal>
 		</div>
 	);
 }

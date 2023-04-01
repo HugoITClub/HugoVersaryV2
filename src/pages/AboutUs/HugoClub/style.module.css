@@ -181,3 +181,18 @@
 	top: -4rem;
 	left: -4rem;
 }
+
+.header-modal :global(.modal-dialog) {
+	margin-top: 0;
+	margin-bottom: 0;
+	height: 100%;
+}
+
+.header-slide-img {
+	transition: 0.4s ease-out;
+}
+
+.header-slide-img:hover {
+	transform: translateY(-1rem);
+	box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
+}

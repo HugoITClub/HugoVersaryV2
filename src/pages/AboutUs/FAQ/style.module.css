@@ -22,13 +22,15 @@
 	margin-left: 6rem;
 }
 
+ol {
+	padding-left: 0 !important;
+}
+
 @media (max-width: 768px) {
 	.faq-wrap {
 		margin-top: 5rem;
 	}
-	ol {
-		padding-left: 0 !important;
-	}
+
 	.hugo-content-benefit {
 		font-size: 14px !important;
 	}
