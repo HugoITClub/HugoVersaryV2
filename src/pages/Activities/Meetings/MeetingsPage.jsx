@@ -12,9 +12,13 @@ import Wiggle from "../../../components/Wiggle/Wiggle";
 import style from "./style.module.css";
 
 import { Link } from "react-router-dom";
+import { FormattedMessage } from "react-intl";
+import meetingsMessages from "./meetingsMessages";
+
 export default function MeetingsPage() {
 	const { isLoading: isMeetingLoading, isFull: isMeetingFull, data: meetings, getMore: getMoreMeeting } = useSheetAPI("Meeting", "T", "Y", { earlyTake: 8 });
 	const { data: mainImg } = useSheetAPI("Meeting", "Z", "AI", { earlyTake: 20 });
+
 	return (
 		<div className="overflow-hidden">
 			<div className={style["meeting"]}>
@@ -92,7 +96,9 @@ export default function MeetingsPage() {
 						</div>
 					))}
 				</Carousel>
-				<h1 className="display-5 f-google-san fw-bolder text-center text-gradient text-uppercase my-5">meetings</h1>
+				<h1 className="display-5 f-google-san fw-bolder text-center text-gradient text-uppercase my-5">
+					<FormattedMessage {...meetingsMessages.meetings} />
+				</h1>
 				<div id="meeting" className="container position-relative">
 					<div className={joinCls("position-absolute h-100 w-100", style["meeting-bg"])}>
 						<Image src={logoHugo} className="position-fixed" />
@@ -116,7 +122,9 @@ export default function MeetingsPage() {
 											<div className={joinCls("text-ellipsis text-start", style["post-description"])}>{description}</div>
 											<div className={joinCls("text-uppercase mt-2", style["post-date"])}>{date}</div>
 											<div className="text-decoration-none d-flex align-items-center mt-1">
-												<p className="m-0 fw-bold text-gradient">Read more</p>
+												<p className="m-0 fw-bold text-gradient">
+													<FormattedMessage {...meetingsMessages.readMore} />
+												</p>
 												<p className={joinCls("mb-0 mt-1 ms-2 d-flex text-decoration-none align-items-center justify-content-center text-gradient", style["read-btn"])}>
 													<i className="fa-solid fa-arrow-right"></i>
 												</p>
@@ -167,7 +175,7 @@ export default function MeetingsPage() {
 						<div className="row justify-content-center mt-5">
 							<div className="col-auto">
 								<button className={joinCls("btn btn-lg btn-outline-gradient rounded-pill position-relative", style["see-more-btn"])} onClick={() => getMoreMeeting(8)}>
-									SEE MORE
+									<FormattedMessage {...meetingsMessages.seeMore} />
 								</button>
 							</div>
 						</div>

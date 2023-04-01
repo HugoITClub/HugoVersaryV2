@@ -35,7 +35,7 @@ export default function Image({ src, lazy = true, fade = true, className, alt, .
 	return isIntersected ? (
 		<img src={src} className={joinCls("img-fluid", fade && "fadeIn animated", className)} {...props} alt={alt} />
 	) : (
-		<div ref={skeletonRef} className={joinCls("w-100 h-100", className)}>
+		<div ref={skeletonRef} className={joinCls("w-100 h-100 overflow-hidden", className)}>
 			<Skeleton className="w-100 h-100" />
 		</div>
 	);

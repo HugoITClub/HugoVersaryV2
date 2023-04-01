@@ -1,3 +1,4 @@
+import { FormattedMessage } from "react-intl";
 import Footer from "../../../components/Footer/Footer";
 import Image from "../../../components/Image/Image.jsx";
 import Skeleton from "../../../components/Skeleton/Skeleton";
@@ -11,6 +12,7 @@ import RectDecor1Svg from "../../Home/images/rect-decor-1.svg";
 import RectDecor2Svg from "../../Home/images/rect-decor-2.svg";
 import RectDecor4Svg from "../../Home/images/rect-decor-4.svg";
 import Modal from "../../../components/Modal/Modal";
+import hugoClubMessages from "./hugoClubMessages";
 
 import style from "./style.module.css";
 import { useState } from "react";
@@ -51,7 +53,7 @@ export default function AboutUsPage() {
 						<Image src={RectDecor1Svg} />
 					</Wiggle>
 					<div className={joinCls("col-10 text-start f-crimson-pro", style["about-us-content"])}>
-						We are an English Club for <span className="">every students</span> in Da Nang City.
+						<FormattedMessage {...hugoClubMessages.header} />
 					</div>
 				</div>
 
@@ -108,9 +110,7 @@ export default function AboutUsPage() {
 					<div className="col-12">
 						<div className={joinCls("f-crimson-pro", style["club-name"])}>Hugo English Club</div>
 						<div className={joinCls("text-muted mt-3 mt-lg-5", style["club-description"])}>
-							Hugo English Club was established in March 2008 by DUT students, with the motto of practicing English in dynamic, fun, and interesting ways. Besides, Hugo members not
-							only come from DUT but also come from different universities and colleges in Da Nang, which can give us a lot of opportunities to make new friends. In addition, Hugo
-							also organizes extra-curricular activities such as events, competitions, collaboration programs with other clubs, and charity activities,…
+							<FormattedMessage {...hugoClubMessages.hugoEnglishClubDescription} />
 						</div>
 					</div>
 				</div>
@@ -119,27 +119,38 @@ export default function AboutUsPage() {
 						<Image src={RectDecor2Svg} />
 					</Wiggle>
 					<div className="col-12">
-						<div className={joinCls("f-crimson-pro", style["club-name"])}>Active Time</div>
+						<div className={joinCls("f-crimson-pro", style["club-name"])}>
+							<FormattedMessage {...hugoClubMessages.activeTime} />
+						</div>
 						<div className={joinCls("text-muted mt-3 mt-lg-5", style["club-description"])}>
 							<ul>
 								<li>
-									<span className="text-dark ms-3 fw-bold">Meeting time:</span> 8:00 A.M., every Sunday.
-								</li>
-								<li>
-									<span className="text-dark ms-3 fw-bold">Meeting venue:</span> Block C’s Yard, in front of room C116, The University of Science and Technology.
-								</li>
-								<li>
 									<div className="ms-3">
-										Any adjustments to our meeting venue due to special events or extra activities will be announced via email or the Hugo English Club group. Therefore, remember
-										to <span className="text-black fw-bold"> check your email inbox and group notifications</span> before every meeting.
+										<FormattedMessage {...hugoClubMessages.meetingTime} />
 									</div>
 								</li>
 								<li>
-									<div className="ms-3">How to receive notifications:</div>
-									<ol>
-										<li className="ms-3">Via meeting announcement email from our club. Our club’s email address: hugoclub.dut@gmail.com.</li>
-										<li className="ms-3">Besides, there will also be announcing posts on the Hugo English Club group with some essential information for the meeting.</li>
-									</ol>
+									<div className="ms-3">
+										<FormattedMessage {...hugoClubMessages.meetingVenue} />
+									</div>
+								</li>
+								<li>
+									<div className="ms-3">
+										<FormattedMessage {...hugoClubMessages.remind} />
+									</div>
+								</li>
+								<li>
+									<div className="ms-3">
+										<FormattedMessage {...hugoClubMessages.receiveNotifications} />
+										<ol>
+											<li className="ms-3">
+												<FormattedMessage {...hugoClubMessages.notificationFromEmail} />
+											</li>
+											<li className="ms-3">
+												<FormattedMessage {...hugoClubMessages.notificationFromGroup} />
+											</li>
+										</ol>
+									</div>
 								</li>
 							</ul>
 						</div>
@@ -150,59 +161,89 @@ export default function AboutUsPage() {
 						<Image src={EclipseDecor6Svg} />
 					</Wiggle>
 					<div className="col-12">
-						<div className={joinCls("f-crimson-pro", style["club-name"])}>Club's Activities</div>
+						<div className={joinCls("f-crimson-pro", style["club-name"])}>
+							<FormattedMessage {...hugoClubMessages.clubActivities} />
+						</div>
 						<div className={joinCls("mt-5", style["club-description"])}>
 							<div className="row justify-content-around">
-								<div className="col-12 col-lg-3 fw-bold text-start">Weekly Meeting</div>
+								<div className="col-12 col-lg-3 fw-bold text-start">
+									<FormattedMessage {...hugoClubMessages.weeklyMeeting} />
+								</div>
 								<div className="col-12 col-lg-9 text-muted">
-									Every Sunday morning at 8 A.M. with ever-changing topics and formats. In the meeting, you can participate in multiple activities such as: Presenting, Acting, or
-									Discussing with stimulating and salutary games.
+									<FormattedMessage {...hugoClubMessages.weeklyMeetingDescription} />
 								</div>
 							</div>
 							<div className="row justify-content-around mt-5">
-								<div className="col-12 col-lg-3 fw-bold text-start">Team Meeting</div>
+								<div className="col-12 col-lg-3 fw-bold text-start">
+									<FormattedMessage {...hugoClubMessages.teamMeeting} />
+								</div>
 								<div className="col-12 col-lg-9 text-muted">
-									Weekly hosted by teams of Hugo. In these meetings, members can express themselves further with multiple entertainments hosted by team leaders and other members.
+									<FormattedMessage {...hugoClubMessages.teamMeetingDescription} />
 								</div>
 							</div>
 							<div className="row justify-content-around mt-5">
-								<div className="col-12 col-lg-3 fw-bold text-start">Team Building Event</div>
+								<div className="col-12 col-lg-3 fw-bold text-start">
+									<FormattedMessage {...hugoClubMessages.teamBuildingEvent} />
+								</div>
 								<div className="col-12 col-lg-9 text-muted">
-									Extracurricular activities will be hosted at public spaces in order to practice common use English and members’ teamwork skills.
+									<FormattedMessage {...hugoClubMessages.teamBuildingEventDescription} />
 								</div>
 							</div>
 							<div className="row justify-content-around mt-5">
-								<div className="col-12 col-lg-3 fw-bold text-start">Collaboration</div>
-								<div className="col-12 col-lg-9 text-muted">Conjoining with other clubs in Danang City.</div>
-							</div>
-							<div className="row justify-content-around mt-5">
-								<div className="col-12 col-lg-3 fw-bold text-start">English Contest</div>
+								<div className="col-12 col-lg-3 fw-bold text-start">
+									<FormattedMessage {...hugoClubMessages.collaboration} />
+								</div>
 								<div className="col-12 col-lg-9 text-muted">
-									Members can represent DUT by participating in the National English Olympiad taking place in October annually. During March or April, Hugo will host English
-									Competitions to discover potential gems for the Olympiad Team.
+									<FormattedMessage {...hugoClubMessages.collaborationDescription} />
 								</div>
 							</div>
 							<div className="row justify-content-around mt-5">
-								<div className="col-12 col-lg-3 fw-bold text-start">Camping</div>
-								<div className="col-12 col-lg-9 text-muted">Members can participate in Team Camps and Club Camps. Whereas Hugo Camp will be the biggest event annually.</div>
-							</div>
-							<div className="row justify-content-around mt-5">
-								<div className="col-12 col-lg-3 fw-bold text-start">Cultural Exchange</div>
-								<div className="col-12 col-lg-9 text-muted">Participating in cultural programs with foreigners.</div>
-							</div>
-							<div className="row justify-content-around mt-5">
-								<div className="col-12 col-lg-3 fw-bold text-start">Soft-Skill Contest</div>
+								<div className="col-12 col-lg-3 fw-bold text-start">
+									<FormattedMessage {...hugoClubMessages.englishContest} />
+								</div>
 								<div className="col-12 col-lg-9 text-muted">
-									This will usually be a collaboration with other clubs, with the aim to enhance soft skills as well as practice in-use English.
+									<FormattedMessage {...hugoClubMessages.englishContestDescription} />
 								</div>
 							</div>
 							<div className="row justify-content-around mt-5">
-								<div className="col-12 col-lg-3 fw-bold text-start">Boardgame</div>
-								<div className="col-12 col-lg-9 text-muted">Recreational activities,...</div>
+								<div className="col-12 col-lg-3 fw-bold text-start">
+									<FormattedMessage {...hugoClubMessages.camping} />
+								</div>
+								<div className="col-12 col-lg-9 text-muted">
+									<FormattedMessage {...hugoClubMessages.campingDescription} />
+								</div>
 							</div>
 							<div className="row justify-content-around mt-5">
-								<div className="col-12 col-lg-3 fw-bold text-start">Group</div>
-								<div className="col-12 col-lg-9 text-muted">Movements organized in the official group of Hugo English Club.</div>
+								<div className="col-12 col-lg-3 fw-bold text-start">
+									<FormattedMessage {...hugoClubMessages.cultureExchange} />
+								</div>
+								<div className="col-12 col-lg-9 text-muted">
+									<FormattedMessage {...hugoClubMessages.cultureExchangeDescription} />
+								</div>
+							</div>
+							<div className="row justify-content-around mt-5">
+								<div className="col-12 col-lg-3 fw-bold text-start">
+									<FormattedMessage {...hugoClubMessages.softSkillContest} />
+								</div>
+								<div className="col-12 col-lg-9 text-muted">
+									<FormattedMessage {...hugoClubMessages.softSkillContestDescription} />
+								</div>
+							</div>
+							<div className="row justify-content-around mt-5">
+								<div className="col-12 col-lg-3 fw-bold text-start">
+									<FormattedMessage {...hugoClubMessages.boardgame} />
+								</div>
+								<div className="col-12 col-lg-9 text-muted">
+									<FormattedMessage {...hugoClubMessages.boardgameDescription} />
+								</div>
+							</div>
+							<div className="row justify-content-around mt-5">
+								<div className="col-12 col-lg-3 fw-bold text-start">
+									<FormattedMessage {...hugoClubMessages.group} />
+								</div>
+								<div className="col-12 col-lg-9 text-muted">
+									<FormattedMessage {...hugoClubMessages.groupDescription} />
+								</div>
 							</div>
 						</div>
 					</div>
@@ -218,8 +259,7 @@ export default function AboutUsPage() {
 					</Wiggle>
 					<div className={joinCls("f-crimson-pro", style["club-name"])}>Hugo Staff 2022 - 2023</div>
 					<div className={joinCls("text-muted mt-3 mt-lg-5", style["club-description"])}>
-						To create a joyful playground for every student in Da Nang City who really passionate in English, it takes an electric group of passionate staffs. Get to know the young
-						people leading the way at Hugo English Club this year.
+						<FormattedMessage {...hugoClubMessages.hugoStaffDescription} />
 					</div>
 				</div>
 				<div className="row justify-content-center align-items-stretch mt-5">

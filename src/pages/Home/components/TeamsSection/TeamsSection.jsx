@@ -30,6 +30,8 @@ import nifflerSvg from "./images/niffler.svg";
 import style from "./style.module.css";
 import Wiggle from "../../../../components/Wiggle/Wiggle";
 import Animation from "../../../../components/Animation/Animation";
+import { FormattedMessage } from "react-intl";
+import homeMessages from "../../homeMessages";
 
 const baseOrderedTeamLogoClassNames = [
 	joinCls("top-50 start-100 translate-middle", style["active"]),
@@ -186,10 +188,14 @@ export default function TeamsSection({ className }) {
 							<p className={joinCls("mt-3", style["description"])}>“{teamMap[selectedTeamKey].description}”</p>
 							<div className="d-flex justify-content-between align-items-center">
 								<Link to={teamMap[selectedTeamKey].link}>
-									<button className="btn btn-outline-gradient rounded-pill text-uppercase px-4 mt-3">See more</button>
+									<button className="btn btn-outline-gradient rounded-pill text-uppercase px-4 mt-3">
+										<FormattedMessage {...homeMessages.seeMoreButton} />
+									</button>
 								</Link>
 								<div className={joinCls("d-flex align-items-center gap-2 fw-bold cursor-pointer", style["next-btn"])} onClick={handleNextBtnClicked}>
-									<span>Next</span>
+									<span>
+										<FormattedMessage {...homeMessages.next} />
+									</span>
 									<i className="fa-solid fa-arrow-right" />
 								</div>
 							</div>

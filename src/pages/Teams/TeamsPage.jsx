@@ -10,6 +10,9 @@ import { BANANA, HEROES_COMPANY, NIFFLER, POWER_RANGERS, TEAMS_PAGE_PATH } from 
 
 import useSheetAPI from "../../services/google/hooks/useSheetAPI";
 import style from "./style.module.css";
+import { useSelector } from "react-redux";
+import teamsMessages from "./teamsMessages";
+import { FormattedMessage } from "react-intl";
 
 const sheetNameMap = {
 	[BANANA]: "Banana",
@@ -37,29 +40,31 @@ export default function TeamsPage() {
 	const {
 		params: { name },
 	} = useMatch(TEAMS_PAGE_PATH);
+	const { locale } = useSelector((state) => state.language);
 
 	const { data: teamData } = useSheetAPI(sheetNameMap[name], "AE", "AH", { earlyTake: 50 });
 	const { data: teamIntro } = useSheetAPI(sheetNameMap[name], "V", "AD", { earlyTake: 1 });
 	const { data: teamActivities } = useSheetAPI(sheetNameMap[name], "AI", "AO", { earlyTake: 50 });
+
 	const exploreCategories = [
 		{
-			title: "Team Meeting",
-			description: "Weekly meeting",
+			title: teamsMessages.teamMeetings[locale],
+			description: teamsMessages.teamMeetingsDescription[locale],
 			images: Array.from(teamData.map(([meetingPicUrl, campingPicUrl, extraPicUrl, sharingPicUrl]) => meetingPicUrl)),
 		},
 		{
-			title: "Team Camping",
-			description: "One of the most interesting activities",
+			title: teamsMessages.teamCamping[locale],
+			description: teamsMessages.teamCampingDescription[locale],
 			images: Array.from(teamData.map(([meetingPicUrl, campingPicUrl, extraPicUrl, sharingPicUrl]) => campingPicUrl)),
 		},
 		{
-			title: "Extra Activities",
-			description: "Other Activities",
+			title: teamsMessages.extraActivities[locale],
+			description: teamsMessages.extraActivitiesDescription[locale],
 			images: Array.from(teamData.map(([meetingPicUrl, campingPicUrl, extraPicUrl, sharingPicUrl]) => extraPicUrl)),
 		},
 		{
-			title: "Team Member",
-			description: "Our beloved members",
+			title: teamsMessages.teamMembers[locale],
+			description: teamsMessages.teamMembersDescription[locale],
 			images: Array.from(teamData.map(([meetingPicUrl, campingPicUrl, extraPicUrl, sharingPicUrl]) => sharingPicUrl)),
 		},
 	];
@@ -96,7 +101,7 @@ export default function TeamsPage() {
 					</section>
 					<section id="explore" className={joinCls("container", style["explore"])}>
 						<h1 className="text-white text-center f-google-san fw-semibold">
-							Explore <span className={joinCls(style["title"], style[teamMap[name].className])}>{teamName}</span>
+							<FormattedMessage {...teamsMessages.explore} /> <span className={joinCls(style["title"], style[teamMap[name].className])}>{teamName}</span>
 						</h1>
 						<p className="text-light text-center fst-italic fs-5 mt-5">{intro}</p>
 						<div className="row mt-5 gap-5 text-white justify-content-center">
@@ -133,7 +138,9 @@ export default function TeamsPage() {
 					</section>
 
 					<section className="container mt-10 px-4 px-lg-3">
-						<h1 className="display-6 f-google-san fw-bolder text-white text-center">Recent Activities</h1>
+						<h1 className="display-6 f-google-san fw-bolder text-white text-center">
+							<FormattedMessage {...teamsMessages.recentActivities} />
+						</h1>
 						<Slider
 							items={teamActivities}
 							className="gap-3 mt-5"
