@@ -18,7 +18,7 @@ function EventsPage() {
 	return (
 		<div className="overflow-hidden">
 			<div className="event">
-				<Carousel id="EventsIntroCarousel" safeZone intervalTime={5000} className={style["event-intro"]}>
+				<Carousel id="EventsIntroCarousel" intervalTime={5000} className={style["event-intro"]}>
 					{mainImg.map(([id, eventName, imgUrl]) => (
 						<div key={id} className={joinCls("position-relative", style["header-pic"])}>
 							<Image src={imgUrl} className="object-fit-cover w-100 h-100" />
