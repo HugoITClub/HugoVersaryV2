@@ -15,7 +15,7 @@ import Modal from "../../../components/Modal/Modal";
 import hugoClubMessages from "./hugoClubMessages";
 
 import style from "./style.module.css";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Animation from "../../../components/Animation/Animation";
 
 export default function AboutUsPage() {
@@ -30,10 +30,15 @@ export default function AboutUsPage() {
 
 	const { isLoading: isStaffSliderLoading, data: staffSlider } = useSheetAPI("SliderStaff", "F", "G", { earlyTake: 20 });
 
+	const staffImageAreaRef = useRef();
 	const [staffsList, setStaffsList] = useState(["2022-2023", "2021-2022", "2021-2020"]);
 	const handleStaffClicked = (staff) => {
 		const staffIndex = staffsList.findIndex((item) => item === staff);
 		setStaffsList([...staffsList.slice(staffIndex), ...staffsList.slice(0, staffIndex)]);
+		window.scrollTo({
+			top: staffImageAreaRef.current.getBoundingClientRect().top + window.scrollY - 72,
+			behavior: "smooth",
+		});
 	};
 	useEffect(() => {
 		const newStaffsList = staffMembers.reduce((result, [id, name, imageUrl, title, motto, term]) => {
@@ -267,7 +272,7 @@ export default function AboutUsPage() {
 				</div>
 			</div>
 
-			<div className="position-relative container mt-10 z-1">
+			<div ref={staffImageAreaRef} className="position-relative container mt-10 z-1">
 				<Wiggle className={joinCls("position-absolute", style["rect-decor-4"])}>
 					<Image src={RectDecor4Svg} />
 				</Wiggle>
@@ -279,7 +284,7 @@ export default function AboutUsPage() {
 					<div className="row">
 						<div className="col-auto">
 							<h1 className={joinCls("f-crimson-pro me-5", style["club-name"])}>
-								<span>Hugo</span> Staff {staffsList[0]}
+								<span className="d-none d-lg-inline">Hugo</span> Staff {staffsList[0]}
 							</h1>
 						</div>
 						<div className="col">
