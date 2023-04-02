@@ -65,7 +65,7 @@ const hugoClubMessages = defineMessages({
 	},
 	notificationFromGroup: {
 		id: `${SCOPE}.NotificationFromGroup`,
-		[EN_LOCALE]: "Besides, there will also be announcing posts on the <b>Hugo English Club Facebook's Group<em/> with some essential information for the meeting.",
+		[EN_LOCALE]: "Besides, there will also be announcing posts on the <b>Hugo English Club Facebook's Group</b> with some essential information for the meeting.",
 		[VI_LOCALE]: "Ngoài ra, còn có thông báo trên <b>Nhóm Facebook Hugo English Club</b> cùng với một số thông tin cần thiết cho buổi sinh hoạt.",
 		values: {
 			b: (...chunks) => <b className="text-black">{chunks}</b>,
