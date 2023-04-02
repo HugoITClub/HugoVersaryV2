@@ -15,10 +15,11 @@ import Modal from "../../../components/Modal/Modal";
 import hugoClubMessages from "./hugoClubMessages";
 
 import style from "./style.module.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import Animation from "../../../components/Animation/Animation";
 
 export default function AboutUsPage() {
-	const { data: staffMembers } = useSheetAPI("AboutUs", "N", "R", { earlyTake: 13 });
+	const { data: staffMembers } = useSheetAPI("AboutUs", "N", "S", { earlyTake: 40 });
 	// const {
 	// 	isIntroductionLoading,
 	// 	isIntroductionFull,
@@ -28,12 +29,28 @@ export default function AboutUsPage() {
 	// });
 
 	const { isLoading: isStaffSliderLoading, data: staffSlider } = useSheetAPI("SliderStaff", "F", "G", { earlyTake: 20 });
+
+	const [staffsList, setStaffsList] = useState(["2022-2023", "2021-2022", "2021-2020"]);
+	const handleStaffClicked = (staff) => {
+		const staffIndex = staffsList.findIndex((item) => item === staff);
+		setStaffsList([...staffsList.slice(staffIndex), ...staffsList.slice(0, staffIndex)]);
+	};
+	useEffect(() => {
+		const newStaffsList = staffMembers.reduce((result, [id, name, imageUrl, title, motto, term]) => {
+			if (!result.includes(term)) result.push(term);
+			return result;
+		}, []);
+		setStaffsList(newStaffsList);
+	}, [staffMembers]);
+
 	const [isShownModal, setIsShownModal] = useState(false);
 	const [currentImgModal, setCurrentImgModal] = useState();
 	const handleModalImg = (imgUrl) => {
 		setIsShownModal(true);
 		setCurrentImgModal(imgUrl);
 	};
+
+	const currentStaffMembers = staffMembers.filter(([id, name, imageUrl, title, motto, term]) => term === staffsList[0]);
 
 	return (
 		<div className="position-relative overflow-hidden">
@@ -249,21 +266,46 @@ export default function AboutUsPage() {
 					</div>
 				</div>
 			</div>
+
 			<div className="position-relative container mt-10 z-1">
 				<Wiggle className={joinCls("position-absolute", style["rect-decor-4"])}>
 					<Image src={RectDecor4Svg} />
 				</Wiggle>
-				<div className={joinCls("text-start row justify-content-center position-relative", style["about-human-description"])}>
+				<div className={joinCls("text-start position-relative", style["about-human-description"])}>
 					<Wiggle className={joinCls("position-absolute", style["eclipse-decor-5"])}>
 						<Image src={EclipseDecor5Svg} />
 					</Wiggle>
-					<div className={joinCls("f-crimson-pro", style["club-name"])}>Hugo Staff 2022 - 2023</div>
-					<div className={joinCls("text-muted mt-3 mt-lg-5", style["club-description"])}>
+
+					<div className="row">
+						<div className="col-auto">
+							<h1 className={joinCls("f-crimson-pro me-5", style["club-name"])}>
+								<span>Hugo</span> Staff {staffsList[0]}
+							</h1>
+						</div>
+						<div className="col">
+							<div className={joinCls("position-relative overflow-hidden", style["staff-option-list"])}>
+								<div className="position-relative row flex-nowrap">
+									{staffsList.slice(1).map((staff, index) => (
+										<div key={staff + index} className="col-auto">
+											<Animation animation={[{ name: "fadeIn" }]}>
+												<h1 className={joinCls("f-crimson-pro", style["club-name"])} onClick={() => handleStaffClicked(staff)}>
+													{staff}
+												</h1>
+											</Animation>
+										</div>
+									))}
+								</div>
+								<div className={joinCls("position-absolute top-0 end-0", style["fade"])} />
+							</div>
+						</div>
+					</div>
+
+					<div className={joinCls("text-muted mt-5", style["club-description"])}>
 						<FormattedMessage {...hugoClubMessages.hugoStaffDescription} />
 					</div>
 				</div>
 				<div className="row justify-content-center align-items-stretch mt-5">
-					{staffMembers.slice(0, 1).map(([id, name, imageUrl, title, motto]) => (
+					{currentStaffMembers.slice(0, 1).map(([id, name, imageUrl, title, motto]) => (
 						<div key={id} className={joinCls("col-lg-4 col-12 col-md-6")}>
 							<div className={joinCls("text-center rounded-3 overflow-hidden h-100", style["item"])}>
 								<Image src={imageUrl} />
@@ -277,7 +319,7 @@ export default function AboutUsPage() {
 					))}
 				</div>
 				<div className="row justify-content-center align-items-stretch g-4 mt-4">
-					{staffMembers.slice(1).map(([id, name, imageUrl, title, motto]) => (
+					{currentStaffMembers.slice(1).map(([id, name, imageUrl, title, motto, term]) => (
 						<div key={id} className={joinCls("col-lg-3 col-12 col-md-6")}>
 							<div className={joinCls("text-center rounded-3 overflow-hidden h-100", style["item"])}>
 								<Image src={imageUrl} />
