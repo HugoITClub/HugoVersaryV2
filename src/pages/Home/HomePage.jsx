@@ -28,6 +28,7 @@ import YtDecor2Svg from "./images/yt-decor-2.svg";
 
 import Wiggle from "../../components/Wiggle/Wiggle";
 import style from "./style.module.css";
+import { HUGO_CLUB_PAGE_PATH } from "../AboutUs/HugoClub/constants";
 
 export default function HomePage() {
 	const { data: blogsData } = useSheetAPI("Blogs", "M", "R", { earlyTake: 8 });
@@ -63,7 +64,7 @@ export default function HomePage() {
 							<p className={joinCls("me-0 me-lg-5", style["description"])}>
 								<FormattedMessage {...homeMessages.description} />
 							</p>
-							<Link to={ABOUT_US_PAGE_PATH} className="btn btn-outline-gradient rounded-pill px-4">
+							<Link to={HUGO_CLUB_PAGE_PATH} className="btn btn-outline-gradient rounded-pill px-4">
 								<FormattedMessage {...homeMessages.seeMoreButton} />
 							</Link>
 						</div>
