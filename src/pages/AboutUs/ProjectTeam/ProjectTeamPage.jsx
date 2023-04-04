@@ -348,11 +348,11 @@ export default function ProjectTeamPage() {
 									<br /> Với mong muốn mang hình ảnh một câu lạc bộ tiếng Anh năng động, vui vẻ và bổ ích đến gần hơn với những ai đã, đang và sẽ trở thành một phần của Hugo
 									English Club, dự án đã được thành lập dựa trên các giá trị:
 									<ul>
-										<li>
+										<li className="mt-3">
 											<span className="fw-bold text-black">Lan tỏa:</span> <br /> Đây chính là nơi những khoảnh khắc đáng nhớ, sự kiện nổi bật cũng như thông tin về câu lạc bộ và
 											toàn bộ thành viên của Hugo được chia sẻ và tái hiện sinh động.
 										</li>
-										<li>
+										<li className="mt-3">
 											<span className="fw-bold text-black">Kết nối:</span> <br /> Bạn đã từng là một thành viên của Hugo? Hay bạn đang tham gia câu lạc bộ? Cũng có thể bạn sẽ tham
 											gia câu lạc bộ trong tương lai? Dù bạn là ai, dự án mong muốn sẽ kết nối con người - những mảnh ghép độc đáo của Hugo lại với nhau. Chúng mình hi vọng có thể
 											mang lại những thông tin cần thiết về lịch sử ra đời, quá trình phát triển của câu lạc bộ; các thế hệ đi trước cũng như những thế hệ tiếp theo và lan tỏa niềm
