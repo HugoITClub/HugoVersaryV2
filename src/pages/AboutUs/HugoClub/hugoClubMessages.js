@@ -6,7 +6,7 @@ const SCOPE = "HugoClub";
 const hugoClubMessages = defineMessages({
 	header: {
 		id: `${SCOPE}.Header`,
-		[EN_LOCALE]: "We are an English Club for <i>every students</i> in Da Nang City.",
+		[EN_LOCALE]: "We are an English Club for <i>every student</i> in Da Nang City.",
 		[VI_LOCALE]: "Câu lạc bộ tiếng Anh dành cho <i>học sinh, sinh viên</i> tại Đà Nẵng.",
 		values: {
 			i: (...chunks) => <i>{chunks}</i>,
