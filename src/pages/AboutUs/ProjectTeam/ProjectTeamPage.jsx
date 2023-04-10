@@ -376,7 +376,7 @@ export default function ProjectTeamPage() {
 							<div className={style["fade"]}></div>
 							<div className={joinCls("text-center text-white position-absolute f-google-san", style["summary-quote"])}>
 								<p className="px-5">"Coming together is a beginning, staying together is progress, and working together is success."</p>
-								<span className="mt-5">– Henry Ford –</span>
+								<span className="mt-3 mt-lg-5">– Henry Ford –</span>
 							</div>
 						</div>
 
@@ -386,7 +386,7 @@ export default function ProjectTeamPage() {
 					</div>
 				</div>
 			))}
-			<Footer className="mt-10" />
+			<Footer className="mt-lg-10 mt-5" />
 		</div>
 	);
 }
