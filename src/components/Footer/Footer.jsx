@@ -19,6 +19,8 @@ import { DARK_THEME, LIGHT_THEME } from "../../services/theme/constants";
 import { PROJECT_TEAM_PAGE_PATH } from "../../pages/AboutUs/ProjectTeam/constants";
 import { FormattedMessage } from "react-intl";
 import footerMessages from "./footerMessages";
+import { FAQ_PAGE_PATH } from "../../pages/AboutUs/FAQ/constants";
+import { HUGO_CLUB_PAGE_PATH } from "../../pages/AboutUs/HugoClub/constants";
 
 export default function Footer({ theme = LIGHT_THEME, className, ...props }) {
 	const dispatch = useDispatch();
@@ -106,11 +108,14 @@ export default function Footer({ theme = LIGHT_THEME, className, ...props }) {
 								<h3 className={joinCls("text-uppercase mt-3 mb-4", themeContent[theme].titleColor)}>
 									<FormattedMessage {...footerMessages.aboutUsTitle} />
 								</h3>
-								<Link to={ABOUT_US_PAGE_PATH} className={joinCls("text-decoration-none mb-2", themeContent[theme].textColor)}>
+								<Link to={HUGO_CLUB_PAGE_PATH} className={joinCls("text-decoration-none mb-2", themeContent[theme].textColor)}>
 									Hugo English Club
 								</Link>
 								<Link to={PROJECT_TEAM_PAGE_PATH} className={joinCls("text-decoration-none mb-2", themeContent[theme].textColor)}>
 									HUGOVERSARY Team
+								</Link>
+								<Link to={FAQ_PAGE_PATH} className={joinCls("text-decoration-none mb-2", themeContent[theme].textColor)}>
+									FAQ
 								</Link>
 							</div>
 						</div>

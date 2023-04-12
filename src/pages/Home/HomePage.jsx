@@ -111,9 +111,9 @@ export default function HomePage() {
 				<Wiggle className={joinCls("position-absolute", style["shooting-stars"])}>
 					<Image src={ShootingStarsSvg} />
 				</Wiggle>
-				<Wiggle className={joinCls("position-absolute", style["puzzle"])}>
+				{/* <Wiggle className={joinCls("position-absolute", style["puzzle"])}>
 					<Image src={PuzzleStarsSvg} />
-				</Wiggle>
+				</Wiggle> */}
 
 				<div className="position-relative container px-4 px-lg-0">
 					<h1 className="display-5 f-google-san fw-bolder text-gradient text-center">
@@ -152,9 +152,9 @@ export default function HomePage() {
 				<Wiggle className={joinCls("position-absolute", style["note"])}>
 					<Image src={NoteSvg} />
 				</Wiggle>
-				<Wiggle className={joinCls("position-absolute", style["rect-decor-3"])}>
+				{/* <Wiggle className={joinCls("position-absolute", style["rect-decor-3"])}>
 					<Image src={RectDecor3Svg} />
-				</Wiggle>
+				</Wiggle> */}
 
 				<div className="position-relative container px-4 px-lg-0">
 					<h1 className="display-5 f-google-san fw-bolder text-gradient text-center">BLOGS</h1>
@@ -191,9 +191,9 @@ export default function HomePage() {
 				<Wiggle className={joinCls("position-absolute d-none d-lg-block", style["rect-decor-2"])}>
 					<Image src={RectDecor2Svg} />
 				</Wiggle>
-				<Wiggle className={joinCls("position-absolute", style["dots"])}>
+				{/* <Wiggle className={joinCls("position-absolute", style["dots"])}>
 					<Image src={DotsSvg} />
-				</Wiggle>
+				</Wiggle> */}
 
 				<div className={joinCls("position-relative rounded-4", style["join-us"])}>
 					{/* <Image src={randomImgUrl(2000, 1000)} className="position-absolute top-0 left-0 w-100 h-100 rounded-4" /> */}
