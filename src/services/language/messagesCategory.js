@@ -6,6 +6,7 @@ import meetingsMessages from "../../pages/Activities/Meetings/meetingsMessages";
 import blogsMessages from "../../pages/Blogs/blogsMessages";
 import homeMessages from "../../pages/Home/homeMessages";
 import teamsMessages from "../../pages/Teams/teamsMessages";
+import projectTeamMessages from "../../pages/AboutUs/ProjectTeam/projectTeamMessages";
 import { EN_LOCALE, VI_LOCALE } from "./constants";
 
 function generateMessages(rawMessages, locale) {
@@ -21,7 +22,7 @@ function generateMessages(rawMessages, locale) {
 	}, {});
 }
 
-const rawMessages = [navigatorMessages, footerMessages, homeMessages, teamsMessages, meetingsMessages, eventsMessages, blogsMessages, hugoClubMessages];
+const rawMessages = [navigatorMessages, footerMessages, homeMessages, teamsMessages, meetingsMessages, eventsMessages, blogsMessages, hugoClubMessages, projectTeamMessages];
 
 const enMessages = generateMessages(rawMessages, EN_LOCALE);
 const viMessages = generateMessages(rawMessages, VI_LOCALE);
