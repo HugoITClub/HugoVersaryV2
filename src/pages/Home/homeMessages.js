@@ -57,7 +57,7 @@ const homeMessages = defineMessages({
 		[EN_LOCALE]:
 			"Do you want to immerse yourself in an environment where people practice English together?{break}Are you eager to make active and talented friends in Danang?{break}More than an English Club, let’s join us to know what's behind it!",
 		[VI_LOCALE]:
-			"Một môi trường năng động nơi mà bạn có thể thỏa sức trao dồi vốn tiếng Anh của mình?{break}Những người bạn dễ thương và tài năng luôn sẵn sàng đồng hành cùng bạn?{break}Bạn không nhầm đâu vì Hugo có tất cả những điều đó. Vậy thì còn chần chừ gì nữa mà không tham gia CLB ngay và luôn nào!",
+			"Một môi trường năng động nơi mà bạn có thể thỏa sức trau dồi vốn tiếng Anh của mình?{break}Những người bạn dễ thương và tài năng luôn sẵn sàng đồng hành cùng bạn?{break}Bạn không nhầm đâu vì Hugo có tất cả những điều đó. Vậy thì còn chần chừ gì nữa mà không tham gia CLB ngay và luôn nào!",
 		values: { break: <br /> },
 	},
 	callingActionButton: {
