@@ -45,6 +45,7 @@ export default function ProjectTeamPage() {
 						<Wiggle className={joinCls("position-absolute", style["flowerIcon1"])}>
 							<Image src={flowerIcon1} />
 						</Wiggle>
+
 						<Wiggle className={joinCls("position-absolute", style["flowerIcon1-1"])}>
 							<Image src={flowerIcon1} />
 						</Wiggle>
