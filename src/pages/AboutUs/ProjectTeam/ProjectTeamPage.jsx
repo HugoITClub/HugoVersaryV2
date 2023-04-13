@@ -29,6 +29,9 @@ import TuanLe from "./images/TuanLe.jpg";
 import UyenPhung from "./images/UyenPhung.jpg";
 import style from "./style.module.css";
 
+import { FormattedMessage } from "react-intl";
+import projectTeamMessages from "./projectTeamMessages";
+
 import Wiggle from "../../../components/Wiggle/Wiggle";
 import useSheetAPI from "../../../services/google/hooks/useSheetAPI";
 
@@ -42,6 +45,7 @@ export default function ProjectTeamPage() {
 						<Wiggle className={joinCls("position-absolute", style["flowerIcon1"])}>
 							<Image src={flowerIcon1} />
 						</Wiggle>
+
 						<Wiggle className={joinCls("position-absolute", style["flowerIcon1-1"])}>
 							<Image src={flowerIcon1} />
 						</Wiggle>
@@ -54,10 +58,7 @@ export default function ProjectTeamPage() {
 
 						<div className={joinCls("f-google-san text-center text-dark", style["team-title"])}>Hugoversary - Hugo English Club Anniversary</div>
 						<div className={joinCls("text-center mt-3", style["team-description"])}>
-							“Nghe quen quen phớ hôn, đúng rùi đó, cái tên này là sự kết hợp giữa Hugo và Anniversary, và cuối cùng dự án Hugoversary ra đời. Đúng như cái tên của nó, Website này
-							là sản phẩm trong dự án của chúng mình, được tạo ra bởi nhóm Hugo IT và thuộc quyền sở hữu của Hugo English Club. Đây là nơi lưu giữ, cập nhật và quảng bá các hoạt
-							động, sự kiện của CLB Hugo tính từ lúc mới hình thành đến hiện tại. Tại đây, các thành viên hiện tại của CLB, các cựu thành viên và thậm chí các cá nhân không phải
-							thành viên CLB đều có thể tham quan, tìm hiểu và nhìn lại quá trình phát triển của Hugo.“
+							<FormattedMessage {...projectTeamMessages.teamDescription} />
 						</div>
 					</div>
 					<div className={joinCls("mt-10 position-relative", style["team-member"])}>
@@ -315,12 +316,13 @@ export default function ProjectTeamPage() {
 
 						<div className="position-relative row justify-content-between">
 							<div className="col-lg-6 col-12">
-								<div className={joinCls("fw-bold f-google-san text-black", style["story-title"])}>Khởi nguồn</div>
+								<div className={joinCls("fw-bold f-google-san text-black", style["story-title"])}>
+									<FormattedMessage {...projectTeamMessages.storyTitle} />
+								</div>
 								<div className={joinCls("text-start mt-3", style["story-content"])}>
-									“Tự nhiên mà có thôi” <br /> Đúng rồi, cái ý tưởng tạo một chiếc website cho Hugo chính là tự nhiên mà có thôi.
-									<br /> Tuy vậy, hành trình tạo ra chiếc website này chẳng phải tự nhiên và dễ dàng. Sau những buổi họp bàn kế hoạch sơ lược cho project, 5 con người ấy quyết định
-									tuyển thêm thành viên để chạy deadline cùng. Thật may mắn là bọn tui đã chiêu mộ được những nhân tài giỏi giang, đáng yêu về chung team hihi. Cứ thế sau 9 tháng
-									10 ngày thì chiếc website này cũng đã ra đời trong niềm vui sướng vỡ òa của chúng tui và chính thức đưa vào hoạt động vào ngày 25/03/2023.
+									<FormattedMessage {...projectTeamMessages.storyQuotes} />
+									<br />
+									<FormattedMessage {...projectTeamMessages.ourStory} />
 								</div>
 							</div>
 							<div className="col-lg-6 col-12">
@@ -340,23 +342,28 @@ export default function ProjectTeamPage() {
 								<Image src={imgUrl2} className={joinCls("mt-5 shadow", style["mission-img"])} />
 							</div>
 							<div className="col-lg-6 col-12">
-								<div className={joinCls("fw-bold f-google-san text-black ", style["story-title"])}>Mục tiêu</div>
+								<div className={joinCls("fw-bold f-google-san text-black ", style["story-title"])}>
+									<FormattedMessage {...projectTeamMessages.missionTitle} />
+								</div>
 								<div className={joinCls("text-start mt-3", style["story-content"])}>
 									<span className={style["project-team-quote"]}>
-										“Đây không đơn thuần là một website, đây là một cuốn sách lưu giữ những kỉ niệm và con người tại Hugo English Club.”
+										<FormattedMessage {...projectTeamMessages.missionQuotes} />
 									</span>
-									<br /> Với mong muốn mang hình ảnh một câu lạc bộ tiếng Anh năng động, vui vẻ và bổ ích đến gần hơn với những ai đã, đang và sẽ trở thành một phần của Hugo
-									English Club, dự án đã được thành lập dựa trên các giá trị:
+									<br /> <FormattedMessage {...projectTeamMessages.missionContent} />
 									<ul>
 										<li className="mt-3">
-											<span className="fw-bold text-black">Lan tỏa:</span> <br /> Đây chính là nơi những khoảnh khắc đáng nhớ, sự kiện nổi bật cũng như thông tin về câu lạc bộ và
-											toàn bộ thành viên của Hugo được chia sẻ và tái hiện sinh động.
+											<span className="fw-bold text-black">
+												<FormattedMessage {...projectTeamMessages.goViral} />
+											</span>
+											<br />
+											<FormattedMessage {...projectTeamMessages.goViralContent} />
 										</li>
 										<li className="mt-3">
-											<span className="fw-bold text-black">Kết nối:</span> <br /> Bạn đã từng là một thành viên của Hugo? Hay bạn đang tham gia câu lạc bộ? Cũng có thể bạn sẽ tham
-											gia câu lạc bộ trong tương lai? Dù bạn là ai, dự án mong muốn sẽ kết nối con người - những mảnh ghép độc đáo của Hugo lại với nhau. Chúng mình hi vọng có thể
-											mang lại những thông tin cần thiết về lịch sử ra đời, quá trình phát triển của câu lạc bộ; các thế hệ đi trước cũng như những thế hệ tiếp theo và lan tỏa niềm
-											đam mê tiếng Anh đến với tất cả mọi người.
+											<span className="fw-bold text-black">
+												<FormattedMessage {...projectTeamMessages.connect} />
+											</span>{" "}
+											<br />
+											<FormattedMessage {...projectTeamMessages.connectContent} />
 										</li>
 									</ul>
 								</div>
