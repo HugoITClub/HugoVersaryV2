@@ -325,7 +325,7 @@ export default function ProjectTeamPage() {
 									<FormattedMessage {...projectTeamMessages.ourStory} />
 								</div>
 							</div>
-							<div className="col-lg-6 col-12">
+							<div className="col-lg-6 mt-5 mt-lg-0 col-12">
 								<Image src={imgUrl1} className={joinCls("rounded-5 shadow", style["story-img"])} />
 							</div>
 						</div>

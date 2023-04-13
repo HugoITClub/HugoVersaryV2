@@ -228,6 +228,10 @@
 }
 
 @media (max-width: 768px) {
+	.story-img:hover,
+	.mission-img:hover {
+		transform: translateY(0);
+	}
 	.mission-story {
 		margin-top: 5rem !important;
 	}
