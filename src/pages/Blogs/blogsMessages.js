@@ -21,8 +21,8 @@ const blogsMessages = defineMessages({
 	},
 	hugoBlogs: {
 		id: `${SCOPE}.HugoBlogs`,
-		[EN_LOCALE]: "Hugo's Blogs",
-		[VI_LOCALE]: "Hugo's Blogs",
+		[EN_LOCALE]: "Hugo Blogs",
+		[VI_LOCALE]: "Hugo Blogs",
 	},
 });
 
