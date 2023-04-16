@@ -18,12 +18,13 @@ import { HUGO_CLUB_PAGE_PATH } from "../../pages/AboutUs/HugoClub/constants";
 import { useSelector } from "react-redux";
 import navigatorMessages from "./navigatorMessages";
 import { FormattedMessage } from "react-intl";
+import useSheetAPI from "../../services/google/hooks/useSheetAPI";
 
 export default function Navigator() {
 	const location = useLocation();
 	const navbarRef = useRef();
 	const { locale } = useSelector((state) => state.language);
-
+	const { data: regisForm } = useSheetAPI("AboutUs", "", "U", { earlyTake: 1 });
 	const navLinks = [
 		{
 			name: navigatorMessages.home[locale],
@@ -92,7 +93,7 @@ export default function Navigator() {
 	];
 
 	const joinUsBtn = (
-		<a href="https://forms.gle/P3a5dJzUpWxstcKt8" target="_blank" rel="noreferrer" className="text-decoration-none ">
+		<a href={regisForm[0]} target="_blank" rel="noreferrer" className="text-decoration-none ">
 			<button className={joinCls("btn btn-gradient rounded-pill px-3 mx-3", style["join-us-btn"])}>
 				<FormattedMessage {...navigatorMessages.joinUsButton} />
 			</button>
