@@ -57,3 +57,12 @@
 		width: 8rem;
 	}
 }
+
+@media (max-width: 375px) {
+	.join-us-btn {
+		padding: 8px !important;
+	}
+	.navbar-container {
+		flex-wrap: nowrap !important;
+	}
+}

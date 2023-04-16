@@ -93,7 +93,7 @@ export default function Navigator() {
 
 	const joinUsBtn = (
 		<a href="https://forms.gle/P3a5dJzUpWxstcKt8" target="_blank" rel="noreferrer" className="text-decoration-none ">
-			<button className="btn btn-gradient rounded-pill px-3 mx-3">
+			<button className={joinCls("btn btn-gradient rounded-pill px-3 mx-3", style["join-us-btn"])}>
 				<FormattedMessage {...navigatorMessages.joinUsButton} />
 			</button>
 		</a>
