@@ -32,9 +32,8 @@ import { HUGO_CLUB_PAGE_PATH } from "../AboutUs/HugoClub/constants";
 
 export default function HomePage() {
 	const { data: blogsData } = useSheetAPI("Blogs", "M", "R", { earlyTake: 8 });
-
+	const { data: regisForm } = useSheetAPI("AboutUs", "", "U", { earlyTake: 1 });
 	const { data: activitiesData } = useSheetAPI("Activities", "M", "S", { earlyTake: 20 });
-
 	const { data: sliderHomePageData } = useSheetAPI("SliderHomePage", "H", "I", { earlyTake: 10 });
 	// const { isLoading: isJoinUsImgLoading, isFull: isJoinUsImgFull, data: JoinUsImgData, getMore: getJoinUsImgData } = useSheetAPI("SliderHomePage", "J", "K", { earlyTake: 1 });
 	const [isShownHugoVideo, setIsShownHugoVideo] = useState(false);
@@ -207,9 +206,9 @@ export default function HomePage() {
 						<p className={joinCls("text-center f-google-san mt-3 px-3", style["join-us-description"])}>
 							<FormattedMessage {...homeMessages.callingAction} />
 						</p>
-						<Link target="_blank" to="https://forms.gle/P3a5dJzUpWxstcKt8" className="btn btn-lg btn-outline-gradient rounded-pill text-uppercase px-5 py-3 mt-4">
+						<a target="_blank" href={regisForm[0]} className="btn btn-lg btn-outline-gradient rounded-pill text-uppercase px-5 py-3 mt-4">
 							<FormattedMessage {...homeMessages.callingActionButton} />
-						</Link>
+						</a>
 					</div>
 				</div>
 			</section>
