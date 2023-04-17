@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Crimson+Pro:ital@1&display=swap");
 
+.carousel {
+	margin-top: 20px;
+}
+
 .carousel :global(.carousel-item) {
 	height: 90vh;
 }
@@ -98,6 +102,10 @@
 @media (min-width: 992px) {
 	.blog-item {
 		flex-basis: 25%;
+	}
+
+	.carousel-inner:first-child {
+		padding: 2.1rem !important;
 	}
 }
 
