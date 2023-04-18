@@ -42,7 +42,7 @@ export default function TeamsPage() {
 	} = useMatch(TEAMS_PAGE_PATH);
 	const { locale } = useSelector((state) => state.language);
 
-	const { data: teamData } = useSheetAPI(sheetNameMap[name], "AE", "AH", { earlyTake: 50 });
+	const { data: teamData } = useSheetAPI(sheetNameMap[name], "AE", "AH", { earlyTake: 70 });
 	const { data: teamIntro } = useSheetAPI(sheetNameMap[name], "V", "AD", { earlyTake: 1 });
 	const { data: teamActivities } = useSheetAPI(sheetNameMap[name], "AI", "AO", { earlyTake: 50 });
 
