@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Crimson+Pro:ital@1&display=swap");
 
 .carousel :global(.carousel-item) {
-	height: 90vh;
+	height: 60vh;
 }
 
 .description {
