@@ -44,6 +44,7 @@ export default function HomePage() {
 			<Carousel id="HeaderCarousel" className={joinCls("position-relative", style["carousel"])} intervalTime={5000}>
 				{sliderHomePageData.map((item) => (
 					<Image key={item[1]} src={item[1]} className="w-100 h-100" />
+					// <div key={item[1]} style={{ backgroundImage: `url(${item[1]})`, backgroundSize: "cover" }} className="w-100 h-100"></div>
 				))}
 			</Carousel>
 

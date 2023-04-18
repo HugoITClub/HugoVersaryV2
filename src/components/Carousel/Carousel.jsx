@@ -5,7 +5,7 @@ import "./style.css";
 function Carousel({
 	id,
 	safeZone = false,
-	intervalTime = 5000,
+	intervalTime = 7000,
 	nextButton = true,
 	prevButton = true,
 	onNext = (oldImageIndex, newImageIndex) => {},
