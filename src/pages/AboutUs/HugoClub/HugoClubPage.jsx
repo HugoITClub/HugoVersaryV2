@@ -19,7 +19,7 @@ import { useEffect, useRef, useState } from "react";
 import Animation from "../../../components/Animation/Animation";
 
 export default function AboutUsPage() {
-	const { data: staffMembers } = useSheetAPI("AboutUs", "N", "S", { earlyTake: 40 });
+	const { data: staffMembers } = useSheetAPI("AboutUs-LOCK", "A", "F", { earlyTake: 40 });
 	// const {
 	// 	isIntroductionLoading,
 	// 	isIntroductionFull,
@@ -28,7 +28,7 @@ export default function AboutUsPage() {
 	// 	earlyTake: 1,
 	// });
 
-	const { isLoading: isStaffSliderLoading, data: staffSlider } = useSheetAPI("SliderStaff", "F", "G", { earlyTake: 20 });
+	const { isLoading: isStaffSliderLoading, data: staffSlider } = useSheetAPI("SliderStaff-LOCK", "A", "B", { earlyTake: 20 });
 
 	const staffImageAreaRef = useRef();
 	const [staffsList, setStaffsList] = useState(["2022-2023", "2021-2022", "2021-2020"]);
@@ -350,4 +350,3 @@ export default function AboutUsPage() {
 		</div>
 	);
 }
-

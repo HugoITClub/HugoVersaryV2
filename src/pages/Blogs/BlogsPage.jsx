@@ -20,11 +20,11 @@ import { FormattedMessage } from "react-intl";
 import blogsMessages from "./blogsMessages";
 
 export default function BlogsPage() {
-	const { data: blogIntroData } = useSheetAPI("Blogs", "S", "W", { earlyTake: 8 });
+	const { data: blogIntroData } = useSheetAPI("Blogs-LOCK", "G", "K", { earlyTake: 8 });
 
-	const { isLoading: isBlogsLoading, isFull: isBlogsFull, data: blogsData, getMore: getMoreBlogsData } = useSheetAPI("Blogs", "M", "R", { earlyTake: 8 });
+	const { isLoading: isBlogsLoading, isFull: isBlogsFull, data: blogsData, getMore: getMoreBlogsData } = useSheetAPI("Blogs-LOCK", "A", "F", { earlyTake: 8 });
 
-	const { data: academicData } = useSheetAPI("Academic", "K", "P", { earlyTake: 8 });
+	const { data: academicData } = useSheetAPI("Academic-LOCK", "A", "F", { earlyTake: 8 });
 
 	return (
 		<div className="position-relative overflow-hidden">

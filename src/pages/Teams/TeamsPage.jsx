@@ -20,7 +20,6 @@ const sheetNameMap = {
 	[POWER_RANGERS]: "PowerRangers",
 	[NIFFLER]: "Niffler",
 };
-
 const teamMap = {
 	[BANANA]: {
 		className: "banana",
@@ -42,9 +41,9 @@ export default function TeamsPage() {
 	} = useMatch(TEAMS_PAGE_PATH);
 	const { locale } = useSelector((state) => state.language);
 
-	const { data: teamData } = useSheetAPI(sheetNameMap[name], "AE", "AH", { earlyTake: 70 });
-	const { data: teamIntro } = useSheetAPI(sheetNameMap[name], "V", "AD", { earlyTake: 1 });
-	const { data: teamActivities } = useSheetAPI(sheetNameMap[name], "AI", "AO", { earlyTake: 50 });
+	const { data: teamData } = useSheetAPI(sheetNameMap[name].concat("-LOCK"), "J", "M", { earlyTake: 100 });
+	const { data: teamIntro } = useSheetAPI(sheetNameMap[name].concat("-LOCK"), "A", "I", { earlyTake: 1 });
+	const { data: teamActivities } = useSheetAPI(sheetNameMap[name].concat("-LOCK"), "N", "T", { earlyTake: 100 });
 
 	const exploreCategories = [
 		{

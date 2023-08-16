@@ -39,7 +39,7 @@ export default function PostsPage() {
 		});
 	}, [data]);
 
-	const { data: RecommendPostsData } = useSheetAPI("RecommendPosts", "I", "N", { earlyTake: 8 });
+	const { data: RecommendPostsData } = useSheetAPI("RecommendPosts-LOCK", "A", "F", { earlyTake: 10 });
 
 	return (
 		<div className="bg-white pt-5 position-relative">
