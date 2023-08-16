@@ -15,8 +15,8 @@ import { FormattedMessage } from "react-intl";
 import eventsMessages from "./eventsMessages";
 
 function EventsPage() {
-	const { isLoading: isEventLoading, isFull: isEventFull, data: events, getMore: getMoreEvent } = useSheetAPI("Event", "L", "Q", { earlyTake: 8 });
-	const { data: mainImg } = useSheetAPI("Event", "R", "T", { earlyTake: 8 });
+	const { isLoading: isEventLoading, isFull: isEventFull, data: events, getMore: getMoreEvent } = useSheetAPI("Event-LOCK", "A", "F", { earlyTake: 8 });
+	const { data: mainImg } = useSheetAPI("Event-LOCK", "G", "I", { earlyTake: 8 });
 	return (
 		<div className="overflow-hidden">
 			<div className="event">

@@ -16,9 +16,8 @@ import { FormattedMessage } from "react-intl";
 import meetingsMessages from "./meetingsMessages";
 
 export default function MeetingsPage() {
-	const { isLoading: isMeetingLoading, isFull: isMeetingFull, data: meetings, getMore: getMoreMeeting } = useSheetAPI("Meeting", "T", "Y", { earlyTake: 8 });
-	const { data: mainImg } = useSheetAPI("Meeting", "Z", "AI", { earlyTake: 20 });
-
+	const { isLoading: isMeetingLoading, isFull: isMeetingFull, data: meetings, getMore: getMoreMeeting } = useSheetAPI("Meeting-LOCK", "A", "F", { earlyTake: 8 });
+	const { data: mainImg } = useSheetAPI("Meeting-LOCK", "G", "P", { earlyTake: 20 });
 	return (
 		<div className="overflow-hidden">
 			<div className={style["meeting"]}>
