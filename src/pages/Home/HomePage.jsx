@@ -31,10 +31,10 @@ import style from "./style.module.css";
 import { HUGO_CLUB_PAGE_PATH } from "../AboutUs/HugoClub/constants";
 
 export default function HomePage() {
-	const { data: blogsData } = useSheetAPI("Blogs", "M", "R", { earlyTake: 8, earlySkip: 1 });
-	const { data: regisForm } = useSheetAPI("AboutUs", "", "U", { earlyTake: 1, earlySkip: 1 });
+	const { data: blogsData } = useSheetAPI("Blogs-LOCK", "A", "F", { earlyTake: 8 });
+	const { data: regisForm } = useSheetAPI("AboutUs-LOCK", "", "H", { earlyTake: 1 });
 	const { data: activitiesData } = useSheetAPI("Activities-LOCK", "A", "G", { earlyTake: 50 });
-	const { data: sliderHomePageData } = useSheetAPI("SliderHomePage", "H", "I", { earlyTake: 10 });
+	const { data: sliderHomePageData } = useSheetAPI("SliderHomePage-LOCK", "A", "B", { earlyTake: 10 });
 	// const { isLoading: isJoinUsImgLoading, isFull: isJoinUsImgFull, data: JoinUsImgData, getMore: getJoinUsImgData } = useSheetAPI("SliderHomePage", "J", "K", { earlyTake: 1 });
 	const [isShownHugoVideo, setIsShownHugoVideo] = useState(false);
 	return (

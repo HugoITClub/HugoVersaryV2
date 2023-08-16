@@ -43,7 +43,7 @@ export default function TeamsPage() {
 
 	const { data: teamData } = useSheetAPI(sheetNameMap[name].concat("-LOCK"), "J", "M", { earlyTake: 100 });
 	const { data: teamIntro } = useSheetAPI(sheetNameMap[name].concat("-LOCK"), "A", "I", { earlyTake: 1 });
-	const { data: teamActivities } = useSheetAPI(sheetNameMap[name].concat("-LOCK"), "N", "T", { earlyTake: 100, earlySkip: 1 });
+	const { data: teamActivities } = useSheetAPI(sheetNameMap[name].concat("-LOCK"), "N", "T", { earlyTake: 100 });
 
 	const exploreCategories = [
 		{
