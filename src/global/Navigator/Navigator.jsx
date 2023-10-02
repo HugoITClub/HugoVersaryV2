@@ -24,7 +24,7 @@ export default function Navigator() {
 	const location = useLocation();
 	const navbarRef = useRef();
 	const { locale } = useSelector((state) => state.language);
-	const { data: regisForm } = useSheetAPI("AboutUs", "", "U", { earlyTake: 1 });
+	const { data: regisForm } = useSheetAPI("AboutUs-LOCK", "", "H", { earlyTake: 1 });
 	const navLinks = [
 		{
 			name: navigatorMessages.home[locale],
